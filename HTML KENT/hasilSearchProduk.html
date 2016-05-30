@@ -1,0 +1,232 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="bootstrap/js/jquery.shiningImage.min.js"></script>
+<style>
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+100%{left:-200%}
+}
+.headerBG
+{
+	background-color:#347BFE;
+}
+.text1
+{
+	color:yellow;
+}
+.custombutton
+{
+	border-style:solid;
+	border-color:yellow;
+}
+.marg
+{
+	margin-left:auto;
+}
+.sss
+{
+	background-image:url("Wakasa copy.png");
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+}
+.foot
+{
+	background-image:url("pict1.png");
+}
+.icon
+{
+	width:45;
+	height:45;
+}
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%;height:350%; float: left; }
+div#slider figure { 
+  position: relative;
+  width: 500%;
+  height:20%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 15s slidy infinite; 
+}
+</style>
+<script>
+	$(document).ready(function()
+	{
+		$("#wakasa").shiningImage({opacity:1,
+		delay:9999999999});
+		
+	})
+</script>
+</head>
+
+<body>
+
+	
+	<div class="container-fluid headerBG">
+	<br>
+		<div class="row">
+			<div class="col-sm-1">
+			
+				<div class="col-sm-1">
+				<img id="wakasa" src="Wakasa copy.png" style="width:330px;height:80px;"></img>
+				</div>
+			</div>
+			<div class="col-sm-9">
+			</div>
+			<div class="col-sm-1">
+			
+			<h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="#" class="text1">Eng</a>|<a href="#" class="text1">Ind</a></h4>
+				
+					<button type="button" class="custombutton btn btn-primary btn-lg">Login/Register</button>
+			
+			</div>
+		</div>
+		<br>
+	</div>
+	
+	
+		<div class="row" style="position:absolute;z-index:1;top:30%;">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-3">
+				<h3>Cari tentang Wakasa</h3>
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Masukkan Nama Kunci">
+					  <span class="input-group-btn">
+						<button class="btn btn-primary" type="button">Search <span class="glyphicon glyphicon-search"></span></button>
+					  </span>
+				</div><!-- /input-group --><br>
+				<div class="form-group" style="position:absolute;z-index:2;top:inherit;">
+				  <select class="form-control" id="sel1" style="width:150px;">
+					<option>ByModel</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+				  </select>
+				 </div>
+				 <div class="form-group" style="position:absolute;z-index:2;top:inherit;left:60%;">
+				  <select class="form-control" id="sel1" style="width:150px;">
+					<option>Bymake</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+				  </select>
+				 </div>
+			</div>
+			
+		</div>
+		
+		
+		
+	<div id="slider">
+	
+	<figure>
+		<img src="ibiza.jpg" alt>
+		<img src="taj-mahal_copy.jpg" alt>
+		<img src="austin-fireworks.jpg" alt>
+	</figure>
+	</div>
+	
+	
+		
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-5">
+			</div>
+			<div class="col-sm-4">
+				<h2>Hasil Pencarian</h2>
+				<p>Your Search for "XXX" has 20 matches</p>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-sm-2" style="margin-left:3%;">
+				<div class="row">
+					<img src="baut.png" >
+					</img>
+				</div>
+				<div class="row">
+					<div style="text-align:center;background-color:yellow;width:inherit;height:30px;font-size:16pt;">Baut Mobil Avanza Tipe S</div>
+					<div style="text-align:center;width:inherit"><p>Sed ut perpiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p></div>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+			<div class="col-sm-2">
+				<div class="row">
+					<img src="baut.png" >
+					</img>
+				</div>
+				<div class="row">
+					<div style="text-align:center;background-color:yellow;width:inherit;height:30px;font-size:16pt;">Baut Mobil Avanza Tipe S</div>
+					<div style="text-align:center;width:inherit"><p>Sed ut perpiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p></div>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+			<div class="col-sm-2">
+				<div class="row">
+					<img src="baut.png" >
+					</img>
+				</div>
+				<div class="row">
+					<div style="text-align:center;background-color:yellow;width:inherit;height:30px;font-size:16pt;">Baut Mobil Avanza Tipe S</div>
+					<div style="text-align:center;width:inherit"><p>Sed ut perpiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p></div>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+			<div class="col-sm-2">
+				<div class="row">
+					<img src="baut.png" >
+					</img>
+				</div>
+				<div class="row">
+					<div style="text-align:center;background-color:yellow;width:inherit;height:30px;font-size:16pt;">Baut Mobil Avanza Tipe S</div>
+					<div style="text-align:center;width:inherit"><p>Sed ut perpiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p></div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="row">
+			<div class="col-sm-11">
+			</div>
+			<div class="col-sm-1">
+				page 1 of 99
+			</div>
+		</div>
+	</div>
+	
+	<div class="container-fluid foot">
+	<div class="row">
+	<br><br>
+		<div class="col-sm-1">
+		</div>
+		<div class="col-sm-2">
+		<p><span class="glyphicon glyphicon-earphone"></span>&nbspCustomer Service<br><br> 021-2903-0924<br>021-2903-0925<br>021-2903-0926<br></p>
+		</div>
+		<div class="col-sm-2">
+		</div>
+		<div class="col-sm-2">
+		
+		<p><span class="glyphicon glyphicon-envelope"></span>&nbsp PT.Wira Karya Sempurna <br><br> Pool PPD Pesing Poglar no.2/B15<br>Jakarta Barat 11710, Indonesia</p>
+		</div>
+		<div class="col-sm-2">
+		</div>
+		<div class="col-sm-2">
+		<p>&nbspinfo@wakasaparts.com<br></p>
+		<div class="row">
+		<img class ="icon" src="envelope.png"></img><img class ="icon" src="twitter.png"></img><img class ="icon" src="gmail.png"></img><img class ="icon" src="fbi.png"></img>
+		</div>
+	</div>
+	<br><br><br>
+	</div>
+</body>
+
+</html>
