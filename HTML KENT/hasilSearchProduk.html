@@ -1,64 +1,11 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="hasilSearchProduk.css">
 <script src="bootstrap/js/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
 <script src="bootstrap/js/jquery.shiningImage.min.js"></script>
-<style>
-@keyframes slidy {
-0% { left: 0%; }
-20% { left: 0%; }
-25% { left: -100%; }
-45% { left: -100%; }
-50% { left: -200%; }
-70% { left: -200%; }
-100%{left:-200%}
-}
-.headerBG
-{
-	background-color:#347BFE;
-}
-.text1
-{
-	color:yellow;
-}
-.custombutton
-{
-	border-style:solid;
-	border-color:yellow;
-}
-.marg
-{
-	margin-left:auto;
-}
-.sss
-{
-	background-image:url("Wakasa copy.png");
-	background-repeat:no-repeat;
-	background-size: 100% 100%;
-}
-.foot
-{
-	background-image:url("pict1.png");
-}
-.icon
-{
-	width:45;
-	height:45;
-}
-div#slider { overflow: hidden; }
-div#slider figure img { width: 20%;height:350%; float: left; }
-div#slider figure { 
-  position: relative;
-  width: 500%;
-  height:20%;
-  margin: 0;
-  left: 0;
-  text-align: left;
-  font-size: 0;
-  animation: 15s slidy infinite; 
-}
-</style>
+
 <script>
 	$(document).ready(function()
 	{
@@ -70,28 +17,60 @@ div#slider figure {
 </head>
 
 <body>
-
-	
-	<div class="container-fluid headerBG">
+<div class="container-fluid headerBG">
 	<br>
 		<div class="row">
-			<div class="col-sm-1">
-			
-				<div class="col-sm-1">
-				<img id="wakasa" src="Wakasa copy.png" style="width:330px;height:80px;"></img>
-				</div>
+			<div class="col-sm-3">
+			 
+				<img src="wakasa copy.png" class="img-thumbnail" alt="New York" width=70% height =70% style="backgound-color:transparent">
+			  
 			</div>
-			<div class="col-sm-9">
-			</div>
-			<div class="col-sm-1">
-			
-			<h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="#" class="text1">Eng</a>|<a href="#" class="text1">Ind</a></h4>
-				
-					<button type="button" class="custombutton btn btn-primary btn-lg">Login/Register</button>
-			
+			<div class="col-sm-7"></div>
+			<div class="col-sm-2">
+			<h4>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="#" class="text1">Eng</a>|<a href="#" class="text1">Ind</a></h4>
+			<h6 style="color:yellow">Welcome Back,<b style="color:white">MR Vincent</b></h6>
+			<h5>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="#" style="color:yellow;font-size:10pt;">[ Logout ]</a></h5>
 			</div>
 		</div>
-		<br>
+		<form class="form-inline" role="form" style="position:absolute;z-index:5;top:100px;right:15%;">
+	<div class="form-group">
+		<div class="dropdown">
+		  <img style="width:50px;" class="dropdown-toggle" data-toggle="dropdown" src="iconGear.jpg" class="img-rounded"></img>
+		  <ul class="dropdown-menu">
+			<li><a href="#">Tentang Kami</a></li>
+			
+		  </ul>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="dropdown">
+		   <img style="width:50px;" class="dropdown-toggle" data-toggle="dropdown" src="iconBox.jpg" class="img-rounded"></img>
+		  <ul class="dropdown-menu">
+			<li><a href="#">Temukan Wakasa</a></li>
+			
+		  </ul>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="dropdown">
+		   <img style="width:50px;" class="dropdown-toggle" data-toggle="dropdown" src="iconCall.jpg" class="img-rounded"></img>
+		  <ul class="dropdown-menu">
+			<li><a href="#">Kontak Kami</a></li>
+			
+		  </ul>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="dropdown">
+		  <img style="width:50px;" class="dropdown-toggle" data-toggle="dropdown" src="iconSearch.jpg" class="img-rounded"></img>
+		  <ul class="dropdown-menu">
+			<li><a href="#">Cari Produk</a></li>
+			
+		  </ul>
+		</div>
+	</div>
+</form>
+
 	</div>
 	
 	
@@ -130,67 +109,50 @@ div#slider figure {
 	<div id="slider">
 	
 	<figure>
-		<img src="ibiza.jpg" alt>
 		<img src="taj-mahal_copy.jpg" alt>
-		<img src="austin-fireworks.jpg" alt>
 	</figure>
 	</div>
 	
 	
 		
-	<div class="container-fluid">
+	<div class="container-fluid" style="background-image:url(smartObject.png);background-size: 100% 100%;background-repeat:no-repeat;">
 		<div class="row">
 			<div class="col-sm-5">
 			</div>
 			<div class="col-sm-4">
-				<h2>Hasil Pencarian</h2>
-				<p>Your Search for "XXX" has 20 matches</p>
+				<h2 style="font-family:Exo-Medium;color:#1a8cff;">HASIL PENCARIAN</h2>
+				<p style="font-family:ubuntu">Your Search for "XXX" has 20 matches</p>
 			</div>
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-sm-2" style="margin-left:3%;">
-				<div class="row">
-					<img src="baut.png" >
-					</img>
-				</div>
-				<div class="row">
-					<div style="text-align:center;background-color:yellow;width:inherit;height:30px;font-size:16pt;">Baut Mobil Avanza Tipe S</div>
-					<div style="text-align:center;width:inherit"><p>Sed ut perpiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p></div>
-				</div>
+			<div class="col-sm-3">
+			  <div class="thumbnail">
+				<img src="baut.png" alt="New York" width=100% height = 100% >
+				<p style="padding:5px;font-family: Exo-medium;font-size:12pt;background-color: #fff000;text-align:center"><strong>BAUT MOBIL AVANZA TIPE S</strong></p>
+				<p style="font-family: Ubuntu;;margin-left:10px;word-wrap:break-word;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam<br><br><a style="font-family: Ubuntu;font-size:12pt;"><B>SELENGKAPNYA >></b></a></p>
+			  </div>
 			</div>
-			<div class="col-sm-1"></div>
-			<div class="col-sm-2">
-				<div class="row">
-					<img src="baut.png" >
-					</img>
-				</div>
-				<div class="row">
-					<div style="text-align:center;background-color:yellow;width:inherit;height:30px;font-size:16pt;">Baut Mobil Avanza Tipe S</div>
-					<div style="text-align:center;width:inherit"><p>Sed ut perpiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p></div>
-				</div>
+			<div class="col-sm-3">
+			  <div class="thumbnail">
+				<img src="baut.png" alt="New York" width=100% height = 100% >
+				<p style="padding:5px;font-family: Exo-medium;font-size:12pt;background-color: #fff000;text-align:center"><strong>BAUT MOBIL AVANZA TIPE S</strong></p>
+				<p style="font-family: Ubuntu;;margin-left:10px;word-wrap:break-word;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam<br><br><a style="font-family: Ubuntu;font-size:12pt;"><b>SELENGKAPNYA >></b></a></p>
+			  </div>
 			</div>
-			<div class="col-sm-1"></div>
-			<div class="col-sm-2">
-				<div class="row">
-					<img src="baut.png" >
-					</img>
-				</div>
-				<div class="row">
-					<div style="text-align:center;background-color:yellow;width:inherit;height:30px;font-size:16pt;">Baut Mobil Avanza Tipe S</div>
-					<div style="text-align:center;width:inherit"><p>Sed ut perpiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p></div>
-				</div>
+			<div class="col-sm-3">
+			  <div class="thumbnail">
+				<img src="baut.png" alt="New York" width=100% height = 100% >
+				<p style="padding:5px;font-family: Exo-medium;font-size:12pt;background-color: #fff000;text-align:center"><strong>BAUT MOBIL AVANZA TIPE S</strong></p>
+				<p style="font-family: Ubuntu;;margin-left:10px;word-wrap:break-word;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam<br><br><a style="font-family: Ubuntu;font-size:12pt;"><b>SELENGKAPNYA >></b></a></p>
+			  </div>
 			</div>
-			<div class="col-sm-1"></div>
-			<div class="col-sm-2">
-				<div class="row">
-					<img src="baut.png" >
-					</img>
-				</div>
-				<div class="row">
-					<div style="text-align:center;background-color:yellow;width:inherit;height:30px;font-size:16pt;">Baut Mobil Avanza Tipe S</div>
-					<div style="text-align:center;width:inherit"><p>Sed ut perpiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p></div>
-				</div>
+			<div class="col-sm-3">
+			  <div class="thumbnail">
+				<img src="baut.png" alt="New York" width=100% height = 100% >
+				<p style="padding:5px;font-family: Exo-medium;font-size:12pt;background-color: #fff000;text-align:center"><strong>BAUT MOBIL AVANZA TIPE S</strong></p>
+				<p style="font-family: Ubuntu;;margin-left:10px;word-wrap:break-word;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam<br><br><a style="font-family: Ubuntu;font-size:12pt;"><b>SELENGKAPNYA >></b></a></p>
+			  </div>
 			</div>
 			
 		</div>
@@ -203,26 +165,26 @@ div#slider figure {
 		</div>
 	</div>
 	
-	<div class="container-fluid foot">
-	<div class="row">
+	<div class="container-fluid foot" style="background-image:url(footerBG.png);background-size:100% 100%;background-repeat:no-repeat;">
+	<div class="row" >
 	<br><br>
 		<div class="col-sm-1">
 		</div>
 		<div class="col-sm-2">
-		<p><span class="glyphicon glyphicon-earphone"></span>&nbspCustomer Service<br><br> 021-2903-0924<br>021-2903-0925<br>021-2903-0926<br></p>
+		<p class="whiteText" style="font-family:Ubuntu"><span class="glyphicon glyphicon-earphone"></span>&nbspCustomer Service<br><br> 021-2903-0924<br>021-2903-0925<br>021-2903-0926<br></p>
 		</div>
 		<div class="col-sm-2">
 		</div>
 		<div class="col-sm-2">
 		
-		<p><span class="glyphicon glyphicon-envelope"></span>&nbsp PT.Wira Karya Sempurna <br><br> Pool PPD Pesing Poglar no.2/B15<br>Jakarta Barat 11710, Indonesia</p>
+		<p class="whiteText" style="font-family:Roboto-regular"><span class="glyphicon glyphicon-envelope"></span>&nbsp PT.Wira Karya Sempurna <br><br> Pool PPD Pesing Poglar no.2/B15<br>Jakarta Barat 11710, Indonesia</p>
 		</div>
 		<div class="col-sm-2">
 		</div>
 		<div class="col-sm-2">
-		<p>&nbspinfo@wakasaparts.com<br></p>
+		<p class="whiteText" style="font-family:Roboto-regular;">&nbspinfo@wakasaparts.com<br></p>
 		<div class="row">
-		<img class ="icon" src="envelope.png"></img><img class ="icon" src="twitter.png"></img><img class ="icon" src="gmail.png"></img><img class ="icon" src="fbi.png"></img>
+		&nbsp&nbsp&nbsp&nbsp <img class ="icon" src="envelope.png"></img><img class ="icon" src="twitter.png"></img><img class ="icon" src="gmail.png"></img><img class ="icon" src="fbi.png"></img>
 		</div>
 	</div>
 	<br><br><br>
