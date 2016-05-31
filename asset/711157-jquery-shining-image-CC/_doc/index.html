@@ -1,0 +1,165 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>jQuery Shining Image - HTML5 Image effect</title>
+
+        <meta name="description" content="Thank you for your purchase .">
+        <meta name="author" content="Loopus">
+        <meta name="copyright" content="Loopus">
+        <meta name="generator" content="Documenter v1.5 http://rxa.li/documenter">
+        <meta name="date" content="2011-10-29T00:00:00+02:00">
+
+        <link rel="stylesheet" href="css/documenter_style.css" media="all">
+
+        <script src="js/jquery.1.6.4.js"></script>
+
+        <script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+        <script src="js/jquery.easing.js"></script>
+
+
+        <script>document.createElement('section');var duration=500,easing='swing';</script>
+        <script src="js/script.js"></script>
+
+        <style>
+            html{background-color:#FFFFFF;color:#383838;}
+            ::-moz-selection{background:#444444;color:#DDDDDD;}
+            ::selection{background:#444444;color:#DDDDDD;}
+            #documenter_sidebar #documenter_logo{background-image:url();}
+            a{color:#0000FF;}
+            hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+            #documenter_sidebar, #documenter_sidebar ol a{background-color:#DDDDDD;color:#222222;}
+            #documenter_sidebar ol a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+            #documenter_sidebar ol{border-top:1px solid #AAAAAA;}
+            #documenter_sidebar ol a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+            #documenter_sidebar ol a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+            #documenter_sidebar ol a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+            #documenter_copyright{display:block !important;visibility:visible !important;}
+        </style>
+
+    </head>
+    <body>
+        <div id="documenter_sidebar">
+            <a href="#documenter_cover" id="documenter_logo"></a>
+            <ol id="documenter_nav">
+                <li><a class="current" href="#documenter_cover">Start</a></li>
+                <li><a href="#general">General</a></li>
+                <li><a href="#getting_started">Getting Started</a></li>
+                <li><a href="#options">Options</a></li>
+                <li><a href="#methods">Methods</a></li>
+                <li><a href="#help_and_suggestions">Help and Suggestions</a></li>
+
+            </ol>
+            <div id="documenter_copyright">Copyright Loopus 2011<br>
+                made with the <a href="http://rxa.li/documenter">Documenter v1.5</a> 
+            </div>
+        </div>
+        <div id="documenter_content">
+            <section id="documenter_cover"><h1>jQuery Shining Image</h1><h2>HTML5 Image effect</h2><hr><ul><li>Created: 03/10/2011</li><li>latest Update: 10/29/2011</li><li>By: Loopus</li><li><a href=""></a></li><li>Email: <a href="mailto:&#108;&#111;&#111;&#112;&#117;&#115;&#95;&#119;&#101;&#98;&#64;&#104;&#111;&#116;&#109;&#97;&#105;&#108;&#46;&#102;&#114;">&#108;&#111;&#111;&#112;&#117;&#115;&#95;&#119;&#101;&#98;&#64;&#104;&#111;&#116;&#109;&#97;&#105;&#108;&#46;&#102;&#114;</a></li></ul><p>Thank you for your purchase .</p></section><section id="general">
+                <h3>General</h3><hr class="notop">
+                <p>
+                    jQuery Shining Image is an HTML5 jQuery plugin that add an animated shining effect to your images.</p>
+                <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 10px; padding-right: 0px; padding-bottom: 10px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; outline-width: 0px; outline-style: initial; outline-color: initial; font-style: inherit; font-size: 13px; font-family: inherit; vertical-align: baseline; ">
+                    This plugin use canvas element, and is compatible with all computer and mobiles modern browsers. For the others, the image keeps its default static look.</p>
+            </section>
+            <section id="getting_started">
+                <h3>Getting Started</h3><hr class="notop">
+                <p>
+                    This plugin only work with images (img tag).</p>
+                <p>
+                    To initialize the plugin, you must call it in $(window).load() function (and not $(window).ready() function), beacause the images must be loaded before .</p>
+                <p>
+                    The img tag will be hide and replace by a canvas tag. Its id is the same as the image, followed by  '_canvas'. Ex : 'yourImgID_canvas' . </p>
+                <p>
+                    HTML Example :</p>
+                <p style="margin-left: 40px; ">
+                    <strong>&lt;img id=&quot;imgID&quot; src=&quot;test.jpg&quot; &nbsp;alt=&quot;test&quot; /&gt;</strong><br>
+                    <strong>&lt;script</strong>&gt;<br>
+                    <strong>$(window).load(function()</strong><br>
+                    <strong>{&nbsp;</strong><br>
+                    <strong>&nbsp; &nbsp; $(&quot;#imgID&quot;).shiningImage();&nbsp;</strong><br>
+                    <strong>});</strong><br>
+                    <strong>&lt;/script&gt;</strong></p>
+                <p>
+                    &nbsp;</p>
+                <p>
+                    &nbsp;</p>
+            </section>
+            <section id="options">
+                <h3>Options</h3><hr class="notop">
+                <p>
+                    You can customize the plugin effect, using this parameters :</p>
+                <ul>
+                    <li>
+                        <strong>color :</strong>&nbsp;String | Sets the effect color</li>
+                    <li>
+                        <strong>delay :</strong>&nbsp;Int | Sets the delay between each shine effect</li>
+                    <li>
+                        <strong>direction :</strong>&nbsp;&#39;x&#39;,&#39;y&#39; or &#39;z&#39; | Sets the effect direction. Horizontal (x), vertical (y) or diagonal (z)</li>
+                    <li>
+                        <strong>onComplete :</strong>&nbsp;Function | | Execute this function after plugin initialisation
+                    </li>
+                    <li>
+                        <strong>onLoopComplete :</strong>&nbsp;Function | | Execute this function after each loop
+                    </li>
+                    <li>
+                        <strong>opacity :</strong>&nbsp;Int between 0 and 1 | | Sets the effect opacity</li>                    
+                    <li>
+                        <strong>playOnLoad :</strong>&nbsp; Boolean | | Automatically start effect or not
+                    </li>
+                    <li>
+                        <strong>scale :</strong>&nbsp;Int between 0 and 1 | Sets the effect scale. 1 = 30% of image width or height</li>
+                    <li>
+                        <strong>speed :</strong>&nbsp;Int | Sets the effect speed in ms</li>
+                </ul>
+                <p>
+                    Example :</p>
+                <p style="margin-left: 40px; ">
+                    <strong>&lt;img id=&quot;imgID&quot; src=&quot;test.jpg&quot; &nbsp;alt=&quot;test&quot; /&gt;</strong><br>
+                    <strong>&lt;script</strong>&gt;<br>
+                    <strong>$(window).load(function()</strong><br>
+                    <strong>{&nbsp;</strong></p>
+                <p style="margin-left: 40px; ">
+                    <strong>&nbsp; &nbsp; $(&quot;#imgID&quot;).shiningImage({</strong><br>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; direction : &#39;y&#39;,</strong><br>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; color : &#39;#75FFA5&#39;,</strong><br>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; opacity : 0.25,</strong><br>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; scale : 0.7,</strong><br>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; speed : 100,</strong><br>
+                    <strong>&nbsp; &nbsp; &nbsp; &nbsp; delay : 3000</strong><br>
+                    <strong>&nbsp; &nbsp; });&nbsp;</strong></p>
+                <p style="margin-left: 40px; ">
+                    <strong>});</strong><br>
+                    <strong>&lt;/script&gt;</strong></p>
+                <p>
+                    &nbsp;</p>
+                <p>You can change them after initialisation like this : <strong>$('#yourImg').data('shiningImage').settings.color = '#78DAF5';</strong></p>
+            </section>
+            <section id="methods">
+                <h3>Methods</h3><hr class="notop">
+                <p>You can interact with the plugin :</p>
+                <ul>
+                    <li>
+                        <strong>.data('shiningImage').shine() :</strong>&nbsp;Start shine effect
+                    </li>
+                    <li>
+                        <strong>.data('shiningImage').shine() :</strong>&nbsp;Stop shine effect
+                    </li>
+                </ul>
+                <p>Example :</p>
+                <p style="margin-left: 40px; ">$('#yourImgID').data('shiningImage').stopshine();</p>
+            </section>
+            <section id="help_and_suggestions">
+                <h3>Help and Suggestions</h3><hr class="notop">
+                <p>
+                    If you need help or if you want to make me a suggestion, please e-mail me via envato or at &#108;&#111;&#111;&#112;&#117;&#115;&#95;&#119;&#101;&#98;&#64;&#104;&#111;&#116;&#109;&#97;&#105;&#108;&#46;&#102;&#114;</p>
+            </section>
+
+        </div>
+    </body>
+</html>
