@@ -1,0 +1,61 @@
+@font-face
+{
+	font-family:Exo-medium;
+	src:url(bootstrap/fonts/Exo-Medium.ttf);
+}
+@font-face
+{
+	font-family:Roboto-regular;
+	src:url(bootstrap/fonts/Roboto-Regular.ttf);
+}
+
+.headerBG
+{
+	background-color:#347BFE;
+}
+.text1
+{
+	color:yellow;
+	font-size:8pt;
+}
+.custombutton
+{
+	border-style:solid;
+	border-color:yellow;
+}
+.marg
+{
+	margin-left:auto;
+}
+.whiteText
+{
+	color:white;
+}
+.sss
+{
+	background-image:url("Wakasa copy.png");
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+}
+.foot
+{
+	background-image:url("pict1.png");
+}
+.icon
+{
+	width:35;
+	height:35;
+}
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%;height:350%; float: left; }
+div#slider figure { 
+  position: relative;
+  width: 500%;
+  height:20%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 15s slidy infinite; 
+}
+.img-thumbnail{background-color:transparent;border:none}
