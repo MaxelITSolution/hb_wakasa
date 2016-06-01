@@ -11,3 +11,6 @@
 <script type="text/javascript" src="<?php echo base_url();  ?>asset/datatable/dataTables.tableTools.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();  ?>asset/sweetalert-master/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/sweetalert-master/dist/sweetalert.css" type="text/css" />
+
+<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/font.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />

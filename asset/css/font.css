@@ -1,0 +1,12 @@
+@font-face{
+	font-family: Exo2;
+	src: url('../font/exo-2/Exo2-Regular.otf') format('opentype');
+}
+@font-face{
+	font-family: Ubuntu;
+	src: url('../font/ubuntu/Ubuntu-R.ttf') format('truetype');
+}
+@font-face{
+	font-family: Roboto;
+	src: url('../font/roboto/Roboto-Regular.ttf') format('truetype');
+}

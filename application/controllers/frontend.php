@@ -21,5 +21,10 @@ class Frontend extends CI_Controller {
 		$this->load->view('link');
 		$this->load->view('v_front_karir');
 	}
+
+	public function footer(){
+		$this->load->view('link');
+		$this->load->view('v_footer');
+	}
 }
 ?>
