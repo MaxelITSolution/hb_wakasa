@@ -1,0 +1,17 @@
+h2{
+	color: #2B343B;
+	text-align: center;
+}
+
+a{
+	color: #2B343B;
+	font-size: 15px;
+}
+a:hover{
+	text-decoration: none;
+	color: #2B343B;
+}
+
+#sep{
+	margin-bottom: 25px;
+}

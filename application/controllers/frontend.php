@@ -16,5 +16,10 @@ class Frontend extends CI_Controller {
 	public function searchProduct(){
 		$this->load->view('v_search_product');
 	}
+	
+	public function karir(){
+		$this->load->view('link');
+		$this->load->view('v_front_karir');
+	}
 }
 ?>

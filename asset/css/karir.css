@@ -1,0 +1,108 @@
+@font-face{
+	font-family: Exo2;
+	src: url('../font/exo-2/Exo2-Regular.otf') format('opentype');
+}
+@font-face{
+	font-family: Ubuntu;
+	src: url('../font/ubuntu/Ubuntu-R.ttf') format('truetype');
+}
+.content{
+	margin: 0;
+	padding: 0;
+}
+#content_bg_image{
+	width: 100%;
+	position: absolute;
+}
+#main{
+	margin-top: 60px;
+}
+#left_content{
+	font-family: Exo2;
+	text-align: right;
+	font-size: 35px;
+	color: #0071bc;
+	font-weight: bold;
+}
+#right_content{
+	font-family: Ubuntu;
+	padding-top: 12px;
+	line-height: 22px;
+	width: 450px;
+}
+
+@media screen and (min-width: 850px) and (max-width: 1024px){
+	#main{
+		margin-top: 0px;
+		margin-left: -20px;
+	}
+	#left_content{
+		font-size: 30px;
+		margin-top: 5px;
+	}
+	#right_content{
+		font-size: 12px;
+		width: 320px;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-width: 850px){
+	#main{
+		margin-top: 0px;
+		margin-left: -20px;
+	}
+	#left_content{
+		font-size: 25px;
+		margin-top: 5px;
+	}
+	#right_content{
+		font-size: 11px;
+		width: 300px;
+		line-height: 15px;
+	}
+}
+
+@media screen and (min-width: 400px) and (max-width: 640px){
+	#main{
+		margin-top: 0px;
+		margin-left: -20px;
+	}
+	#left_content{
+		font-size: 20px;
+		margin-top: 5px;
+		margin-left: 100px;
+	}
+	#right_content{
+		font-size: 10px;
+		width: 550px;
+		text-align: center;
+		line-height: 15px;
+		margin-top: -10px;
+	}
+}
+
+@media screen and (max-width: 399px){
+	#content_bg_image{
+		height: 100px;
+	}
+	#main{
+		margin-top: 0px;
+		margin-left: -20px;
+	}
+	#left_content{
+		font-size: 14px;
+		margin-top: 5px;
+		margin-left: 30px;
+		width: 200px;
+	}
+	#right_content{
+		font-size: 8px;
+		width: 340px;
+		text-align: center;
+		line-height: 15px;
+		margin-top: -12px;
+	}
+	#btm{
+		margin-top: -10px;
+	}
+}
