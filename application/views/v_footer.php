@@ -12,9 +12,9 @@
 	<div class="col-xs-4" id="footer_center_content">
 		<div class="col-xs-3"><img src="<?php echo base_url(); ?>asset/image/footer/envelope.png" id="footer_envelope_image" class="pull-right"></div>
 		<div class="col-xs-9" id="footer_content_center">
-			<p>PT. Wira Karya Sempurna</p>
-			<p>Pool PPD Pesing Poglar no.2 / B15</p>
-			<p>Jakarta Barat 11710, Indonesia</p>
+			<p id="p_1">PT. Wira Karya Sempurna</p>
+			<p id="p_2">Pool PPD Pesing Poglar no.2 / B15</p>
+			<p id="p_3">Jakarta Barat 11710, Indonesia</p>
 		</div>
 	</div>
 	<div class="col-xs-4" id="footer_right_content">

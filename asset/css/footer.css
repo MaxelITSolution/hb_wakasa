@@ -3,6 +3,9 @@
 	padding: 0;
 	color: #fff;
 	overflow-x: hidden;
+	position: absolute;
+	overflow-y: hidden;
+	margin-top: 50px;
 }
 #footer_background{
 	position: absolute;
@@ -58,14 +61,16 @@
 #copy_rights{
 	font-family: Ubuntu;
 	font-size: 13px;
-	margin-top: 70px;
+	margin-top: 50px;
 	margin-left: 135px;
+	margin-bottom: 30px;
 }
 
 @media screen and (min-width: 950px) and (max-width: 1300px){
 	#footer_left_content{
 		font-size: 16px;
 		margin-top: 40px;
+		margin-left: -20px;
 	}
 	#footer_phone_image{
 		width: 20px;
@@ -90,7 +95,7 @@
 	}
 	#copy_rights{
 		font-size: 12px;
-		margin-left: 100px;
+		margin-left: 80px;
 		margin-top: 30px;
 	}
 }
@@ -221,18 +226,27 @@
 	#footer_center_content{
 		margin-top: -90px;
 		margin-left: 110px;
+		width: 250px;
+		line-height: 15px;
+	}
+	#footer_center_content #p_2{
+		margin-top: -5px;
+	}
+	#footer_center_content #p_3{
+		margin-top: -5px;
 	}
 	#footer_content_center{
 		margin-left: -15px;
 	}
 	#footer_right_content{
 		margin-top: 8px;
-		margin-left: 45px;
+		margin-left: 20px;
 		width: 250px;
 	}
 	#copy_rights{
 		text-align: center;
 		margin-top: 5px;
-		margin-left: 0px;
+		margin-left: 10px;
+		width: 300px;
 	}
 }

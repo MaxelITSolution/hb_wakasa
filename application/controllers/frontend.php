@@ -6,11 +6,22 @@ class Frontend extends CI_Controller {
 	}
 	
 	public function home(){
-		$this->load->view('v_home');
+		$this->load->view('link');
+		$this->load->view('v_front_home');
+	}
+
+	public function jelajahiProduct(){
+		$this->load->view('link');
+		$this->load->view('v_front_jelajahi_produk');
 	}
 	
 	public function searchGeneral(){
 		$this->load->view('v_search_general');
+	}
+
+	public function hasilSearchGeneral(){
+		$this->load->view('link');
+		$this->load->view('v_front_hasil_search_general');	
 	}
 	
 	public function searchProduct(){

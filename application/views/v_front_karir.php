@@ -4,11 +4,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/karir.css"/>
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
 	</head>
-	<body>
-		
+	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">
+		<?php include('TestBanner.php'); ?>
+
 		<div class="content">
-			<img src="<?php echo base_url(); ?>asset/image/content/karir/background.png" class="img-responsive" id="content_bg_image">
 			<div class="container">
 				<div class="col-sm-12" id="main">
 					<div class="col-xs-6" id="left_content">JOIN OUR TEAM</div>
@@ -19,5 +20,7 @@
 				</div>
 			</div>
 		</div>
+
+		<?php include('v_footer.php'); ?>
 	</body>
 </html>

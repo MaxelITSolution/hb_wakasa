@@ -1,0 +1,156 @@
+.content{
+	margin-top: -80px;
+}
+/*BOX ATAS*/
+/*#title_top{
+	box-shadow: 5px -5px 20px grey;
+}*/
+#title_top{
+	background-color: #fff;
+    padding-bottom: 30px;
+}
+#title_top p{
+	font-family: Exo2;
+	font-size: 30px;
+	color: #0071bc;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 30px;
+}
+#search_input{
+	border-radius: 10px;
+	font-family: Ubuntu;
+	color: #0071bc;
+	width: 350px;
+}
+.form-group{
+	margin-right: 20px;
+}
+#search_input::-webkit-input-placeholder {
+    color:    #0071bc;
+}
+#search_input:-moz-placeholder {
+    color:    #0071bc;
+}
+#search_input::-moz-placeholder {
+    color:    #0071bc;
+}
+#search_input:-ms-input-placeholder {
+    color:    #0071bc;
+}
+.form-inline{
+	text-align: center;
+	margin-top: 30px;
+}
+.form-inline button{
+	border-radius: 10px;
+	padding-left: 20px;
+	color: #0071bc;
+	background-color: #fff000;
+	font-family: Ubuntu;
+	font-size: 16px;
+}
+#search_icon{
+	padding-left: 5px;
+}
+
+/*BOX BAWAH BIRU BG*/
+#title_bottom_content{
+	margin-top: -250px;
+}
+#title_bottom_content h3{
+	font-family: Exo2;
+	font-size: 30px;
+	color: #fff;
+	text-align: center;
+}
+#title_bottom_content p{
+	font-family: Ubuntu;
+	font-size: 14px;
+	color: #fff;
+	width: 500px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 20px;
+}
+#p2{
+	margin-top: -10px;
+	margin-bottom: 0px;
+}
+#p3{
+	color: #fff000 !important;
+}
+.content_produk_terbaru{
+	margin-left: 0px;
+	margin-right: 0px;
+	position: absolute;
+	width: 90%;
+	margin-top: 500px;
+}
+.content_produk_unggulan{
+	margin-left: 0px;
+	margin-right: 0px;
+	position: absolute;
+	width: 90%;
+	margin-top: 1050px;
+}
+.content_produk_terbaru h3, .content_produk_unggulan h3{
+	font-family: Exo2;
+	color: #0071bc;
+	font-size: 30px;
+	text-align: center;
+	margin-left: 150px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+.content_slider{
+	width: 250px;
+	background-color: #fff;
+	box-shadow: 5px 5px 20px grey;
+}
+.desc_title{
+	background-color: #fff000;
+	text-align: center;
+	font-family: Exo2-med;
+	font-size: 15px;
+}
+.desc_title p{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 10px;
+}
+.desc_body{
+	font-family: Ubuntu;
+	color: #636363;
+	padding-left: 20px;
+}
+.desc_footer{
+	padding-left: 20px;
+	font-family: Ubuntu;
+	color: #2081d1;
+	padding-bottom: 10px;
+}
+.owl-carousel{
+	margin-left: 100px;
+	padding-right: 40px;
+}
+.content_slider p{
+	width: 220px;
+}
+
+/*OWL CAROUSEL*/
+#arrow_left{
+	margin-left: -50px !important;
+	margin-top: -220px;
+}
+#arrow_right{
+	margin-top: -210px;
+}
+.content_bottom{
+	padding-top: 1600px;
+}
+
+#to_footer{
+	margin-bottom: 500px;
+}
