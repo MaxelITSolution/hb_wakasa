@@ -5,6 +5,50 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("asset/bootstrap/css/bootstrap.css")?>">
 <script src="<?php echo base_url("asset/bootstrap/js/jquery.min.js")?>"></script>
 <script src="<?php echo base_url("asset/bootstrap/js/bootstrap.js")?>"></script>
+<script>
+	$(document).ready(function(){
+		$("img[name|='gambar1']").hover(function(){
+			$(this).css('background-color','yellow');
+			$(this).attr('src','<?php echo base_url("asset/image/HasilSearchProduk/gearHover.png")?>');
+			$("img[name|='gambar2']").css('background-color','#1a75ff');
+			$("img[name|='gambar3']").css('background-color','#1a75ff');
+			$("img[name|='gambar4']").css('background-color','#1a75ff');
+			$("img[name|='gambar2']").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/boxIdle.png")?>');
+			$("img[name|='gambar3']").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/callIdle.png")?>');
+			$("img[name|='gambar4']").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/searchIdle.png")?>');
+		})
+		$("img[name|='gambar2']").hover(function(){
+			$(this).css('background-color','yellow');
+			$(this).attr('src','<?php echo base_url("asset/image/HasilSearchProduk/boxHover.png")?>');
+			$("img[name|='gambar1']").css('background-color','#1a75ff');
+			$("img[name|='gambar3']").css('background-color','#1a75ff');
+			$("img[name|='gambar4']").css('background-color','#1a75ff');
+			$("img[name|='gambar1']").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/gearIdle.png")?>');
+			$("img[name|='gambar3']").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/callIdle.png")?>');
+			$("img[name|='gambar4']").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/searchIdle.png")?>');
+		})
+		$("img[name|='gambar3']").hover(function(){
+			$(this).css('background-color','yellow');
+			$(this).attr('src','<?php echo base_url("asset/image/HasilSearchProduk/callHover.png")?>');
+			$("img[name|='gambar2']").css('background-color','#1a75ff');
+			$("img[name|='gambar1']").css('background-color','#1a75ff');
+			$("img[name|='gambar4']").css('background-color','#1a75ff');
+			$("img[name|='gambar2']").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/boxIdle.png")?>');
+			$("img[name|='gambar1']").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/gearIdle.png")?>');
+			$("img[name|='gambar4']").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/searchIdle.png")?>');
+		})
+		$("img[name|='gambar4']").hover(function(){
+			$(this).css('background-color','yellow');
+			$(this).attr('src','<?php echo base_url("asset/image/HasilSearchProduk/searchHover.png")?>');
+			$("img[name|='gambar2']").css('background-color','#1a75ff');
+			$("img[name|='gambar3']").css('background-color','#1a75ff');
+			$("img[name|='gambar1']").css('background-color','#1a75ff');
+			$("img[name|='gambar2']").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/boxIdle.png")?>');
+			$("img[name|='gambar3']").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/callIdle.png")?>');
+			$("img[name|='gambar1]").attr('src','<?php echo base_url("asset/image/HasilSearchProduk/gearIdle.png")?>');
+		})
+	})
+</script>
 <style>
 
  @media only screen and (max-width: 360px)
@@ -69,7 +113,10 @@
 		
 
  }
- 
+ .active1
+ {
+	 background-color:yellow;
+ }
 body
 {
 	padding:0px;
@@ -83,15 +130,30 @@ body
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    width: 44px;
+    width: 50px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    
+    color:white;
 	left:0px;
+	
 }
-
+.dropdown-content a{
+    color: #1a75ff;
+	margin-top:2px;
+	border-radius:4px;
+	background-color:white;
+    text-decoration: bold;
+    display: block;
+	opacity:0.7;
+	width:50px;
+	height:50px;
+}
 .dropdown:hover .dropdown-content {
     display: block;
+}
+.dropdown-content a:hover {
+    background-color:#1a75ff;
+	color:white;
+	opacity:1;
 }
 
 .headerBG
@@ -130,7 +192,7 @@ body
 	margin:0px;
 	width:100%;
 	height:100%;
-	background-image:url("<?php echo base_url("asset/image/HasilSearchProduk/austin-fireworks.jpg")?>");
+	background-image:url("<?php echo base_url("asset/image/HasilSearchProduk/background.png")?>");
     background-size:100% 100%;
 }
 .GambarBanner
@@ -140,13 +202,15 @@ body
 }
 .logoDropDown
 {
-	width:15%;
+	width:17%;
 	height:auto;
+	background-color:#1a75ff;
+    border-radius: 5px;
 }
 .menuBanner
 {
 	position:absolute;
-	right:-70px;
+	right:-35px;
 	top:100px;
 }
 .margl1
@@ -167,6 +231,9 @@ body
 {font-size:10pt}
 .f_size2
 {font-size:8pt}
+.f_size3
+{font-size:6pt}
+
 	</style>
 </head>
 <body>
@@ -186,29 +253,29 @@ body
 
 <div class="menuBanner" id="menuBanner">
 	<div class="dropdown">
-		<img src="<?php echo base_url("asset/image/HasilSearchProduk/gear.png")?>" class="logoDropDown" id="logoDropDown2">
+		<img src="<?php echo base_url("asset/image/HasilSearchProduk/gearIdle.png")?>" class="logoDropDown" id="logoDropDown2" name="gambar1" >
 		<div class="dropdown-content" id="dropdown-content1">
-			<a href="#" class="f_size2" style=" word-wrap: break-word;">Tentang Kami</a>
+			<a href="#" class="f_size2" style="text-align: center; width:50px;"><span style="margin-top:50px;height:50px;width:50px;margin-left:5px;line-height:25px;">Tentang Kami</span></a>
 		</div>
 	</div>
 	<div class="dropdown">
-		<img src="<?php echo base_url("asset/image/HasilSearchProduk/box.png")?>" class="logoDropDown" id="logoDropDown2">
+		<img src="<?php echo base_url("asset/image/HasilSearchProduk/boxIdle.png")?>" class="logoDropDown" id="logoDropDown2" name="gambar2" >
 		<div class="dropdown-content" id="dropdown-content1">
-			<a href="#" class="f_size2" style=" word-wrap: break-word;">Temukan wakasa</a>
+			<a href="#" class="f_size2" style="text-align: center; width:50px;"><span style="word-wrap:break-word;margin-top:50px;height:50px;width:50px;margin-left:5px;line-height:20px;">Temukan wakasa</span></a>
 		</div>
 	</div>
 	<div class="dropdown">
-		<img src="<?php echo base_url("asset/image/HasilSearchProduk/call.png")?>" class="logoDropDown" id="logoDropDown2">
+		<img src="<?php echo base_url("asset/image/HasilSearchProduk/callIdle.png")?>" class="logoDropDown" id="logoDropDown2" name="gambar3"  >
 		<div class="dropdown-content" id="dropdown-content1">
-			<a href="#" class="f_size2" style=" word-wrap: break-word;">Kontak Kami</a>
+			<a href="#" class="f_size2" style="text-align:center; width:50px"><span style="word-wrap:break-word;margin-top:50px;height:50px;width:50px;margin-left:5px;line-height:20px;">Kontak Kami</span></a>
 		</div>
 	</div>
 
 	<div class="dropdown">
-		<img src="<?php echo base_url("asset/image/HasilSearchProduk/search.png")?>" class="logoDropDown" id="logoDropDown2">
+		<img src="<?php echo base_url("asset/image/HasilSearchProduk/searchIdle.png")?>" class="logoDropDown" id="logoDropDown2" name="gambar4"  >
 		<div class="dropdown-content"  id="dropdown-content1">
-			<a href="#" class="f_size2" style=" word-wrap: break-word;">cari</a><br>
-			<a href="#" class="f_size2" style=" word-wrap: break-word;">cari Konten</a>
+			<a href="#" class="f_size2" style="text-align: center; width:50px;height:50px;"><span style="margin-top:20px;height:50px;width:50px;margin-left:5px;line-height:50px;">cari</span></a>
+			<a href="#" class="f_size2" style="text-align: center;width:50px;"><span style="font-family:ubuntu;margin-top:50%;height:50px;width:50px;margin-left:5px;line-height:100%;">cari produk</span></a>
 		</div>
 	</div>
 </div>
