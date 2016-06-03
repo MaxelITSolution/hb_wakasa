@@ -9,6 +9,11 @@ class Frontend extends CI_Controller {
 		$this->load->view('link');
 		$this->load->view('v_front_home');
 	}
+	
+	public function home_1(){
+		$this->load->view("v_head_home");
+		$this->load->view('v_home');
+	}
 
 	public function jelajahiProduct(){
 		$this->load->view('link');
@@ -29,6 +34,7 @@ class Frontend extends CI_Controller {
 	}
 	
 	public function karir(){
+		$this->load->view("v_head_karir");
 		$this->load->view('link');
 		$this->load->view('v_front_karir');
 	}
@@ -39,6 +45,30 @@ class Frontend extends CI_Controller {
 	public function HasilProduk()
 	{
 		$this->load->view("TestBanner");
+	}
+	public function HasilSearchGeneral()
+	{
+		$this->load->view("v_head_HasilSearchGeneral");
+	}
+	public function jelajahiProduk()
+	{
+		$this->load->view("v_head_jelajahiProduk");
+	}
+	public function kontak()
+	{
+		$this->load->view("v_head_kontak");
+	}
+	public function reseller()
+	{
+		$this->load->view("v_head_reseller");
+	}
+	public function temukanWakasa()
+	{
+		$this->load->view("v_head_temukanWakasa");
+	}
+	public function tentangKami()
+	{
+		$this->load->view("v_head_tentangKami");
 	}
 }
 ?>
