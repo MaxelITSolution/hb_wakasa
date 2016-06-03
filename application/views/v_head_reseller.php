@@ -93,14 +93,14 @@
 	 #kanan1
 	 {
 		 position:absolute;
-		 left:8%;
+		 right:5px;
 		 font-size:8pt;
 	 }
 	 #kanan2
 	 {
 		 position:absolute;
-		 left:17%;
-		 top:5%;
+		 left:75%;
+		 top:6%;
 		 font-size:8pt;
 	 }
 	 #logoDropDown2
@@ -110,7 +110,7 @@
 	 }
 		#menuBanner
 		{
-			right:-50px;
+			right:0;
 			top:90px;
 		}
 		#dropdown-content1
@@ -191,7 +191,7 @@ body
 	
 	padding:0px;
 	margin:0px;
-	background-color:#005ce6;
+	background-color:#33bbff;
 	width:100%;
 	height:125px;
 }
@@ -309,9 +309,9 @@ body
 	<img class="logo" src="<?php echo base_url("asset/image/HasilSearchProduk/wakasalogo.png")?>"></img>
 	<div class="col1">
 		<div class="col1_1">
-		<div class="margl7 f_size1" id="kanan1"><Strong style="color:yellow"><i>ENG</i>|<i>ID</i></strong></div>
-		<p class="col1_1 f_size1" id="tulisanBawahLogo">welcome back,&nbsp <span class="f_size1" style="color:white;display:inline">Mr Vincent</span></p>
-		<div class="margl6 f_size1" id="kanan2"><a href="#" style="color:yellow">[ Logout ]</a></div>
+		<br>
+			<div class="margl5 f_size1" id="kanan1"><Strong style="color:yellow;font-family:Ubuntu"><i>ENG</i>|<i>ID</i></strong></div>
+			<button id="kanan2" style="border-radius:10px;border:2px solid yellow;background-color:#33bbff;font-family:Ubuntu">Login| Register</button>
 		</div>
 	</div>
 </div>

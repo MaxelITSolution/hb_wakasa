@@ -6,6 +6,7 @@ class Frontend extends CI_Controller {
 	}
 	
 	public function home(){
+		$this->load->view("v_head_home");
 		$this->load->view('v_home');
 	}
 	
@@ -32,11 +33,11 @@ class Frontend extends CI_Controller {
 	}
 	public function HasilSearchGeneral()
 	{
-		$this->load->view("v_HasilSearchGeneral");
+		$this->load->view("v_head_HasilSearchGeneral");
 	}
 	public function jelajahiProduk()
 	{
-		$this->load->view("v_jelajahiProduk");
+		$this->load->view("v_head_jelajahiProduk");
 	}
 	public function kontak()
 	{
@@ -49,6 +50,10 @@ class Frontend extends CI_Controller {
 	public function temukanWakasa()
 	{
 		$this->load->view("v_head_temukanWakasa");
+	}
+	public function tentangKami()
+	{
+		$this->load->view("v_head_tentangKami");
 	}
 }
 ?>

@@ -3,6 +3,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("asset/bootstrap/css/bootstrap.css")?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url("asset/css/font.css")?>">
+
 <script src="<?php echo base_url("asset/bootstrap/js/jquery.min.js")?>"></script>
 <script src="<?php echo base_url("asset/bootstrap/js/bootstrap.js")?>"></script>
 <script>
@@ -53,11 +55,11 @@
 
  @media only screen and (max-width: 360px)
  {
-	 #btnIMG
-	 {
+	#btnIMG
+	{
 		 width:15px;
 		 height:auto;
-	 }
+	}
     #judulForm
 	{
 		padding:0px;
@@ -93,15 +95,15 @@
 	 #kanan1
 	 {
 		 position:absolute;
-		 right:7px;
+		 left:29%;
 		 top:3%;
 		 font-size:8pt;
 	 }
 	 #kanan2
 	 {
 		 position:absolute;
-		 right:5px;
-		 top:5%;
+		 left:75%;
+		 top:6%;
 		 font-size:8pt;
 	 }
 	 #logoDropDown2
@@ -140,8 +142,14 @@
 		}
 		.f_size1
 		{text-align:center;}
-		
 
+ }
+ @media only screen and (max-height:400px)
+ {
+	 #tulisanBawahLogo
+	 {
+		 top:15%;
+	 }
  }
  .active1
  {
@@ -192,7 +200,7 @@ body
 	
 	padding:0px;
 	margin:0px;
-	background-color:#00cc99;
+	background-color:#008ae6;
 	width:100%;
 	height:125px;
 }
@@ -288,6 +296,7 @@ body
 {margin-left:20%;}
 .margl3
 {margin-left:30%;}
+
 .margl4
 {margin-left:40%;}
 .margl5
@@ -302,7 +311,12 @@ body
 {font-size:8pt}
 .f_size3
 {font-size:6pt}
-
+select{
+	
+    padding: 0 0 0 2.5%;
+	text-align:center;
+	font-family:Ubuntu;
+}
 	</style>
 </head>
 <body>
@@ -311,13 +325,13 @@ body
 	<div class="col1">
 		<div class="col1_1">
 		<br>
-			<div class="margl5 f_size1" id="kanan1"><Strong style="color:yellow;font-family:Ubuntu"><i>ENG</i>|<i>ID</i></strong></div>
-			<button id="kanan2" style="border-radius:10px;border:2px solid yellow;background-color:#00cc99;font-family:Ubuntu">Login| Register</button>
+			<div class="margl6 f_size1" id="kanan1"><Strong style="color:yellow;font-family:Ubuntu"><i>ENG</i>|<i>ID</i></strong></div>
+			<button id="kanan2" style="border-radius:10px;border:2px solid yellow;background-color:#008ae6;color:yellow;font-family:Ubuntu">Login| Register</button>
 		</div>
 	</div>
 </div>
 <div>
-	<img src="<?php echo base_url("asset/image/kontak.jpg")?>" class="GambarBanner"/>
+	<img src="<?php echo base_url("asset/image/Office-Business.jpg")?>" class="GambarBanner"/>
 </div>
 
 <div class="menuBanner" id="menuBanner">
@@ -349,7 +363,23 @@ body
 		</div>
 	</div>
 </div>
-
+<div  style="width:100%;position:absolute;top:65%;">
+	<div style="width:30%;height:25px;background-color:#ffe6e6">
+		<div style="font-family:Ubuntu;text-align:center;color:white;margin-left:54%;width:50%;height:100%;background-color:#3366ff;border-top-right-radius:5px;border-bottom-right-radius:5px;">
+		PRODUK UNGGULAN
+		</div>
+	</div>
+	<div style="margin-top:1px;width:25%;height:25px;background-color:#005c99">
+		<div style="font-family:Ubuntu;text-align:center;color:white;margin-left:50%;width:65%;height:100%;background-color:#33adff;border-top-right-radius:5px;border-bottom-right-radius:5px;">
+		BAUT - BAUT(BOLTS)
+		</div>
+	</div>
+	<div style="margin-top:1px;width:20%;height:25px;background-color:#da8b8b">
+		<div style="font-family:Ubuntu;text-align:center;color:gray;margin-left:50%;width:75%;height:100%;background-color:#cccccc;border-top-right-radius:5px;border-bottom-right-radius:5px;">
+		klik lihat semua kategori
+		</div>
+	</div>	
+</div>
 
 </body>
 </html>

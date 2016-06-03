@@ -95,14 +95,15 @@
 	 #kanan1
 	 {
 		 position:absolute;
-		 left:8%;
+		 left:29%;
+		 top:3%;
 		 font-size:8pt;
 	 }
 	 #kanan2
 	 {
 		 position:absolute;
-		 left:17%;
-		 top:5%;
+		 left:75%;
+		 top:6%;
 		 font-size:8pt;
 	 }
 	 #logoDropDown2
@@ -112,7 +113,7 @@
 	 }
 		#menuBanner
 		{
-			right:-50px;
+			right:0px;
 			top:90px;
 		}
 		#dropdown-content1
@@ -199,7 +200,7 @@ body
 	
 	padding:0px;
 	margin:0px;
-	background-color:#005ce6;
+	background-color:#00b386;
 	width:100%;
 	height:125px;
 }
@@ -323,9 +324,9 @@ select{
 	<img class="logo" src="<?php echo base_url("asset/image/HasilSearchProduk/wakasalogo.png")?>"></img>
 	<div class="col1">
 		<div class="col1_1">
-		<div class="margl7 f_size1" id="kanan1"><Strong style="color:yellow"><i>ENG</i>|<i>ID</i></strong></div>
-		<p class="col1_1 f_size1" id="tulisanBawahLogo">welcome back,&nbsp <span class="f_size1" style="color:white;display:inline">Mr Vincent</span></p>
-		<div class="margl6 f_size1" id="kanan2"><a href="#" style="color:yellow">[ Logout ]</a></div>
+		<br>
+			<div class="margl6 f_size1" id="kanan1"><Strong style="color:yellow;font-family:Ubuntu"><i>ENG</i>|<i>ID</i></strong></div>
+			<button id="kanan2" style="border-radius:10px;border:2px solid yellow;background-color:#00b386;font-family:Ubuntu">Login| Register</button>
 		</div>
 	</div>
 </div>
@@ -363,7 +364,7 @@ select{
 	</div>
 </div>
 <div class="isiContent" style="position:absolute;width:100%;left:0;top:45%;">
-	<h3 class="margl4" style="font-size:22pt;font-family:Exo2;">CARI RESELLER WAKASA</h3>
+	<h3 class="margl4" style="font-size:22pt;font-family:Exo2;color:#1a75ff">CARI RESELLER WAKASA</h3>
 	<br>
 	<p style="font-size:12pt;margin-left:36%;font-family:Ubuntu">Produk Wakasa dapat Anda dapatkan di ribuan toko onderdil di berbagai<br> &nbsp&nbsp penjuru nusantara. Silahkan temukan peritel Wakasa di dekat Anda.</p>
 	<br>

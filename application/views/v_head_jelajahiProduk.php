@@ -93,8 +93,8 @@
 	 #kanan1
 	 {
 		 position:absolute;
-		 right:7px;
 		 top:3%;
+		 right:5px;
 		 font-size:8pt;
 	 }
 	 #kanan2
@@ -111,7 +111,7 @@
 	 }
 		#menuBanner
 		{
-			right:0px;
+			right:-0px;
 			top:90px;
 		}
 		#dropdown-content1
@@ -192,7 +192,7 @@ body
 	
 	padding:0px;
 	margin:0px;
-	background-color:#00cc99;
+	background-color:#005ce6;
 	width:100%;
 	height:125px;
 }
@@ -312,12 +312,12 @@ body
 		<div class="col1_1">
 		<br>
 			<div class="margl5 f_size1" id="kanan1"><Strong style="color:yellow;font-family:Ubuntu"><i>ENG</i>|<i>ID</i></strong></div>
-			<button id="kanan2" style="border-radius:10px;border:2px solid yellow;background-color:#00cc99;font-family:Ubuntu">Login| Register</button>
+			<button id="kanan2" style="border-radius:10px;border:2px solid yellow;background-color:#005ce6;font-family:Ubuntu">Login| Register</button>
 		</div>
 	</div>
 </div>
 <div>
-	<img src="<?php echo base_url("asset/image/kontak.jpg")?>" class="GambarBanner"/>
+	<img src="<?php echo base_url("asset/image/business.jpg")?>" class="GambarBanner"/>
 </div>
 
 <div class="menuBanner" id="menuBanner">
@@ -350,7 +350,12 @@ body
 	</div>
 </div>
 
-
+<div class="formBanner" id="formBanner">
+<h2 class="margl1" id="judulForm" style="color:blue;font-family:Ubuntu">CARI TENTANG WAKASA</h2><br>
+	<div class="tmptForm">
+		<input placeholder="Masukkan Kata Kunci" type="text" class="margl05 inputFRM1" ></input><button id="buttonFRM" class="margl05 buttonFRM" style="font-family:Ubuntu">Search<img id="btnIMG" src="<?php echo base_url("asset/image/HasilSearchProduk/searchHover.png")?>" style="width:20px;height:auto;"></img></button>
+	</div>
+</div>
 </body>
 </html>
 
