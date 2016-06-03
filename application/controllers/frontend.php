@@ -18,6 +18,7 @@ class Frontend extends CI_Controller {
 	}
 	
 	public function karir(){
+		$this->load->view("v_head_karir");
 		$this->load->view('link');
 		$this->load->view('v_front_karir');
 	}
@@ -28,6 +29,26 @@ class Frontend extends CI_Controller {
 	public function HasilProduk()
 	{
 		$this->load->view("TestBanner");
+	}
+	public function HasilSearchGeneral()
+	{
+		$this->load->view("v_HasilSearchGeneral");
+	}
+	public function jelajahiProduk()
+	{
+		$this->load->view("v_jelajahiProduk");
+	}
+	public function kontak()
+	{
+		$this->load->view("v_head_kontak");
+	}
+	public function reseller()
+	{
+		$this->load->view("v_head_reseller");
+	}
+	public function temukanWakasa()
+	{
+		$this->load->view("v_head_temukanWakasa");
 	}
 }
 ?>

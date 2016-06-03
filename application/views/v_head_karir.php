@@ -3,6 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("asset/bootstrap/css/bootstrap.css")?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url("asset/css/font.css")?>">
 <script src="<?php echo base_url("asset/bootstrap/js/jquery.min.js")?>"></script>
 <script src="<?php echo base_url("asset/bootstrap/js/bootstrap.js")?>"></script>
 <script>
@@ -53,11 +54,11 @@
 
  @media only screen and (max-width: 360px)
  {
-	 #btnIMG
-	 {
+	#btnIMG
+	{
 		 width:15px;
 		 height:auto;
-	 }
+	}
     #judulForm
 	{
 		padding:0px;
@@ -66,7 +67,7 @@
 	#formBanner
 	{
 		width:100%;
-		top:13%;
+		top:16%;
 	}
 	#frmCombo
 	{
@@ -139,8 +140,14 @@
 		}
 		.f_size1
 		{text-align:center;}
-		
 
+ }
+ @media only screen and (max-height:400px)
+ {
+	 #tulisanBawahLogo
+	 {
+		 top:15%;
+	 }
  }
  .active1
  {
@@ -180,6 +187,7 @@ body
     display: block;
 }
 .dropdown-content a:hover {
+	display:block;
     background-color:#1a75ff;
 	color:white;
 	opacity:1;
@@ -197,7 +205,7 @@ body
 .logo
 {
 	position:absolute;
-	max-width: 250px;
+	max-width: 300px;
 	margin:1.3% 2% 2% 2%;
 }
 .col1
@@ -268,7 +276,7 @@ body
 .buttonFRM
 {
 	width:7%;
-	border-radius:5px;
+	border-radius:10px;
 	background-color:yellow;
 	color:blue;
 }
@@ -315,7 +323,7 @@ body
 	</div>
 </div>
 <div>
-	<img src="<?php echo base_url("asset/image/business.jpg")?>" class="GambarBanner"/>
+	<img src="<?php echo base_url("asset/image/Office-Business.jpg")?>" class="GambarBanner"/>
 </div>
 
 <div class="menuBanner" id="menuBanner">
@@ -344,21 +352,6 @@ body
 		<div class="dropdown-content"  id="dropdown-content1">
 			<a href="#" class="f_size2" style="text-align: center; width:50px;height:50px;"><span style="margin-top:20px;height:50px;width:50px;margin-left:5px;line-height:50px;">cari</span></a>
 			<a href="#" class="f_size2" style="text-align: center;width:50px;"><span style="font-family:ubuntu;margin-top:50%;height:50px;width:50px;margin-left:5px;line-height:100%;">cari produk</span></a>
-		</div>
-	</div>
-</div>
-
-<div class="formBanner" id="formBanner">
-<h2 class="margl1" id="judulForm" style="color:blue;font-family:Ubuntu">Cari Produk Wakasa</h2>
-	<div class="tmptForm">
-		<input placeholder="Masukkan Kata Kunci" type="text" class="margl05 inputFRM1" ></input><button id="buttonFRM" class="margl05 buttonFRM" style="font-family:Ubuntu">Search<img id="btnIMG" src="<?php echo base_url("asset/image/HasilSearchProduk/searchHover.png")?>" style="width:20px;height:auto;"></img></button>
-		<div class="tmptForm">
-		<select class="inputFRM margl05" id="frmCombo">
-			<option value="Bymake">Bymake</option>
-		</select>
-		<select class="inputFRM margl05" id="frmCombo">
-			<option value="Bymodel">ByModel</option>
-		</select>
 		</div>
 	</div>
 </div>

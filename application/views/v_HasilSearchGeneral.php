@@ -66,7 +66,7 @@
 	#formBanner
 	{
 		width:100%;
-		top:13%;
+		top:16%;
 	}
 	#frmCombo
 	{
@@ -180,6 +180,7 @@ body
     display: block;
 }
 .dropdown-content a:hover {
+	display:block;
     background-color:#1a75ff;
 	color:white;
 	opacity:1;
@@ -349,17 +350,9 @@ body
 </div>
 
 <div class="formBanner" id="formBanner">
-<h2 class="margl1" id="judulForm" style="color:blue;font-family:Ubuntu">Cari Produk Wakasa</h2>
+<h2 class="margl1" id="judulForm" style="color:blue;font-family:Ubuntu">CARI TENTANG WAKASA</h2><br>
 	<div class="tmptForm">
 		<input placeholder="Masukkan Kata Kunci" type="text" class="margl05 inputFRM1" ></input><button id="buttonFRM" class="margl05 buttonFRM" style="font-family:Ubuntu">Search<img id="btnIMG" src="<?php echo base_url("asset/image/HasilSearchProduk/searchHover.png")?>" style="width:20px;height:auto;"></img></button>
-		<div class="tmptForm">
-		<select class="inputFRM margl05" id="frmCombo">
-			<option value="Bymake">Bymake</option>
-		</select>
-		<select class="inputFRM margl05" id="frmCombo">
-			<option value="Bymodel">ByModel</option>
-		</select>
-		</div>
 	</div>
 </div>
 </body>

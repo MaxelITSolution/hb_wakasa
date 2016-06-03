@@ -66,7 +66,7 @@
 	#formBanner
 	{
 		width:100%;
-		top:13%;
+		top:16%;
 	}
 	#frmCombo
 	{
@@ -180,6 +180,7 @@ body
     display: block;
 }
 .dropdown-content a:hover {
+	display:block;
     background-color:#1a75ff;
 	color:white;
 	opacity:1;
@@ -197,7 +198,7 @@ body
 .logo
 {
 	position:absolute;
-	max-width: 250px;
+	max-width: 300px;
 	margin:1.3% 2% 2% 2%;
 }
 .col1
@@ -268,7 +269,7 @@ body
 .buttonFRM
 {
 	width:7%;
-	border-radius:5px;
+	border-radius:10px;
 	background-color:yellow;
 	color:blue;
 }
@@ -315,7 +316,7 @@ body
 	</div>
 </div>
 <div>
-	<img src="<?php echo base_url("asset/image/business.jpg")?>" class="GambarBanner"/>
+	<img src="<?php echo base_url("asset/image/map.png")?>" class="GambarBanner"/>
 </div>
 
 <div class="menuBanner" id="menuBanner">
@@ -348,20 +349,7 @@ body
 	</div>
 </div>
 
-<div class="formBanner" id="formBanner">
-<h2 class="margl1" id="judulForm" style="color:blue;font-family:Ubuntu">Cari Produk Wakasa</h2>
-	<div class="tmptForm">
-		<input placeholder="Masukkan Kata Kunci" type="text" class="margl05 inputFRM1" ></input><button id="buttonFRM" class="margl05 buttonFRM" style="font-family:Ubuntu">Search<img id="btnIMG" src="<?php echo base_url("asset/image/HasilSearchProduk/searchHover.png")?>" style="width:20px;height:auto;"></img></button>
-		<div class="tmptForm">
-		<select class="inputFRM margl05" id="frmCombo">
-			<option value="Bymake">Bymake</option>
-		</select>
-		<select class="inputFRM margl05" id="frmCombo">
-			<option value="Bymodel">ByModel</option>
-		</select>
-		</div>
-	</div>
-</div>
+
 </body>
 </html>
 

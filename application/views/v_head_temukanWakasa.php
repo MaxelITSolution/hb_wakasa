@@ -3,6 +3,8 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("asset/bootstrap/css/bootstrap.css")?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url("asset/css/font.css")?>">
+
 <script src="<?php echo base_url("asset/bootstrap/js/jquery.min.js")?>"></script>
 <script src="<?php echo base_url("asset/bootstrap/js/bootstrap.js")?>"></script>
 <script>
@@ -53,11 +55,11 @@
 
  @media only screen and (max-width: 360px)
  {
-	 #btnIMG
-	 {
+	#btnIMG
+	{
 		 width:15px;
 		 height:auto;
-	 }
+	}
     #judulForm
 	{
 		padding:0px;
@@ -66,7 +68,7 @@
 	#formBanner
 	{
 		width:100%;
-		top:13%;
+		top:16%;
 	}
 	#frmCombo
 	{
@@ -139,8 +141,14 @@
 		}
 		.f_size1
 		{text-align:center;}
-		
 
+ }
+ @media only screen and (max-height:400px)
+ {
+	 #tulisanBawahLogo
+	 {
+		 top:15%;
+	 }
  }
  .active1
  {
@@ -180,6 +188,7 @@ body
     display: block;
 }
 .dropdown-content a:hover {
+	display:block;
     background-color:#1a75ff;
 	color:white;
 	opacity:1;
@@ -197,7 +206,7 @@ body
 .logo
 {
 	position:absolute;
-	max-width: 250px;
+	max-width: 300px;
 	margin:1.3% 2% 2% 2%;
 }
 .col1
@@ -268,7 +277,7 @@ body
 .buttonFRM
 {
 	width:7%;
-	border-radius:5px;
+	border-radius:10px;
 	background-color:yellow;
 	color:blue;
 }
@@ -286,6 +295,7 @@ body
 {margin-left:20%;}
 .margl3
 {margin-left:30%;}
+
 .margl4
 {margin-left:40%;}
 .margl5
@@ -300,7 +310,12 @@ body
 {font-size:8pt}
 .f_size3
 {font-size:6pt}
-
+select{
+	
+    padding: 0 0 0 2.5%;
+	text-align:center;
+	font-family:Ubuntu;
+}
 	</style>
 </head>
 <body>
@@ -315,7 +330,7 @@ body
 	</div>
 </div>
 <div>
-	<img src="<?php echo base_url("asset/image/business.jpg")?>" class="GambarBanner"/>
+	<img src="<?php echo base_url("asset/image/Office-Business.jpg")?>" class="GambarBanner"/>
 </div>
 
 <div class="menuBanner" id="menuBanner">
@@ -347,21 +362,27 @@ body
 		</div>
 	</div>
 </div>
+<div class="isiContent" style="position:absolute;width:100%;left:0;top:45%;">
+	<h3 class="margl4" style="font-size:22pt;font-family:Exo2;">CARI RESELLER WAKASA</h3>
+	<br>
+	<p style="font-size:12pt;margin-left:36%;font-family:Ubuntu">Produk Wakasa dapat Anda dapatkan di ribuan toko onderdil di berbagai<br> &nbsp&nbsp penjuru nusantara. Silahkan temukan peritel Wakasa di dekat Anda.</p>
+	<br>
+	<div  style="display:inline;margin-left:35%;">
+		<select style="margin-left:20px;width:10%;border-radius:25px;">
+			<option value="" default selected>Provinsi</option>
+		</select>
+		
+		<select style="margin-left:20px;width:10%;border-radius:25px;">
+			<option value="" default selected>Kabupaten</option>
+		</select>
 
-<div class="formBanner" id="formBanner">
-<h2 class="margl1" id="judulForm" style="color:blue;font-family:Ubuntu">Cari Produk Wakasa</h2>
-	<div class="tmptForm">
-		<input placeholder="Masukkan Kata Kunci" type="text" class="margl05 inputFRM1" ></input><button id="buttonFRM" class="margl05 buttonFRM" style="font-family:Ubuntu">Search<img id="btnIMG" src="<?php echo base_url("asset/image/HasilSearchProduk/searchHover.png")?>" style="width:20px;height:auto;"></img></button>
-		<div class="tmptForm">
-		<select class="inputFRM margl05" id="frmCombo">
-			<option value="Bymake">Bymake</option>
-		</select>
-		<select class="inputFRM margl05" id="frmCombo">
-			<option value="Bymodel">ByModel</option>
-		</select>
-		</div>
+		<button style="margin-left:15px;font-family:Ubuntu;width:10%;border-radius:15px;background-color:yellow">
+		Search
+		<img style="width:20px;" src="<?php echo base_url("asset/image/HasilSearchProduk/searchHover.png")?>"/>
+		</button>
 	</div>
 </div>
+
 </body>
 </html>
 
