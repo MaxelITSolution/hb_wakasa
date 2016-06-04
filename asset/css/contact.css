@@ -1,0 +1,106 @@
+#contact_us{
+	margin-left: 50px;
+}
+#contact_us, #subscribe_us{
+	background-color: #f0f0f0;
+	box-shadow: 5px -5px 20px grey;
+	padding-top: 30px;
+	padding-bottom: 50px;
+	margin-top: -100px;
+}
+
+#contact_us h3, #subscribe_us h3{
+	color: #0071bc;
+	font-family: Exo2;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 75px;
+}
+
+.form-group{
+	width: 85%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.form-group input, .form-group textarea{
+	border-radius: 10px;
+	font-family: Ubuntu;
+	font-size: 15px;
+	color: #0071bc;
+}
+
+input.form-control::-webkit-input-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+input.form-control:-moz-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+input.form-control::-moz-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+input.form-control:-ms-input-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+textarea.form-control::-webkit-input-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+textarea.form-control:-moz-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+textarea.form-control::-moz-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+textarea.form-control:-ms-input-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+button{
+	border-radius: 10px;
+	padding-left: 20px;
+	color: #0071bc;
+	background-color: #fff000;
+	font-family: Ubuntu;
+	font-size: 16px;
+	margin-right: 70px;
+	border-radius: 10px;
+	margin-top: 50px;
+}
+#contact_us_button:hover{
+	text-decoration: none;
+	color: #0071bc;
+}
+#search_icon{
+	padding-left: 5px;
+}
+
+#subscribe_us p{
+	font-family: Ubuntu;
+	font-size: 15px;
+	color: #807f7e;
+	text-align: center;
+	line-height: 25px;
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#welcome{
+	margin-bottom: 0px;	
+}
+
+#subscribe_us_input_name{
+	margin-top: 30px;
+}
+
+#subscribe_us_button{
+	margin-top: 130px;
+	margin-right: 40px;
+}

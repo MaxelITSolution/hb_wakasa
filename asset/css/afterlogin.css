@@ -1,0 +1,60 @@
+#result{
+	padding-top: 40px;
+}
+#title{
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+#title h3{
+	font-family: Exo2;
+	font-size: 30px;
+	color: #0071bc;
+	font-weight: bold;
+	text-align: center;
+}
+
+.image_result{
+	width: 250px;
+}
+
+.content_slider{
+	width: 250px;
+	background-color: #fff;
+	box-shadow: 5px 5px 20px grey;
+}
+.desc_title{
+	background-color: #fff000;
+	text-align: center;
+	font-family: Exo2-med;
+	font-size: 15px;
+}
+.desc_title p{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 10px;
+}
+.desc_body{
+	font-family: Ubuntu;
+	color: #636363;
+	padding-left: 20px;
+}
+.desc_footer{
+	padding-left: 20px;
+	font-family: Ubuntu;
+	color: #2081d1;
+	padding-bottom: 10px;
+}
+
+#space{
+	padding-bottom: 30px;
+}
+
+#to_footer{
+	margin-bottom: 50px;
+}
+
+.paging{
+	font-family: Ubuntu;
+	color: #636363;
+	margin-right: 20px;
+}

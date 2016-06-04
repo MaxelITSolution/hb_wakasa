@@ -9,7 +9,7 @@
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">
 		<?php include('TestBanner.php'); ?>
 		<div class="content">
-			<div class="container">
+			<div class="container" id="container">
 				<div id="title">
 					<h3>HASIL PENCARIAN</h3>
 					<p>Your search for "XXX" has 20 matches</p>
@@ -17,9 +17,24 @@
 				<div id="result">
 					<p id="result_title">Xxx The Price of Insurance Broker become High</p>
 					<p id="result_desc">On the other hand, we denounce with righteous indignarion and dislike men who are so beguiled and demoralized by the charms of the moment, so blinded by desire, that they cannot foresee the pain and truble that are bound to ensure and equal blame belongs to those who fail in their duty throught weakness.www.dps-insurancebroker.co/xxx-The-Price-of-Insurance</p>
+					<div class="separator"></div>
+					<p id="result_title">Xxx The Price of Insurance Broker become High</p>
+					<p id="result_desc">On the other hand, we denounce with righteous indignarion and dislike men who are so beguiled and demoralized by the charms of the moment, so blinded by desire, that they cannot foresee the pain and truble that are bound to ensure and equal blame belongs to those who fail in their duty throught weakness.www.dps-insurancebroker.co/xxx-The-Price-of-Insurance</p>
+					<div class="separator"></div>
+					<p id="result_title">Xxx The Price of Insurance Broker become High</p>
+					<p id="result_desc">On the other hand, we denounce with righteous indignarion and dislike men who are so beguiled and demoralized by the charms of the moment, so blinded by desire, that they cannot foresee the pain and truble that are bound to ensure and equal blame belongs to those who fail in their duty throught weakness.www.dps-insurancebroker.co/xxx-The-Price-of-Insurance</p>
+					<div class="separator"></div>
+					<p id="result_title">Xxx The Price of Insurance Broker become High</p>
+					<p id="result_desc">On the other hand, we denounce with righteous indignarion and dislike men who are so beguiled and demoralized by the charms of the moment, so blinded by desire, that they cannot foresee the pain and truble that are bound to ensure and equal blame belongs to those who fail in their duty throught weakness.www.dps-insurancebroker.co/xxx-The-Price-of-Insurance</p>
+					<div class="separator"></div>
+					<p id="result_title">Xxx The Price of Insurance Broker become High</p>
+					<p id="result_desc">On the other hand, we denounce with righteous indignarion and dislike men who are so beguiled and demoralized by the charms of the moment, so blinded by desire, that they cannot foresee the pain and truble that are bound to ensure and equal blame belongs to those who fail in their duty throught weakness.www.dps-insurancebroker.co/xxx-The-Price-of-Insurance</p>
+					<div class="separator"></div>
 				</div>
+				<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>
 			</div>
 		</div>
+		<div id="to_footer"></div>
 		<?php include('v_footer.php'); ?>
 	</body>
 </html>

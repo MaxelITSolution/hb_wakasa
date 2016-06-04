@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">
-		<?php include('TestBanner.php'); ?>
+		
 
 		<div class="content">
 			<div class="container">

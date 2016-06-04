@@ -152,5 +152,87 @@
 }
 
 #to_footer{
-	margin-bottom: 500px;
+	margin-bottom: 290px;
+}
+
+/*BOTTOM - IKLAN DKK */
+#left_home_content, #right_home_content{
+	background-color: #fff;
+}
+#left_home_content{
+	padding-top: 90px;
+	padding-bottom: 112px;
+}
+#right_home_content{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+#left_home_content{
+	padding-left: 75px;
+}
+#img_foot_home{
+	background-color: #08a3e9;
+	width: 80px;
+	height: 70px;
+	border-radius: 10px;
+}
+
+#img_reseller{
+	margin-top: 10px;
+}
+#foot_home_desc_reseller{
+	margin-top: -5px;
+	font-family: Exo2;
+	font-size: 28px;
+	color: #636363;
+	font-weight: bold;
+}
+#img_karir{
+	margin-top: 10px;
+	margin-left: 0px;
+	width: 50px;
+}
+#foot_home_desc_karir{
+	margin-top: 10px;
+	font-family: Exo2;
+	font-size: 28px;
+	color: #636363;
+	font-weight: bold;
+}
+#foot_left_desc{
+	color: #636363;
+	font-family: Ubuntu;
+	font-size: 14px;
+	width: 500px;
+	line-height: 25px;
+	margin-top: 20px;
+}
+#right_home_content p{
+	text-align: center;
+	font-family: Ubuntu;
+	color: #636363;
+	font-size: 14px;
+}
+#img_iklan{
+	width: 100%;
+	margin-left: 22px;
+}
+#yellow_bg{
+	width: 100%;
+	margin-left: 22px;
+}
+#logo_iklan{
+	width: 22px;
+	margin-right: 10px;
+	margin-top: -35px;
+	margin-left: 40px;
+}
+#under_iklan{
+	font-family: Exo2;
+	color: #636363;
+	font-size: 16px;
+}
+#under_iklan span{
+	position: absolute;
+	margin-top: -32px;
 }

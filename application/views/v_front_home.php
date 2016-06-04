@@ -7,7 +7,6 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">
-		<?php include('TestBanner.php'); ?>
 
 		<div class="content">
 			<div class="content_title">
@@ -151,15 +150,36 @@
 			</div>
 
 			<div class="content_bottom">
-				<div class="col-sm-6">
+				<div class="col-sm-6" id="left_home_content">
 					<div class="col-xs-6">
-						<div id="col-xs-4">
-						<img src="<?php echo base_url(); ?>asset">
+						<div class="col-xs-4" id="img_foot_home">
+							<img src="<?php echo base_url(); ?>asset/image/content/home/reseller.png" id="img_reseller">
+						</div>
+						<div class="col-xs-8" id="foot_home_desc_reseller">
+							MENJADI RESELLER
 						</div>
 					</div>
-					<div class="col-xs-6"></div>
+					<div class="col-xs-6">
+						<div class="col-xs-4" id="img_foot_home">
+							<img src="<?php echo base_url(); ?>asset/image/content/home/karir.png" id="img_karir">
+						</div>
+						<div class="col-xs-8" id="foot_home_desc_karir">
+							KARIR
+						</div>
+					</div>
+					<div class="col-xs-12" id="foot_left_desc">
+					Sed ut perpiciatis unde omnis iste natus error sit voluptaten accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+					</div>
 				</div>
-				<div class="col-sm-6"></div>
+				<div class="col-sm-6" id="right_home_content">
+					<p>Beli produk Wakasa online melalui salah satu toko online mitra kami :</p>
+					<img src="<?php echo base_url(); ?>asset/image/content/home/iklan.png" id="img_iklan">			
+					<div id="under_iklan">
+						<img src="<?php echo base_url(); ?>asset/image/content/home/yellow.png" id="yellow_bg">
+						<img src="<?php echo base_url(); ?>asset/image/content/home/iklan_logo.png" id="logo_iklan">
+						<span>TEMUKAN PRODUK WAKASA</span>
+					</div>		
+				</div>
 			</div>
 		</div>
 		<div id="to_footer"></div>

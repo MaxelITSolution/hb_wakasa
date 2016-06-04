@@ -1,0 +1,15 @@
+#title{
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 75px;
+}
+#title h3{
+	font-family: Exo2;
+	font-size: 30px;
+	color: #0071bc;
+	font-weight: bold;
+}
+#title p{
+	font-family: Ubuntu;
+	color: #4d4d4d;
+}
