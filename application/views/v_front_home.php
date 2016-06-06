@@ -5,13 +5,28 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/home.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				$("#arrow_right1").click(function(){
+				    $('#arrow_right_top').click();
+				});
+
+
+				$("#arrow_right2").click(function(){
+				    $('#arrow_right_bottom').click();
+				});
+			});
+
+		</script>
 	</head>
-	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">
+	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden; background-repeat: no-repeat;">
 
 		<div class="content">
 			<div class="content_title">
-				<div class="col-xs-2"></div>
-				<div class="col-xs-8">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
 					<div id="title_top">
 						<p>CARI PRODUK WAKASA</p>
 						<form class="form-inline">
@@ -19,7 +34,7 @@
 						    	<label class="sr-only" for="search_input">Masukkan Kata Kunci</label>
 						    	<input type="text" class="form-control" id="search_input" name="search_input" placeholder="Masukkan kata kunci">
 					  		</div>
-						  	<button type="button" class="btn">Search <img src="<?php echo base_url(); ?>asset/image/content/search_icon.png" id="search_icon" /></button>
+						  	<button type="button" class="btn" id="btn_search">Search <img src="<?php echo base_url(); ?>asset/image/content/search_icon.png" id="search_icon" /></button>
 						</form>
 					</div>	
 					<div id="title_bottom">
@@ -32,12 +47,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-2"></div>
+				<div class="col-md-2"></div>
 			</div>
 
 			<div class="content_produk_terbaru">
 				<h3>PRODUK TERBARU</h3>
-				<div class="owl-carousel">
+				<div class="owl-carousel" id="owl-carousel-1">
 					<div id="item1">
 						<div class="content_slider">
 							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
@@ -88,13 +103,13 @@
 							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
 						</div>
 					</div>
-					<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right1"/>
 				</div>
+				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right1"/>
 			</div>
 
 			<div class="content_produk_unggulan">
 				<h3>PRODUK UNGGULAN</h3>
-				<div class="owl-carousel">
+				<div class="owl-carousel" id="owl-carousel-2">
 					<div id="item1">
 						<div class="content_slider">
 							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
@@ -145,8 +160,8 @@
 							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
 						</div>
 					</div>
-					<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right1"/>
 				</div>
+				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right2"/>
 			</div>
 
 			<div class="content_bottom">
@@ -188,17 +203,50 @@
 		<script src="<?php echo base_url(); ?>asset/owl-carousel/owl.carousel.min.js"></script>
 		<script typ="text/javascript">
 			$(document).ready(function(){
-			  $(".owl-carousel").owlCarousel({
+			  	$("#owl-carousel-1").owlCarousel({
 					items: 1,
 					nav: true,
 					loop: true,
-					navText: ['<img src="<?php echo base_url(); ?>asset/image/content/arrow_left.png" id="arrow_left"/>', '<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" id="arrow_right"/>'],
+					navText: ['<img src="<?php echo base_url(); ?>asset/image/content/arrow_left.png" id="arrow_left"/>', '<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" id="arrow_right_top"/>'],
 					responsive : {
-					    900 : {
-							items: 4,
-							nav: true,
-							loop: true,
-							navText: ['<img src="<?php echo base_url(); ?>asset/image/content/arrow_left.png" id="arrow_left""/>', '<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right"/>']
+					    1280 : {
+					    	items: 4
+					    },
+					    1024 : {
+					    	items: 3
+					    },
+					    850 : {
+							items: 3
+					    },
+					    700 : {
+					    	items: 2
+					    },
+					    600 : {
+					    	items: 1
+					    }
+					}
+				});
+
+				$("#owl-carousel-2").owlCarousel({
+					items: 1,
+					nav: true,
+					loop: true,
+					navText: ['<img src="<?php echo base_url(); ?>asset/image/content/arrow_left.png" id="arrow_left"/>', '<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" id="arrow_right_bottom"/>'],
+					responsive : {
+					    1280 : {
+					    	items: 4
+					    },
+					    1024 : {
+					    	items: 3
+					    },
+					    850 : {
+							items: 3
+					    },
+					    700 : {
+					    	items: 2
+					    },
+					    600 : {
+					    	items: 1
 					    }
 					}
 				});

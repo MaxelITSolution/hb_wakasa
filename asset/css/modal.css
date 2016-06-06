@@ -1,0 +1,343 @@
+.m_notifikasi {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.m_login {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.m_notifikasi_content {
+    background-color: #fff;
+    color: #00a0e8;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.m_login_content {
+    background-image: url('../image/content/blue_bg.png');
+    color: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+
+.m_notifikasi_content p{
+	font-family: Ubuntu;
+	font-size: 16px;
+	width: 420px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.m_login_content p{
+	font-family: Ubuntu;
+	font-size: 14px;
+	width: 420px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-left: 120px;
+}
+#email_login{
+	margin-top: -40px;
+	width: 450px;
+	border-radius: 10px;
+	margin-left: 120px;
+}
+#password_login{
+	width: 450px;
+	border-radius: 10px;
+	margin-left: 120px;
+}
+
+.close_notifikasi {
+    color: #fff;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #00a0e8;
+    padding: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.close_login {
+    color: #000;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.close_register {
+    color: #000;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.close_notifikasi:hover,
+.close_login:hover,
+.close_register:hover,
+.close_notifikasi:focus,
+.close_login:focus,
+.close_register:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+input.form-control{
+	color: #0071bc;
+}
+
+input.form-control::-webkit-input-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+input.form-control:-moz-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+input.form-control::-moz-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+input.form-control:-ms-input-placeholder {
+    color:    #0071bc;
+    opacity: .6;
+}
+
+#login_button{
+	font-family: Ubuntu;
+	background-color: #fff000;
+	font-size: 15px;
+	border-radius: 5px;
+	color: #007bc5;
+	margin-left: 510px;
+	margin-bottom: 30px;
+}
+
+button span{
+	color: #000;
+	background-color: #fff;
+}
+.modal-header{
+	background-color: #fff000;
+}
+
+.modal-header h4{
+	color: #0071bc;
+	font-family: Exo2;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.modal-body p{
+	font-family: Ubuntu;
+	font-size: 14px;
+	text-align: center;
+}
+#m_p1{
+	padding-top: 15px;
+}
+#m_p2{
+	padding-bottom: 30px;
+}
+.form-control.reg_input{
+	border-radius: 10px;
+	width: 475;
+	margin-left: 200px;
+	font-family: Ubuntu;
+}
+#m_p3{
+	color: #0071bc;
+	font-family: Ubuntu;
+	margin-left: -200px;
+	padding-top: 20px;
+}
+.radio{
+	color: #0071bc;
+	font-family: Ubuntu;
+	margin-left: 250px;
+}
+.input_line{
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-top-color: transparent;
+	border-bottom-color: #0071bc;
+	font-family: Ubuntu;
+	color: #0071bc;
+}
+#m_p4{
+	padding-top: 20px;	
+	color: #0071bc;
+	font-family: Ubuntu;
+	margin-left: -50px;
+}
+#m_p5{
+	padding-top: 20px;
+	color: #0071bc;
+	font-family: Ubuntu;
+	margin-left: 15px;
+}
+#register_button{
+	background-color: #00a0e8;
+	color: #fff000;
+	font-family: Ubuntu;
+	margin-top: 15px;
+}
+#m_p6{
+	padding-top: 20px;
+}
+.footer_register{
+	padding-top: 20px;
+	margin-left: 150px;
+}
+#end_register{
+	margin-bottom: 50px;
+}
+
+@media screen and (max-width: 1024px){
+/*LOGIN*/
+	.m_login_content p{
+		margin-left: 20px;
+	}
+	.m_login_content .form-group{
+		margin-left: -100px;
+	}
+	#login_button{
+		margin-left: 410px;
+	}
+}
+
+@media screen and (max-width: 980px){
+	#uname_reg, #upass_reg, #upass_conf_reg, #uname_full_reg, #nama_toko_reg, #alamat_toko_reg, #kota_reg, #provinsi_reg, #phone_reg, #handphone_reg, #email_reg{
+		margin-left: 50px;
+		width: 470px;
+	}
+	.radio{
+		margin-left: 100px;
+	}
+	#m_p6{
+		margin-left: -150px;
+	}
+}
+
+@media screen and (max-width: 850px){
+/*LOGIN*/
+	#email_login, #password_login{
+		width: 350px;
+	}
+	#login_button{
+		margin-left: 310px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	#uname_reg, #upass_reg, #upass_conf_reg, #uname_full_reg, #nama_toko_reg, #alamat_toko_reg, #kota_reg, #provinsi_reg, #phone_reg, #handphone_reg, #email_reg{
+		margin-left: 100px;
+	}
+	#m_p3{
+		margin-left: -200px;
+	}
+	#m_p4{
+		margin-left: -60px;
+	}
+	#m_p5{
+		margin-left: 0px;
+	}
+	#m_p6{
+		margin-right: 180px;
+	}
+	.radio{
+		margin-left: 150px;
+	}
+	#register_button{
+		margin-left: 100px;
+	}
+}
+
+@media screen and (max-width: 400px){
+/*NOTIFIKASI*/	
+	.m_notifikasi_content p{
+		width: 150px;
+		font-size: 12px;
+	}
+
+/*LOGIN*/
+	.m_login_content{
+		margin-left: 20px;
+		width: 320px;
+	}
+	.m_login_content p{
+		width: 250px;
+		text-align: center;	
+	}
+	#email_login, #password_login{
+		width: 250px;
+	}
+	#login_button{
+		margin-left: 110px;
+	}
+
+/*REGISTER*/
+	#uname_reg, #upass_reg, #upass_conf_reg, #uname_full_reg, #nama_toko_reg, #alamat_toko_reg, #kota_reg, #provinsi_reg, #phone_reg, #handphone_reg, #email_reg{
+		margin-left: 20px;
+		width: 240px;
+	}
+	#m_p3{
+		margin-left: 0px;
+	}
+	#lainnya_reg{
+		width: 150px;
+	}
+	#m_p4{
+		margin-left: 0px;
+	}
+	#m_p5{
+		margin-left: 0px;
+	}
+	#m_p6{
+		margin-right: 10px;
+	}
+	.radio{
+		margin-left: 20px;
+	}
+	#register_button{
+		margin-left: -100px;
+	}
+
+}

@@ -104,3 +104,62 @@ button{
 	margin-top: 130px;
 	margin-right: 40px;
 }
+
+@media screen and (max-width: 1024px){
+	#contact_us_button, #subscribe_us_button{
+		margin-right: 30px;
+	}	
+	#welcome{
+		width: 300px !important;
+	}
+	#sub_desc{
+		width: 300px !important;
+	}
+	#subscribe_us_button{
+		margin-top: 80px;
+	}
+}
+
+@media screen and (max-width: 980px){
+	#contact_us_button, #subscribe_us_button{
+		margin-right: 30px;
+	}	
+	#welcome{
+		width: 250px !important;
+	}
+	#sub_desc{
+		width: 250px !important;
+	}
+	#subscribe_us_button{
+		margin-top: 50px;
+	}
+}
+
+
+@media screen and (max-width: 850px){
+	.content{
+		margin-left: -40px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	#contact_us{
+		margin-top: 100px;
+	}
+	#subscribe_us{
+		margin-top: 50px;
+		margin-left: 50px;
+	}
+	#welcome, #sub_desc{
+		width: 500px !important;
+	}
+}
+
+@media screen and (max-width: 400px){
+	#welcome{
+		width: 250px !important;
+	}
+	#sub_desc{
+		width: 250px !important;
+	}
+}

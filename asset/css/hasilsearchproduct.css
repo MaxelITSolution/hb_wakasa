@@ -64,3 +64,51 @@
 	margin-right: 25px;
 	margin-top: 75px;
 }
+
+@media screen and (max-width: 1024px){
+	.col-sm-3{
+		margin-right: 80px;
+	}
+	#rsl1, #rsl3{
+		margin-left: 180px;
+	}
+	#rsl3, #rsl4{
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 980px){
+	.col-sm-3{
+		margin-right: 120px;
+	}
+	#rsl1, #rsl3{
+		margin-left: 80px;
+	}
+	#rsl3, #rsl4{
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	#rsl1, #rsl3{
+		margin-left: 210px;
+	}
+	#rsl2, #rsl4{
+		margin-left: 210px;
+	}
+	#rsl2{
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 400px){
+	#rsl1, #rsl3{
+		margin-left: 20px;
+	}
+	#rsl2, #rsl4{
+		margin-left: 20px;
+	}
+	#rsl2{
+		margin-top: 30px;
+	}
+}

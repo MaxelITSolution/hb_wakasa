@@ -70,6 +70,12 @@ class Frontend extends CI_Controller {
 		$this->load->view("v_front_after_login");	
 	}
 
+	public function tentangKami()
+	{	
+		$this->load->view('link');
+		$this->load->view("v_front_tentang_kami");
+	}
+
 /*GAK TAU DI PAKE ATO NDAK */
 
 	
@@ -96,10 +102,6 @@ class Frontend extends CI_Controller {
 	public function reseller()
 	{
 		$this->load->view("v_head_reseller");
-	}
-	public function tentangKami()
-	{
-		$this->load->view("v_head_tentangKami");
 	}
 }
 ?>

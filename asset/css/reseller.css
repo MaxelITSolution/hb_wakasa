@@ -30,3 +30,47 @@ span{
 	color: #00a0e8;
 	font-weight: bold;
 }
+
+@media screen and (max-width: 1024px){
+	#content_left{
+		text-align: center;
+		margin-left: 250px;
+	}
+	#content_right{
+		width: 800px;
+		text-align: center;
+		margin-left: 70px;
+	}
+}
+
+
+@media screen and (max-width: 1024px){
+	#content_left{
+		margin-left: 120px;
+		width: 500px;
+	}
+	#content_right{
+		width: 800px;
+		text-align: center;
+		margin-left: -50px;
+	}
+}
+
+@media screen and (max-width: 800px){
+	#content_right{
+		width: 700px;
+		text-align: center;
+		margin-left: 0px;
+	}
+}
+
+@media screen and (max-width: 400px){
+	#content_left{
+		margin-left: 10px;
+		width: 300px;
+	}
+	#content_right{
+		width: 280px;
+		margin-left: 20px;
+	}
+}

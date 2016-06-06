@@ -29,3 +29,50 @@
 #to_footer{
 	margin-bottom: 50px;
 }
+
+@media screen and (max-width: 1024px){
+	#result_desc{
+		padding-right: 120px;
+	}
+}
+
+@media screen and (max-width: 980px){
+	#result_desc{
+		padding-right: 0px;
+	}
+}
+
+@media screen and (max-width: 800px){
+	#title{
+		margin-left: -50px;
+	}
+	#result{
+		margin-left: -50px;
+	}
+	#result_desc{
+		padding-right: 80px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	#result_desc{
+		padding-right: 20px;
+	}
+}
+
+@media screen and (max-width: 400px){
+	#title{
+		margin-left: -90px;
+		margin-top: 80px;
+	}
+	#title p{
+		text-align: center;
+		width: 250px;
+	}
+	#result{
+		margin-left: -90px;
+	}
+	#result_desc{
+		padding-right: 0px;
+	}
+}

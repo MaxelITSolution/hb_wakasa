@@ -37,6 +37,9 @@
 		font-size: 12px;
 		width: 320px;
 	}
+	.content{
+		margin-top: 75px;
+	}
 }
 
 @media screen and (min-width: 700px) and (max-width: 850px){
@@ -52,6 +55,9 @@
 		font-size: 11px;
 		width: 300px;
 		line-height: 15px;
+	}
+	.content{
+		margin-top: 75px;
 	}
 }
 
@@ -97,5 +103,8 @@
 	}
 	#btm{
 		margin-top: -10px;
+	}
+	.content{
+		margin-top: 75px;
 	}
 }

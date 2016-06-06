@@ -1,5 +1,5 @@
 <div class="footer">
-	<img src="<?php echo base_url(); ?>asset/image/footer/background.png" class="" id="footer_background">
+	<img src="<?php echo base_url(); ?>asset/image/footer/background.png" class="img-responsive" id="footer_background">
 	<div class="col-xs-4" id="footer_left_content">
 		<div class="col-xs-3"><img src="<?php echo base_url(); ?>asset/image/footer/phone.png" id="footer_phone_image" class="pull-right"></div>
 		<div class="col-xs-9" id="footer_content_left">

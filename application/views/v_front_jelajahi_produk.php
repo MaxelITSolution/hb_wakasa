@@ -5,13 +5,27 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/jelajahi_produk.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				$("#arrow_right1").click(function(){
+				    $('#arrow_right_top').click();
+				});
+
+
+				$("#arrow_right2").click(function(){
+				    $('#arrow_right_bottom').click();
+				});
+			});
+
+		</script>
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">
 		<?php include('TestBanner.php'); ?>
 		<div class="content">
 			<div class="content_produk_terbaru">
 				<h3>PRODUK TERBARU</h3>
-				<div class="owl-carousel">
+				<div class="owl-carousel" id="owl-carousel-1">
 					<div id="item1">
 						<div class="content_slider">
 							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
@@ -63,12 +77,13 @@
 						</div>
 					</div>
 				</div>
+				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right1"/>
 				<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>
 			</div>
 
 			<div class="content_produk_unggulan">
 				<h3>PRODUK UNGGULAN</h3>
-				<div class="owl-carousel">
+				<div class="owl-carousel" id="owl-carousel-2">
 					<div id="item1">
 						<div class="content_slider">
 							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
@@ -120,6 +135,7 @@
 						</div>
 					</div>
 				</div>
+				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right2"/>
 				<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>
 			</div>
 		</div>
@@ -128,29 +144,50 @@
 		<script src="<?php echo base_url(); ?>asset/owl-carousel/owl.carousel.min.js"></script>
 		<script typ="text/javascript">
 			$(document).ready(function(){
-			  $(".owl-carousel").owlCarousel({
+			  $("#owl-carousel-1").owlCarousel({
 					items: 1,
 					nav: true,
 					loop: true,
-					navText: ['<img src="<?php echo base_url(); ?>asset/image/content/arrow_left.png" id="arrow_left"/>', '<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" id="arrow_right"/>'],
+					navText: ['<img src="<?php echo base_url(); ?>asset/image/content/arrow_left.png" id="arrow_left"/>', '<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" id="arrow_right_top"/>'],
 					responsive : {
-						1280 : {
-							items: 4,
-							nav: true,
-							loop: true,
-							navText: ['<img src="<?php echo base_url(); ?>asset/image/content/arrow_left.png" id="arrow_left"/>', '<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right"/>']
+					    1280 : {
+					    	items: 4
 					    },
-						1024 : {
-							items: 3,
-							nav: true,
-							loop: true,
-							navText: ['<img src="<?php echo base_url(); ?>asset/image/content/arrow_left.png" id="arrow_left"/>', '<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right"/>']
+					    1024 : {
+					    	items: 3
+					    },
+					    850 : {
+							items: 3
+					    },
+					    700 : {
+					    	items: 2
 					    },
 					    600 : {
-							items: 2,
-							nav: true,
-							loop: true,
-							navText: ['<img src="<?php echo base_url(); ?>asset/image/content/arrow_left.png" id="arrow_left" style="margin-left: -50px !important;"/>', '<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right"/>']
+					    	items: 1
+					    }
+					}
+				});
+
+				$("#owl-carousel-2").owlCarousel({
+					items: 1,
+					nav: true,
+					loop: true,
+					navText: ['<img src="<?php echo base_url(); ?>asset/image/content/arrow_left.png" id="arrow_left"/>', '<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" id="arrow_right_bottom"/>'],
+					responsive : {
+					    1280 : {
+					    	items: 4
+					    },
+					    1024 : {
+					    	items: 3
+					    },
+					    850 : {
+							items: 3
+					    },
+					    700 : {
+					    	items: 2
+					    },
+					    600 : {
+					    	items: 1
 					    }
 					}
 				});

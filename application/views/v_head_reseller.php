@@ -5,6 +5,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("asset/bootstrap/css/bootstrap.css")?>">
 <script src="<?php echo base_url("asset/bootstrap/js/jquery.min.js")?>"></script>
 <script src="<?php echo base_url("asset/bootstrap/js/bootstrap.js")?>"></script>
+
+<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/notifikasi.css" type="text/css" />
 <script>
 	$(document).ready(function(){
 		$("img[name|='gambar1']").hover(function(){
@@ -302,7 +304,10 @@ body
 .f_size3
 {font-size:6pt}
 
-	</style>
+/*CODE MICHAEL*/
+
+
+</style>
 </head>
 <body>
 <div class="headerBG">
@@ -348,8 +353,6 @@ body
 		</div>
 	</div>
 </div>
-
-
 </body>
 </html>
 

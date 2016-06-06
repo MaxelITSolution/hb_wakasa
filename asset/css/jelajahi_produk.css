@@ -61,6 +61,7 @@
 .paging{
 	font-family: Ubuntu;
 	color: #636363;
+	margin-top: 10px;
 }
 
 /*OWL CAROUSEL*/
@@ -68,6 +69,55 @@
 	margin-left: -50px !important;
 	margin-top: -220px;
 }
-#arrow_right{
-	margin-top: -210px;
+#arrow_right_top, #arrow_right_bottom{
+	display: none;
+}
+#arrow_right1, #arrow_right2{
+	margin-top: -210px;	
+	margin-right: -110px;
+}
+#arrow_right1:hover, #arrow_right2:hover{
+	cursor: pointer;
+}
+
+@media screen and (max-width: 1024px){
+	.owl-carousel{
+		width: 95%;
+	}
+	#arrow_right1, #arrow_right2{
+		margin-top: -210px;
+		margin-right: -70px;
+	}
+}
+
+@media screen and (max-width: 850px){
+	.owl-carousel{
+		margin-left: 80px;
+	}
+	#arrow_right1, #arrow_right2{
+		margin-right: -50px;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.owl-carousel{
+		margin-left: 45px;
+
+	}
+	#arrow_left{
+		margin-left: 0px;
+		width: 30px;
+		padding-left: 10px;
+	}
+	#arrow_right1, #arrow_right2{
+		width: 20px;
+		margin-right: -30px;
+	}
+	
+	.content_produk_terbaru h3, .content_produk_unggulan h3{
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		margin-left: 35px;
+	}
 }

@@ -28,12 +28,13 @@
 					   	<textarea class="form-control" rows="5" id="contact_us_message" name="contact_us_message" placeholder="Message"></textarea>
 					</div>
 					<button type="button" class="btn pull-right" id="contact_us_button">SUBMIT</button>
+					<div class="row"></div>
 				</div>
-				<div class="col-sm-1"></div>
+				<div class="col-sm-1" id="qwe"></div>
 				<div class="col-sm-5" id="subscribe_us">
 					<h3>IKUTI UPDATE KAMI</h3>
 					<p id="welcome">Selamat Datang di <i>website</i> Wakasa Automotive Parts.</p>
-					<p>Kami adalah perusahaan penyedia suku cadang otomotif untuk berbagai mobil baik mobil penumpang dan mobil.</p>
+					<p id="sub_desc">Kami adalah perusahaan penyedia suku cadang otomotif untuk berbagai mobil baik mobil penumpang dan mobil.</p>
 					<div class="form-group" id="subscribe_us_input_name">
 					    <label for="subscribe_us_name" class="sr-only">Name</label>
 					   	<input type="text" class="form-control" id="subscribe_us_name" name="subscribe_us_name" placeholder="Name">
@@ -43,6 +44,7 @@
 					   	<input type="email" class="form-control" id="contact_us_email" name="contact_us_email" placeholder="Email">
 					</div>
 					<button type="button" class="btn pull-right" id="subscribe_us_button">SUBSCRIBE</button>
+					<div class="row"></div>
 				</div>
 			</div>
 		</div>
