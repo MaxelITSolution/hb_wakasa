@@ -172,7 +172,7 @@ MENU
 	<div class="col1">
 		<div class="col1_1">
 			<div class="margl6 f_size1" id="kanan1"><Strong style="color:yellow;font-family:Ubuntu"><i>ENG</i>|<i>ID</i></strong></div>
-			<button id="kanan2" style="border-radius:10px;border:2px solid yellow;background-color:#008ae6;color:yellow;font-family:Ubuntu">Login| Register</button>
+			<button id="kanan2" style="border-radius:10px;border:2px solid yellow;background-color:#008ae6;color:yellow;font-family:Ubuntu;">Login| Register</button>
 		</div>
 	</div>
 </div>
