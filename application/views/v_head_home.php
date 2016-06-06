@@ -220,7 +220,7 @@ MENU
 <div class="dropdown">
   <div class="dropbtn" id="logoDropDown2" style="background-color:#0099ff;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/gearIdle.png')?>);"></div>
   <div class="dropdown-content" id="dropdown-content1">
-    <a href="<?php echo site_url("frontend/tentangKami")?>" style="padding-top:6px;text-align:center;word-wrap: break-word;font-size:9pt;">Tentang Kami</a>
+    <a href="<?php echo site_url("tentangkami")?>" style="padding-top:6px;text-align:center;word-wrap: break-word;font-size:9pt;">Tentang Kami</a>
    
   </div>
 </div>
@@ -228,7 +228,7 @@ MENU
 <div class="dropdown">
   <div class="dropbtn" id="logoDropDown2" style="background-color:#0099ff;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/boxIdle.png')?>);"></div>
   <div class="dropdown-content" id="dropdown-content1">
-    <a href="<?php echo site_url("frontend/temukanWakasa")?>" style="padding-top:7px;text-align:center;word-wrap: break-word;font-size:8pt">Temukan Wakasa</a>
+    <a href="<?php echo site_url("temukanwakasa")?>" style="padding-top:7px;text-align:center;word-wrap: break-word;font-size:8pt">Temukan Wakasa</a>
    
   </div>
 </div>
@@ -236,7 +236,7 @@ MENU
 <div class="dropdown">
   <div class="dropbtn" id="logoDropDown2" style="background-color:#0099ff;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/callIdle.png')?>);"></div>
   <div class="dropdown-content" id="dropdown-content1">
-    <a href="<?php echo site_url("frontend/contact")?>" style="padding-top:6px;text-align:center;word-wrap: break-word;">Kontak Kami</a>
+    <a href="<?php echo site_url("contact")?>" style="padding-top:6px;text-align:center;word-wrap: break-word;">Kontak Kami</a>
    
   </div>
 </div>
@@ -244,8 +244,8 @@ MENU
 <div class="dropdown" >
   <div class="dropbtn" id="logoDropDown2" style="background-color:yellow;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/searchHover.png')?>);"></div>
   <div class="dropdown-content" id="dropdown-content1">
-    <a href="<?php echo site_url("frontend/searchGeneral")?>" style="padding-top:10px;text-align:center;word-wrap: break-word;">Cari</a>
-    <a href="<?php echo site_url("frontend/searchGeneral")?>" style="padding-top:5px;text-align:center;word-wrap: break-word;font-size:10pt;">Cari Produk</a>
+    <a href="<?php echo site_url("searchgeneral")?>" style="padding-top:10px;text-align:center;word-wrap: break-word;">Cari</a>
+    <a href="<?php echo site_url("searchgeneral")?>" style="padding-top:5px;text-align:center;word-wrap: break-word;font-size:10pt;">Cari Produk</a>
   </div>
 </div>
 

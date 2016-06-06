@@ -5,12 +5,13 @@ class Frontend extends CI_Controller {
 /*MICHAEL PAKE*/
 
 	public function index(){
-		$this->load->view('v_home');
+		//$this->load->view('v_home');
+    $this->home();
 	}
 	
 	public function home(){
 		$this->load->view('link');
-		$this->load->view("v_head_home");
+		$this->load->view('v_head_home');
 		$this->load->view('v_front_home');
 	}
 
