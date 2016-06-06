@@ -52,3 +52,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'frontend';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['home'] = 'frontend/home';
+$route['jelajahproduct'] = 'frontend/jelajahiProduct';
+$route['searchgeneral'] = 'frontend/searchGeneral';
+$route['hasilsearchgeneral'] = 'frontend/hasilSearchGeneral';
+$route['hasilsearchgeneral_nf'] = 'frontend/hasilSearchGeneral_nf';
+
+$route['hasilsearchproduct'] = 'frontend/hasilSearchProduct';
+$route['hasilsearchproduct_nf'] = 'frontend/hasilSearchProduct_nf';
+$route['karir'] = 'frontend/karir';
+$route['contact'] = 'frontend/contact';
+$route['menjadireseller'] = 'frontend/menjadiReseller';
+$route['temukanwakasa'] = 'frontend/temukanWakasa';
+$route['login'] = 'frontend/afterLogin';
+$route['tentangkami'] = 'frontend/tentangKami';
