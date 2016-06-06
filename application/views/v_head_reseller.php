@@ -15,6 +15,10 @@
 <style>
 @media only screen and (max-width: 360px)
  {
+	 #asd
+	 {
+		 
+	 }
 	 #btnIMG
 	 {
 		 width:15px;
