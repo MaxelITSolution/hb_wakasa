@@ -10,7 +10,100 @@
 	
 </script>
 <style>
-
+@media only screen and (max-width: 360px)
+ {
+	 #btnIMG
+	 {
+		 width:15px;
+		 height:auto;
+	 }
+    #judulForm
+	{
+		padding:0px;
+		font-size:14pt;
+	}
+	#formBanner
+	{
+		width:100%;
+		top:16%;
+	}
+	#frmCombo
+	{
+		width:25%;
+		height:10%;
+	}
+	#input1
+	{
+		width:35%;
+	}
+	#buttonFRM
+	{
+		width:20%;
+		height:auto;
+		font-size:12px;
+	}
+	 #kanan1
+	 {
+		 position:absolute;
+		 top:8%;
+		 right:40%;
+		 font-size:8pt;
+	 }
+	 #kanan2
+	 {
+		 position:absolute;
+		 right:33%;
+		 top:11%;
+		 font-size:8pt;
+	 }
+	 #tulisanBawahLogo
+	 {
+		 top:9%;
+	 }
+	 #logoDropDown2
+	 {
+		width:10%;
+		height:auto;
+	 }
+	#menuBanner
+	{
+		display:none;
+	}
+	#dropdown-content1 
+	{
+		width:30px;
+	}
+	.col1
+	{
+		top:9%;
+	}
+    .logo
+	{
+	width: 220px;
+	height:auto;
+	left:30px;
+	top:5px;
+    }
+	.headerBG
+	{
+			
+		padding:0px;
+		margin:0px;
+		background-color:#005ce6;
+		width:100%;
+		height:160px;
+	}
+	.f_size1
+	{text-align:center;}
+	#MenuMobile
+	{
+		display:block;
+		left:46%;
+		color:yellow;
+		text-decoration:none;
+		top:15%;
+	}
+ }
 .dropbtn {
 	margin-right:5px;
     color: white;
@@ -57,10 +150,21 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.MenuMobile
+{
+	position:absolute;
+	font-size:16pt;
+	z-index:5;
+	display:none;
+}
 </style>
 
 </head>
 <body>
+<div class="MenuMobile" id="MenuMobile">
+MENU
+</div>
+
 <div class="headerBG" style="background-color:#00cc99">
 	<img class="logo" src="<?php echo base_url("asset/image/HasilSearchProduk/wakasalogo.png")?>"></img>
 	<div class="col1">

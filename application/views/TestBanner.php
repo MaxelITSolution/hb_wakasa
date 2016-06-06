@@ -13,6 +13,100 @@
 </script>
 
 <style>
+@media only screen and (max-width: 360px)
+ {
+	 #btnIMG
+	 {
+		 width:15px;
+		 height:auto;
+	 }
+    #judulForm
+	{
+		padding:0px;
+		font-size:14pt;
+	}
+	#formBanner
+	{
+		width:100%;
+		top:16%;
+	}
+	#frmCombo
+	{
+		width:25%;
+		height:10%;
+	}
+	#input1
+	{
+		width:35%;
+	}
+	#buttonFRM
+	{
+		width:20%;
+		height:auto;
+		font-size:12px;
+	}
+	 #kanan1
+	 {
+		 position:absolute;
+		 top:8%;
+		 right:40%;
+		 font-size:8pt;
+	 }
+	 #kanan2
+	 {
+		 position:absolute;
+		 right:40%;
+		 top:13%;
+		 font-size:8pt;
+	 }
+	 #tulisanBawahLogo
+	 {
+		 top:9%;
+	 }
+	 #logoDropDown2
+	 {
+		width:10%;
+		height:auto;
+	 }
+	#menuBanner
+	{
+		display:none;
+	}
+	#dropdown-content1 
+	{
+		width:30px;
+	}
+	.col1
+	{
+		top:9%;
+	}
+    .logo
+	{
+	width: 220px;
+	height:auto;
+	left:30px;
+	top:5px;
+    }
+	.headerBG
+	{
+			
+		padding:0px;
+		margin:0px;
+		background-color:#005ce6;
+		width:100%;
+		height:160px;
+	}
+	.f_size1
+	{text-align:center;}
+	#MenuMobile
+	{
+		display:block;
+		left:46%;
+		color:yellow;
+		text-decoration:none;
+		top:15%;
+	}
+ }
 .dropbtn {
 	margin-right:5px;
     color: white;
@@ -59,17 +153,27 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
-</style>
+.MenuMobile
+{
+	position:absolute;
+	font-size:16pt;
+	z-index:5;
+	display:none;
+}</style>
 
 </head>
 <body>
+<div class="MenuMobile" id="MenuMobile">
+MENU
+</div>
+
 <div class="headerBG">
 	<img class="logo" src="<?php echo base_url("asset/image/HasilSearchProduk/wakasalogo.png")?>"></img>
 	<div class="col1">
 		<div class="col1_1">
 		<div class="margl7 f_size1" id="kanan1"><Strong style="color:yellow"><i>ENG</i>|<i>ID</i></strong></div>
 		<p class="col1_1 f_size1" id="tulisanBawahLogo">welcome back,&nbsp <span class="f_size1" style="color:white;display:inline">Mr Vincent</span></p>
-		<div class="margl6 f_size1" id="kanan2"><a href="#" style="color:yellow">[ Logout ]</a></div>
+		<div class="margl6 f_size1" id="kanan2"><a href="#" style="color:yellow">[Logout]</a></div>
 		</div>
 	</div>
 </div>
@@ -77,7 +181,7 @@
 	<img src="<?php echo base_url("asset/image/business.jpg")?>" class="GambarBanner"/>
 </div>
 
-<div style="position:absolute;top:100px;right:35px;" >
+<div class="menuBanner" id="menuBanner" style="position:absolute;top:100px;right:35px;" >
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 <div class="dropdown">
   <div class="dropbtn" style="background-color:#0099ff;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/gearIdle.png')?>);"></div>

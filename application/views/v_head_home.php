@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("asset/bootstrap/css/bootstrap.css")?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("asset/css/font.css")?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url("asset/css/Headers.css")?>">
@@ -11,6 +12,96 @@
 	
 </script>
 <style>
+@media only screen and (max-width: 360px)
+ {
+	 #btnIMG
+	 {
+		 width:15px;
+		 height:auto;
+	 }
+    #judulForm
+	{
+		padding:0px;
+		font-size:14pt;
+	}
+	#formBanner
+	{
+		width:100%;
+		top:16%;
+	}
+	#frmCombo
+	{
+		width:25%;
+		height:10%;
+	}
+	#input1
+	{
+		width:35%;
+	}
+	#buttonFRM
+	{
+		width:20%;
+		height:auto;
+		font-size:12px;
+	}
+	 #kanan1
+	 {
+		 position:absolute;
+		 top:8%;
+		 right:40%;
+		 font-size:8pt;
+	 }
+	 #kanan2
+	 {
+		 position:absolute;
+		 right:30%;
+		 top:11%;
+		 font-size:8pt;
+	 }
+	 #logoDropDown2
+	 {
+		width:10%;
+		height:auto;
+	 }
+	#menuBanner
+	{
+		display:none;
+	}
+	#dropdown-content1 
+	{
+		width:30px;
+	}
+	.col1
+	{
+		top:9%;
+	}
+    .logo
+	{
+	width: 220px;
+	height:auto;
+	left:30px;
+	top:5px;
+    }
+	.headerBG
+	{
+			
+		padding:0px;
+		margin:0px;
+		background-color:#005ce6;
+		width:100%;
+		height:160px;
+	}
+	.f_size1
+	{text-align:center;}
+	#MenuMobile
+	{
+		display:block;
+		left:46%;
+		color:yellow;
+		text-decoration:none;
+		top:15%;
+	}
+ }
 .dropbtn {
 	margin-right:5px;
     color: white;
@@ -57,10 +148,20 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.MenuMobile
+{
+	position:absolute;
+	font-size:16pt;
+	z-index:5;
+	display:none;
+}
 </style>
 </head>
 <body>
-<div class="headerBG">
+<div class="MenuMobile" id="MenuMobile">
+MENU
+</div>
+<div class="headerBG" id="headerBG">
 	<img class="logo" src="<?php echo base_url("asset/image/HasilSearchProduk/wakasalogo.png")?>"></img>
 	<div class="col1">
 		<div class="col1_1">
