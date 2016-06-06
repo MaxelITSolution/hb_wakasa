@@ -147,6 +147,8 @@
 	z-index :2;
 	border-radius:5px;
 	cursor:default;
+	color:#00a0e8;
+	font-family:Ubuntu;
 }
 .dropdown-content a:hover {background-color: #0099ff;color:white;}
 
@@ -159,7 +161,12 @@
 	font-size:16pt;
 	z-index:5;
 	display:none;
-}</style>
+}
+.formBanner
+{
+	top:30%;
+}
+</style>
 
 </head>
 <body>
@@ -171,9 +178,9 @@ MENU
 	<img class="logo" src="<?php echo base_url("asset/image/HasilSearchProduk/wakasalogo.png")?>"></img>
 	<div class="col1">
 		<div class="col1_1">
-		<div class="margl7 f_size1" id="kanan1"><Strong style="font-family:Ubuntu;color:yellow"><i>ENG</i>|<i>ID</i></strong></div>
-		<p class="col1_1 f_size1" id="tulisanBawahLogo">welcome back,&nbsp <span class="f_size1" style="font-family:Ubuntu;color:white;display:inline">Mr Vincent</span></p>
-		<div class="margl6 f_size1" id="kanan2"><a href="#" style="font-family:Ubuntu;color:yellow">[Logout]</a></div>
+		<div class="margl6 f_size1" id="kanan1"><Strong style="font-family:Ubuntu;color:yellow"><i>ENG</i>|<i>ID</i></strong></div>
+			<div id="kanan2" style="border-radius:10px;border:2px solid yellow;background-color:#008ae6;color:yellow;font-family:Ubuntu"><A href="#" style="padding-left:5px;color:yellow;font-family:Ubuntu;font-size:10pt;">Login</a>| <A href="#" style="padding-right:5px;color:yellow;font-family:Ubuntu">Register</a></div>
+		
 		</div>
 	</div>
 </div>

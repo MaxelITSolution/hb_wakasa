@@ -156,6 +156,8 @@
 	z-index :2;
 	border-radius:5px;
 	cursor:default;
+	color:#00a0e8;
+	font-family:Ubuntu;
 }
 .dropdown-content a:hover {background-color: #0099ff;color:white;}
 
@@ -195,7 +197,7 @@
 		<div class="col1_1">
 		<br>
 			<div class="margl6 f_size1" id="kanan1"><Strong style="color:yellow;font-family:Ubuntu"><i>ENG</i>|<i>ID</i></strong></div>
-			<button id="kanan2" style="border-radius:10px;border:2px solid yellow;background-color:#00b386;font-family:Ubuntu">Login| Register</button>
+			<div id="kanan2" style="border-radius:10px;border:2px solid yellow;background-color:#008ae6;color:yellow;font-family:Ubuntu"><A href="#" style="padding-left:5px;color:yellow;font-family:Ubuntu;font-size:10pt;">Login</a>| <A href="#" style="padding-right:5px;color:yellow;font-family:Ubuntu">Register</a></div>
 		</div>
 	</div>
 </div>
