@@ -13,6 +13,27 @@
 <style>
 @media only screen and (max-width: 360px)
  {
+	 #search
+	 {
+		 margin-left:15px;font-size:7pt;
+		 word-wrap:word-break;
+	 }
+	 #judul
+	 {
+		 font-size:10pt;
+		 text-align:center;
+	 }
+	 #isiContent
+	 {
+		 position:absolute;
+		 top:22%;
+		 width:100%;
+		 left:0px;
+	 }
+	 #tulisan
+	 {
+		 font-size:8pt;
+	 }
 	 #btnIMG
 	 {
 		 width:15px;
@@ -129,7 +150,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #f4ebfe;
     width: 45px;
 	border-radius:5px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -151,7 +172,22 @@
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
+.isiContent
+{
+	position:absolute;width:100%;left:0;top:45%;
+}
+.tulisan
+{
+	font-size:12pt;margin-left:36%;font-family:Ubuntu;
+}
+.judul
+{
+	font-size:20pt;font-family:Exo2;color:#1a75ff;text-align:center;
+}
+.search
+{
+	margin-left:15px;font-family:Ubuntu;width:10%;border-radius:15px;background-color:yellow;
+}
 .margl05
 {margin-left:5%;}
 .margl1
@@ -219,7 +255,7 @@ MENU
 <div class="dropdown">
   <div class="dropbtn" id="logoDropDown2" style="background-color:#0099ff;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/gearIdle.png')?>);"></div>
   <div class="dropdown-content" id="dropdown-content1">
-    <a href="#" style="text-align:center;word-wrap: break-word;">Tentang Kami</a>
+    <a href="<?php echo site_url("frontend/tentangKami")?>" style="padding-top:6px;text-align:center;word-wrap: break-word;font-size:9pt;">Tentang Kami</a>
    
   </div>
 </div>
@@ -227,7 +263,7 @@ MENU
 <div class="dropdown">
   <div class="dropbtn" id="logoDropDown2" style="background-color:#0099ff;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/boxIdle.png')?>);"></div>
   <div class="dropdown-content" id="dropdown-content1">
-    <a href="#" style="text-align:center;word-wrap: break-word;font-size:8pt">Temukan Wakasa</a>
+    <a href="<?php echo site_url("frontend/temukanWakasa")?>" style="padding-top:7px;text-align:center;word-wrap: break-word;font-size:8pt">Temukan Wakasa</a>
    
   </div>
 </div>
@@ -235,7 +271,7 @@ MENU
 <div class="dropdown">
   <div class="dropbtn" id="logoDropDown2" style="background-color:#0099ff;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/callIdle.png')?>);"></div>
   <div class="dropdown-content" id="dropdown-content1">
-    <a href="#" style="text-align:center;word-wrap: break-word;">Kontak Kami</a>
+    <a href="<?php echo site_url("frontend/contact")?>" style="padding-top:6px;text-align:center;word-wrap: break-word;">Kontak Kami</a>
    
   </div>
 </div>
@@ -243,17 +279,18 @@ MENU
 <div class="dropdown" >
   <div class="dropbtn" id="logoDropDown2" style="background-color:yellow;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/searchHover.png')?>);"></div>
   <div class="dropdown-content" id="dropdown-content1">
-    <a href="#" style="text-align:center;word-wrap: break-word;">Cari</a>
-    <a href="#" style="text-align:center;word-wrap: break-word;font-size:10pt;">Cari Produk</a>
+    <a href="<?php echo site_url("frontend/searchGeneral")?>" style="padding-top:10px;text-align:center;word-wrap: break-word;">Cari</a>
+    <a href="<?php echo site_url("frontend/searchGeneral")?>" style="padding-top:5px;text-align:center;word-wrap: break-word;font-size:10pt;">Cari Produk</a>
   </div>
 </div>
 
 </div>
-<div class="isiContent" style="position:absolute;width:100%;left:0;top:45%;">
-	<h3 class="margl4" style="font-size:22pt;font-family:Exo2;color:#1a75ff">CARI RESELLER WAKASA</h3>
-	<br>
-	<p style="font-size:12pt;margin-left:36%;font-family:Ubuntu">Produk Wakasa dapat Anda dapatkan di ribuan toko onderdil di berbagai<br> &nbsp&nbsp penjuru nusantara. Silahkan temukan peritel Wakasa di dekat Anda.</p>
-	<br>
+
+<div class="isiContent" id="isiContent" >
+	<h3 id="judul" class="judul" class="margl4">CARI RESELLER WAKASA</h3>
+	
+	<p id="tulisan" class="tulisan" >Produk Wakasa dapat Anda dapatkan di ribuan toko onderdil di berbagai<br> &nbsp&nbsp penjuru nusantara. Silahkan temukan peritel Wakasa di dekat Anda.</p>
+	
 	<div  style="display:inline;margin-left:35%;">
 		<select style="margin-left:20px;width:10%;border-radius:25px;">
 			<option value="" default selected>Provinsi</option>
@@ -263,7 +300,7 @@ MENU
 			<option value="" default selected>Kabupaten</option>
 		</select>
 
-		<button style="margin-left:15px;font-family:Ubuntu;width:10%;border-radius:15px;background-color:yellow">
+		<button id="search" class="search" >
 		Search
 		<img style="width:20px;" src="<?php echo base_url("asset/image/HasilSearchProduk/searchHover.png")?>"/>
 		</button>

@@ -35,7 +35,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #f4ebfe;
     width: 45px;
 	border-radius:5px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -74,35 +74,43 @@
 	<img src="<?php echo base_url("asset/image/business.jpg")?>" class="GambarBanner"/>
 </div>
 
-<div class="menuBanner" id="menuBanner">
+<div class="menuBanner" id="menuBanner" >
 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-	<div class="dropdown">
-		<img src="<?php echo base_url("asset/image/HasilSearchProduk/gearIdle.png")?>" class="logoDropDown" id="logoDropDown2" name="gambar1" >
-		<div class="dropdown-content" id="dropdown-content1">
-			<a href="#" class="f_size2" style="text-align: center; width:50px;"><span style="margin-top:50px;height:50px;width:50px;margin-left:5px;line-height:25px;">Tentang Kami</span></a>
-		</div>
-	</div>
-	<div class="dropdown">
-		<img src="<?php echo base_url("asset/image/HasilSearchProduk/boxIdle.png")?>" class="logoDropDown" id="logoDropDown2" name="gambar2" >
-		<div class="dropdown-content" id="dropdown-content1">
-			<a href="#" class="f_size2" style="text-align: center; width:50px;"><span style="word-wrap:break-word;margin-top:50px;height:50px;width:50px;margin-left:5px;line-height:20px;">Temukan wakasa</span></a>
-		</div>
-	</div>
-	<div class="dropdown">
-		<img src="<?php echo base_url("asset/image/HasilSearchProduk/callIdle.png")?>" class="logoDropDown" id="logoDropDown2" name="gambar3"  >
-		<div class="dropdown-content" id="dropdown-content1">
-			<a href="#" class="f_size2" style="text-align:center; width:50px"><span id="btnIMG" style="word-wrap:break-word;margin-top:50px;height:50px;width:50px;margin-left:5px;line-height:20px;">Kontak Kami</span></a>
-		</div>
-	</div>
-
-	<div class="dropdown">
-		<img src="<?php echo base_url("asset/image/HasilSearchProduk/searchIdle.png")?>" class="logoDropDown" id="logoDropDown2" name="gambar4"  >
-		<div class="dropdown-content"  id="dropdown-content1">
-			<a href="#" class="f_size2" style="text-align: center; width:50px;height:50px;"><span style="margin-top:20px;height:50px;width:50px;margin-left:5px;line-height:50px;">cari</span></a>
-			<a href="#" class="f_size2" style="text-align: center;width:50px;"><span style="font-family:ubuntu;margin-top:50%;height:50px;width:50px;margin-left:5px;line-height:100%;">cari produk</span></a>
-		</div>
-	</div>
+<div class="dropdown">
+  <div class="dropbtn" id="logoDropDown2" style="background-color:#0099ff;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/gearIdle.png')?>);"></div>
+  <div class="dropdown-content" id="dropdown-content1">
+    <a href="<?php echo site_url("frontend/tentangKami")?>" style="padding-top:6px;text-align:center;word-wrap: break-word;font-size:9pt;">Tentang Kami</a>
+   
+  </div>
 </div>
+
+<div class="dropdown">
+  <div class="dropbtn" id="logoDropDown2" style="background-color:#0099ff;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/boxIdle.png')?>);"></div>
+  <div class="dropdown-content" id="dropdown-content1">
+    <a href="<?php echo site_url("frontend/temukanWakasa")?>" style="padding-top:7px;text-align:center;word-wrap: break-word;font-size:8pt">Temukan Wakasa</a>
+   
+  </div>
+</div>
+
+<div class="dropdown">
+  <div class="dropbtn" id="logoDropDown2" style="background-color:#0099ff;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/callIdle.png')?>);"></div>
+  <div class="dropdown-content" id="dropdown-content1">
+    <a href="<?php echo site_url("frontend/contact")?>" style="padding-top:6px;text-align:center;word-wrap: break-word;">Kontak Kami</a>
+   
+  </div>
+</div>
+
+<div class="dropdown" >
+  <div class="dropbtn" id="logoDropDown2" style="background-color:yellow;background-image:url(<?php echo base_url('asset/image/HasilSearchProduk/searchHover.png')?>);"></div>
+  <div class="dropdown-content" id="dropdown-content1">
+    <a href="<?php echo site_url("frontend/searchGeneral")?>" style="padding-top:10px;text-align:center;word-wrap: break-word;">Cari</a>
+    <a href="<?php echo site_url("frontend/searchGeneral")?>" style="padding-top:5px;text-align:center;word-wrap: break-word;font-size:10pt;">Cari Produk</a>
+  </div>
+</div>
+
+</div>
+
+
 
 <div class="formBanner" id="formBanner">
 <h2 class="margl1" id="judulForm" style="color:blue;font-family:Ubuntu">CARI TENTANG WAKASA</h2><br>
