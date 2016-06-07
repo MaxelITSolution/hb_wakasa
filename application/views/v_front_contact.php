@@ -5,8 +5,10 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/contact.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerhijau.css" type="text/css" />
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_full.png'); overflow-x: hidden;">
+		<?php include('v_header.php'); ?>
 		<div class="content">
 			<div class="container">
 				<div class="col-sm-5" id="contact_us">

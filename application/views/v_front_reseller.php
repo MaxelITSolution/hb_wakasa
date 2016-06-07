@@ -5,8 +5,12 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/reseller.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerbiru_muda.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannerreseller.css" type="text/css" />
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">
+	<?php include('v_header.php'); ?>
+	<?php include('v_banner_reseller.php'); ?>
 		<div class="content">
 			<div class="container">
 				<div class="col-sm-6" id="content_left">

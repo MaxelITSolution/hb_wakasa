@@ -5,13 +5,12 @@ class Frontend extends CI_Controller {
 /*MICHAEL PAKE*/
 
 	public function index(){
-		//$this->load->view('v_home');
-    $this->home();
+		$this->load->view('v_home');
 	}
 	
 	public function home(){
 		$this->load->view('link');
-		$this->load->view('v_head_home');
+		$this->load->view("v_head_home");
 		$this->load->view('v_front_home');
 	}
 
@@ -45,19 +44,16 @@ class Frontend extends CI_Controller {
 
 	public function karir(){
 		$this->load->view('link');
-		$this->load->view("v_head_karir");
 		$this->load->view('v_front_karir');
 	}
 
 	public function contact(){
 		$this->load->view('link');
-		$this->load->view("v_head_kontak");
 		$this->load->view('v_front_contact');
 	}
 
 	public function menjadiReseller(){
 		$this->load->view('link');
-		$this->load->view("v_head_reseller");
 		$this->load->view('v_front_reseller');
 	}
 
@@ -75,6 +71,16 @@ class Frontend extends CI_Controller {
 	{	
 		$this->load->view('link');
 		$this->load->view("v_front_tentang_kami");
+	}
+
+	public function header(){
+		$this->load->view('link');
+		$this->load->view("v_header");
+	}
+
+	public function bannerpolos(){
+		$this->load->view('link');
+		$this->load->view("v_banner_polos");
 	}
 
 /*GAK TAU DI PAKE ATO NDAK */

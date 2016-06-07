@@ -1,6 +1,6 @@
 #title{
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 300px;
 	margin-bottom: 75px;
 }
 #title h3{
@@ -12,4 +12,10 @@
 #title p{
 	font-family: Ubuntu;
 	color: #4d4d4d;
+}
+
+@media screen and (max-width: 400px){
+	#title{
+		margin-top: 150px;
+	}
 }

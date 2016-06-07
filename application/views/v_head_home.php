@@ -250,7 +250,7 @@ MENU
 </div>
 
 </div>
-
+*/
 <div id="navigasi" class="navigasi" style="">
 	<div style="width:30%;height:25px;background-color:#ffe6e6">
 		<div   id="tulisan1" class="tulisan1" style="font-family:Ubuntu;text-align:center;color:white;margin-left:54%;width:50%;height:100%;background-color:#3366ff;border-top-right-radius:5px;border-bottom-right-radius:5px;">

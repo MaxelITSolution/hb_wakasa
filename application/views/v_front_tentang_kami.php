@@ -5,9 +5,13 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/tentangkami.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerbiru.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannerpolos.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/modal.css" type="text/css" />
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_full.png'); overflow-x: hidden;">
-		<?php include('v_head_tentangKami.php'); ?>
+		<?php include('v_header.php'); ?>
+		<?php include('v_banner_polos.php'); ?>
 		<div class="content">
 			<div class="history">
 				<div class="col-sm-2"></div>
@@ -74,8 +78,62 @@
 				</div>
 			</div>
 
+			
+		<div class="m_login" id="m_login">
+			<div class="m_login_content">
+				<span class="close_login">X</span>
+				<p>Already have an account? Log In now to see more</p>
+				<div class="form-group">
+				    <label for="email_login" class="sr-only">Email</label>
+				    <input type="email" class="form-control" id="email_login" name="email_login" placeholder="Email">
+				</div>
+				<div class="form-group">
+				    <label for="password_login" class="sr-only">Password</label>
+				    <input type="password" class="form-control" id="password_login" name="password_login" placeholder="Password">
+				</div>
+				<button type="button" class="btn" id="login_button">Login</button>
+			</div>
 		</div>
+
+		</div>
+
+
+
+
 		<div id="to_footer"></div>
 		<?php include('v_footer.php'); ?>
+		<script type="text/javascript">
+			var modal_notif = document.getElementById('m_notifikasi');
+			var modal_login = document.getElementById('m_login');
+
+			var btn_notif = document.getElementById("btn_tes_notifikasi");
+			var btn_login = document.getElementById("btn_tes_login");
+
+			var span_notif = document.getElementsByClassName("close_notifikasi")[0];
+			var span_login = document.getElementsByClassName("close_login")[0];
+	
+			span_notif.onclick = function(){
+				modal_notif.style.display = "none";
+			}
+			span_login.onclick = function(){
+				modal_login.style.display = "none";
+			}
+
+			btn_notif.onclick = function() {
+			    modal_notif.style.display = "block";
+			}
+			btn_login.onclick = function() {
+			    modal_login.style.display = "block";
+			}
+
+			window.onclick = function(event) {
+			    if (event.target == modal_notif) {
+			        modal_notif.style.display = "none";
+			    }
+			    if (event.target == modal_login) {
+			        modal_login.style.display = "none";
+			    }
+			}
+		</script>
 	</body>
 </html>

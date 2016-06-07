@@ -6,17 +6,20 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/searchgeneral.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/modal.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerbiru.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannergeneral.css" type="text/css" />
 
 	</head>
 	<body>
-		<?php include('TestBanner.php'); ?>
-		<input type="button" id="btn_tes_notifikasi" name="btn_tes_notifikasi" value="Notifikasi"></body>
+		<?php include('v_header.php'); ?>
+		<?php include('v_banner_general.php'); ?>
+		<!--<input type="button" id="btn_tes_notifikasi" name="btn_tes_notifikasi" value="Notifikasi"></body>
 		
 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#m_register">
 		  	Register
 		</button>
 
-		<input type="button" id="btn_tes_login" name="btn_tes_login" value="Login"></body>
+		<input type="button" id="btn_tes_login" name="btn_tes_login" value="Login"></body>-->
 		
 		<div class="m_notifikasi" id="m_notifikasi">
 			<div class="m_notifikasi_content">
@@ -28,7 +31,7 @@
 		<div class="m_login" id="m_login">
 			<div class="m_login_content">
 				<span class="close_login">X</span>
-				<p>Already have and account? Log In now to see more</p>
+				<p>Already have an account? Log In now to see more</p>
 				<div class="form-group">
 				    <label for="email_login" class="sr-only">Email</label>
 				    <input type="email" class="form-control" id="email_login" name="email_login" placeholder="Email">

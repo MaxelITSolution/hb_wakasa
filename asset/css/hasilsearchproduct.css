@@ -1,6 +1,6 @@
 #title{
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 300px;
 	margin-bottom: 75px;
 }
 #title h3{
@@ -110,5 +110,8 @@
 	}
 	#rsl2{
 		margin-top: 30px;
+	}
+	#title{
+		margin-top: 100px;
 	}
 }

@@ -1,0 +1,44 @@
+#image_banner{
+	margin-top: -30px;
+	width: 100%;
+	max-height: 580px;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#navigasi{
+	margin-top: -300px;
+	position: relative;
+}
+
+@media screen and (max-width: 1024px){
+	#tulisan1{
+		width: 250px !important;
+	}
+	#tulisan2{
+		width: 225px !important;
+	}
+	#tulisan3{
+		width: 200px !important;
+	}
+}
+
+@media screen and (max-width: 850px){
+	#navigasi{
+		margin-top: -200px;
+		position: relative;
+	}
+}
+
+@media screen and (max-width: 400px){
+	#tulisan1{
+		width: 150px !important;
+	}
+	#tulisan2{
+		width: 125px !important;
+	}
+	#tulisan3{
+		width: 100px !important;
+	}
+}

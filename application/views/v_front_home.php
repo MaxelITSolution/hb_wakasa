@@ -167,20 +167,24 @@
 			<div class="content_bottom">
 				<div class="col-sm-6" id="left_home_content">
 					<div class="col-xs-6">
+						<a href="menjadireseller">
 						<div class="col-xs-4" id="img_foot_home">
 							<img src="<?php echo base_url(); ?>asset/image/content/home/reseller.png" id="img_reseller">
 						</div>
 						<div class="col-xs-8" id="foot_home_desc_reseller">
 							MENJADI RESELLER
 						</div>
+						</a>
 					</div>
 					<div class="col-xs-6">
+						<a href="karir">
 						<div class="col-xs-4" id="img_foot_home">
 							<img src="<?php echo base_url(); ?>asset/image/content/home/karir.png" id="img_karir">
 						</div>
 						<div class="col-xs-8" id="foot_home_desc_karir">
 							KARIR
 						</div>
+						</a>
 					</div>
 					<div class="col-xs-12" id="foot_left_desc">
 					Sed ut perpiciatis unde omnis iste natus error sit voluptaten accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.

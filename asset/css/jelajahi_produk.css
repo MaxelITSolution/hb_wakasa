@@ -1,19 +1,19 @@
 .content{
-	margin-bottom: 1150px;
+	margin-bottom: 1450px;
 }
 .content_produk_terbaru{
 	margin-left: 0px;
 	margin-right: 0px;
 	position: absolute;
 	width: 90%;
-	margin-top: 75px;
+	margin-top: 350px;
 }
 .content_produk_unggulan{
 	margin-left: 0px;
 	margin-right: 0px;
 	position: absolute;
 	width: 90%;
-	margin-top: 600px;
+	margin-top: 900px;
 }
 .content_produk_terbaru h3, .content_produk_unggulan h3{
 	font-family: Exo2;
@@ -112,6 +112,10 @@
 	#arrow_right1, #arrow_right2{
 		width: 20px;
 		margin-right: -30px;
+	}
+
+	.content{
+		margin-top: -200px;
 	}
 	
 	.content_produk_terbaru h3, .content_produk_unggulan h3{
