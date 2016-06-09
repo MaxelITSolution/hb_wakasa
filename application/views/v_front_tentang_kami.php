@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannerpolos.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/modal.css" type="text/css" />
 	</head>
-	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_full.png'); overflow-x: hidden;">
+	<body id="body" style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_full.png'); overflow-x: hidden;">
 		<?php include('v_header.php'); ?>
 		<?php include('v_banner_polos.php'); ?>
 		<div class="content">

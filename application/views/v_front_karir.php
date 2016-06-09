@@ -5,7 +5,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/karir.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
-		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerhijau.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerbiru.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannerpolos.css" type="text/css" />
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">

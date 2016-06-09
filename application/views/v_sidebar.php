@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/admin_page.css">
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#sidebar_btn1').click(function(){

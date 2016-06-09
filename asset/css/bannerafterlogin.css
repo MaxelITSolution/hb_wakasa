@@ -125,7 +125,7 @@
 	.banner h3{
 		font-size: 30px	;
 		margin-top: -150px;
-		margin-left: 170px;
+		margin-left: 200px;
 	}	
 	.banner .form-inline{
 		margin-left: 20px;
@@ -135,14 +135,14 @@
 		position: absolute;
 		width: 250px;
 		margin-top: 130px;
-		margin-left: 110px;
+		margin-left: 150px;
 		height: 30px;
 	}
 	.banner #btn_search{
 		margin-top: 130px;
 		height: 30px;
 		padding-top: 2px;
-		margin-left: 390px;
+		margin-left: 410px;
 	}
 }
 

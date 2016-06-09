@@ -5,7 +5,9 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/home.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannerhome.css" type="text/css" />
 
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerbiru.css" type="text/css" />
 		<script type="text/javascript">
 			$(document).ready(function(){
 
@@ -22,7 +24,8 @@
 		</script>
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden; background-repeat: no-repeat;">
-
+		<?php include('v_header.php'); ?>
+		<?php include('v_banner_home.php'); ?>
 		<div class="content">
 			<div class="content_title">
 				<div class="col-md-2"></div>

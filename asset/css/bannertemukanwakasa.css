@@ -1,0 +1,291 @@
+#image_banner{
+	width: 100%;
+	max-height: 705px;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.banner #title{
+	font-family: Exo2;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	color: #0071bc;
+	margin-top: -350px;
+}
+.banner #desc{
+	font-family: Ubuntu;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	color: #636363;
+	width: 550px;
+	margin-left: 400px;
+	margin-top: 25px;
+}
+
+/*dropdown1*/
+.dropbtn1 {
+    background-color: #fff;
+    color: #0071bc;
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    text-align: left;
+    padding-left: 15px;
+    border-radius: 5px;
+    margin-left: 380px;
+    margin-top: 25px;
+}
+.dropbtn1 span{
+	margin-left: 90px;
+}
+
+.dropdown1 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content1 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-left: 380px;
+}
+
+.dropdown-content1 a {
+    color: #0071bc;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content1 a:hover {background-color: #f1f1f1}
+
+.dropdown1:hover .dropdown-content1 {
+    display: block;
+}
+
+.dropdown1:hover .dropbtn1 {
+    background-color: #fff;
+}
+
+/*dropdown 2*/
+.dropbtn2 {
+    background-color: #fff;
+    color: #0071bc;
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    width: 200px;
+    text-align: left;
+    padding-left: 15px;
+    border-radius: 5px;
+    margin-left: 25px;
+}
+
+.dropbtn2 span{
+	margin-left: 90px;
+}
+
+.dropdown2 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-left: 25px;
+}
+
+.dropdown-content2 a {
+    color: #0071bc;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content2 a:hover {background-color: #f1f1f1}
+
+.dropdown2:hover .dropdown-content2 {
+    display: block;
+}
+
+.dropdown2:hover .dropbtn2 {
+    background-color: #fff;
+}
+
+.banner #btn_search{
+	border-radius: 10px;
+	padding-left: 20px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	color: #0071bc;
+	background-color: #fff000;
+	font-family: Ubuntu;
+	font-size: 16px;
+	margin-left: 25px;
+}
+.banner #search_icon{
+	padding-left: 5px;
+}
+
+@media screen and (max-width: 1024px){
+	.banner #desc{
+		margin-left: 220px;
+	}
+	.dropbtn1{
+		margin-left: 210px;
+	}
+	.dropdown-content1 {
+	    margin-left: 210px;
+	}
+}
+
+@media screen and (max-width: 980px){
+	.banner #title{
+		margin-left: 20px;
+		margin-top: -300px;
+	}
+	.banner #desc{
+		margin-left: 200px;
+	}
+	.dropbtn1{
+		margin-left: 200px;
+	}
+	.dropdown-content1 {
+	    margin-left: 110px;
+	}
+}
+
+@media screen and (max-width: 850px){
+	.banner #title{
+		margin-left: 20px;
+		margin-top: -250px;
+	}
+	.banner #desc{
+		margin-left: 120px;
+	}
+	.dropbtn1{
+		margin-left: 110px;
+	}
+	.dropdown-content1 {
+	    margin-left: 110px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.banner #title{
+		margin-top: -200px;
+	}
+	.banner #desc{
+		margin-left: 100px;
+		margin-top:  -10px;
+	}
+	.dropbtn1{
+		margin-top: -10px;
+		margin-left: 100px;
+	}
+	.dropdown-content1 {
+	    margin-left: 100px;
+	}
+}
+
+@media screen and (max-width: 680px){
+	.banner #title{
+		margin-top: -180px;
+	}
+	.banner #desc{
+		margin-left: 50px;
+	}
+	.dropbtn1{
+		margin-left: 40px;
+		width: 180px;
+	}
+	.dropbtn1 span{
+		margin-left: 90px;
+		color: #0071bc;
+	}
+	.dropbtn2{
+		margin-left: 40px;
+		width: 180px;
+	}
+	.dropbtn2 span{
+		margin-left: 70px;
+		color: #0071bc;
+	}
+	.dropdown-content1 {
+	    margin-left: 100px;
+	}
+}
+
+@media screen and (max-width: 400px){
+	#image_banner{
+		margin-top: 200px;
+	}
+	.banner #title{
+		font-size: 20px;
+		margin-left: 20px;
+		margin-top: -180px;
+	}
+	.banner #desc{
+		font-size: 12px;
+		width: 250px;
+		margin-left: 50px;
+		margin-top: 0px;
+	}
+	.dropbtn1{
+		margin-left: 5px;
+		width: 110px;
+	}
+	.dropbtn1 span{
+		margin-left: 20px;
+	}
+	.dropbtn2{
+		margin-left: 5px;
+		width: 110px;
+	}
+	.dropbtn2 span{
+		margin-left: 10px;
+	}
+	.banner #btn_search{
+		width: 75px;
+		margin-left: 0px;
+		font-size: 12px;
+		padding-left: 5px;
+		margin-top: -2px;
+	}
+	.banner #search_icon{
+		padding-left: 5px;
+		width: 20px;
+	}
+
+	.dropdown-content1 {
+	    margin-left: 5px;
+	    min-width: 110px;
+	}
+	.dropdown-content1 {
+	    margin-left: 5px;
+	    min-width: 110px;
+	}
+
+	.dropdown-content2 {
+	    margin-left: 5px;
+	    min-width: 110px;
+	}
+	.dropdown-content2 {
+	    margin-left: 5px;
+	    min-width: 110px;
+	}
+}

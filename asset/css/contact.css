@@ -1,7 +1,7 @@
-#contact_us{
+.content #contact_us{
 	margin-left: 50px;
 }
-#contact_us, #subscribe_us{
+.content #contact_us, .content #subscribe_us{
 	background-color: #f0f0f0;
 	box-shadow: 5px -5px 20px grey;
 	padding-top: 30px;
@@ -9,7 +9,7 @@
 	margin-top: -100px;
 }
 
-#contact_us h3, #subscribe_us h3{
+.content #contact_us h3, .content #subscribe_us h3{
 	color: #0071bc;
 	font-family: Exo2;
 	font-size: 30px;
@@ -18,52 +18,52 @@
 	margin-bottom: 75px;
 }
 
-.form-group{
+.content .form-group{
 	width: 85%;
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.form-group input, .form-group textarea{
+.content .form-group input, .content .form-group textarea{
 	border-radius: 10px;
 	font-family: Ubuntu;
 	font-size: 15px;
 	color: #0071bc;
 }
 
-input.form-control::-webkit-input-placeholder {
+.content input.form-control::-webkit-input-placeholder {
     color:    #0071bc;
     opacity: .6;
 }
-input.form-control:-moz-placeholder {
+.content input.form-control:-moz-placeholder {
     color:    #0071bc;
     opacity: .6;
 }
-input.form-control::-moz-placeholder {
+.content input.form-control::-moz-placeholder {
     color:    #0071bc;
     opacity: .6;
 }
-input.form-control:-ms-input-placeholder {
+.content input.form-control:-ms-input-placeholder {
     color:    #0071bc;
     opacity: .6;
 }
-textarea.form-control::-webkit-input-placeholder {
+.content textarea.form-control::-webkit-input-placeholder {
     color:    #0071bc;
     opacity: .6;
 }
-textarea.form-control:-moz-placeholder {
+.content textarea.form-control:-moz-placeholder {
     color:    #0071bc;
     opacity: .6;
 }
-textarea.form-control::-moz-placeholder {
+.content textarea.form-control::-moz-placeholder {
     color:    #0071bc;
     opacity: .6;
 }
-textarea.form-control:-ms-input-placeholder {
+.content textarea.form-control:-ms-input-placeholder {
     color:    #0071bc;
     opacity: .6;
 }
-button{
+.content button{
 	border-radius: 10px;
 	padding-left: 20px;
 	color: #0071bc;
@@ -74,15 +74,15 @@ button{
 	border-radius: 10px;
 	margin-top: 50px;
 }
-#contact_us_button:hover{
+.content #contact_us_button:hover{
 	text-decoration: none;
 	color: #0071bc;
 }
-#search_icon{
+.content #search_icon{
 	padding-left: 5px;
 }
 
-#subscribe_us p{
+.content #subscribe_us p{
 	font-family: Ubuntu;
 	font-size: 15px;
 	color: #807f7e;
@@ -92,45 +92,45 @@ button{
 	margin-left: auto;
 	margin-right: auto;
 }
-#welcome{
+.content #welcome{
 	margin-bottom: 0px;	
 }
 
-#subscribe_us_input_name{
+.content #subscribe_us_input_name{
 	margin-top: 30px;
 }
 
-#subscribe_us_button{
+.content #subscribe_us_button{
 	margin-top: 130px;
 	margin-right: 40px;
 }
 
 @media screen and (max-width: 1024px){
-	#contact_us_button, #subscribe_us_button{
+	.content #contact_us_button, .content #subscribe_us_button{
 		margin-right: 30px;
 	}	
-	#welcome{
+	.content #welcome{
 		width: 300px !important;
 	}
-	#sub_desc{
+	.content #sub_desc{
 		width: 300px !important;
 	}
-	#subscribe_us_button{
+	.content #subscribe_us_button{
 		margin-top: 80px;
 	}
 }
 
 @media screen and (max-width: 980px){
-	#contact_us_button, #subscribe_us_button{
+	.content #contact_us_button, .content #subscribe_us_button{
 		margin-right: 30px;
 	}	
-	#welcome{
+	.content #welcome{
 		width: 250px !important;
 	}
-	#sub_desc{
+	.content #sub_desc{
 		width: 250px !important;
 	}
-	#subscribe_us_button{
+	.content #subscribe_us_button{
 		margin-top: 50px;
 	}
 }
@@ -143,23 +143,29 @@ button{
 }
 
 @media screen and (max-width: 768px){
-	#contact_us{
+	.content #contact_us{
 		margin-top: 100px;
 	}
-	#subscribe_us{
+	.content #subscribe_us{
 		margin-top: 50px;
 		margin-left: 50px;
 	}
-	#welcome, #sub_desc{
+	.content #welcome, .content #sub_desc{
 		width: 500px !important;
+	}
+	.content{
+		margin-top: -200px;
 	}
 }
 
-@media screen and (max-width: 400px){
-	#welcome{
+@media screen and (max-width: 450px){
+	.content{
+		margin-top: -80px;
+	}
+	.content #welcome{
 		width: 250px !important;
 	}
-	#sub_desc{
+	.content #sub_desc{
 		width: 250px !important;
 	}
 }

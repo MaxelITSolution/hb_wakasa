@@ -1,44 +1,149 @@
 #image_banner{
-	margin-top: -30px;
 	width: 100%;
-	max-height: 580px;
+	max-height: 705px;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
-#navigasi{
-	margin-top: -300px;
-	position: relative;
+
+#banner_text1{
+	background: rgb(192, 196, 198);
+	background: rgba(192, 196, 198, 0.5);
+	width: 450px;
+	position: absolute;
+	margin-top: -250px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+#banner_text1_{
+	background-color: #2662aa;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	width: 200px;
+	margin-left: 250px;
+	height: 40px;
+	font-family: Ubuntu;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	padding-top: 8px;
+	text-align: center;
 }
 
-@media screen and (max-width: 1024px){
-	#tulisan1{
-		width: 250px !important;
-	}
-	#tulisan2{
-		width: 225px !important;
-	}
-	#tulisan3{
-		width: 200px !important;
-	}
+#banner_text2{
+	background-color: #005085;
+	width: 350px;
+	position: absolute;
+	margin-top: -205px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+#banner_text2_{
+	background-color: #00a0e8;
+	width: 200px;
+	margin-left: 180px;
+	height: 40px;
+	font-family: Ubuntu;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	padding-top: 8px;
+	text-align: center;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+#banner_text3{
+	background-color: #715557;
+	width: 250px;
+	position: absolute;
+	margin-top: -160px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+#banner_text3_{
+	background-color: #cccccc;
+	width: 200px;
+	margin-left: 100px;
+	height: 40px;
+	font-family: Ubuntu;
+	font-size: 16px;
+	font-weight: bold;
+	color: #636363;
+	padding-top: 8px;
+	text-align: center;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 @media screen and (max-width: 850px){
-	#navigasi{
-		margin-top: -200px;
-		position: relative;
+	#banner_text1{
+		margin-top: -170px;
+	}
+	#banner_text2{
+		margin-top: -125px;
+	}
+	#banner_text3{
+		margin-top: -80px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	#banner_text1{
+		width: 250px;
+		margin-top: -198px;
+	}
+	#banner_text1_{
+		width: 150px;
+		margin-left: 100px;
+		font-size: 12px;
+		height: 30px;
+		padding-top: 5px;
+	}
+	#banner_text2{
+		width: 200px;
+		margin-top: -165px;
+	}
+	#banner_text2_{
+		width: 150px;
+		margin-left: 75px;
+		font-size: 12px;
+		height: 30px;
+		padding-top: 5px;
+	}
+	#banner_text3{
+		width: 150px;
+		margin-top: -130px;
+	}
+	#banner_text3_{
+		width: 150px;
+		margin-left: 45px;
+		font-size: 12px;
+		height: 30px;
+		padding-top: 5px;
 	}
 }
 
 @media screen and (max-width: 400px){
-	#tulisan1{
-		width: 150px !important;
+	#image_banner{
+		margin-top: 200px;
+		width: 100%;
+		max-height: 705px;
+		-webkit-background-size: cover;
+	    -moz-background-size: cover;
+	    -o-background-size: cover;
+	    background-size: cover;
 	}
-	#tulisan2{
-		width: 125px !important;
+	#banner_text1{
+		margin-top: -180px;
 	}
-	#tulisan3{
-		width: 100px !important;
+	#banner_text2{
+		margin-top: -145px;
+	}
+	#banner_text3{
+		margin-top: -110px;
 	}
 }

@@ -99,6 +99,12 @@
 	}
 }
 
+@media screen and (max-width: 680px){
+	.content{
+		margin-top: -150px;
+	}
+}
+
 @media screen and (max-width: 400px){
 	.owl-carousel{
 		margin-left: 45px;

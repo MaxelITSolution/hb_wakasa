@@ -3,14 +3,14 @@
 class Frontend extends CI_Controller {
 
 /*MICHAEL PAKE*/
-
+	
 	public function index(){
-		$this->load->view('v_home');
+		$this->load->view('link');
+		$this->load->view('v_front_home');
 	}
 	
 	public function home(){
 		$this->load->view('link');
-		$this->load->view("v_head_home");
 		$this->load->view('v_front_home');
 	}
 
@@ -82,6 +82,28 @@ class Frontend extends CI_Controller {
 		$this->load->view('link');
 		$this->load->view("v_banner_polos");
 	}
+
+
+	public function search_g(){
+		$inp = $this->input->post('search_input');
+		if ($inp=="no"){
+			$this->hasilSearchGeneral_nf();
+		}
+		else {
+			$this->hasilSearchGeneral();	
+		}
+	}
+
+	public function search_p(){
+		$inp = $this->input->post('search_input');
+		if ($inp=="no"){
+			$this->hasilSearchProduct_nf();
+		}
+		else {
+			$this->hasilSearchProduct();	
+		}
+	}
+
 
 /*GAK TAU DI PAKE ATO NDAK */
 

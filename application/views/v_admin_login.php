@@ -13,7 +13,7 @@
 			<hr id="row_1" />
 			<hr id="row_2" />
 			<form action="backend/login" method="post">
-				<input type="text" id="admin_uname" name="admin_uname" placeholder="User Name" />
+				<input type="email" id="admin_mail" name="admin_mail" placeholder="User E-mail" style="margin-bottom: 10px;" />
 				<input type="password" id="admin_password" name="admin_password" placeholder="User Password" />
 				<button type="submit" id="btn_login" name="btn_login">Log In</button>
 			</form>

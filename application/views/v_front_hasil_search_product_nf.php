@@ -6,11 +6,11 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/hasilsearchproduct_nf.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerbiru.css" type="text/css" />
-		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannergeneral.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannerproduk.css" type="text/css" />
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">
 		<?php include('v_header.php'); ?>
-		<?php include('v_banner_general.php'); ?>
+		<?php include('v_banner_produk.php'); ?>
 		<div class="content">
 			<div class="container">
 				<div id="title">

@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/jelajahi_produk.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerbiru.css" type="text/css" />
-		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannergeneral.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/banner_jelajahi_produk.css" type="text/css" />
 		<script type="text/javascript">
 			$(document).ready(function(){
 

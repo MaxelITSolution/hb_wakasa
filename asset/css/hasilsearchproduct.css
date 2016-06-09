@@ -90,6 +90,9 @@
 }
 
 @media screen and (max-width: 768px){
+	.content{
+		margin-top: -150px;
+	}
 	#rsl1, #rsl3{
 		margin-left: 210px;
 	}
@@ -102,6 +105,9 @@
 }
 
 @media screen and (max-width: 400px){
+	.content{
+		margin-top: 0px;
+	}
 	#rsl1, #rsl3{
 		margin-left: 20px;
 	}

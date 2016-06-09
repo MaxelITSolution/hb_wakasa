@@ -67,3 +67,6 @@ $route['menjadireseller'] = 'frontend/menjadiReseller';
 $route['temukanwakasa'] = 'frontend/temukanWakasa';
 $route['login'] = 'frontend/afterLogin';
 $route['tentangkami'] = 'frontend/tentangKami';
+
+$route['search_g'] = 'frontend/search_g';
+$route['search_p'] = 'frontend/search_p';
