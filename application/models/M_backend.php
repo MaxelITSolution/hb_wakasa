@@ -28,5 +28,30 @@ class M_Backend extends CI_Model
 			return $query;
 		}
 	}
+	
+	function insertData($tablename,$data)
+	{
+		$this->db->insert($tablename,$data);
+	}
+	
+	public function updateData($tablename,$data,$conditions)
+	{
+		$this->db->where($conditions);
+		$this->db->update($tablename,$data);
+	}
+	
+	public function getData($tablename,$conditions)
+	{
+		if(!empty($conditions))
+		{
+			$this->db->where($conditions);
+		}
+		return $this->db->get($tablename)->result();
+	}
+	public function DeleteData($tablename,$conditions)
+	{
+		$this->db->delete($tablename,$conditions);
+	}
+	
 }
 ?>

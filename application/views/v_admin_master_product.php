@@ -1,8 +1,42 @@
 <script type="text/javascript">
-	$('#master').addClass('active_main');
-	$('#product').addClass('active');
+	
 	$(document).ready(function () {
-		$('#productTable').DataTable();
+		createTableDataEng(<?php echo $produk?>);
+		
+		$("#productTable").on("click","#Hapus",function()
+		{
+			if(confirm("Apakah Data Tersebut mau dihapus ?"))
+			{
+				$.ajax({
+					url:"<?php echo site_url("backend/DeleteData")?>",
+					method: "POST",
+					datatype:"json",
+					data:{productID:$(this).attr("productID")},
+					success:function(res)
+					{
+						createTableDataEng(JSON.parse(res));
+					}
+				});
+			}
+		});
+		function createTableDataEng(duata)
+		{
+			$('#productTable').DataTable(
+			{
+				data:duata,
+				columns:[
+				{title:"Product ID"},
+				{title:"Product Name"},
+				{title:"Product Description"},
+				{title:"Product Image"},
+				{title:"Product Date"},
+				{title:"Product Time"},
+				{title:"Product Active"},
+				{title:"&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp "}
+				],
+				destroy:true
+			});
+		}
 	});
 </script>
 <div class="mycontent">
@@ -18,25 +52,7 @@
 	</div>
 	<div id="sep">&nbsp;</div>
 	<table id="productTable" class="display hover cell-border" width="100%">
-		<thead>
-			<tr>
-				<td>Id</td>
-				<td>Name</td>
-				<td>Nama</td>
-				<td>Action</td>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>col 1</td>
-				<td>col 2</td>
-				<td>col 3</td>
-				<td>
-					<a href="detail_update_product"><span class="glyphicon glyphicon-user"></span> Detail </a> |
-					<a href=""><span class="glyphicon glyphicon-trash"></span> Hapus</a>
-				</td>
-			</tr>
-		</tbody>
+		
 	</table>
 	
 </div>

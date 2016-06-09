@@ -24,6 +24,7 @@
 	<br/>
 	<div class="row">
 		<div class="col-sm-8" id="left_content">
+		<?php echo form_open_multipart('backend/do_upload');?>
 			<h3><i>English</i></h3>
 			<input type="text" class="product_name" id="product_name_eng" name="product_name_eng" placeholder="Product Name ... " >
 			<textarea rows="5" class="product_desc" id="product_desc_eng" name="product_desc_eng" placeholder="Product Description ... "></textarea>
@@ -37,12 +38,12 @@
 
 			<hr class="bold" id="sep_prod">
 
-			<button type="button" class="btn btn-default pull-right" id="btn_save_product">Save</button>
+			<input type="submit" class="btn btn-default pull-right" id="btn_save_product">Save</button>
 
 		</div>
 		<div class="col-sm-4" id="right_content">
 			<h3><i>Image / Gambar</i></h3>
-			<input type='file' id="button_add_image" />
+			<input type='file' id="button_add_image" name="userfile" size="20" />
 			<img id="content_image" src="#" alt="your image" />
 
 		</div>
