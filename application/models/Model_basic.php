@@ -26,8 +26,8 @@ class Model_basic extends CI_Model
 	
 	public function query($text)
 	{
-		$answer = $this->db->query($text);
-		return $answer->result();
+		
+		return  $this->db->query($text);
 	}
 }
 ?>

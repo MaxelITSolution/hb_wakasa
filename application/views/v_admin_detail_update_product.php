@@ -25,7 +25,7 @@
 	<br/>
 	<div class="row">
 		<div class="col-sm-8" id="left_content">
-		<?php echo form_open_multipart('backend/do_uploadAddProduct');?>
+		<?php echo form_open_multipart('backend/do_upload');?>
 		<input type="hidden" name="url" value="<?php echo $this->uri->segment(3)?>">
 		
 			<h3><i>English</i></h3>

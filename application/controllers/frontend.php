@@ -3,7 +3,12 @@
 class Frontend extends CI_Controller {
 
 /*MICHAEL PAKE*/
-	
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->helper(Array("url"));
+		$this->load->model("M_frontend");
+	}
 	public function index(){
 		$this->load->view('link');
 		$this->load->view('v_front_home');
@@ -15,8 +20,15 @@ class Frontend extends CI_Controller {
 	}
 
 	public function jelajahiProduct(){
-		$this->load->view('link');
-		$this->load->view('v_front_jelajahi_produk');
+		$data["produk"] = $this->M_frontend->getData("product",null);
+		$linkIND = "";
+		$linkENG = "";
+		$data["linkENG"]=site_url("frontend/jelajahiProduct/eng");
+		$data["linkIND"]=site_url("frontend/jelajahiProduct/ind");
+		
+		
+		$this->load->view('link',$data);
+		$this->load->view('v_front_jelajahi_produk',$data);
 	}
 
 	public function searchGeneral(){

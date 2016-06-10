@@ -221,7 +221,7 @@ class Backend extends CI_Controller {
 		$config['max_size']	= '100';
 		$config['max_width']  = '1024';
 		$config['max_height']  = '1024';
-		
+		$this->load->library('upload', $config);
 		if ( !$this->upload->do_upload())
 		{
 			$error = array('error' => $this->upload->display_errors());
@@ -229,10 +229,14 @@ class Backend extends CI_Controller {
 		else
 		{
 			$data = array('upload_data' => $this->upload->data());
-			
-			$this->M_backend->updateData("product",Array("product_image"=>$data["upload_data"]["file_name"],"product_name_ina"=>$detailnameINA,"product_name_eng"=>$detailnameENG,"product_desc_ina"=>$detailINA,"product_desc_eng"=>$detailENG),Array("product_id"=>$url));
+			$product_id = $this->M_backend->GenerateID();
+			$product_id = ($product_id[0]->product_id)+1;
+		    $date = $this->M_backend->getDate1()->result()[0]->tanggal;
+			$time =  $this->M_backend->getTime()->result()[0]->time;
+			$this->M_backend->insertData("product",Array("product_id"=>$product_id,"product_image"=>$data["upload_data"]["file_name"],"product_name_ina"=>$detailnameINA,"product_name_eng"=>$detailnameENG,"product_desc_ina"=>$detailINA,"product_desc_eng"=>$detailENG,"product_create_date"=>$date,"product_create_time"=>$time));
 		}
-		
+		redirect("backend/add_product");
 	}
+	
 }
 ?>

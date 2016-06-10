@@ -3,7 +3,7 @@
 		<a href="home"><img src="<?php echo base_url(); ?>asset/image/logo.png" id="logo_image"></a>
 	</div>
 	<div class="col-xs-6" id="right_header">
-		<p id="lang"> <a href=""><i>ENG</i></a> | <a href=""><i>ID</i></a></p>
+		<p id="lang"> <a href="<?php echo $linkENG?>" id="engContent"><i>ENG</i></a> | <a href="<?php echo $linkIND?>" id="indContent"><i>ID</i></a></p>
 		<p id="log_reg"><a href="#" onclick="f_login();">log in</a> | <a href="menjadireseller">register</a></p>
 
 		<div class="dropdown" id="drop1">
