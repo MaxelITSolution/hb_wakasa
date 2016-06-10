@@ -1,11 +1,6 @@
 <?php 
 class Model_basic extends CI_Model
 {
-    function __construct()
-	{
-		parent::__construct();
-		$this->load->database();
-	}
 	public function getData($tablename,$conditions)
 	{
 		if(!empty($conditions))
@@ -31,8 +26,8 @@ class Model_basic extends CI_Model
 	
 	public function query($text)
 	{
-		$answer = $this->db->query($text);
-		return $answer->result();
+		
+		return  $this->db->query($text);
 	}
 }
 ?>

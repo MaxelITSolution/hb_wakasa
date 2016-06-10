@@ -4,6 +4,13 @@ class Frontend extends CI_Controller {
 
 /*MICHAEL PAKE*/
 	
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->helper(Array("url"));
+		$this->load->model("M_frontend");
+	}
+	
 	public function set_lang_eng(){
 		$this->session->set_userdata('user_lang', 'eng');
 		echo "<script>window.location.href='javascript:history.back(-2);'</script>";
@@ -12,7 +19,7 @@ class Frontend extends CI_Controller {
 		$this->session->set_userdata('user_lang', 'ina');
 		echo "<script>window.location.href='javascript:history.back(-2);'</script>";
 	}
-
+	
 	public function index(){
 		$this->load->database();
 		$this->load->view('link');
@@ -39,6 +46,15 @@ class Frontend extends CI_Controller {
 		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
 		$this->load->view('v_front_jelajahi_produk', $data);
+		$data["produk"] = $this->M_frontend->getData("product",null);
+		$linkIND = "";
+		$linkENG = "";
+		$data["linkENG"]=site_url("frontend/jelajahiProduct/eng");
+		$data["linkIND"]=site_url("frontend/jelajahiProduct/ind");
+		
+		
+		$this->load->view('link',$data);
+		$this->load->view('v_front_jelajahi_produk',$data);
 	}
 
 	public function searchGeneral(){

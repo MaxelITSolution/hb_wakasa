@@ -1,16 +1,23 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Backend extends CI_Controller {
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->database();
+		$this->load->model('M_backend');
+		$this->load->helper(Array("form","url"));
+	}
 	public function index(){
 		$this->load->view('link');
 		$this->load->view('v_admin_login');
 	}
 	
 	public function dashboard(){
-		$this->load->database();
+		
 		$this->load->view('link_');
 		$this->load->view('v_sidebar');
-		$this->load->model('M_backend');
+		
 		$table = "reseller_no_active";
 		$data["data_reseller_no_active"] = $this->M_backend->load($table);
         $this->load->view('v_admin_dashboard', $data);
@@ -41,9 +48,19 @@ class Backend extends CI_Controller {
 	}
 
 	public function product(){
+		$hasil = Array();
+		$datum = $this->M_backend->getData("product",null);
+		$hasil = Array();
+		foreach($datum as $row)
+		{
+			Array_push($hasil,Array($row->product_id,$row->product_name_eng,$row->product_desc_eng,$row->product_image,$row->product_create_date,$row->product_create_time,$row->product_isactive,"<a href='detail_update_product/".$row->product_id."'><span class='glyphicon glyphicon-user'></span> Detail </a> |
+					<a id='Hapus' productID='".$row->product_id."' href='#'><span class='glyphicon glyphicon-trash'></span> Hapus</a>"));
+		}
+		$data["produk"] =json_encode($hasil);
+		
 		$this->load->view('link_');
 		$this->load->view('v_sidebar');
-        $this->load->view('v_admin_master_product');
+        $this->load->view('v_admin_master_product',$data);
 		$this->load->view('v_sidebar_foot');
 	}
 
@@ -55,9 +72,17 @@ class Backend extends CI_Controller {
 	}
 
 	public function detail_update_product(){
+		$index=  $this->uri->segment(3);
+		$datum = $this->M_backend->getData("product",Array("product_id"=>$index));
+		$data["detailNameEng"]=$datum[0]->product_name_eng;
+		$data["detailNameIna"]=$datum[0]->product_name_ina;
+		$data["detailDescEng"]=$datum[0]->product_desc_eng;
+		$data["detailDescIna"]=$datum[0]->product_desc_ina;
+		$data["detailPicture"]=$datum[0]->product_image;
+		
 		$this->load->view('link_');
 		$this->load->view('v_sidebar');
-        $this->load->view('v_admin_detail_update_product');
+        $this->load->view('v_admin_detail_update_product',$data);
 		$this->load->view('v_sidebar_foot');		
 	}
 	
@@ -215,5 +240,96 @@ class Backend extends CI_Controller {
 	public function logout(){
 		redirect('../backend');
 	}
+	
+	public function DeleteData()
+	{
+		$temp = $this->input->post("productID");
+		$this->M_backend->DeleteData("product",Array("product_id"=>$temp));
+		
+		$hasil = Array();
+		$datum = $this->M_backend->getData("product",null);
+		$hasil = Array();
+		foreach($datum as $row)
+		{
+			Array_push($hasil,Array($row->product_id,$row->product_name_eng,$row->product_desc_eng,$row->product_image,$row->product_create_date,$row->product_create_time,$row->product_isactive,"<a href='detail_update_product/".$row->product_id."'><span class='glyphicon glyphicon-user'></span> Detail </a> |
+					<a id='Hapus' productID='".$row->product_id."' href='#'><span class='glyphicon glyphicon-trash'></span> Hapus</a>"));
+		}
+		$data["produk"] =json_encode($hasil);
+		echo $data["produk"];
+	}
+	
+	function do_upload()//Upload Gambar Ke folder 
+	{
+		$url = $this->input->post("url");
+		$detailnameINA = $this->input->post("product_name_ina");
+		$detailnameENG = $this->input->post("product_name_eng");
+		
+		$detailINA = $this->input->post("product_desc_ina");
+		$detailENG = $this->input->post("product_desc_eng");
+		
+		//print($detailINA);print($detailnameINA);print($detailENG);print($detailnameENG);
+		
+		
+		$config['upload_path'] ="Upload";
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '100';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '1024';
+		
+		$this->load->library('upload', $config);
+
+		if ( !$this->upload->do_upload())
+		{
+			$error = array('error' => $this->upload->display_errors());
+		}
+		else
+		{
+			$data = array('upload_data' => $this->upload->data());
+			//print_r($data["upload_data"]["file_name"]);
+			$this->M_backend->updateData("product",Array("product_image"=>$data["upload_data"]["file_name"],"product_name_ina"=>$detailnameINA,"product_name_eng"=>$detailnameENG,"product_desc_ina"=>$detailINA,"product_desc_eng"=>$detailENG),Array("product_id"=>$url));
+		}
+		$index = $url;
+		$datum = $this->M_backend->getData("product",Array("product_id"=>$index));
+		$data["detailNameEng"]=$datum[0]->product_name_eng;
+		$data["detailNameIna"]=$datum[0]->product_name_ina;
+		$data["detailDescEng"]=$datum[0]->product_desc_eng;
+		$data["detailDescIna"]=$datum[0]->product_desc_ina;
+		$data["detailPicture"]=$datum[0]->product_image;
+		
+		$this->load->view('link_');
+		$this->load->view('v_sidebar');
+        $this->load->view('v_admin_detail_update_product',$data);
+		$this->load->view('v_sidebar_foot');		
+	}
+	function do_uploadAddProduct()
+	{
+		$detailnameINA = $this->input->post("product_name_ina");
+		$detailnameENG = $this->input->post("product_name_eng");
+		
+		$detailINA = $this->input->post("product_desc_ina");
+		$detailENG = $this->input->post("product_desc_eng");
+		
+		$config['upload_path'] ="Upload";
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size']	= '100';
+		$config['max_width']  = '1024';
+		$config['max_height']  = '1024';
+		$this->load->library('upload', $config);
+		if ( !$this->upload->do_upload())
+		{
+			$error = array('error' => $this->upload->display_errors());
+		}
+		else
+		{
+			$data = array('upload_data' => $this->upload->data());
+			$product_id = $this->M_backend->GenerateID();
+			$product_id = ($product_id[0]->product_id)+1;
+		    $date = $this->M_backend->getDate1()->result()[0]->tanggal;
+			$time =  $this->M_backend->getTime()->result()[0]->time;
+			$this->M_backend->insertData("product",Array("product_id"=>$product_id,"product_image"=>$data["upload_data"]["file_name"],"product_name_ina"=>$detailnameINA,"product_name_eng"=>$detailnameENG,"product_desc_ina"=>$detailINA,"product_desc_eng"=>$detailENG,"product_create_date"=>$date,"product_create_time"=>$time));
+		}
+		redirect("backend/add_product");
+	}
+	
 }
 ?>

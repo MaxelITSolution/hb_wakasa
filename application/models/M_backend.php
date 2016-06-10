@@ -65,5 +65,43 @@ class M_Backend extends CI_Model
 			$this->db->update('administrator', $data);
 		}
 	}
+	
+	function insertData($tablename,$data)
+	{
+		$this->db->insert($tablename,$data);
+	}
+	
+	public function updateData($tablename,$data,$conditions)
+	{
+		$this->db->where($conditions);
+		$this->db->update($tablename,$data);
+	}
+	
+	public function getData($tablename,$conditions)
+	{
+		if(!empty($conditions))
+		{
+			$this->db->where($conditions);
+		}
+		return $this->db->get($tablename)->result();
+	}
+	public function DeleteData($tablename,$conditions)
+	{
+		$this->db->delete($tablename,$conditions);
+	}
+	public function GenerateID()
+	{
+		$this->db->select("max(product_id) as product_id");
+		$this->db->from("product");
+		return $this->db->get()->result();
+	}
+	public function getDate1()
+	{
+		return $this->db->query("select Curdate() as tanggal");
+	}
+	public function getTime()
+	{
+		return $this->db->query("select curtime() as time");
+	}
 }
 ?>

@@ -18,6 +18,7 @@
 				$("#arrow_right2").click(function(){
 				    $('#arrow_right_bottom').click();
 				});
+				
 			});
 
 		</script>
@@ -29,7 +30,7 @@
 			<div class="content_produk_terbaru">
 				<h3>PRODUK TERBARU</h3>
 				<div class="owl-carousel" id="owl-carousel-1">
-				<?php if($this->uri->segment(3)=="ind"){foreach($produk as $row){?>
+				<?php foreach($produk as $row){?>
 					<div id="<?php echo $row->product_id?>">
 						<div class="content_slider">
 							<img src="<?php echo base_url('Upload/'.$row->product_image); ?>">
@@ -40,29 +41,7 @@
 							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
 						</div>
 					</div>
-				<?php }}elseif($this->uri->segment(3) == "eng"){foreach($produk as $row){?>
-					<div id="<?php echo $row->product_id?>">
-						<div class="content_slider">
-							<img src="<?php echo base_url('Upload/'.$row->product_image); ?>">
-							<div class="desc_title">
-								<p><?php echo $row->product_name_eng?></p>
-							</div>
-							<p class="desc_body"><?php echo $row->product_desc_eng?></p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-				<?php }}else{foreach($produk as $row){?>
-					<div id="<?php echo $row->product_id?>">
-						<div class="content_slider">
-							<img src="<?php echo base_url('Upload/'.$row->product_image); ?>">
-							<div class="desc_title">
-								<p><?php echo $row->product_name_ina?></p>
-							</div>
-							<p class="desc_body"><?php echo $row->product_desc_ina?></p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-				<?php }}?>
+				<?php }?>
 				</div>
 				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right1"/>
 				<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>

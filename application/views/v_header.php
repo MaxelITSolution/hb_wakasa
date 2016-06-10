@@ -24,6 +24,8 @@
 		<p id="log_reg">
 			<a href="#" onclick="f_login();"><?php echo $lang_array[0]; ?></a> | <a href="#" id="btn_reg1"><?php echo $lang_array[1]; ?></a>
 		</p>
+		<p id="lang"> <a href="<?php echo $linkENG?>" id="engContent"><i>ENG</i></a> | <a href="<?php echo $linkIND?>" id="indContent"><i>ID</i></a></p>
+		<p id="log_reg"><a href="#" onclick="f_login();">log in</a> | <a href="menjadireseller">register</a></p>
 
 		<div class="dropdown" id="drop1">
 		  	<button class="dropbtn" id="menu_1"><img src="<?php echo base_url(); ?>asset/image/menu/menu1.png" id="menu1"></button>
