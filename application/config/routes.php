@@ -70,3 +70,5 @@ $route['tentangkami'] = 'frontend/tentangKami';
 
 $route['search_g'] = 'frontend/search_g';
 $route['search_p'] = 'frontend/search_p';
+$route['set_lang_eng'] = 'frontend/set_lang_eng';
+$route['set_lang_ina'] = 'frontend/set_lang_ina';

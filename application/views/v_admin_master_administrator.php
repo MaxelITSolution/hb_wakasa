@@ -11,30 +11,45 @@
 	
 	<div class="col-xs-12">
 		<div class="row">
-			<div class="col-xs-3"><a href=""><i class="fa fa-plus-square fa-lg"></i> Tambah Administrator</a></div>
+			<div class="col-xs-3"><a href="add_administrator"><i class="fa fa-plus-square fa-lg"></i> Tambah Administrator</a></div>
 			<div class="col-xs-6"></div>
 			<div class="col-xs-3"></div>
 		</div>
 	</div>
-	<div id="sep">&nbsp;</div>
+	<div class="bold">&nbsp;</div>
 	<table id="administratorTable" class="display hover cell-border" width="100%">
 		<thead>
 			<tr>
-				<td>Colom 1</td>
-				<td>Colom 2</td>
-				<td>Colom 3</td>
-				<td>Colom 4</td>
-				<td>Colom 5</td>
+				<td>Id</td>
+				<td>Name</td>
+				<td>E-mail</td>
+				<td>Phone Number</td>
+				<td>Action</td>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>col 1</td>
-				<td>col 2</td>
-				<td>col 3</td>
-				<td>col 4</td>
-				<td>col 5</td>
-			</tr>
+			<?php foreach ($administrator->result() as $row)  
+            {  
+            ?>
+            <tr>
+            	<td>
+					<?php echo $row->admin_id;?>
+				</td>
+				<td>
+					<?php echo $row->admin_uname;?>
+				</td>
+				<td>
+					<?php echo $row->admin_email;?>
+				</td>
+				<td>
+					<?php echo $row->admin_phone;?>
+				</td>
+				<td>
+					<a href="<?php echo 'detail_update_administrator?id=' .$row->admin_id; ?>"><span class="glyphicon glyphicon-user"></span> Detail </a> | 
+					<a href="<?php echo 'delete_administrator?id=' .$row->admin_id; ?>"><span class="glyphicon glyphicon-trash"></span> Hapus</a>
+				</td>
+            </tr>
+            <?php } ?>
 		</tbody>
 	</table>
 	

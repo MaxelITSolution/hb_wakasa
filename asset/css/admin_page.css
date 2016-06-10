@@ -28,6 +28,7 @@ a:hover{
 
 .mycontent{
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	overflow-x: hidden;
 }
 
 #left_content .product_name{
@@ -38,12 +39,30 @@ a:hover{
 	padding-right: 10px;
 }
 
+.input_box{
+	width: 90%;
+	font-size: 14px;
+	height: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+}
+
+.textarea_box{
+	resize: none;
+	width: 90%;
+	padding: 10px;
+	margin-top: 10px;
+}
+
 #left_content .product_desc{
 	resize: none;
 	width: 90%;
 	padding: 10px;
 	margin-top: 10px;
 }
+
+
 
 .space_dot{
 	border: 1px dashed #f0f0f0;
@@ -58,6 +77,13 @@ a:hover{
 #btn_save_product{
 	width: 100px;
 	margin-right: 70px;
+	border-radius: 0px;
+}
+#btn_save_administrator{
+	width: 100px;
+	margin-right: 50px;
+	margin-top: 10px;
+	border-radius: 0px;
 }
 
 @media screen and (max-width: 1024px){	

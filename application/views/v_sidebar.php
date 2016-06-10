@@ -19,7 +19,7 @@
 			<hr/>
 			
 			<!--DASHBOARD-->
-			<li class="nav-header" style="margin:0; padding:0;"><a href="dashboard"><i class="fa fa-dashboard fa-lg"> &nbsp;</i>&nbsp;&nbsp;Dashboard</a></li>
+			<li class="nav-header" id="dashboard" style="margin:0; padding:0;"><a href="dashboard"><i class="fa fa-dashboard fa-lg"> &nbsp;</i>&nbsp;&nbsp;Dashboard</a></li>
 
 			<!--MASTER-->
 			<li class="nav-header" id="master" data-toggle="collapse" data-target="#sub_master"><i class="fa fa-desktop fa-lg"> &nbsp;</i>&nbsp;Master&nbsp;&nbsp;<i class="fa fa-arrow-down fa-lg" style="margin-left: 80px;"></i>

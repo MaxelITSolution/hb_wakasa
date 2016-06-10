@@ -196,11 +196,13 @@
 				<div class="col-sm-6" id="right_home_content">
 					<p>Beli produk Wakasa online melalui salah satu toko online mitra kami :</p>
 					<img src="<?php echo base_url(); ?>asset/image/content/home/iklan.png" id="img_iklan">			
-					<div id="under_iklan">
-						<img src="<?php echo base_url(); ?>asset/image/content/home/yellow.png" id="yellow_bg">
-						<img src="<?php echo base_url(); ?>asset/image/content/home/iklan_logo.png" id="logo_iklan">
-						<span>TEMUKAN PRODUK WAKASA</span>
-					</div>		
+					<a href="temukanwakasa">
+						<div id="under_iklan">
+							<img src="<?php echo base_url(); ?>asset/image/content/home/yellow.png" id="yellow_bg">
+							<img src="<?php echo base_url(); ?>asset/image/content/home/iklan_logo.png" id="logo_iklan">
+							<span>TEMUKAN PRODUK WAKASA</span>
+						</div>
+					</a>		
 				</div>
 			</div>
 		</div>

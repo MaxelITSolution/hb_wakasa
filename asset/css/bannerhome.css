@@ -12,7 +12,7 @@
 	background: rgba(192, 196, 198, 0.5);
 	width: 450px;
 	position: absolute;
-	margin-top: -250px;
+	margin-top: -240px;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
@@ -35,7 +35,7 @@
 	background-color: #005085;
 	width: 350px;
 	position: absolute;
-	margin-top: -205px;
+	margin-top: -200px;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 	border-top-right-radius: 10px;
@@ -81,10 +81,10 @@
 
 @media screen and (max-width: 850px){
 	#banner_text1{
-		margin-top: -170px;
+		margin-top: -160px;
 	}
 	#banner_text2{
-		margin-top: -125px;
+		margin-top: -120px;
 	}
 	#banner_text3{
 		margin-top: -80px;
@@ -94,7 +94,7 @@
 @media screen and (max-width: 768px){
 	#banner_text1{
 		width: 250px;
-		margin-top: -198px;
+		margin-top: -190px;
 	}
 	#banner_text1_{
 		width: 150px;
@@ -105,7 +105,7 @@
 	}
 	#banner_text2{
 		width: 200px;
-		margin-top: -165px;
+		margin-top: -160px;
 	}
 	#banner_text2_{
 		width: 150px;
@@ -138,10 +138,10 @@
 	    background-size: cover;
 	}
 	#banner_text1{
-		margin-top: -180px;
+		margin-top: -170px;
 	}
 	#banner_text2{
-		margin-top: -145px;
+		margin-top: -140px;
 	}
 	#banner_text3{
 		margin-top: -110px;

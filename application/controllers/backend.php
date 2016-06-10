@@ -17,6 +17,29 @@ class Backend extends CI_Controller {
 		$this->load->view('v_sidebar_foot');
 	}
 	
+	public function detail_reseller(){
+		$this->load->database();
+		$this->load->view('link_');
+		$this->load->view('v_sidebar');
+		$this->load->model('M_backend');
+		$id =  $this->input->get('id');
+		$table = "reseller";
+		$data["reseller"] = $this->M_backend->load_du($table, $id);
+        $this->load->view('v_admin_detail_reseller', $data);
+		$this->load->view('v_sidebar_foot');
+	}
+
+	public function conf_reseller(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		$data['reseller_isactive'] = 1;
+		$id =  $this->input->post('reseller_id');
+		$table = "conf_reseller";
+		$this->M_backend->update($table, $data, $id);
+
+		redirect('../backend/dashboard');
+	}
+
 	public function product(){
 		$this->load->view('link_');
 		$this->load->view('v_sidebar');
@@ -39,10 +62,80 @@ class Backend extends CI_Controller {
 	}
 	
 	public function administrator(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		$this->load->view('v_sidebar_foot');
 		$this->load->view('link_');
 		$this->load->view('v_sidebar');
-        $this->load->view('v_admin_master_administrator');
+		$table = "administrator";
+		$data["administrator"] = $this->M_backend->load($table);
+        $this->load->view('v_admin_master_administrator', $data);
 		$this->load->view('v_sidebar_foot');
+	}
+
+	public function add_administrator(){
+		$this->load->view('link_');
+		$this->load->view('v_sidebar');
+        $this->load->view('v_admin_add_administrator');
+		$this->load->view('v_sidebar_foot');	
+	}
+
+	public function new_administrator(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		date_default_timezone_set("Asia/Jakarta");
+		$data['admin_id'] = "ADM".date("dmYHis");
+		$data['admin_uname'] = $this->input->post('admin_uname');
+		$data['admin_email'] = $this->input->post('admin_mail');
+		$data['admin_phone'] = $this->input->post('admin_phone');
+		$data['admin_address'] = $this->input->post('admin_address');
+		$admin_pass = $this->input->post('admin_password');
+		$admin_pass_ = md5($admin_pass);
+		$data['admin_password'] = $admin_pass_;
+		$data['admin_create_date'] = date("Y/m/d");
+		$data['admin_create_time'] = date("h:i:sa");
+		$data['admin_isactive'] = 1;
+		$table = "new_administrator";
+		$this->M_backend->insert($table, $data);
+
+		$this->administrator();
+	}
+
+	public function detail_update_administrator(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		$this->load->view('link_');
+		$this->load->view('v_sidebar');
+		$id =  $this->input->get('id');
+		$table = "administrator";
+		$data["administrator"] = $this->M_backend->load_du($table, $id);
+        $this->load->view('v_admin_detail_update_administrator', $data);
+		$this->load->view('v_sidebar_foot');		
+	}
+
+	public function update_administrator(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		$data['admin_uname'] = $this->input->post('admin_uname');
+		$data['admin_email'] = $this->input->post('admin_mail');
+		$data['admin_phone'] = $this->input->post('admin_phone');
+		$data['admin_address'] = $this->input->post('admin_address');
+		$id =  $this->input->post('admin_id');
+		$table = "administrator";
+		$this->M_backend->update($table, $data, $id);
+
+		redirect('../backend/administrator');
+	}
+
+	public function delete_administrator(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		$id =  $this->input->get('id');
+		$data['admin_isactive'] = 0;
+		$table = "administrator";
+		$this->M_backend->delete($table, $data, $id);
+
+		redirect('../backend/administrator');
 	}
 	
 	public function login(){
@@ -90,7 +183,7 @@ class Backend extends CI_Controller {
 		/*CEK PASSWORD DAN KONFORM SAMA*/
 		if ($upass == $upass_conf){
 			$data['reseller_id'] = $ureg_id;
-			$data['reseller_username'] = $ureg_id;
+			$data['reseller_username'] = $uname;
 			$data['reseller_password'] = md5($upass);
 			$data['reseller_uname'] = $ufname;
 			$data['reseller_nama_toko'] = $store_name;

@@ -4,73 +4,138 @@ class Frontend extends CI_Controller {
 
 /*MICHAEL PAKE*/
 	
+	public function set_lang_eng(){
+		$this->session->set_userdata('user_lang', 'eng');
+		echo "<script>window.location.href='javascript:history.back(-2);'</script>";
+	}
+	public function set_lang_ina(){
+		$this->session->set_userdata('user_lang', 'ina');
+		echo "<script>window.location.href='javascript:history.back(-2);'</script>";
+	}
+
 	public function index(){
+		$this->load->database();
 		$this->load->view('link');
-		$this->load->view('v_front_home');
+		$this->load->model('M_frontend');
+		$this->M_frontend->set_session();
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
+		$this->load->view('v_front_home', $data);	
 	}
 	
 	public function home(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_home');
+		$this->load->view('v_front_home', $data);
 	}
 
 	public function jelajahiProduct(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_jelajahi_produk');
+		$this->load->view('v_front_jelajahi_produk', $data);
 	}
 
 	public function searchGeneral(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_search_general');
+		$this->load->view('v_front_search_general', $data);
 	}
 
 	public function hasilSearchGeneral(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_hasil_search_general');	
+		$this->load->view('v_front_hasil_search_general', $data);	
 	}
 	public function hasilSearchGeneral_nf(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_hasil_search_general_nf');	
+		$this->load->view('v_front_hasil_search_general_nf', $data);	
 	}
 
 	public function hasilSearchProduct(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_hasil_search_product');	
+		$this->load->view('v_front_hasil_search_product', $data);	
 	}
 	public function hasilSearchProduct_nf(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_hasil_search_product_nf');	
+		$this->load->view('v_front_hasil_search_product_nf', $data);	
 	}
 
 	public function karir(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_karir');
+		$this->load->view('v_front_karir', $data);
 	}
 
 	public function contact(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_contact');
+		$this->load->view('v_front_contact', $data);
 	}
 
 	public function menjadiReseller(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_reseller');
+		$this->load->view('v_front_reseller', $data);
 	}
 
 	public function temukanWakasa(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view("v_front_temukan_wakasa");
+		$this->load->view("v_front_temukan_wakasa", $data);
 	}
 
 	public function afterLogin(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view("v_front_after_login");	
+		$this->load->view("v_front_after_login", $data);	
 	}
 
-	public function tentangKami()
-	{	
+	public function tentangKami(){
+		$this->load->database();
+		$this->load->model('M_frontend');
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();	
 		$this->load->view('link');
-		$this->load->view("v_front_tentang_kami");
+		$this->load->view("v_front_tentang_kami", $data);
 	}
 
 	public function header(){

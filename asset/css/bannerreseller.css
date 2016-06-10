@@ -11,14 +11,18 @@
 #banner_text1{
 	background: rgb(192, 196, 198);
 	background: rgba(192, 196, 198, 0.5);
-	width: 450px;
+	width: 400px;
 	position: absolute;
-	margin-top: -250px;
+	margin-top: -240px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 #banner_text1_{
 	background-color: #2662aa;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	width: 200px;
-	margin-left: 250px;
+	margin-left: 240px;
 	height: 40px;
 	font-family: Ubuntu;
 	font-size: 16px;
@@ -32,10 +36,14 @@
 	background-color: #005085;
 	width: 350px;
 	position: absolute;
-	margin-top: -205px;
+	margin-top: -200px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 #banner_text2_{
 	background-color: #00a0e8;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	width: 200px;
 	margin-left: 180px;
 	height: 40px;
@@ -52,9 +60,13 @@
 	width: 250px;
 	position: absolute;
 	margin-top: -160px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 #banner_text3_{
 	background-color: #cccccc;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
 	width: 200px;
 	margin-left: 100px;
 	height: 40px;
@@ -67,24 +79,12 @@
 }
 
 @media screen and (max-width: 850px){
-	#banner_text1{
-		margin-top: -170px;
-	}
-	#banner_text2{
-		margin-top: -125px;
-	}
-	#banner_text3{
-		margin-top: -80px;
-	}
-}
-
-@media screen and (max-width: 850px){
 	#image_banner{
-		margin-top: 200px;
+		margin-top: 140px;
 	}
 	#banner_text1{
 		width: 250px;
-		margin-top: -108px;
+		margin-top: -100px;
 	}
 	#banner_text1_{
 		width: 150px;
@@ -95,7 +95,7 @@
 	}
 	#banner_text2{
 		width: 200px;
-		margin-top: -75px;
+		margin-top: -70px;
 	}
 	#banner_text2_{
 		width: 150px;
@@ -114,5 +114,11 @@
 		font-size: 12px;
 		height: 30px;
 		padding-top: 5px;
+	}
+}
+
+@media screen and (max-width: 400px){
+	#image_banner{
+		margin-top: 200px;
 	}
 }
