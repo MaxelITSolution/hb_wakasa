@@ -29,56 +29,40 @@
 			<div class="content_produk_terbaru">
 				<h3>PRODUK TERBARU</h3>
 				<div class="owl-carousel" id="owl-carousel-1">
-					<div id="item1">
+				<?php if($this->uri->segment(3)=="ind"){foreach($produk as $row){?>
+					<div id="<?php echo $row->product_id?>">
 						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
+							<img src="<?php echo base_url('Upload/'.$row->product_image); ?>">
 							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
+								<p><?php echo $row->product_name_ina?></p>
 							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
+							<p class="desc_body"><?php echo $row->product_desc_ina?></p>
 							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
 						</div>
 					</div>
-					<div id="item2">
+				<?php }}elseif($this->uri->segment(3) == "eng"){foreach($produk as $row){?>
+					<div id="<?php echo $row->product_id?>">
 						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
+							<img src="<?php echo base_url('Upload/'.$row->product_image); ?>">
 							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
+								<p><?php echo $row->product_name_eng?></p>
 							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
+							<p class="desc_body"><?php echo $row->product_desc_eng?></p>
 							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
 						</div>
 					</div>
-					<div id="item3">
+				<?php }}else{foreach($produk as $row){?>
+					<div id="<?php echo $row->product_id?>">
 						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
+							<img src="<?php echo base_url('Upload/'.$row->product_image); ?>">
 							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
+								<p><?php echo $row->product_name_ina?></p>
 							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
+							<p class="desc_body"><?php echo $row->product_desc_ina?></p>
 							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
 						</div>
 					</div>
-					<div id="item4">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item5">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
+				<?php }}?>
 				</div>
 				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right1"/>
 				<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>

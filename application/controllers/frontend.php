@@ -46,7 +46,7 @@ class Frontend extends CI_Controller {
 		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
 		$this->load->view('v_front_jelajahi_produk', $data);
-		$data["produk"] = $this->M_frontend->getData("product",null);
+		/*$data["produk"] = $this->M_frontend->getData("product",null);
 		$linkIND = "";
 		$linkENG = "";
 		$data["linkENG"]=site_url("frontend/jelajahiProduct/eng");
@@ -54,7 +54,7 @@ class Frontend extends CI_Controller {
 		
 		
 		$this->load->view('link',$data);
-		$this->load->view('v_front_jelajahi_produk',$data);
+		$this->load->view('v_front_jelajahi_produk',$data);*/
 	}
 
 	public function searchGeneral(){
