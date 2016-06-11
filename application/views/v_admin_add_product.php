@@ -44,7 +44,7 @@
 
 			<hr class="bold" id="sep_prod">
 
-			<input type="submit" class="btn btn-default pull-right" id="btn_save_product">Save</button>
+			<input type="submit" class="btn btn-default pull-right" id="btn_save_product"></input>
 
 		</div>
 		<div class="col-sm-4" id="right_content">

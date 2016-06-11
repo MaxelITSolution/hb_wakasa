@@ -53,7 +53,7 @@ class Backend extends CI_Controller {
 		$hasil = Array();
 		foreach($datum as $row)
 		{
-			Array_push($hasil,Array($row->product_id,$row->product_name_eng,$row->product_desc_eng,$row->product_image,$row->product_create_date,$row->product_create_time,$row->product_isactive,"<a href='detail_update_product/".$row->product_id."'><span class='glyphicon glyphicon-user'></span> Detail </a> |
+			Array_push($hasil,Array($row->product_id,$row->product_name_eng,"<a href='detail_update_product/".$row->product_id."'><span class='glyphicon glyphicon-user'></span> Detail </a> |
 					<a id='Hapus' productID='".$row->product_id."' href='#'><span class='glyphicon glyphicon-trash'></span> Hapus</a>"));
 		}
 		$data["produk"] =json_encode($hasil);
@@ -251,7 +251,7 @@ class Backend extends CI_Controller {
 		$hasil = Array();
 		foreach($datum as $row)
 		{
-			Array_push($hasil,Array($row->product_id,$row->product_name_eng,$row->product_desc_eng,$row->product_image,$row->product_create_date,$row->product_create_time,$row->product_isactive,"<a href='detail_update_product/".$row->product_id."'><span class='glyphicon glyphicon-user'></span> Detail </a> |
+			Array_push($hasil,Array($row->product_id,$row->product_name_eng,"<a href='detail_update_product/".$row->product_id."'><span class='glyphicon glyphicon-user'></span> Detail </a> |
 					<a id='Hapus' productID='".$row->product_id."' href='#'><span class='glyphicon glyphicon-trash'></span> Hapus</a>"));
 		}
 		$data["produk"] =json_encode($hasil);
@@ -270,7 +270,7 @@ class Backend extends CI_Controller {
 		//print($detailINA);print($detailnameINA);print($detailENG);print($detailnameENG);
 		
 		
-		$config['upload_path'] ="Upload";
+		$config['upload_path'] ="asset/image/Upload";
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '100';
 		$config['max_width']  = '1024';
@@ -281,6 +281,7 @@ class Backend extends CI_Controller {
 		if ( !$this->upload->do_upload())
 		{
 			$error = array('error' => $this->upload->display_errors());
+			$this->M_backend->updateData("product",Array("product_name_ina"=>$detailnameINA,"product_name_eng"=>$detailnameENG,"product_desc_ina"=>$detailINA,"product_desc_eng"=>$detailENG),Array("product_id"=>$url));
 		}
 		else
 		{
@@ -309,26 +310,33 @@ class Backend extends CI_Controller {
 		$detailINA = $this->input->post("product_desc_ina");
 		$detailENG = $this->input->post("product_desc_eng");
 		
-		$config['upload_path'] ="Upload";
+		$product_id = "PRD".date("dmYHis");
+		
+		$config['upload_path'] ="asset/image/Upload";
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '100';
 		$config['max_width']  = '1024';
 		$config['max_height']  = '1024';
+		$config['file_name'] = $product_id;
+		
 		$this->load->library('upload', $config);
 		if ( !$this->upload->do_upload())
 		{
 			$error = array('error' => $this->upload->display_errors());
+		    $date = $this->M_backend->getDate1()->result()[0]->tanggal;
+			$time =  $this->M_backend->getTime()->result()[0]->time;
+			$this->M_backend->insertData("product",Array("product_id"=>$product_id,"product_name_ina"=>$detailnameINA,"product_name_eng"=>$detailnameENG,"product_desc_ina"=>$detailINA,"product_desc_eng"=>$detailENG,"product_create_date"=>$date,"product_create_time"=>$time));
 		}
 		else
 		{
 			$data = array('upload_data' => $this->upload->data());
-			$product_id = $this->M_backend->GenerateID();
-			$product_id = ($product_id[0]->product_id)+1;
 		    $date = $this->M_backend->getDate1()->result()[0]->tanggal;
 			$time =  $this->M_backend->getTime()->result()[0]->time;
 			$this->M_backend->insertData("product",Array("product_id"=>$product_id,"product_image"=>$data["upload_data"]["file_name"],"product_name_ina"=>$detailnameINA,"product_name_eng"=>$detailnameENG,"product_desc_ina"=>$detailINA,"product_desc_eng"=>$detailENG,"product_create_date"=>$date,"product_create_time"=>$time));
+			
 		}
 		redirect("backend/add_product");
+		
 	}
 	
 }

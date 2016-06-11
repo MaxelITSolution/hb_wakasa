@@ -27,12 +27,7 @@
 				columns:[
 				{title:"Product ID"},
 				{title:"Product Name"},
-				{title:"Product Description"},
-				{title:"Product Image"},
-				{title:"Product Date"},
-				{title:"Product Time"},
-				{title:"Product Active"},
-				{title:"&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp &nbsp &nbsp "}
+				{title:"Action"}
 				],
 				destroy:true
 			});
@@ -45,7 +40,7 @@
 	
 	<div class="col-xs-12">
 		<div class="row">
-			<div class="col-xs-3"><a href="add_product"><i class="fa fa-plus-square fa-lg"></i> Tambah Produk</a></div>
+			<div class="col-xs-3"><a href=<?php echo site_url("backend/add_product")?>><i class="fa fa-plus-square fa-lg"></i> Tambah Produk</a></div>
 			<div class="col-xs-6"></div>
 			<div class="col-xs-3"></div>
 		</div>

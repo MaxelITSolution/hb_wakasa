@@ -14,7 +14,7 @@
 		
 		<div class="col-xs-12">
 			<div class="row">
-				<div class="col-xs-3"><a href="../product"><i class="fa fa-reply fa-lg"></i> Kembali</a></div>
+				<div class="col-xs-3"><a href="<?php echo site_url("backend/product")?>"><i class="fa fa-reply fa-lg"></i> Kembali</a></div>
 				<div class="col-xs-6"></div>
 				<div class="col-xs-3"></div>
 			</div>
@@ -48,7 +48,7 @@
 			<h3><i>Image / Gambar</i></h3>
 			<input type='file' id="button_add_image" name="userfile" size="20" />
 			</form>
-			<img id="content_image" src="<?php echo base_url("Upload/".$detailPicture)?>" alt="your image" />
+			<img id="content_image" src="<?php echo base_url("asset/image/Upload/".$detailPicture)?>" alt="your image" />
 
 		</div>
 	</div>
