@@ -19,12 +19,20 @@ class Frontend extends CI_Controller {
 		$this->session->set_userdata('user_lang', 'ina');
 		echo "<script>window.location.href='javascript:history.back(-2);'</script>";
 	}
+
+	public function cek_session(){
+		$lang_now = $this->session->userdata('user_lang');
+		if ($lang_now!="ina" || $lang_now!="eng"){
+			$this->M_frontend->set_session();
+		}
+	}
 	
 	public function index(){
 		$this->load->database();
 		$this->load->view('link');
 		$this->load->model('M_frontend');
-		$this->M_frontend->set_session();
+		$this->cek_session();
+		$lang_now = $this->session->userdata('user_lang');
 		$data['indo'] = $this->M_frontend->get_content_ina();
 		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('v_front_home', $data);	

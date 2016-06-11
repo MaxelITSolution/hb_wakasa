@@ -14,7 +14,7 @@
 		<div class="content">
 			<div class="container">
 				<div class="col-sm-5" id="contact_us">
-					<h3>HUBUNGI KAMI</h3>
+					<h3><?php echo $lang_array[58]; ?></h3>
 					<div class="form-group">
 					    <label for="contact_us_name" class="sr-only">Name</label>
 					   	<input type="text" class="form-control" id="contact_us_name" name="contact_us_name" placeholder="Name">
@@ -36,9 +36,9 @@
 				</div>
 				<div class="col-sm-1" id="qwe"></div>
 				<div class="col-sm-5" id="subscribe_us">
-					<h3>IKUTI UPDATE KAMI</h3>
-					<p id="welcome">Selamat Datang di <i>website</i> Wakasa Automotive Parts.</p>
-					<p id="sub_desc">Kami adalah perusahaan penyedia suku cadang otomotif untuk berbagai mobil baik mobil penumpang dan mobil.</p>
+					<h3><?php echo $lang_array[59]; ?></h3>
+					<p id="welcome"><?php echo $lang_array[9]; ?></p>
+					<p id="sub_desc"><?php echo $lang_array[60]; ?></p>
 					<div class="form-group" id="subscribe_us_input_name">
 					    <label for="subscribe_us_name" class="sr-only">Name</label>
 					   	<input type="text" class="form-control" id="subscribe_us_name" name="subscribe_us_name" placeholder="Name">

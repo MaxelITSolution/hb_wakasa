@@ -14,10 +14,10 @@
 		<div class="content">
 			<div class="container">
 				<div class="col-sm-12" id="main">
-					<div class="col-xs-6" id="left_content">JOIN OUR TEAM</div>
+					<div class="col-xs-6" id="left_content"><?php echo $lang_array[20]; ?></div>
 					<div class="col-xs-6" id="right_content">
-						<p>Apakah Anda pribadi yang dinamis? Cekatan? Jujur? Punya passion di otomotif? Kami selalu mencari orang-orang terbaik untuk bergabung dalam winning team kami.</p>
-						<p id="btm">Silahkan kirimkan lamaran lengkap beserta CV ke <b>career@wakasaparts.com</b> atau melalui pos ke alamat kantor kami.</p>
+						<p><?php echo $lang_array[21]; ?></p>
+						<p id="btm"><?php echo $lang_array[22]; ?></p>
 					</div>
 				</div>
 			</div>

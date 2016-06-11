@@ -62,11 +62,11 @@
 	<div class="m_menu" id="m_menu">
 		<div class="m_menu_content">
 			<p id="close_menu" class="menu_list">CLOSE</p>
-			<a href="tentangkami"><p id="tentang_kami" class="menu_list">TENTANG KAMI</p></a>
-			<a href="temukanwakasa"><p id="temukan_wakasa" class="menu_list">TEMUKAN WAKASA</p></a>
-			<a href="contact"><p id="kontak_kami" class="menu_list">KONTAK KAMI</p></a>
-			<a href="searchgeneral"><p id="cari_menu" class="menu_list">CARI</p></a>
-			<a href="jelajahproduct"><p id="cari_produk_menu" class="menu_list">CARI PRODUK</p></a>
+			<a href="tentangkami"><p id="tentang_kami" class="menu_list"><?php echo $lang_array[2]; ?></p></a>
+			<a href="temukanwakasa"><p id="temukan_wakasa" class="menu_list"><?php echo $lang_array[3]; ?></p></a>
+			<a href="contact"><p id="kontak_kami" class="menu_list"><?php echo $lang_array[4]; ?></p></a>
+			<a href="searchgeneral"><p id="cari_menu" class="menu_list"><?php echo $lang_array[5]; ?></p></a>
+			<a href="jelajahproduct"><p id="cari_produk_menu" class="menu_list"><?php echo $lang_array[6]; ?></p></a>
 		</div>
 	</div>
 

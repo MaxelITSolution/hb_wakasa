@@ -31,7 +31,7 @@
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
 					<div id="title_top">
-						<p>CARI PRODUK WAKASA</p>
+						<p><?php echo $lang_array[7]; ?></p>
 						<form class="form-inline">
 						  	<div class="form-group">
 						    	<label class="sr-only" for="search_input">Masukkan Kata Kunci</label>
@@ -43,10 +43,10 @@
 					<div id="title_bottom">
 						<img src="<?php echo base_url(); ?>asset/image/content/home/blue_bg.png" class="img-responsive" id="blue_bg">
 						<div id="title_bottom_content">
-							<h3>KUALITAS YANG MENJADI BUKTI</h3>
-							<p id="p1">Selamat datang di <i>website</i> Wakasa Automotive Parts.</p>
-							<p id="p2">Kami adalah perusahaan penyedia suku cadang otomotif untuk berbagai mobil penumpang dan mobil niaga. Kami telah melayani kebutuhan suku cadang otomotif Indonesia sejak 1980. Produk kami tersedia lebih dari ribuan jenis suku cadang berkualitas prima.</p>
-							<p id="p3">Sekali pasang, Anda tenang.</p>
+							<h3><?php echo $lang_array[8]; ?></h3>
+							<p id="p1"><?php echo $lang_array[9]; ?></p>
+							<p id="p2"><?php echo $lang_array[10]; ?></p>
+							<p id="p3"><?php echo $lang_array[11]; ?></p>
 						</div>
 					</div>
 				</div>
@@ -54,64 +54,26 @@
 			</div>
 
 			<div class="content_produk_terbaru">
-				<h3>PRODUK TERBARU</h3>
+				<h3><?php echo $lang_array[16]; ?></h3>
 				<div class="owl-carousel" id="owl-carousel-1">
-					<div id="item1">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
+					<?php 
+						for ($i=0; $i<5; $i++){?>
+							<div class="content_slider">
+								<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
+								<div class="desc_title">
+									<p>BAUT MOBIL AVANZA TIPE S</p>
+								</div>
+								<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
+								<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
 							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item2">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item3">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item4">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item5">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
+						<?php }
+					?>
 				</div>
 				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right1"/>
 			</div>
 
 			<div class="content_produk_unggulan">
-				<h3>PRODUK UNGGULAN</h3>
+				<h3><?php echo $lang_array[17]; ?></h3>
 				<div class="owl-carousel" id="owl-carousel-2">
 					<div id="item1">
 						<div class="content_slider">
@@ -175,7 +137,7 @@
 							<img src="<?php echo base_url(); ?>asset/image/content/home/reseller.png" id="img_reseller">
 						</div>
 						<div class="col-xs-8" id="foot_home_desc_reseller">
-							MENJADI RESELLER
+							<?php echo $lang_array[12]; ?>
 						</div>
 						</a>
 					</div>
@@ -185,7 +147,7 @@
 							<img src="<?php echo base_url(); ?>asset/image/content/home/karir.png" id="img_karir">
 						</div>
 						<div class="col-xs-8" id="foot_home_desc_karir">
-							KARIR
+							<?php echo $lang_array[13]; ?>
 						</div>
 						</a>
 					</div>
@@ -194,13 +156,13 @@
 					</div>
 				</div>
 				<div class="col-sm-6" id="right_home_content">
-					<p>Beli produk Wakasa online melalui salah satu toko online mitra kami :</p>
+					<p><?php echo $lang_array[14]; ?></p>
 					<img src="<?php echo base_url(); ?>asset/image/content/home/iklan.png" id="img_iklan">			
 					<a href="temukanwakasa">
 						<div id="under_iklan">
 							<img src="<?php echo base_url(); ?>asset/image/content/home/yellow.png" id="yellow_bg">
 							<img src="<?php echo base_url(); ?>asset/image/content/home/iklan_logo.png" id="logo_iklan">
-							<span>TEMUKAN PRODUK WAKASA</span>
+							<span><?php echo $lang_array[15]; ?></span>
 						</div>
 					</a>		
 				</div>
