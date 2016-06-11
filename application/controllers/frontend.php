@@ -19,6 +19,10 @@ class Frontend extends CI_Controller {
 		$this->session->set_userdata('user_lang', 'ina');
 		echo "<script>window.location.href='javascript:history.back(-2);'</script>";
 	}
+	public function set_reg_no(){
+		$this->session->set_userdata('user_register', 'no');
+		echo "<script>window.location.href='javascript:history.back(-2);'</script>";
+	}
 
 	public function cek_session(){
 		$lang_now = $this->session->userdata('user_lang');
@@ -36,6 +40,7 @@ class Frontend extends CI_Controller {
 		$data['indo'] = $this->M_frontend->get_content_ina();
 		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('v_front_home', $data);	
+		redirect('../home');
 	}
 	
 	public function home(){

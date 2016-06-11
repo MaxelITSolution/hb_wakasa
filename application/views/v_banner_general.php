@@ -1,7 +1,7 @@
 <div class="banner">
 	<img src="<?php echo base_url(); ?>asset/image/banner/banner1.jpg" id="image_banner">
 
-	<h3>CARI TENTANG WAKASA</h3>
+	<h3><?php echo $lang_array[70]; ?></h3>
 	<form class="form-inline" action="search_g" method="post">
 	  	<div class="form-group">
 	    	<label class="sr-only" for="search_input">Masukkan Kata Kunci</label>

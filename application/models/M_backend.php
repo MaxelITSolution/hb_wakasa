@@ -14,6 +14,17 @@ class M_Backend extends CI_Model
 		}
 		return false;
 	}
+	public function login_user($uname, $pass){
+		$this->db->where("reseller_email", $uname);
+		$this->db->where("reseller_password", $pass);
+		$this->db->where("reseller_isactive", 1);
+		$query = $this->db->get("reseller");
+		if($query->num_rows()>0)
+		{
+			return true;
+		}
+		return false;
+	}
 
 	public function insert($table, $data){
 		if ($table=="new_reseller"){

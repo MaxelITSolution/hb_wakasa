@@ -5,7 +5,8 @@
 	<div class="col-xs-6" id="right_header">
 		<p id="lang"> <a href="set_lang_eng"><i>ENG</i></a> | <a href="set_lang_ina"><i>ID</i></a></p>
 		<?php $lang = $_SESSION["user_lang"]; $ctr=0; 
-        	$lang_array = array();?>
+        	$lang_array = array(); $reg = $_SESSION["user_register"]; 
+        	$log = $_SESSION["user_login"]; ?>
 		<?php 
 			if ($lang=="ina"){
 				foreach ($indo->result() as $row)  
@@ -19,6 +20,31 @@
 		        	$lang_array[$ctr] = $row->content_eng;
 		        	$ctr = $ctr + 1;
 		        }
+			}
+			if ($reg=="yes"){
+				echo "<script type='text/javascript'>"
+					, 	"$(document).ready(function(){ "
+					, 		"$('#btn_notif').click();"
+					, 	"});"
+				   	, "</script>"
+				;
+			}
+			if ($log=="no"){
+				echo "<script type='text/javascript'>"
+					, 	"$(document).ready(function(){ "
+					, 		"document.getElementById('cari_produk_menu').style.display = 'none';"
+					, 		"document.getElementById('cari_produk_menu_wakasa').style.display = 'none';"
+					, 	"});"
+				   	, "</script>"
+				;
+			} else {
+				echo "<script type='text/javascript'>"
+					, 	"$(document).ready(function(){ "
+					, 		"document.getElementById('cari_produk_menu').style.display = 'block';"
+					, 		"document.getElementById('cari_produk_menu_wakasa').style.display = 'block';"
+					, 	"});"
+				   	, "</script>"
+				;
 			}
 		?>
 		<p id="log_reg">
@@ -46,7 +72,7 @@
 		  	<button class="dropbtn active" id="menu_4"><img src="<?php echo base_url(); ?>asset/image/menu/menu4_blue.png" id="menu4"></button>
 		  	<div class="dropdown-content">
 		    	<a href="searchgeneral" id="cari"><?php echo $lang_array[5]; ?></a>
-		    	<a href="jelajahproduct"><?php echo $lang_array[6]; ?></a>
+		    	<a href="jelajahproduct" id="cari_produk_menu_wakasa"><?php echo $lang_array[6]; ?></a>
 		  	</div>
 		</div>
 		<p id="btn_menu">MENU</p>
@@ -72,7 +98,7 @@
 
 	<div class="m_notifikasi" id="m_notifikasi">
 		<div class="m_notifikasi_content" id="m_notifikasi_content">
-			<span class="close_notifikasi">X</span>
+			<a href="set_reg_no"><span class="close_notifikasi">X</span></a>
 			<p>Terimakasih telah mendaftar di website kami. Kami perlu memverifikasi terlebih dahulu data-data Anda. Anda akan diberikan notifikasi melalui e-mail setelah disetujui.</p>
 		</div>
 	</div>
@@ -90,7 +116,7 @@
 				    <label for="password_login" class="sr-only">Password</label>
 				    <input type="password" class="form-control" id="password_login" name="password_login" placeholder="Password">
 				</div>
-				<button type="button" class="btn" id="login_button">Login</button>
+				<button type="submit" class="btn" id="login_button">Login</button>
 			</form>
 		</div>
 	</div>
@@ -176,10 +202,10 @@
 							<p id="m_p6" class="pull-right">*by register, I agree with Terms & Policies</p>
 						</div>
 						<div class="col-sm-6">
-							<button type="button" class="btn" id="register_button">Daftar Sekarang</button>
+							<button type="button" class="btn" id="register_button1">Daftar Sekarang</button>
 						</div>
 					</div>
-					<button type="submit" class="btn" id="btn_reg_now" style="display: none;">Daftar Sekarang</button>
+					<button type="submit" class="btn" id="btn_reg_now1" style="display: none;">Daftar Sekarang</button>
 					<div class="row" id="end_register"></div>
 		      		</form>
 		      	</div>
@@ -194,6 +220,26 @@
 			});
 			$('#btn_reg1').click(function(){
 				$('#btn_register_1').click();
+			});
+			$('#register_button1').click(function(){
+				$o1 = $('input[name="opt1"]:checked').val();
+				$o2 = $('input[name="opt_yn"]:checked').val();
+				$p1 = document.getElementById('upass_reg').value;
+				$p2 = document.getElementById('upass_conf_reg').value;
+				if($o1==null){
+					sweetAlert("Error", "Field 'Dari mana anda mengetahui WAKASA' harus diisi.", "error");
+				}
+				if($o2==null){
+					sweetAlert("Error", "Field 'Apakah Anda pernah membeli produk WAKASA' harus diisi.", "error");
+				}
+				if($p1!=$p2){
+					sweetAlert("Error", "Password Tidak Sesuai", "error");	
+				}
+				if ($o1!=null && $o2!=null){
+					if ($p1==$p2){
+						$('#btn_reg_now1').click();
+					}
+				}
 			});
 		});
 		function f_login(){

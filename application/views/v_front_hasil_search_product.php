@@ -14,8 +14,8 @@
 		<div class="content">
 			<div class="container">
 				<div id="title">
-					<h3>HASIL PENCARIAN</h3>
-					<p>Your search for "XXX" has 20 matches</p>
+					<h3><?php echo $lang_array[61]; ?></h3>
+					<p><?php echo $lang_array[62]; ?> "XXX" <?php echo $lang_array[63]; ?> 20 <?php echo $lang_array[64]; ?></p>
 				</div>
 				<div id="result">
 					<div class="col-sm-3" id="rsl1">

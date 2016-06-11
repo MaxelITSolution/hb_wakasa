@@ -14,8 +14,8 @@
 		<div class="content">
 			<div class="container">
 				<div id="title">
-					<h3>HASIL PENCARIAN</h3>
-					<p>Your search for "XXX" did not match with any document</p>
+					<h3><?php echo $lang_array[61]; ?></h3>
+					<p><?php echo $lang_array[62]; ?> "XXX" <?php echo $lang_array[65]; ?></p>
 				</div>
 			</div>
 		</div>

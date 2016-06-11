@@ -181,6 +181,26 @@ class Backend extends CI_Controller {
 		}	
 	}
 
+	public function login_user(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		$umail = $this->input->post('email_login');
+		$upass = $this->input->post('password_login');
+		$pass = md5($upass);
+		$result = $this->M_backend->login_user($umail, $pass);
+		if($result)
+		{
+			$this->session->set_userdata('user_login', 'yes');
+			echo "<script>window.location.href='javascript:history.back(-2);'</script>";
+		}
+		else
+		{
+			$this->session->set_userdata('user_login', 'no');
+			echo '<script type="text/javascript">alert("Login Gagal! Pastikan Username dan Password Benar");</script>';
+			echo "<script>window.location.href='javascript:history.back(-2);'</script>";
+		}	
+	}
+
 	public function user_register(){
 		$this->load->database();
 		date_default_timezone_set("Asia/Jakarta");
@@ -230,7 +250,8 @@ class Backend extends CI_Controller {
 			$data['reseller_isactive'] =  $uisactive;
 			$table = "new_reseller";
 			$this->M_backend->insert($table, $data);
-			redirect('../menjadireseller?r=1');	
+			$this->session->set_userdata('user_register', 'yes');
+			redirect('../menjadireseller');	
 		} else {
 			redirect('../menjadireseller');	
 		}

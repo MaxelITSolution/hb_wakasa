@@ -27,7 +27,7 @@
 		<?php include('v_banner_jelajahi_produk.php'); ?>	
 		<div class="content">
 			<div class="content_produk_terbaru">
-				<h3>PRODUK TERBARU</h3>
+				<h3><?php echo $lang_array[16]; ?></h3>
 				<div class="owl-carousel" id="owl-carousel-1">
 					<div id="item1">
 						<div class="content_slider">
@@ -85,7 +85,7 @@
 			</div>
 
 			<div class="content_produk_unggulan">
-				<h3>PRODUK UNGGULAN</h3>
+				<h3><?php echo $lang_array[17]; ?></h3>
 				<div class="owl-carousel" id="owl-carousel-2">
 					<div id="item1">
 						<div class="content_slider">
