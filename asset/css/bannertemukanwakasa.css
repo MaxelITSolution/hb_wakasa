@@ -141,6 +141,20 @@
 	padding-left: 5px;
 }
 
+.selectpicker{
+	color: #0071bc;
+	width: 220px;
+	height: 35px;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-family: Ubuntu;
+	font-size: 15px;
+	border-radius: 5px;
+}
+#left_select{
+	margin-left: 410px;
+}
+
 @media screen and (max-width: 1024px){
 	.banner #desc{
 		margin-left: 220px;
@@ -150,6 +164,9 @@
 	}
 	.dropdown-content1 {
 	    margin-left: 210px;
+	}
+	#left_select{
+		margin-left: 210px;
 	}
 }
 
@@ -167,6 +184,9 @@
 	.dropdown-content1 {
 	    margin-left: 110px;
 	}
+	#left_select{
+		margin-left: 190px;
+	}
 }
 
 @media screen and (max-width: 850px){
@@ -182,6 +202,9 @@
 	}
 	.dropdown-content1 {
 	    margin-left: 110px;
+	}
+	#left_select{
+		margin-left: 110px;
 	}
 }
 
@@ -227,6 +250,13 @@
 	}
 	.dropdown-content1 {
 	    margin-left: 100px;
+	}
+	.selectpicker{
+		width: 220px;
+		height: 30px;
+	}
+	#left_select{
+		margin-left: 30px;
 	}
 }
 
@@ -275,17 +305,19 @@
 	    margin-left: 5px;
 	    min-width: 110px;
 	}
-	.dropdown-content1 {
-	    margin-left: 5px;
-	    min-width: 110px;
-	}
 
 	.dropdown-content2 {
 	    margin-left: 5px;
 	    min-width: 110px;
 	}
-	.dropdown-content2 {
-	    margin-left: 5px;
-	    min-width: 110px;
+	.selectpicker{
+		width: 100px;
+		height: 30px;
+	}
+	#left_select{
+		margin-left: 20px;
+	}
+	#btn_search{
+		border-radius: 5px;
 	}
 }

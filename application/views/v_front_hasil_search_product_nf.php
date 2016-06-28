@@ -15,7 +15,7 @@
 			<div class="container">
 				<div id="title">
 					<h3><?php echo $lang_array[61]; ?></h3>
-					<p><?php echo $lang_array[62]; ?> "XXX" <?php echo $lang_array[65]; ?></p>
+					<p><?php echo $lang_array[62]; ?> "<?php echo $name; ?>" <?php echo $lang_array[65]; ?></p>
 				</div>
 			</div>
 		</div>

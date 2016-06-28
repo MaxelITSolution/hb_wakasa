@@ -15,11 +15,11 @@
 			<div class="container" id="container">
 				<div id="title">
 					<h3><?php echo $lang_array[61]; ?></h3>
-					<p><?php echo $lang_array[62]; ?> "XXX" <?php echo $lang_array[65]; ?></p>
+					<p><?php echo $lang_array[62]; ?> "<?php echo $name; ?>" <?php echo $lang_array[65]; ?></p>
 				</div>
 				<div id="result">
 					<p id="result_title"><?php echo $lang_array[66]; ?></p>
-					<p id="result_desc">On the other hand, we denounce with righteous indignarion and dislike men who are so beguiled and demoralized by the charms of the moment, so blinded by desire, that they cannot foresee the pain and truble that are bound to ensure and equal blame belongs to those.</p>
+					<p id="result_desc"><?php echo $lang_array[81]; ?></p>
 				</div>
 			</div>
 		</div>

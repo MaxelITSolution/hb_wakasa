@@ -1,7 +1,7 @@
 <script type="text/javascript">
 	$('#dashboard').addClass('active_main');	
 	$(document).ready(function () {
-		$('#pelajaranTable').DataTable();
+		$('#reseller_no_Table').DataTable();
 	});
 </script>
 <div class="mycontent" style="overflow-x: hidden; ">
@@ -15,7 +15,7 @@
 		<div class="col-sm-3"></div>
 	</div>
 	<hr class="bold">
-	<table id="pelajaranTable" class="display cell-border" cellspacing="0" width="100%" data-click-to-select="true" data-single-select="true">
+	<table id="reseller_no_Table" class="display cell-border" cellspacing="0" width="100%" data-click-to-select="true" data-single-select="true">
 		<thead>
 			<tr>
 				<th>Id Reseller</th>

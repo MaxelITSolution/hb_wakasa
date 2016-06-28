@@ -36,12 +36,12 @@
 			    	<div class="modal-content">
 			     		<div class="modal-header">
 				        	<span class="close_register" data-dismiss="modal" aria-label="Close">X</span>
-			        		<h4 class="modal-title" id="myModalLabel">DAFTAR MENJADI RESELLER</h4>
+			        		<h4 class="modal-title" id="myModalLabel"><?php echo $lang_array[74]; ?></h4>
 				      	</div>
 				      	<div class="modal-body">
 				      		<form action="Backend/user_register" method="post">
-					        <p id="m_p1">Hanya reseller terdaftar yang dapat melihat katalog lengkap kami.</p>
-					        <p id="m_p2">Silahkan mendaftar untuk menjadi reseller dengan mengisi form dibawah ini.</p>
+					        <p id="m_p1"><?php echo $lang_array[75]; ?></p>
+			        		<p id="m_p2"><?php echo $lang_array[76]; ?></p>
 					        <div class="form-group">
 							    <label for="uname_reg" class="sr-only">Username</label>
 							    <input type="text" class="form-control reg_input" id="uname_reg" name="uname_reg" placeholder="Username*" required>
@@ -86,7 +86,7 @@
 							    <label for="email_reg" class="sr-only">Email</label>
 							    <input type="email" class="form-control reg_input" id="email_reg" name="email_reg" placeholder="E-mail*" required>
 							</div>
-							<p id="m_p3">Dari mana anda mengetahui Wakasa?</p>
+							<p id="m_p3"><?php echo $lang_array[77]; ?></p>
 							<div class="radio">
 							  	<label><input type="radio" name="opt1" class="from_where" value="1">Teman / Rekan</label>
 							</div>
@@ -99,17 +99,17 @@
 							<div class="radio">
 							  	<label><input type="radio" name="opt1" class="from_where" value="4">Lainnya : <span><input type="text" id="lainnya_reg" name="lainnya_reg" class="input_line"></span></label>
 							</div>
-							<p id="m_p4">Apakah anda pernah membeli produk Wakasa sebelumnya?</p>
+							<p id="m_p4"><?php echo $lang_array[78]; ?></p>
 							<div class="radio">
 							  	<label><input type="radio" name="opt_yn" class="yes_no" value="y">Yes</label>
 							</div>
 							<div class="radio">
 							  	<label><input type="radio" name="opt_yn" class="yes_no" value="n">No</label>
 							</div>
-							<p id="m_p5">Sudah berapa lama usaha anda berdiri? <span><input type="text" id="time_reg" name="time_reg" class="input_line" required></span></p>
+							<p id="m_p5"><?php echo $lang_array[79]; ?> <span><input type="text" id="time_reg" name="time_reg" class="input_line" required></span></p>
 							<div class="footer_register">
 								<div class="col-sm-6">
-									<p id="m_p6" class="pull-right">*by register, I agree with Terms & Policies</p>
+									<p id="m_p6" class="pull-right"><?php echo $lang_array[80]; ?></p>
 								</div>
 								<div class="col-sm-6">
 									<button type="button" class="btn" id="register_button">Daftar Sekarang</button>

@@ -1,0 +1,34 @@
+.content{
+	margin-top: 300px;
+	margin-bottom: 100px;
+}
+.content #title h3{
+	font-family: Exo2;
+	color: #0071bc;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 30px;
+}
+
+@media screen and (max-width: 800px){
+	.content{
+		margin-top: 200px;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.content{
+		margin-top: 100px;
+		margin-bottom: 50px;
+	}
+	.content #title h3{
+		text-align: center;
+		font-size: 22px;
+	}
+	#table_search_g thead tr td{
+		font-size: 14px;
+	}
+	#table_search_g tbody tr td{
+		font-size: 12px;
+	}
+}

@@ -18,6 +18,12 @@ a:hover{
 
 #sep_prod{
 	margin-top: 25px;
+	width: 100%;
+	margin-left: 0;
+}
+
+#sep_prod1{
+	margin-top: 25px;
 	width: 90%;
 	margin-left: 0;
 }
@@ -32,6 +38,14 @@ a:hover{
 }
 
 #left_content .product_name{
+	width: 90%;
+	font-size: 14px;
+	height: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#right_content .product_make{
 	width: 90%;
 	font-size: 14px;
 	height: 30px;
@@ -75,15 +89,49 @@ a:hover{
 }
 
 #btn_save_product{
+	margin-top: 10px;
 	width: 100px;
-	margin-right: 70px;
+	margin-right: 50px;
 	border-radius: 0px;
 }
-#btn_save_administrator{
+#btn_save_administrator, #btn_save_unggulan{
 	width: 100px;
 	margin-right: 50px;
 	margin-top: 10px;
 	border-radius: 0px;
+}
+
+#btn_save_email{
+	width: 100px;
+	margin-right: 0px;
+	margin-top: 10px;
+	border-radius: 0px;
+}
+
+#btn_save_unggulan{
+	margin-left: 605px;
+}
+
+.btn.btn-default.btn_change_unggulan{
+	width: 100px;
+	margin-right: 50px;
+	margin-top: 10px;
+	border-radius: 0px;
+}
+
+.form-control.inp_box_{
+	width: 550px; 
+	border-radius: 0px;
+}
+
+#unggulan .form-group{
+	margin-top: 10px;
+}
+
+.form-control.for_email{
+	width: 400px;
+	border-radius: 0px;
+	border: 1px solid #cccccc;
 }
 
 @media screen and (max-width: 1024px){	

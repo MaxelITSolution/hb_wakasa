@@ -11,7 +11,7 @@
 	</head>
 	<body id="body" style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_full.png'); overflow-x: hidden;">
 		<?php include('v_header.php'); ?>
-		<?php include('v_banner_polos.php'); ?>
+		<?php include('v_banner_tentang_kami.php'); ?>
 		<div class="content">
 			<div class="history">
 				<div class="col-sm-2"></div>

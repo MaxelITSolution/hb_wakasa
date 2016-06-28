@@ -10,7 +10,7 @@
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">
 		<?php include('v_header.php'); ?>
-		<?php include('v_banner_polos.php'); ?>
+		<?php include('v_banner_karir.php'); ?>
 		<div class="content">
 			<div class="container">
 				<div class="col-sm-12" id="main">

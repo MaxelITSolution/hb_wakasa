@@ -70,6 +70,11 @@ $route['tentangkami'] = 'frontend/tentangKami';
 
 $route['search_g'] = 'frontend/search_g';
 $route['search_p'] = 'frontend/search_p';
+$route['search_p_d'] = 'frontend/search_p_d';
+$route['search_wakasa'] = 'frontend/search_wakasa';
 $route['set_lang_eng'] = 'frontend/set_lang_eng';
 $route['set_lang_ina'] = 'frontend/set_lang_ina';
 $route['set_reg_no'] = 'frontend/set_reg_no';
+$route['user_logout'] = 'frontend/user_logout';
+
+$route['search_product_temp'] = 'frontend/search_product_temp';

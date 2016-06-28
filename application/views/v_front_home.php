@@ -32,12 +32,19 @@
 				<div class="col-md-8">
 					<div id="title_top">
 						<p><?php echo $lang_array[7]; ?></p>
-						<form class="form-inline">
+						<?php $ulog = $_SESSION['user_login']; ?>
+						<?php if ($ulog=="no") { ?>
+							<form class="form-inline" action="<?php echo base_url(); ?>menjadireseller" method="post">
+						<?php } else { ?>
+							<form class="form-inline" action="<?php echo base_url(); ?>search_p" method="post">
+						<?php } ?>
 						  	<div class="form-group">
 						    	<label class="sr-only" for="search_input">Masukkan Kata Kunci</label>
 						    	<input type="text" class="form-control" id="search_input" name="search_input" placeholder="Masukkan kata kunci">
+						    	<input type="hidden" name="txt_make" value="">
+						    	<input type="hidden" name="txt_model" value="">
 					  		</div>
-						  	<button type="button" class="btn" id="btn_search">Search <img src="<?php echo base_url(); ?>asset/image/content/search_icon.png" id="search_icon" /></button>
+						  	<button type="submit" class="btn" id="btn_search">Search <img src="<?php echo base_url(); ?>asset/image/content/search_icon.png" id="search_icon" /></button>
 						</form>
 					</div>	
 					<div id="title_bottom">
@@ -56,18 +63,40 @@
 			<div class="content_produk_terbaru">
 				<h3><?php echo $lang_array[16]; ?></h3>
 				<div class="owl-carousel" id="owl-carousel-1">
-					<?php 
-						for ($i=0; $i<5; $i++){?>
-							<div class="content_slider">
-								<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-								<div class="desc_title">
-									<p>BAUT MOBIL AVANZA TIPE S</p>
-								</div>
-								<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
+				<?php $p_new1 = array(); $p_new1_ = array(); $p_new_ctr = 0; $my_ctr_new = 0;?>
+				<?php foreach ($new_product->result() as $row) {
+					if ($lang=="ina"){
+						$p_new1[$p_new_ctr] = $row->product_name_ina;
+						$p_new1_[$p_new_ctr] = $row->product_desc_ina;
+						$p_new_ctr = $p_new_ctr+1;
+					} else {
+						$p_new1[$p_new_ctr] = $row->product_name_eng;
+						$p_new1_[$p_new_ctr] = $row->product_desc_eng;
+						$p_new_ctr = $p_new_ctr+1;
+					}
+				} ?>
+
+				<?php foreach ($new_product->result() as $row)  
+	            {  
+	            ?>
+					<div class="content_slider">
+						<img src="<?php echo base_url(); ?>asset/image/Upload/<?php echo $row->product_image ?>"/>
+						<div class="desc_title">
+							<p><?php echo $p_new1[$my_ctr_new]; ?></p>
+						</div>
+						<p class="desc_body"><?php echo $p_new1_[$my_ctr_new]; ?></p>
+						<?php $islog1 = $_SESSION['user_login']; ?>
+						<?php if ($islog1=="no"){ ?>
+							<a href="menjadireseller">
+						<?php } else { ?> 
+							<a href="jelajahproduct">
+						<?php } ?>
 								<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-							</div>
-						<?php }
-					?>
+							</a>
+					</div>
+				<?php
+					$my_ctr_new = $my_ctr_new + 1;
+				 } ?>
 				</div>
 				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right1"/>
 			</div>
@@ -75,56 +104,40 @@
 			<div class="content_produk_unggulan">
 				<h3><?php echo $lang_array[17]; ?></h3>
 				<div class="owl-carousel" id="owl-carousel-2">
-					<div id="item1">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
+				<?php $p_ung1 = array(); $p_ung1_ = array(); $p_ung_ctr = 0; $my_ctr = 0;?>
+				<?php foreach ($unggulan->result() as $row) {
+					if ($lang=="ina"){
+						$p_ung1[$p_ung_ctr] = $row->product_name_ina;
+						$p_ung1_[$p_ung_ctr] = $row->product_desc_ina;
+						$p_ung_ctr = $p_ung_ctr+1;
+					} else {
+						$p_ung1[$p_ung_ctr] = $row->product_name_eng;
+						$p_ung1_[$p_ung_ctr] = $row->product_desc_eng;
+						$p_ung_ctr = $p_ung_ctr+1;
+					}
+				} ?>
+
+				<?php foreach ($unggulan->result() as $row)  
+	            {  
+	            ?>
+					<div class="content_slider">
+						<img src="<?php echo base_url(); ?>asset/image/Upload/<?php echo $row->product_image ?>"/>
+						<div class="desc_title">
+							<p><?php echo $p_ung1[$my_ctr]; ?></p>
 						</div>
+						<p class="desc_body"><?php echo $p_ung1_[$my_ctr]; ?></p>
+						<?php $islog1 = $_SESSION['user_login']; ?>
+						<?php if ($islog1=="no"){ ?>
+							<a href="menjadireseller">
+						<?php } else { ?> 
+							<a href="jelajahproduct">
+						<?php } ?>
+								<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
+							</a>
 					</div>
-					<div id="item2">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item3">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item4">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item5">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
+				<?php
+					$my_ctr = $my_ctr + 1;
+				 } ?>
 				</div>
 				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right2"/>
 			</div>
@@ -152,7 +165,7 @@
 						</a>
 					</div>
 					<div class="col-xs-12" id="foot_left_desc">
-					Sed ut perpiciatis unde omnis iste natus error sit voluptaten accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+					<?php echo $lang_array[82]; ?>
 					</div>
 				</div>
 				<div class="col-sm-6" id="right_home_content">

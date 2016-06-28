@@ -1,3 +1,5 @@
 <div class="banner">
-<img src="<?php echo base_url(); ?>asset/image/banner/banner1.jpg" id="image_banner">
+	<?php foreach ($banner_kontak->result() as $row) { ?>
+		<img src="<?php echo base_url(); ?>asset/image/banner/<?php echo $row->image; ?>" id="image_banner">
+	<?php } ?>
 </div>

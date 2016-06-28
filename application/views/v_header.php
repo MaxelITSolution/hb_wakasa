@@ -1,12 +1,12 @@
 <div class="header">
 	<div class="col-xs-6">
-		<a href="home"><img src="<?php echo base_url(); ?>asset/image/logo.png" id="logo_image"></a>
+		<a href="<?php echo base_url(); ?>home"><img src="<?php echo base_url(); ?>asset/image/logo.png" id="logo_image"></a>
 	</div>
 	<div class="col-xs-6" id="right_header">
 		<p id="lang"> <a href="set_lang_eng"><i>ENG</i></a> | <a href="set_lang_ina"><i>ID</i></a></p>
 		<?php $lang = $_SESSION["user_lang"]; $ctr=0; 
         	$lang_array = array(); $reg = $_SESSION["user_register"]; 
-        	$log = $_SESSION["user_login"]; ?>
+        	$log = $_SESSION["user_login"]; $reseller_uname = $_SESSION["user_name"]; ?>
 		<?php 
 			if ($lang=="ina"){
 				foreach ($indo->result() as $row)  
@@ -21,6 +21,8 @@
 		        	$ctr = $ctr + 1;
 		        }
 			}
+
+
 			if ($reg=="yes"){
 				echo "<script type='text/javascript'>"
 					, 	"$(document).ready(function(){ "
@@ -29,7 +31,9 @@
 				   	, "</script>"
 				;
 			}
-			if ($log=="no"){
+
+
+			/*if ($log=="no"){
 				echo "<script type='text/javascript'>"
 					, 	"$(document).ready(function(){ "
 					, 		"document.getElementById('cari_produk_menu').style.display = 'none';"
@@ -46,39 +50,71 @@
 				   	, "</script>"
 				;
 			}
+
+			if($reseller_uname=="nn"){
+				echo "<script type='text/javascript'>"
+					, 	"$(document).ready(function(){ "
+					, 		"document.getElementById('log_reg').style.display = 'block';"
+					, 		"document.getElementById('uname_login').style.display = 'none';"
+					, 	"});"
+				   	, "</script>"
+				;
+			}else{
+				echo "<script type='text/javascript'>"
+					, 	"$(document).ready(function(){ "
+					, 		"document.getElementById('log_reg').style.display = 'none';"
+					, 		"document.getElementById('uname_login').style.display = 'block';"
+					, 	"});"
+				   	, "</script>"
+				;
+			}*/
 		?>
-		<p id="log_reg">
-			<a href="#" onclick="f_login();"><?php echo $lang_array[0]; ?></a> | <a href="#" id="btn_reg1"><?php echo $lang_array[1]; ?></a>
-		</p>
+		<?php if ($reseller_uname=="nn"){ ?>
+			<p id="log_reg">
+				<a href="#" onclick="f_login();"><?php echo $lang_array[0]; ?></a> | <a href="menjadireseller"><?php echo $lang_array[1]; ?></a>
+			</p>
+		<?php } else { ?>
+
+		<?php } ?>
+		<?php if ($reseller_uname=="nn"){ ?>
+
+		<?php } else { ?>
+			<p id="uname_login">Welcome back, <span id="user_login"><?php echo $_SESSION['user_name']; ?></span> | <a href="<?php echo base_url(); ?>user_logout" id="user_btn_logout">logout</a></p>
+		<?php } ?>
 		<div class="dropdown" id="drop1">
 		  	<button class="dropbtn" id="menu_1"><img src="<?php echo base_url(); ?>asset/image/menu/menu1.png" id="menu1"></button>
 		  	<div class="dropdown-content">
-		    	<a href="tentangkami"><?php echo $lang_array[2]; ?></a>
+		    	<a href="<?php echo base_url(); ?>tentangkami"><?php echo $lang_array[2]; ?></a>
 		  	</div>
 		</div>
 		<div class="dropdown"  id="drop2">
 		  	<button class="dropbtn" id="menu_2"><img src="<?php echo base_url(); ?>asset/image/menu/menu2.png" id="menu2"></button>
 		  	<div class="dropdown-content">
-		    	<a href="temukanwakasa"><?php echo $lang_array[3]; ?></a>
+		    	<a href="<?php echo base_url(); ?>temukanwakasa"><?php echo $lang_array[3]; ?></a>
 		  	</div>
 		</div>
 		<div class="dropdown"  id="drop3">
 		  	<button class="dropbtn" id="menu_3"><img src="<?php echo base_url(); ?>asset/image/menu/menu3.png" id="menu3"></button>
 		  	<div class="dropdown-content">
-		    	<a href="contact"><?php echo $lang_array[4]; ?></a>
+		    	<a href="<?php echo base_url(); ?>contact"><?php echo $lang_array[4]; ?></a>
 		  	</div>
 		</div>
 		<div class="dropdown"  id="drop4">
 		  	<button class="dropbtn active" id="menu_4"><img src="<?php echo base_url(); ?>asset/image/menu/menu4_blue.png" id="menu4"></button>
 		  	<div class="dropdown-content">
-		    	<a href="searchgeneral" id="cari"><?php echo $lang_array[5]; ?></a>
-		    	<a href="jelajahproduct" id="cari_produk_menu_wakasa"><?php echo $lang_array[6]; ?></a>
+		    	<a href="<?php echo base_url(); ?>searchgeneral" id="cari"><?php echo $lang_array[5]; ?></a>
+		    	<?php if ($log=="no"){ ?>
+		    		<a href="<?php echo base_url(); ?>menjadireseller" id="cari_produk_menu_wakasa"><?php echo $lang_array[6]; ?></a>
+		    	<?php } else { ?> 
+		    		<a href="<?php echo base_url(); ?>jelajahproduct" id="cari_produk_menu_wakasa"><?php echo $lang_array[6]; ?></a>
+		    	<?php } ?>
 		  	</div>
 		</div>
 		<p id="btn_menu">MENU</p>
 		<p id="btn_login" style="display: none;">login</p>
 		<p id="btn_register" style="display: none;">register</p>
 		<p id="btn_notif" style="display: none;">notif</p>
+		<p id="btn_red" style="display: none;">red</p>
 	</div>
 
 	<button type="button" id="btn_register_1" class="btn btn-primary" data-toggle="modal" data-target="#m_register_1" style="display: none;">
@@ -92,14 +128,18 @@
 			<a href="temukanwakasa"><p id="temukan_wakasa" class="menu_list"><?php echo $lang_array[3]; ?></p></a>
 			<a href="contact"><p id="kontak_kami" class="menu_list"><?php echo $lang_array[4]; ?></p></a>
 			<a href="searchgeneral"><p id="cari_menu" class="menu_list"><?php echo $lang_array[5]; ?></p></a>
-			<a href="jelajahproduct"><p id="cari_produk_menu" class="menu_list"><?php echo $lang_array[6]; ?></p></a>
+			<?php if ($log=="no"){ ?>
+				<a href="menjadireseller"><p id="cari_produk_menu" class="menu_list"><?php echo $lang_array[6]; ?></p></a>
+			<?php } else { ?> 
+				<a href="jelajahproduct"><p id="cari_produk_menu" class="menu_list"><?php echo $lang_array[6]; ?></p></a>
+			<?php } ?>
 		</div>
 	</div>
 
 	<div class="m_notifikasi" id="m_notifikasi">
 		<div class="m_notifikasi_content" id="m_notifikasi_content">
 			<a href="set_reg_no"><span class="close_notifikasi">X</span></a>
-			<p>Terimakasih telah mendaftar di website kami. Kami perlu memverifikasi terlebih dahulu data-data Anda. Anda akan diberikan notifikasi melalui e-mail setelah disetujui.</p>
+			<p><?php echo $lang_array[72]; ?></p>
 		</div>
 	</div>
 
@@ -107,7 +147,7 @@
 		<div class="m_login_content">
 			<form action="Backend/login_user" method="post">
 				<span class="close_login">X</span>
-				<p>Already have an account? Log In now to see more</p>
+				<p><?php echo $lang_array[73]; ?></p>
 				<div class="form-group">
 				    <label for="email_login" class="sr-only">Email</label>
 				    <input type="email" class="form-control" id="email_login" name="email_login" placeholder="Email">
@@ -126,12 +166,12 @@
 	    	<div class="modal-content">
 	     		<div class="modal-header">
 		        	<span class="close_register" data-dismiss="modal" aria-label="Close">X</span>
-	        		<h4 class="modal-title" id="myModalLabel">DAFTAR MENJADI RESELLER</h4>
+	        		<h4 class="modal-title" id="myModalLabel"><?php echo $lang_array[74]; ?></h4>
 		      	</div>
 		      	<div class="modal-body">
 		      		<form action="Backend/user_register" method="post">
-			        <p id="m_p1">Hanya reseller terdaftar yang dapat melihat katalog lengkap kami.</p>
-			        <p id="m_p2">Silahkan mendaftar untuk menjadi reseller dengan mengisi form dibawah ini.</p>
+			        <p id="m_p1"><?php echo $lang_array[75]; ?></p>
+			        <p id="m_p2"><?php echo $lang_array[76]; ?></p>
 			        <div class="form-group">
 					    <label for="uname_reg" class="sr-only">Username</label>
 					    <input type="text" class="form-control reg_input" id="uname_reg" name="uname_reg" placeholder="Username*" required>
@@ -176,7 +216,7 @@
 					    <label for="email_reg" class="sr-only">Email</label>
 					    <input type="email" class="form-control reg_input" id="email_reg" name="email_reg" placeholder="E-mail*" required>
 					</div>
-					<p id="m_p3">Dari mana anda mengetahui Wakasa?</p>
+					<p id="m_p3"><?php echo $lang_array[77]; ?></p>
 					<div class="radio">
 					  	<label><input type="radio" name="opt1" class="from_where" value="1">Teman / Rekan</label>
 					</div>
@@ -189,17 +229,17 @@
 					<div class="radio">
 					  	<label><input type="radio" name="opt1" class="from_where" value="4">Lainnya : <span><input type="text" id="lainnya_reg" name="lainnya_reg" class="input_line"></span></label>
 					</div>
-					<p id="m_p4">Apakah anda pernah membeli produk Wakasa sebelumnya?</p>
+					<p id="m_p4"><?php echo $lang_array[78]; ?></p>
 					<div class="radio">
 					  	<label><input type="radio" name="opt_yn" class="yes_no" value="y">Yes</label>
 					</div>
 					<div class="radio">
 					  	<label><input type="radio" name="opt_yn" class="yes_no" value="n">No</label>
 					</div>
-					<p id="m_p5">Sudah berapa lama usaha anda berdiri? <span><input type="text" id="time_reg" name="time_reg" class="input_line" required></span></p>
+					<p id="m_p5"><?php echo $lang_array[79]; ?> <span><input type="text" id="time_reg" name="time_reg" class="input_line" required></span></p>
 					<div class="footer_register">
 						<div class="col-sm-6">
-							<p id="m_p6" class="pull-right">*by register, I agree with Terms & Policies</p>
+							<p id="m_p6" class="pull-right"><?php echo $lang_array[80]; ?></p>
 						</div>
 						<div class="col-sm-6">
 							<button type="button" class="btn" id="register_button1">Daftar Sekarang</button>

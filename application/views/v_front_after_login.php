@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerbiru.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannerafterlogin.css" type="text/css" />
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/lightbox/dist/css/lightbox.min.css">
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">
 		<?php include('v_header.php'); ?>
@@ -16,30 +17,89 @@
 				<div id="title">
 					<h3>ALL PRODUCT</h3>
 				</div>
-				<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>
+				<!--      Paging -->
+				<?php if ($page_count<21){ ?>
+
+				<?php } else { ?>
+					<div class="paging pull-right">
+			      <?php if ($page_count > 1) { ?>
+						<ul>
+			        <li class="active"><a href="#"><b>Page <?php echo $current_page ?> of <?php echo floor($page_count); ?> &nbsp;&nbsp;</b></a></li>
+
+			        <?php if ($current_page > 1 ) { ?>
+			        <li><a href="<?php echo site_url('login?page='.($current_page - 1)); ?>"><</a></li>
+			        <?php } ?>
+
+			        <?php for ($i=1 ; $i < $page_count; $i++) { ?>
+			        <li><a href="<?php echo site_url('login?page='.$i); ?>"><?php echo $i; ?></a></li>        
+			        <?php } ?>
+			        
+			        <?php if ($current_page < $page_count) { ?>
+			        <li><a href="<?php echo site_url('login?page='.($current_page + 1)); ?>">></a></li>
+			        <?php } ?>
+						</ul>
+			      <?php } ?>
+				</div>
+				<?php } ?>
 				<div id="result">
-				<?php for ($i=0; $i<5; $i++) { ?>
-					<div class="row">
-						<?php for ($j=0; $j<4; $j++) { ?>
-						<div class="col-sm-3">
+				<?php 
+			        if(is_array($product) && count($product) ) {
+			         foreach($product as $product){     
+			        ?>
+			        	<div class="col-sm-3" style="padding-left: 40px; margin-bottom: 30px;">
 							<div class="content_slider">
-								<img src="<?php echo base_url(); ?>asset/image/content/baut.png" class="image_result"/>
+								<img src="<?php echo base_url(); ?>asset/image/Upload/<?=$product->product_image;?>" class="image_result"/>
 								<div class="desc_title">
-									<p>BAUT MOBIL AVANZA TIPE S</p>
+									<?php if ($lang=="ina"){?>
+										<p><?=$product->product_name_ina;?></p>	
+									<?php } else { ?>
+										<p><?=$product->product_name_eng;?></p>	
+									<?php } ?>
 								</div>
-								<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-								<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
+								<p class="desc_body">
+									<?php if ($lang=="ina"){?>
+										<?=$product->product_desc_ina;?>
+									<?php } else { ?>
+										<?=$product->product_desc_eng;?>
+									<?php } ?>
+								</p>
+								<a href="<?php echo base_url(); ?>asset/image/Upload/<?=$product->product_image;?>" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
 							</div>
 						</div>
-						<?php } ?>
-					</div>
-					<div id="space"></div>
-					<?php } ?>
+			           <?php 
+			         }        
+			        }?>  
 				</div>
-				<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>
+				<div class="row"></div>
+				<!--      Paging -->
+				<?php if ($page_count<21){ ?>
+
+				<?php } else { ?>
+					<div class="paging pull-right">
+			      <?php if ($page_count > 1) { ?>
+						<ul>
+			        <li class="active"><a href="#"><b>Page <?php echo $current_page ?> of <?php echo floor($page_count); ?> &nbsp;&nbsp;</b></a></li>
+
+			        <?php if ($current_page > 1 ) { ?>
+			        <li><a href="<?php echo site_url('login?page='.($current_page - 1)); ?>"><</a></li>
+			        <?php } ?>
+
+			        <?php for ($i=1 ; $i < $page_count; $i++) { ?>
+			        <li><a href="<?php echo site_url('login?page='.$i); ?>"><?php echo $i; ?></a></li>        
+			        <?php } ?>
+			        
+			        <?php if ($current_page < $page_count) { ?>
+			        <li><a href="<?php echo site_url('login?page='.($current_page + 1)); ?>">></a></li>
+			        <?php } ?>
+						</ul>
+			      <?php } ?>
+				</div>
+				<?php } ?>
 			</div>
 		</div>
+		<div class="row"></div>
 		<div id="to_footer"></div>
 		<?php include('v_footer.php'); ?>
+		<script src="<?php echo base_url(); ?>asset/lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
 	</body>
 </html>	

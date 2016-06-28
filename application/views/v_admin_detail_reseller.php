@@ -1,4 +1,4 @@
-	<script type="text/javascript">
+<script type="text/javascript">
 	$('#dashboard').addClass('active_main');
 </script>
 <div class="mycontent">
@@ -126,5 +126,16 @@
 		  	<button type="submit" class="btn btn-default pull-right" id="btn_save_administrator">Konfirmasi</button>
 		</div>
 		<?php } ?>
+
+
+		<?php foreach ($email->result() as $row) { ?>
+			<input type="hidden" name="email_address" value="<?php echo $row->admin_email_address; ?>" />
+			<input type="password" name="email_password" value="<?php echo $row->admin_email_password; ?>" hidden />
+			<input type="hidden" name="email_name" value="<?php echo $row->admin_email_Name; ?>" />
+			<input type="hidden" name="email_subject" value="<?php echo $row->admin_email_subject; ?>" />
+			<input type="hidden" name="email_message" value="<?php echo $row->admin_email_message; ?>" />
+        <?php } ?>
+
+
 	</form>
 </div>

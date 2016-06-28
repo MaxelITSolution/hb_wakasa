@@ -13,7 +13,7 @@
 	margin-right: 0px;
 	position: absolute;
 	width: 90%;
-	margin-top: 900px;
+	margin-top: 950px;
 }
 .content_produk_terbaru h3, .content_produk_unggulan h3{
 	font-family: Exo2;
@@ -63,6 +63,15 @@
 	color: #636363;
 	margin-top: 10px;
 }
+.content_slider{
+	height: 400px;
+}
+.content_slider img{
+	height: 200px;
+}
+.content_slider .desc_body{
+	height: 110px;
+}
 
 /*OWL CAROUSEL*/
 #arrow_left{
@@ -78,6 +87,10 @@
 }
 #arrow_right1:hover, #arrow_right2:hover{
 	cursor: pointer;
+}
+
+#to_footer{
+	padding-top: 50px;
 }
 
 @media screen and (max-width: 1024px){

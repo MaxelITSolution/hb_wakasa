@@ -11,7 +11,7 @@
 	
 	<div class="col-xs-12">
 		<div class="row">
-			<div class="col-xs-3"><a href=""><i class="fa fa-reply fa-lg"></i> Kembali</a></div>
+			<div class="col-xs-3"><a href="administrator"><i class="fa fa-reply fa-lg"></i> Kembali</a></div>
 			<div class="col-xs-6"></div>
 			<div class="col-xs-3"></div>
 		</div>

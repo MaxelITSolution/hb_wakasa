@@ -1,5 +1,7 @@
 <div class="banner">
-<img src="<?php echo base_url(); ?>asset/image/map1.png" id="image_banner">
+	<?php foreach ($banner_reseller->result() as $row) { ?>
+		<img src="<?php echo base_url(); ?>asset/image/banner/<?php echo $row->image; ?>" id="image_banner">
+	<?php } ?>
 
 <div id="banner_text1">
 	<div id="banner_text1_"><?php echo $lang_array[28]; ?></div>

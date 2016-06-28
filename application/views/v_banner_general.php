@@ -1,5 +1,7 @@
 <div class="banner">
-	<img src="<?php echo base_url(); ?>asset/image/banner/banner1.jpg" id="image_banner">
+	<?php foreach ($banner_general->result() as $row) { ?>
+		<img src="<?php echo base_url(); ?>asset/image/banner/<?php echo $row->image; ?>" id="image_banner">
+	<?php } ?>
 
 	<h3><?php echo $lang_array[70]; ?></h3>
 	<form class="form-inline" action="search_g" method="post">

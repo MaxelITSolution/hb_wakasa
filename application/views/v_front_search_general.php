@@ -11,7 +11,7 @@
 		<div id="to_header"></div>
 		<?php include('v_header.php'); ?>
 		<div class="content">
-			<div id="title"><p>CARI TENTANG WAKASA</p></div>
+			<div id="title"><p><?php echo $lang_array[70]; ?></p></div>
 			<form class="form-inline" action="search_g" method="post">
 			  	<div class="form-group">
 			    	<label class="sr-only" for="search_input">Masukkan Kata Kunci</label>

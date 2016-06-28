@@ -139,6 +139,16 @@
 	width: 220px;
 }
 
+.content_slider{
+	height: 400px;
+}
+.content_slider img{
+	height: 200px;
+}
+.content_slider .desc_body{
+	height: 110px;
+}
+
 /*OWL CAROUSEL*/
 .owl-carousel{
 	margin-left: 95px;

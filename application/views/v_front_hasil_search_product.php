@@ -3,10 +3,79 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/hasilsearchproduct.css"/>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerbiru.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannerproduk.css" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>asset/css/hasilsearchproduct.css"/>
+
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/lightbox/dist/css/lightbox.min.css">
+		<style type="text/css">
+			.content_slider{
+				height: 400px;
+			}
+			.content_slider img{
+				height: 200px;
+			}
+			.content_slider .desc_body{
+				height: 110px;
+			}
+			ul.pagination li a{
+				font-family: Ubuntu;
+				color: #636363;	
+			}
+			ul.pagination li.active a{
+				background: transparent;
+				border: none;
+				color: #636363;
+			}
+			ul.pagination li.active a:hover{
+				background: transparent;
+				border: none;
+				color: #636363;
+			}
+			ul.pagination li#prev a{
+				background: transparent;
+				border: none;
+			}
+			ul.pagination li#next a{
+				background: transparent;
+				border: none;
+			}
+			#page_num a{
+				background: transparent;
+				border: none;
+			}
+			#paging_info{
+				font-family: Ubuntu;
+				color: #636363;	
+				margin-left: 920px;
+				margin-top: 27px;
+				position: absolute;
+			}
+			ul.pagination{
+				margin-right: 130px;
+			}
+			ul.pagination li#first a{
+				background: transparent;
+				border: none;
+			}
+			ul.pagination li#last a{
+				background: transparent;
+				border: none;
+			}
+		</style>
+		<?php $all_page = ceil($total_page / $per_hal); ?>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				zxc();
+			});
+			function zxc(){
+				var get1 = document.getElementById('page_active').innerHTML;
+				var res1 = get1.split(">");
+				var res1 = res1[1].substring(0, 1);
+				document.getElementById('page_now').innerHTML = res1;
+			}
+		</script>
 	</head>
 	<body style="background-image: url('<?php echo base_url(); ?>asset/image/content/bg_content.png'); overflow-x: hidden;">
 		<?php include('v_header.php'); ?>
@@ -15,56 +84,38 @@
 			<div class="container">
 				<div id="title">
 					<h3><?php echo $lang_array[61]; ?></h3>
-					<p><?php echo $lang_array[62]; ?> "XXX" <?php echo $lang_array[63]; ?> 20 <?php echo $lang_array[64]; ?></p>
+					<p><?php echo $lang_array[62]; ?> "<?php echo $name; ?>" <?php echo $lang_array[63]; ?> <?php echo $total; ?> <?php echo $lang_array[64]; ?></p>
 				</div>
-				<div id="result">
-					<div class="col-sm-3" id="rsl1">
+					
+				<?php foreach ($query->result() as $row) { ?>
+					
+					<div class="col-sm-3">
 						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png" class="image_result"/>
+							<img src="<?php echo base_url(); ?>asset/image/products/<?=$row->image;?>" class="image_result"/>
 							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
+								<p><?php echo $row->nama;?></p>	
 							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
+							<p class="desc_body">
+								<?php echo $row->remarks;?>
+							</p>
+							<a href="<?php echo base_url(); ?>asset/image/Upload/<?=$row->image;?>" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
 						</div>
+						<div id="spasi" style="margin-bottom: 30px;"></div>
 					</div>
-					<div class="col-sm-3" id="rsl2">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png" class="image_result"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div class="col-sm-3" id="rsl3">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png" class="image_result"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div class="col-sm-3" id="rsl4">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png" class="image_result"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>
+
+				<?php } ?>
+
+				<div class="row"></div>
+					<?php if ($total_page<5) { ?>
+
+					<?php } else { ?>
+						<p id="paging_info" class="pull-right"><b>Page <span id="page_now"></span> of <?php echo $all_page; ?> </b></p><?php echo $page_links; ?>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
 		<div id="to_footer"></div>
 		<?php include('v_footer.php'); ?>
+		<script src="<?php echo base_url(); ?>asset/lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
 	</body>
 </html>

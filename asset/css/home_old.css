@@ -1,0 +1,484 @@
+.content{
+	margin-top: -80px;
+}
+/*BOX ATAS*/
+/*#title_top{
+	box-shadow: 5px -5px 20px grey;
+}*/
+#title_top{
+	background-color: #fff;
+    padding-bottom: 30px;
+}
+#title_top p{
+	font-family: Exo2;
+	font-size: 30px;
+	color: #0071bc;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 30px;
+}
+#search_input{
+	border-radius: 10px;
+	font-family: Ubuntu;
+	color: #0071bc;
+	width: 350px;
+}
+.form-group{
+	margin-right: 20px;
+}
+#search_input::-webkit-input-placeholder {
+    color:    #0071bc;
+}
+#search_input:-moz-placeholder {
+    color:    #0071bc;
+}
+#search_input::-moz-placeholder {
+    color:    #0071bc;
+}
+#search_input:-ms-input-placeholder {
+    color:    #0071bc;
+}
+.form-inline{
+	text-align: center;
+	margin-top: 30px;
+}
+.form-inline button{
+	border-radius: 10px;
+	padding-left: 20px;
+	color: #0071bc;
+	background-color: #fff000;
+	font-family: Ubuntu;
+	font-size: 16px;
+}
+#search_icon{
+	padding-left: 5px;
+}
+
+/*BOX BAWAH BIRU BG*/
+#title_bottom_content{
+	margin-top: -250px;
+}
+#title_bottom_content h3{
+	font-family: Exo2;
+	font-size: 30px;
+	color: #fff;
+	text-align: center;
+}
+#title_bottom_content p{
+	font-family: Ubuntu;
+	font-size: 14px;
+	color: #fff;
+	width: 500px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 20px;
+}
+#p2{
+	margin-top: -10px;
+	margin-bottom: 0px;
+}
+#p3{
+	color: #fff000 !important;
+}
+.content_produk_terbaru{
+	margin-left: 0px;
+	margin-right: 0px;
+	position: absolute;
+	width: 90%;
+	margin-top: 500px;
+}
+.content_produk_unggulan{
+	margin-left: 0px;
+	margin-right: 0px;
+	position: absolute;
+	width: 90%;
+	margin-top: 1120px;
+}
+.content_produk_terbaru h3, .content_produk_unggulan h3{
+	font-family: Exo2;
+	color: #0071bc;
+	font-size: 30px;
+	text-align: center;
+	margin-left: 150px;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+.content_slider{
+	width: 250px;
+	background-color: #fff;
+	box-shadow: 5px 5px 20px grey;
+	height: 400px;
+}
+.desc_title{
+	background-color: #fff000;
+	text-align: center;
+	font-family: Exo2-med;
+	font-size: 15px;
+}
+.desc_title p{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-left: 10px;
+}
+.desc_body{
+	font-family: Ubuntu;
+	color: #636363;
+	padding-left: 20px;
+}
+.desc_footer{
+	padding-left: 20px;
+	font-family: Ubuntu;
+	color: #2081d1;
+	padding-bottom: 10px;
+}
+.content_slider img{
+	height: 200px;
+}
+.content_slider .desc_body{
+	height: 110px;
+}
+
+.owl-carousel{
+	margin-left: 100px;
+	padding-right: 40px;
+}
+.content_slider p{
+	width: 220px;
+}
+
+/*OWL CAROUSEL*/
+.owl-carousel{
+	margin-left: 95px;
+}
+#arrow_left{
+	margin-left: -70px !important;
+	margin-top: -220px;
+}
+#arrow_right_top, #arrow_right_bottom{
+	display: none;
+}
+.content_bottom{
+	padding-top: 1600px;
+}
+
+#arrow_right1, #arrow_right2{
+	margin-top: -210px;	
+	margin-right: -110px;
+}
+#arrow_right1:hover, #arrow_right2:hover{
+	cursor: pointer;
+}
+
+#to_footer{
+	margin-bottom: 2110px;
+}
+
+/*BOTTOM - IKLAN DKK */
+.content_bottom{
+	padding-top: 1850px;
+	position: absolute;
+}
+#left_home_content, #right_home_content{
+	background-color: #fff;
+}
+#left_home_content{
+	padding-top: 30px;
+	padding-bottom: 112px;
+}
+#right_home_content{
+	padding-top: 0px;
+	padding-bottom: 30px;
+}
+#left_home_content{
+	padding-left: 75px;
+}
+#img_foot_home{
+	background-color: #08a3e9;
+	width: 80px;
+	height: 70px;
+	border-radius: 10px;
+}
+
+#img_reseller{
+	margin-top: 10px;
+}
+#foot_home_desc_reseller{
+	margin-top: -5px;
+	font-family: Exo2;
+	font-size: 28px;
+	color: #636363;
+	font-weight: bold;
+}
+#img_karir{
+	margin-top: 10px;
+	margin-left: 0px;
+	width: 50px;
+}
+#foot_home_desc_karir{
+	margin-top: 10px;
+	font-family: Exo2;
+	font-size: 28px;
+	color: #636363;
+	font-weight: bold;
+}
+#foot_left_desc{
+	color: #636363;
+	font-family: Ubuntu;
+	font-size: 14px;
+	width: 500px;
+	line-height: 25px;
+	margin-top: 20px;
+}
+#right_home_content p{
+	text-align: center;
+	font-family: Ubuntu;
+	color: #636363;
+	font-size: 14px;
+}
+#img_iklan{
+	width: 100%;
+	margin-left: 22px;
+}
+#yellow_bg{
+	width: 100%;
+	margin-left: 22px;
+}
+#logo_iklan{
+	width: 22px;
+	margin-right: 10px;
+	margin-top: -35px;
+	margin-left: 40px;
+}
+#under_iklan{
+	font-family: Exo2;
+	color: #636363;
+	font-size: 16px;
+}
+#under_iklan span{
+	position: absolute;
+	margin-top: -32px;
+}
+
+@media screen and (max-width: 1280px){
+	#title_bottom_content{
+		padding-top: 30px;
+	}
+	#foot_home_desc_reseller{
+		font-size: 20px;
+		margin-top: 5px;
+		margin-left: -10px;
+	}
+	#foot_home_desc_karir{
+		font-size: 20px;
+		margin-left: -10px;
+		margin-top: 20px;
+	}
+	#to_footer{
+		margin-top: -100px;
+	}
+}
+
+@media screen and (max-width: 1024px){
+	#title_bottom_content{
+		padding-top: 50px;
+	}
+	.owl-carousel{
+		width: 95%;
+	}
+	#arrow_right1, #arrow_right2{
+		margin-top: -210px;
+		margin-right: -70px;
+	}
+	#foot_home_desc_reseller{
+		margin-left: -15px;
+		text-align: center;
+	}
+	#foot_home_desc_karir{
+		margin-top: 5px;
+		margin-left: 0px;
+	}
+	#foot_left_desc{
+		width: 400px;
+	}
+	#right_home_content{
+		padding-top: 50px;
+	}
+	#logo_iklan{
+		padding-top: 4px;
+	}
+	#to_footer{
+		margin-bottom: 2103px;
+	}
+}
+
+
+@media screen and (max-width: 980px){
+	#left_home_content{
+		padding-top: 50px;
+	}
+	#right_home_content{
+		padding-top: 120px;
+	}
+	.content_produk_terbaru{
+		margin-top: 100px;
+	}
+	.content_produk_unggulan{
+		margin-top: 680px;
+	}
+	#right_home_content p{
+		margin-top: -60px;
+	}
+	#right_home_content p{
+		width: 350px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.content_bottom{
+		margin-top: -500px;
+	}
+	#logo_iklan{
+		width: 20px;
+		padding-top: 5px;
+	}
+	#right_home_content span{
+		padding-top: 3px;
+	}
+	#to_footer{
+		margin-bottom: 1703px;
+	}
+}
+
+@media screen and (max-width: 850px){
+	.content{
+		margin-top: 50px;
+	}
+	.content_produk_terbaru{
+		margin-top: 50px;
+	}
+	.content_produk_unggulan{
+		margin-top: 600px;
+	}
+	.content_bottom{
+		margin-top: -450px;
+	}
+	#foot_left_desc{
+		width: 300px;
+		text-align: justify;
+	}
+	#right_home_content p{
+		margin-top: -25px;
+	}
+	#logo_iklan{
+		width: 18px;
+		padding-top: 10px;
+	}
+	#under_iklan span{
+		padding-top: 8px;
+	}
+	#to_footer{
+		margin-bottom: 330px;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.content{
+		margin-top: -80px;
+	}
+	#search_input{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.content_bottom{
+		background-color: #fff;
+	}
+	#foot_home_desc_karir{
+		margin-top: 20px;
+	}
+	#foot_left_desc{
+		width: 600px;
+		text-align: center;
+	}
+	#right_home_content{
+		margin-top: 50px;
+		margin-left: -50px;
+	}
+	#logo_iklan{
+		width: 25px;
+		margin-top: -50px;
+	}
+	#under_iklan span{
+		font-size: 18px;
+		margin-top: -45px;
+	}
+	#to_footer{
+		margin-bottom: -80px;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.content{
+		margin-top: -80px;
+	}
+	#title_top{
+		padding-left: 20px;
+	}
+	#search_input{
+		width: 250px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#blue_bg{
+		height: 350px;
+		margin-left: 10px;
+	}
+
+	.content_produk_terbaru h3, .content_produk_unggulan h3{
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		margin-left: 35px;
+	}
+
+	.owl-carousel{
+		margin-left: 45px;
+
+	}
+	#arrow_left{
+		margin-left: -0px !important;
+	}
+
+
+	#title_bottom_content h3{
+		margin-top: -90px;
+		margin-left: 20px;
+	}
+	#title_bottom_content p{
+		width: 250px;
+		margin-left: 50px;
+	}
+
+	#left_home_content{
+		margin-left: -20px;
+	}
+	#foot_left_desc{
+		width: 250px;
+	}
+
+	#right_home_content{
+		margin-top: 250px;
+		padding-top: 30px;
+	}
+	#right_home_content p{
+		width: 280px;
+		margin-left: 75px;
+	}
+	#logo_iklan{
+		width: 15px;
+		padding-top: 27px;
+	}
+	#under_iklan span{
+		padding-top: 20px;
+	}
+}

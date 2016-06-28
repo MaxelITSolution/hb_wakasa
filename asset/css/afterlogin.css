@@ -58,6 +58,15 @@
 	color: #636363;
 	margin-right: 20px;
 }
+.content_slider{
+	height: 400px;
+}
+.content_slider img{
+	height: 200px;
+}
+.content_slider .desc_body{
+	height: 110px;
+}
 
 @media screen and (max-width: 1024px){
 	.col-sm-3{

@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/footer.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerbiru.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/banner_jelajahi_produk.css" type="text/css" />
+
+		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/lightbox/dist/css/lightbox.min.css">
+
 		<script type="text/javascript">
 			$(document).ready(function(){
 
@@ -29,120 +32,77 @@
 			<div class="content_produk_terbaru">
 				<h3><?php echo $lang_array[16]; ?></h3>
 				<div class="owl-carousel" id="owl-carousel-1">
-					<div id="item1">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
+					<?php $p_new1 = array(); $p_new1_ = array(); $p_new_ctr = 0; $my_ctr_new = 0;?>
+				<?php foreach ($new_product->result() as $row) {
+					if ($lang=="ina"){
+						$p_new1[$p_new_ctr] = $row->product_name_ina;
+						$p_new1_[$p_new_ctr] = $row->product_desc_ina;
+						$p_new_ctr = $p_new_ctr+1;
+					} else {
+						$p_new1[$p_new_ctr] = $row->product_name_eng;
+						$p_new1_[$p_new_ctr] = $row->product_desc_eng;
+						$p_new_ctr = $p_new_ctr+1;
+					}
+				} ?>
+
+				<?php foreach ($new_product->result() as $row)  
+	            {  
+	            ?>
+					<div class="content_slider">
+						<img src="<?php echo base_url(); ?>asset/image/Upload/<?php echo $row->product_image ?>"/>
+						<div class="desc_title">
+							<p><?php echo $p_new1[$my_ctr_new]; ?></p>
 						</div>
+						<p class="desc_body"><?php echo $p_new1_[$my_ctr_new]; ?></p>
+						<a href="<?php echo base_url(); ?>asset/image/Upload/<?php echo $row->product_image ?>" data-lightbox="produk_terbaru"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
 					</div>
-					<div id="item2">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item3">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item4">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item5">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
+				<?php
+					$my_ctr_new = $my_ctr_new + 1;
+				 } ?>
 				</div>
 				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right1"/>
-				<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>
+				<!--<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>-->
 			</div>
 
 			<div class="content_produk_unggulan">
 				<h3><?php echo $lang_array[17]; ?></h3>
 				<div class="owl-carousel" id="owl-carousel-2">
-					<div id="item1">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
+					<?php $p_ung1 = array(); $p_ung1_ = array(); $p_ung_ctr = 0; $my_ctr = 0;?>
+				<?php foreach ($unggulan->result() as $row) {
+					if ($lang=="ina"){
+						$p_ung1[$p_ung_ctr] = $row->product_name_ina;
+						$p_ung1_[$p_ung_ctr] = $row->product_desc_ina;
+						$p_ung_ctr = $p_ung_ctr+1;
+					} else {
+						$p_ung1[$p_ung_ctr] = $row->product_name_eng;
+						$p_ung1_[$p_ung_ctr] = $row->product_desc_eng;
+						$p_ung_ctr = $p_ung_ctr+1;
+					}
+				} ?>
+
+				<?php foreach ($unggulan->result() as $row)  
+	            {  
+	            ?>
+					<div class="content_slider">
+						<img src="<?php echo base_url(); ?>asset/image/Upload/<?php echo $row->product_image ?>"/>
+						<div class="desc_title">
+							<p><?php echo $p_ung1[$my_ctr]; ?></p>
 						</div>
+						<p class="desc_body"><?php echo $p_ung1_[$my_ctr]; ?></p>
+						<a href="<?php echo base_url(); ?>asset/image/Upload/<?php echo $row->product_image ?>" data-lightbox="produk_unggulan"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
 					</div>
-					<div id="item2">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item3">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item4">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
-					<div id="item5">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/content/baut.png"/>
-							<div class="desc_title">
-								<p>BAUT MOBIL AVANZA TIPE S</p>
-							</div>
-							<p class="desc_body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, total rem aoeriam.</p>
-							<p class="desc_footer">SELENGKAPNYA &nbsp;></p>
-						</div>
-					</div>
+				<?php
+					$my_ctr = $my_ctr + 1;
+				 } ?>
 				</div>
 				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right2"/>
-				<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>
+				<!--<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>-->
 			</div>
 		</div>
+		<div id="to_footer"></div>
 		<?php include('v_footer.php'); ?>
+
+		<script src="<?php echo base_url(); ?>asset/lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
 
 		<script src="<?php echo base_url(); ?>asset/owl-carousel/owl.carousel.min.js"></script>
 		<script typ="text/javascript">
