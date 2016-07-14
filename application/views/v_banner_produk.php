@@ -6,7 +6,7 @@
 	<h3><?php echo $lang_array[71]; ?></h3>
 
 	<!-- action="<?php echo base_url(); ?>Frontend/new_sp"-->
-	<form class="form-inline" action="<?php echo base_url(); ?>Frontend/cekS" method="post">
+	<form class="form-inline" action="<?php echo base_url(); ?>cekS" method="post">
 	  	<div class="form-group">
 	    	<label class="sr-only" for="search_input">Masukkan Kata Kunci</label>
 	    	<input type="text" class="form-control" id="search_input" name="search_input" placeholder="Masukkan kata kunci">
