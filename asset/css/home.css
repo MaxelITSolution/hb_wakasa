@@ -143,10 +143,10 @@
 	height: 400px;
 }
 .content_slider img{
-	height: 200px;
+	height: 220px;
 }
 .content_slider .desc_body{
-	height: 110px;
+	height: 90px;
 }
 
 /*OWL CAROUSEL*/
@@ -306,7 +306,7 @@
 		padding-top: 4px;
 	}
 	#to_footer{
-		margin-bottom: 320px;
+		margin-bottom: 400px;
 	}
 }
 
@@ -377,7 +377,7 @@
 	}
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 786px){
 	.content{
 		margin-top: -80px;
 	}
@@ -392,12 +392,38 @@
 		margin-top: 20px;
 	}
 	#foot_left_desc{
+		width: 280px;
+		text-align: center;
+	}
+	#right_home_content{
+		margin-top: -50px;
+		padding-left: -20px;
+		padding-bottom: 200px;
+	}
+	#logo_iklan{
+		width: 15px;
+		margin-top: -32px;
+	}
+	#under_iklan span{
+		font-size: 16px;
+		margin-top: -32px;
+	}
+	#to_footer{
+		margin-bottom: 450px;
+	}
+}
+
+@media screen and (max-width: 758px){
+	#foot_left_desc{
 		width: 600px;
 		text-align: center;
 	}
 	#right_home_content{
 		margin-top: 50px;
 		margin-left: -50px;
+	}
+	.content_bottom #right_home_content{
+		margin-top: 100px;
 	}
 	#logo_iklan{
 		width: 25px;
@@ -408,7 +434,7 @@
 		margin-top: -45px;
 	}
 	#to_footer{
-		margin-bottom: -80px;
+		margin-bottom: -250px;
 	}
 }
 
@@ -462,7 +488,7 @@
 	}
 
 	#right_home_content{
-		margin-top: 250px;
+		margin-top: 30px;
 		padding-top: 30px;
 	}
 	#right_home_content p{
@@ -475,5 +501,16 @@
 	}
 	#under_iklan span{
 		padding-top: 20px;
+	}
+	#arrow_left, #arrow_right1, #arrow_right2{
+		display: none;
+	}
+	#foot_left_desc{
+		z-index: 1;
+		padding-bottom: 20px;
+	}
+	#img_iklan, #yellow_bg{
+		max-width: 373px;
+		width: 100%;
 	}
 }

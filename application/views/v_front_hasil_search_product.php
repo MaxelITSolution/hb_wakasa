@@ -14,10 +14,10 @@
 				height: 400px;
 			}
 			.content_slider img{
-				height: 200px;
+				height: 220px;
 			}
 			.content_slider .desc_body{
-				height: 110px;
+				min-height: 90px;
 			}
 			ul.pagination li a{
 				font-family: Ubuntu;
@@ -44,16 +44,6 @@
 			#page_num a{
 				background: transparent;
 				border: none;
-			}
-			#paging_info{
-				font-family: Ubuntu;
-				color: #636363;	
-				margin-left: 920px;
-				margin-top: 27px;
-				position: absolute;
-			}
-			ul.pagination{
-				margin-right: 130px;
 			}
 			ul.pagination li#first a{
 				background: transparent;
@@ -86,34 +76,45 @@
 					<h3><?php echo $lang_array[61]; ?></h3>
 					<p><?php echo $lang_array[62]; ?> "<?php echo $name; ?>" <?php echo $lang_array[63]; ?> <?php echo $total; ?> <?php echo $lang_array[64]; ?></p>
 				</div>
-					
-				<?php foreach ($query->result() as $row) { ?>
-					
-					<div class="col-sm-3">
-						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/products/<?=$row->image;?>" class="image_result"/>
-							<div class="desc_title">
-								<p><?php echo $row->nama;?></p>	
-							</div>
-							<p class="desc_body">
-								<?php echo $row->remarks;?>
-							</p>
-							<a href="<?php echo base_url(); ?>asset/image/Upload/<?=$row->image;?>" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
-						</div>
-						<div id="spasi" style="margin-bottom: 30px;"></div>
-					</div>
 
-				<?php } ?>
+				<?php for ($i = 0; $i < count($products); ++$i) { ?>
+			        <div class="col-sm-3">
+			            <div class="content_slider">
+			                <?php 
+								$fp = 'asset/image/products/' . $products[$i]->image;
+								if (file_exists($fp)){ ?>
+									<img src="<?php echo base_url(); ?>asset/image/products/<?=$products[$i]->image;?>" class="image_result"/>
+								<?php } else { ?>
+									<img src="<?php echo base_url(); ?>asset/image/products/no.PNG" class="image_result"/>
+								<?php }
+							?>
+			                <div class="desc_title">
+			                    <p><?php echo $products[$i]->nama;?></p> 
+			                </div>
+			                <p class="desc_body">
+			                    <?php echo $products[$i]->id_jenis_barang;?>-<?php echo $products[$i]->id_kendaraan;?><?php echo $products[$i]->id_varian;?><br/>
+			                    <?php echo $products[$i]->make;?> <?php echo $products[$i]->model1;?> <?php echo $products[$i]->model2;?><br/>
+			                    <?php echo $products[$i]->remarks;?><br/>
+			                    EOM no. <?php echo $products[$i]->nomor_asli;?>
+			                </p>
+			                <!--<?php 
+								$fp = 'asset/image/products/' . $products[$i]->image;
+								if (file_exists($fp)){ ?>
+									<a href="<?php echo base_url(); ?>asset/image/products/<?=$products[$i]->image;?>" data-lightbox="produk_login" id="selengkapnya"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
+								<?php } else { ?>
+									<a href="<?php echo base_url(); ?>asset/image/products/no.PNG" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
+								<?php }
+							?>-->
+			            </div>
+			            <div id="spasi" style="margin-bottom: 30px;"></div>
+			        </div>
+			    <?php } ?>
 
-				<div class="row"></div>
-					<?php if ($total_page<5) { ?>
-
-					<?php } else { ?>
-						<p id="paging_info" class="pull-right"><b>Page <span id="page_now"></span> of <?php echo $all_page; ?> </b></p><?php echo $page_links; ?>
-					<?php } ?>
-				</div>
 			</div>
 		</div>
+		<?php if ($total > 12) { ?>
+			<p id="paging_info" class="pull-right"><b>Page <span id="page_now"></span> of <?php echo $all_page; ?> </b></p><?php echo $pagination; ?>
+		<?php } ?>
 		<div id="to_footer"></div>
 		<?php include('v_footer.php'); ?>
 		<script src="<?php echo base_url(); ?>asset/lightbox/dist/js/lightbox-plus-jquery.min.js"></script>

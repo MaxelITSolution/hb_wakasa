@@ -12,7 +12,7 @@
 		<?php include('v_header.php'); ?>
 		<div class="content">
 			<div id="title"><p><?php echo $lang_array[70]; ?></p></div>
-			<form class="form-inline" action="search_g" method="post">
+			<form class="form-inline" action="Frontend/s_g" method="post">
 			  	<div class="form-group">
 			    	<label class="sr-only" for="search_input">Masukkan Kata Kunci</label>
 			    	<input type="text" class="form-control" id="search_input" name="search_input" placeholder="Masukkan kata kunci">

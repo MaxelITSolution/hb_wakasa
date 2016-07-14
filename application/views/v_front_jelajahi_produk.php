@@ -32,33 +32,38 @@
 			<div class="content_produk_terbaru">
 				<h3><?php echo $lang_array[16]; ?></h3>
 				<div class="owl-carousel" id="owl-carousel-1">
-					<?php $p_new1 = array(); $p_new1_ = array(); $p_new_ctr = 0; $my_ctr_new = 0;?>
-				<?php foreach ($new_product->result() as $row) {
-					if ($lang=="ina"){
-						$p_new1[$p_new_ctr] = $row->product_name_ina;
-						$p_new1_[$p_new_ctr] = $row->product_desc_ina;
-						$p_new_ctr = $p_new_ctr+1;
-					} else {
-						$p_new1[$p_new_ctr] = $row->product_name_eng;
-						$p_new1_[$p_new_ctr] = $row->product_desc_eng;
-						$p_new_ctr = $p_new_ctr+1;
-					}
-				} ?>
-
+					
 				<?php foreach ($new_product->result() as $row)  
 	            {  
 	            ?>
 					<div class="content_slider">
-						<img src="<?php echo base_url(); ?>asset/image/Upload/<?php echo $row->product_image ?>"/>
-						<div class="desc_title">
-							<p><?php echo $p_new1[$my_ctr_new]; ?></p>
-						</div>
-						<p class="desc_body"><?php echo $p_new1_[$my_ctr_new]; ?></p>
-						<a href="<?php echo base_url(); ?>asset/image/Upload/<?php echo $row->product_image ?>" data-lightbox="produk_terbaru"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
-					</div>
-				<?php
-					$my_ctr_new = $my_ctr_new + 1;
-				 } ?>
+		                <?php 
+							$fp = 'asset/image/products/' . $row->image;
+							if (file_exists($fp)){ ?>
+								<img src="<?php echo base_url(); ?>asset/image/products/<?=$row->image;?>" class="image_result"/>
+							<?php } else { ?>
+								<img src="<?php echo base_url(); ?>asset/image/products/no.PNG" class="image_result"/>
+							<?php }
+						?>
+		                <div class="desc_title">
+		                    <p><?php echo $row->nama;?></p> 
+		                </div>
+		                <p class="desc_body">
+		                    <?php echo $row->id_jenis_barang;?>-<?php echo $row->id_kendaraan;?><?php echo $row->id_varian;?><br/>
+		                    <?php echo $row->make;?> <?php echo $row->model1;?> <?php echo $row->model2;?><br/>
+		                    <?php echo $row->remarks;?><br/>
+		                    EOM no. <?php echo $row->nomor_asli;?>
+		                </p>
+		                <!--<?php 
+							$fp = 'asset/image/products/' . $row->image;
+							if (file_exists($fp)){ ?>
+								<a href="<?php echo base_url(); ?>asset/image/products/<?=$row->image;?>" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
+							<?php } else { ?>
+								<a href="<?php echo base_url(); ?>asset/image/products/no.PNG" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
+							<?php }
+						?>-->
+		            </div>
+				<?php } ?>
 				</div>
 				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right1"/>
 				<!--<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>-->
@@ -67,33 +72,38 @@
 			<div class="content_produk_unggulan">
 				<h3><?php echo $lang_array[17]; ?></h3>
 				<div class="owl-carousel" id="owl-carousel-2">
-					<?php $p_ung1 = array(); $p_ung1_ = array(); $p_ung_ctr = 0; $my_ctr = 0;?>
-				<?php foreach ($unggulan->result() as $row) {
-					if ($lang=="ina"){
-						$p_ung1[$p_ung_ctr] = $row->product_name_ina;
-						$p_ung1_[$p_ung_ctr] = $row->product_desc_ina;
-						$p_ung_ctr = $p_ung_ctr+1;
-					} else {
-						$p_ung1[$p_ung_ctr] = $row->product_name_eng;
-						$p_ung1_[$p_ung_ctr] = $row->product_desc_eng;
-						$p_ung_ctr = $p_ung_ctr+1;
-					}
-				} ?>
 
 				<?php foreach ($unggulan->result() as $row)  
 	            {  
 	            ?>
 					<div class="content_slider">
-						<img src="<?php echo base_url(); ?>asset/image/Upload/<?php echo $row->product_image ?>"/>
-						<div class="desc_title">
-							<p><?php echo $p_ung1[$my_ctr]; ?></p>
-						</div>
-						<p class="desc_body"><?php echo $p_ung1_[$my_ctr]; ?></p>
-						<a href="<?php echo base_url(); ?>asset/image/Upload/<?php echo $row->product_image ?>" data-lightbox="produk_unggulan"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
-					</div>
-				<?php
-					$my_ctr = $my_ctr + 1;
-				 } ?>
+		                <?php 
+							$fp = 'asset/image/products/' . $row->image;
+							if (file_exists($fp)){ ?>
+								<img src="<?php echo base_url(); ?>asset/image/products/<?=$row->image;?>" class="image_result"/>
+							<?php } else { ?>
+								<img src="<?php echo base_url(); ?>asset/image/products/no.PNG" class="image_result"/>
+							<?php }
+						?>
+		                <div class="desc_title">
+		                    <p><?php echo $row->nama;?></p> 
+		                </div>
+		                <p class="desc_body">
+		                    <?php echo $row->id_jenis_barang;?>-<?php echo $row->id_kendaraan;?><?php echo $row->id_varian;?><br/>
+		                    <?php echo $row->make;?> <?php echo $row->model1;?> <?php echo $row->model2;?><br/>
+		                    <?php echo $row->remarks;?><br/>
+		                    EOM no. <?php echo $row->nomor_asli;?>
+		                </p>
+		                <!--<?php 
+							$fp = 'asset/image/products/' . $row->image;
+							if (file_exists($fp)){ ?>
+								<a href="<?php echo base_url(); ?>asset/image/products/<?=$row->image;?>" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
+							<?php } else { ?>
+								<a href="<?php echo base_url(); ?>asset/image/products/no.PNG" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
+							<?php }
+						?>-->
+		            </div>
+				<?php } ?>
 				</div>
 				<img src="<?php echo base_url(); ?>asset/image/content/arrow_right.png" class="pull-right" id="arrow_right2"/>
 				<!--<div class="paging pull-right"><b>Page 1 of 99 </b>&nbsp;&nbsp; 2 3 4 5 6 &nbsp;&nbsp; > <u>></u></div>-->

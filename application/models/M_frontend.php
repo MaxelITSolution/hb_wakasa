@@ -12,11 +12,11 @@ class M_Frontend extends CI_Model
 
 	public function load($table){
 		if ($table=="unggulan"){
-			$query = $this->db->query('SELECT p.* FROM product p, product_unggulan pu WHERE p.`product_id` = pu.`product_id`');
+			$query = $this->db->query('SELECT * FROM products WHERE is_unggulan = 1');
 			return $query;	
 		}
 		if ($table=="new_product"){
-			$query = $this->db->query('SELECT * FROM product ORDER BY product_id DESC LIMIT 10;');
+			$query = $this->db->query('SELECT * FROM products WHERE is_new = 1');
 			return $query;	
 		}
 		if ($table=="city"){
@@ -28,7 +28,11 @@ class M_Frontend extends CI_Model
 			return $query;	
 		}
 		if ($table=="model"){
-			$query = $this->db->query('SELECT DISTINCT product_model FROM product ORDER BY product_model ASC');
+			$query = $this->db->query('(SELECT DISTINCT make, model1 AS model FROM products) UNION (SELECT DISTINCT make, model2 AS model FROM products)');
+			return $query;	
+		}
+		if ($table=="make"){
+			$query = $this->db->query("SELECT DISTINCT make FROM products");
 			return $query;	
 		}
 		if ($table=="banner_home"){
@@ -65,6 +69,10 @@ class M_Frontend extends CI_Model
 		}
 		if ($table=="banner_tentang"){
 			$query = $this->db->query("SELECT image FROM banner WHERE page='tentang'");
+			return $query;	
+		}
+		if ($table=="content_tentang"){
+			$query = $this->db->query("SELECT image FROM banner WHERE page='content_about'");
 			return $query;	
 		}
 	}
@@ -155,8 +163,9 @@ class M_Frontend extends CI_Model
 		return $query;
 	}
 
-	public function countReseller($inp1, $inp2){
-		$query = $this->db->query("SELECT reseller_id FROM reseller WHERE reseller_provinsi LIKE '$inp1' OR reseller_kota LIKE '$inp2'");
+	public function countReseller($inp2){
+		//$query = $this->db->query("SELECT reseller_id FROM reseller WHERE reseller_provinsi LIKE '$inp1' OR reseller_kota LIKE '$inp2'");
+		$query = $this->db->query("SELECT reseller_id FROM reseller WHERE reseller_kota LIKE '$inp2' AND reseller_is_show=1");
 		if($query->num_rows() > 0){
 			return $query->num_rows();
 		} else {
@@ -164,8 +173,8 @@ class M_Frontend extends CI_Model
 		}
 	}
 
-	public function getReseller($inp1, $inp2){
-		$query = $this->db->query("SELECT * FROM reseller WHERE reseller_provinsi LIKE '$inp1' OR reseller_kota LIKE '$inp2'");
+	public function getReseller($inp2){
+		$query = $this->db->query("SELECT * FROM reseller WHERE reseller_kota LIKE '$inp2' AND reseller_is_show=1");
 		return $query;
 	}
 
@@ -236,5 +245,26 @@ class M_Frontend extends CI_Model
 		}
 		return $this->db->get($tablename)->result();
 	}
+
+	public function insert($table, $data1){
+		if ($table == "new_message"){
+			if($this->db->insert('user_message', $data1))
+          		return true;
+		}
+		if ($table == "new_subscribe"){
+			if($this->db->insert('user_subscribe', $data1))
+          		return true;
+		}
+	}
+
+	public function load_d($table, $bMake){
+		if ($table=="getModel"){
+			/*$query = $this->db->query("SELECT * FROM products WHERE make = '$bMake'");
+			return $query;	*/
+			$this->db->where('make', $bMake);
+			return $this->db->get('products');
+		}
+	}
+
 }
 ?>

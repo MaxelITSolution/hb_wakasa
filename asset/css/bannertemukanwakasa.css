@@ -151,8 +151,17 @@
 	font-size: 15px;
 	border-radius: 5px;
 }
-#left_select{
-	margin-left: 410px;
+#right_select{
+	margin-left: 500px;
+}
+
+@media screen and (max-width: 1280px){
+	.banner #desc{
+		margin-left: 350px;
+	}
+	#right_select{
+		margin-left: 450px;
+	}
 }
 
 @media screen and (max-width: 1024px){
@@ -165,8 +174,8 @@
 	.dropdown-content1 {
 	    margin-left: 210px;
 	}
-	#left_select{
-		margin-left: 210px;
+	#right_select{
+		margin-left: 320px;
 	}
 }
 
@@ -187,6 +196,9 @@
 	#left_select{
 		margin-left: 190px;
 	}
+	#right_select{
+		margin-left: 300px;
+	}
 }
 
 @media screen and (max-width: 850px){
@@ -205,6 +217,12 @@
 	}
 	#left_select{
 		margin-left: 110px;
+	}
+}
+
+@media screen and (max-width: 786px){
+	#right_select{
+		margin-left: 210px;
 	}
 }
 
@@ -257,6 +275,9 @@
 	}
 	#left_select{
 		margin-left: 30px;
+	}
+	#right_select{
+		margin-left: 170px;
 	}
 }
 
@@ -319,5 +340,8 @@
 	}
 	#btn_search{
 		border-radius: 5px;
+	}
+	#right_select{
+		margin-left: 80px;
 	}
 }

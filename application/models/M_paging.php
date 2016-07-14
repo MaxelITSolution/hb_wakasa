@@ -4,6 +4,247 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class M_Paging extends CI_Model
 {
 
+	Public function get_my_data($limit, $offset) {
+		$this->db->like("nama", 'selang');
+		$this->db->like("make", 'MITSUBISHI');
+	  	$query = $this->db->get('products', $limit, $offset);
+	  	return $query->result_array();
+	}
+
+	public function record_count($inp, $inp_make) {
+		return $query = $this->db->like("nama", $inp)
+								 ->like("make", $inp_make)
+								 ->get('products')->num_rows();
+		//return $this->db->count_all("products");
+	}
+
+	public function fetch_data($limit, $id, $inp, $inp_make) {
+		$this->db->limit($limit);
+		$query = $this->db->like("nama", $inp)
+						  ->like("make", $inp_make)
+						  ->get("products");
+		if ($query->num_rows() > 0) {
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+
+			return $data;
+		}
+		return false;
+	}
+
+	function lihat($sampai,$dari){
+		return $query = $this->db->like("nama", 'selang')
+								 ->like("make", 'MITSUBISHI')
+								 ->get('products',$sampai,$dari)->result();
+		
+	}
+
+	function j_s1($sampai,$dari, $inp, $inp_make){
+		return $query = $this->db->like("nama", $inp)
+								 ->like("make", $inp_make)
+								 ->get('products',$sampai,$dari)->result();
+		
+	}
+
+	function j_s($inp, $inp_make){
+		return $query = $this->db->like("nama", '$inp')
+								 ->like("make", '$inp_make')
+								 ->get('products')->num_rows();
+	}
+ 
+	function jumlah(){
+		return $this->db->get('products')->num_rows();
+	}
+
+	//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+	function get_search_products(){
+		$sql = "select * from temp_products";
+		$query = $this->db->query($sql);
+		return $query->num_rows();
+	}
+
+	function get_temp_products($limit, $start){
+		$sql = "select products.* from products, temp_products where products.id = temp_products.id limit " . $start . ", " . $limit;
+		$query = $this->db->query($sql);
+		return $query->result();
+	}
+
+	function cekS_trun(){
+		$query = $this->db->query("TRUNCATE TABLE temp_products");
+		return true;
+	}
+
+
+
+	//======================================================================================
+
+	function _count_inp($inp){
+		$sql = "select * from products where nama like '%$inp%'";
+		$query = $this->db->query($sql);
+		return $query->num_rows();
+	}
+	function _get_inp($inp, $limit, $start){
+		$sql = "select * from products where nama like '%$inp%' limit " . $start . ", " . $limit;
+		$query = $this->db->query($sql);
+		return $query->result();
+	}
+
+	//======================================================================================
+
+
+	//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+		function get_products($limit, $start, $inp = NULL)
+		{
+			if ($inp == "NIL") $inp = "";
+			$sql = "select * from products where nama like '%$inp%' limit " . $start . ", " . $limit;
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
+		function get_products_count($inp = NULL){
+			if ($inp == "NIL") $inp = "";
+			$sql = "select * from products where nama like '%$inp%'";
+			$query = $this->db->query($sql);
+			return $query->num_rows();
+		}
+
+		//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+		function get_products_count_inp_mk($inp = NULL, $inp_make=NULL){
+			if ($inp == "NIL") $inp = "";
+			if ($inp_make == "NIL") $inp_make = "";
+			$sql = "select * from products where nama like '%$inp%' and make like '%$inp_make%'";
+			$query = $this->db->query($sql);
+			return $query->num_rows();
+		}
+			
+		function get_products_inp_mk($limit, $start, $inp = NULL)
+		{
+			if ($inp == "NIL") $inp = "";
+			if ($inp_make == "NIL") $inp_make = "";
+			$sql = "select * from products where nama like '%$inp%' and make like '%$inp_make%' limit " . $start . ", " . $limit;
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
+	//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+
+
+
+
+	//===============================================================================================================
+
+	function cekS_s($inp){
+		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE nama LIKE '%$inp%'");
+		return true;
+	}
+
+	function cekS_s_ctr($inp){
+		$sql = "SELECT id FROM products WHERE nama LIKE '%$inp%'";
+		$query = $this->db->query($sql);
+		return $query->num_rows();
+	}
+
+	//===============================================================================================================
+
+	function cekS_s_mk($inp, $inp_make){
+		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE nama LIKE '%$inp%' AND make LIKE '%$inp_make%'");
+		return true;	
+	}
+
+	function cekS_s_md($inp, $inp_model){
+		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE nama LIKE '%$inp%' AND model1 LIKE '%$inp_model%' OR model2 LIKE '%$inp_model%'");
+		return true;	
+	}
+
+	function cekS_s_mk_md($inp, $inp_make, $inp_model){
+		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE nama LIKE '%$inp%' AND make LIKE '%$inp_make%' AND model1 LIKE '%$inp_model%' OR model2 LIKE '%$inp_model%'");
+		return true;		
+	}
+
+	function cekS_mk($inp_make){
+		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE make LIKE '%$inp_make%'");
+		return true;
+	}
+
+	function cekS_md($inp_model){
+		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE model1 LIKE '%$inp_model%' OR model2 LIKE '%$inp_model%'");
+		return true;	
+	}
+
+	function cekS_mk_md($inp_make, $inp_model){
+		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE make LIKE '%inp_make%' AND model1 LIKE '%$inp_model%' OR model2 LIKE '%$inp_model%'");
+		return true;		
+	}
+
+
+	function get_books($limit, $start, $st = NULL)
+	{
+		if ($st == "NIL") $st = "";
+		$sql = "select * from products where nama like '%$st%' limit " . $start . ", " . $limit;
+		$query = $this->db->query($sql);
+		return $query->result();
+	}
+
+	function get_books_count($st = NULL)
+	{
+		if ($st == "NIL") $st = "";
+		$sql = "select * from products where nama like '%$st%'";
+		$query = $this->db->query($sql);
+		return $query->num_rows();
+	}
+
+	function getDetail_($limit, $start, $st = NULL)
+	{
+		if ($st == "NIL") $st = "";
+		$sql = "select * from products where nama like '%$st%' limit " . $start . ", " . $limit;
+		$query = $this->db->query($sql);
+		return $query;
+	}
+
+//==================================================================================
+	function get_products_s_mk($limit, $start, $inp = NULL, $inp_make = NULL){
+		if ($inp == "NIL") $inp = "";
+		if ($inp_make == "NIL") $inp_make = "";
+		$sql = "select * from products where make like '%$inp_make%' and nama like '%$inp%' limit " . $start . ", " . $limit;
+		$query = $this->db->query($sql);
+		return $query->result();
+	}
+
+	function get_products_count_s_mk($inp = NULL, $inp_make = NULL){
+		if ($inp == "NIL") $inp = "";
+		if ($inp_make == "NIL") $inp_make = "";
+		$sql = "select * from products where make like '%$inp_make%' and nama like '%$inp%'";
+		$query = $this->db->query($sql);
+		return $query->num_rows();	
+	}
+
+//==================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public function getData($pg, $limit){
 		$offset = $this->uri->segment(3);
 		if ($pg=="after_login"){

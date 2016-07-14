@@ -28,7 +28,7 @@
 	<form class="form-horizontal" action="<?php echo base_url(); ?>Backend/update_banner_karir" method="POST" enctype="multipart/form-data">
 		<?php foreach ($image->result() as $row) { ?>
 		<div class="col-sm-4">
-			<input type="hidden" id="img" name="img" >
+			<input type="hidden" id="img" name="img" style="width: 500px;" >
 			<script>
 				$(document).ready(function () {
 					$('#banner_img').change(function(){

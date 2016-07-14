@@ -102,10 +102,10 @@
 		<div class="dropdown"  id="drop4">
 		  	<button class="dropbtn active" id="menu_4"><img src="<?php echo base_url(); ?>asset/image/menu/menu4_blue.png" id="menu4"></button>
 		  	<div class="dropdown-content">
-		    	<a href="<?php echo base_url(); ?>searchgeneral" id="cari"><?php echo $lang_array[5]; ?></a>
+		    	<!--<a href="<?php echo base_url(); ?>searchgeneral" id="cari"><?php echo $lang_array[5]; ?></a>-->
 		    	<?php if ($log=="no"){ ?>
 		    		<a href="<?php echo base_url(); ?>menjadireseller" id="cari_produk_menu_wakasa"><?php echo $lang_array[6]; ?></a>
-		    	<?php } else { ?> 
+		    	<?php } else { ?>
 		    		<a href="<?php echo base_url(); ?>jelajahproduct" id="cari_produk_menu_wakasa"><?php echo $lang_array[6]; ?></a>
 		    	<?php } ?>
 		  	</div>
@@ -127,7 +127,7 @@
 			<a href="tentangkami"><p id="tentang_kami" class="menu_list"><?php echo $lang_array[2]; ?></p></a>
 			<a href="temukanwakasa"><p id="temukan_wakasa" class="menu_list"><?php echo $lang_array[3]; ?></p></a>
 			<a href="contact"><p id="kontak_kami" class="menu_list"><?php echo $lang_array[4]; ?></p></a>
-			<a href="searchgeneral"><p id="cari_menu" class="menu_list"><?php echo $lang_array[5]; ?></p></a>
+			<!--<a href="searchgeneral"><p id="cari_menu" class="menu_list"><?php echo $lang_array[5]; ?></p></a>-->
 			<?php if ($log=="no"){ ?>
 				<a href="menjadireseller"><p id="cari_produk_menu" class="menu_list"><?php echo $lang_array[6]; ?></p></a>
 			<?php } else { ?> 

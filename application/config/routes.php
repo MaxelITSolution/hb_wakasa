@@ -77,4 +77,15 @@ $route['set_lang_ina'] = 'frontend/set_lang_ina';
 $route['set_reg_no'] = 'frontend/set_reg_no';
 $route['user_logout'] = 'frontend/user_logout';
 
+
+$route['sp'] = 'Frontend/sp';
+$route['sp_mk'] = 'Frontend/sp_mk';
+$route['cekS'] = 'Frontend/cekS';
+$route['SearchProduct'] = 'Frontend/SearchProduct';
+
+$route['spik'] = 'Frontend/spik';
+
+$route['client_message'] = 'Frontend/client_message';
+$route['client_subscribe'] = 'Frontend/client_subscribe';
+
 $route['search_product_temp'] = 'frontend/search_product_temp';

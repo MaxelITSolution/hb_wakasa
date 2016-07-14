@@ -1,5 +1,6 @@
 <script type="text/javascript">
-	
+	$('#master').addClass('active_main');
+	$('#product').addClass('active');
 	$(document).ready(function () {
 		$('#productTable').DataTable();
 	});
@@ -23,6 +24,8 @@
 				<td>Nama</td>
 				<td>No. Asli</td>
 				<td>Make</td>
+				<td>Baru</td>
+				<td>Unggulan</td>
 				<td>Action</td>
 			</tr>
 		</thead>
@@ -42,6 +45,24 @@
 				</td>
 				<td>
 					<?php echo $row->make;?>
+				</td>
+				<td style="text-align: center;">
+					<?php $fl = $row->is_new;
+						if ($fl=="0"){ ?>
+							<a href="<?php echo 'set_new?id=' .$row->id; ?>"><span class="glyphicon glyphicon-star-empty"></span></a>
+						<?php } else { ?>
+							<a href="<?php echo 'set_new?id=' .$row->id; ?>"><span class="glyphicon glyphicon-star" style="color: #fff000;"></span></a>
+						<?php }
+					?>
+				</td>
+				<td style="text-align: center;">
+					<?php $fl = $row->is_unggulan;
+						if ($fl=="0"){ ?>
+							<a href="<?php echo 'set_unggulan?id=' .$row->id; ?>"><span class="glyphicon glyphicon-star-empty"></span></a>
+						<?php } else { ?>
+							<a href="<?php echo 'set_unggulan?id=' .$row->id; ?>"><span class="glyphicon glyphicon-star" style="color: #fff000;"></span></a>
+						<?php }
+					?>
 				</td>
 				<td>
 					<a href="<?php echo 'detail_update_products?id=' .$row->id; ?>"><span class="glyphicon glyphicon-user"></span> Detail </a> | 

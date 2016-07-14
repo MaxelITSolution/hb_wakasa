@@ -64,6 +64,25 @@ span{
 	margin-left: 120px;
 }
 
+#m_p7{
+	padding-top: 20px;	
+	color: #0071bc;
+	font-family: Ubuntu;
+	margin-left: -50px;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#kota_reg, #provinsi_reg{
+	height: 30px;
+	color: #00a0e8;
+	font-family: Ubuntu;
+	border-radius: 5px;
+	width: 250px;
+	margin-left: 200px;
+}
+
 .m_register_header{
 	background: #fff000;
 	margin-left: -20px;
@@ -82,7 +101,6 @@ span{
 	top: 70px;
 	left: 350px;
 }
-
 
 @media screen and (max-width: 1024px){
 	#content_left{
@@ -134,5 +152,8 @@ span{
 	#content_right{
 		width: 280px;
 		margin-left: 20px;
+	}
+	#m_p7{
+		width: 250px;
 	}
 }

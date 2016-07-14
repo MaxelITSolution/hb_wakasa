@@ -67,12 +67,20 @@
 							    <input type="text" class="form-control reg_input" id="alamat_toko_reg" name="alamat_toko_reg" placeholder="Alamat Toko / Badan Usaha*" required>
 							</div>
 							<div class="form-group">
-							    <label for="kota_reg" class="sr-only">Kota</label>
-							    <input type="text" class="form-control reg_input" id="kota_reg" name="kota_reg" placeholder="Kota*" required>
+							    <select class="selectpicker" id="kota_reg" name="kota_reg" onchange="setKota();">
+							    	<option value="">Kota</option>
+									<?php foreach ($city->result() as $row) { ?>
+										<option value="<?php echo $row->city; ?>"><?php echo $row->city; ?></option>
+							        <?php } ?>
+								</select>
 							</div>
 							<div class="form-group">
-							    <label for="provinsi_reg" class="sr-only">Provinsi</label>
-							    <input type="text" class="form-control reg_input" id="provinsi_reg" name="provinsi_reg" placeholder="Provinsi*" required>
+							    <select class="selectpicker" id="provinsi_reg" name="provinsi_reg" onchange="setProvinsi();">
+							    	<option value="">Provinsi</option>
+								  	<?php foreach ($provinsi->result() as $row) { ?>
+										<option value="<?php echo $row->provinsi; ?>"><?php echo $row->provinsi; ?></option>
+							        <?php } ?>
+								</select>
 							</div>
 							<div class="form-group">
 							    <label for="phone_reg" class="sr-only">Telepon Kantor</label>
@@ -80,7 +88,7 @@
 							</div>
 							<div class="form-group">
 							    <label for="handphone_reg" class="sr-only">Handphone</label>
-							    <input type="text" class="form-control reg_input" id="handphone_reg" name="handphone_reg" placeholder="Handphone*" required>
+							    <input type="text" class="form-control reg_input" id="handphone_reg" name="handphone_reg" placeholder="Handphone">
 							</div>
 							<div class="form-group">
 							    <label for="email_reg" class="sr-only">Email</label>
@@ -107,6 +115,7 @@
 							  	<label><input type="radio" name="opt_yn" class="yes_no" value="n">No</label>
 							</div>
 							<p id="m_p5"><?php echo $lang_array[79]; ?> <span><input type="text" id="time_reg" name="time_reg" class="input_line" required></span></p>
+							<p id="m_p7"><input type="checkbox" id="ckBox" name="ckBox" value="1">&nbsp;&nbsp;<?php echo $lang_array[84]; ?></p>
 							<div class="footer_register">
 								<div class="col-sm-6">
 									<p id="m_p6" class="pull-right"><?php echo $lang_array[80]; ?></p>

@@ -40,7 +40,7 @@
 	<a href="jelajahproduct">
 <?php } ?>
 	<div id="banner_text2">
-		<div id="banner_text2_">BAUT-BAUT (BOLTS)</div>
+		<div id="banner_text2_"><?php echo $lang_array[83]; ?></div>
 	</div>
 </a>
 <?php if ($islog=="no"){ ?>

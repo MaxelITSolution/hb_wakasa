@@ -43,16 +43,6 @@
 				background: transparent;
 				border: none;
 			}
-			#paging_info{
-				font-family: Ubuntu;
-				color: #636363;	
-				margin-left: 920px;
-				margin-top: 27px;
-				position: absolute;
-			}
-			ul.pagination{
-				margin-right: 130px;
-			}
 		</style>
 		<?php $all_page = ceil($total_page / $per_hal); ?>
 		<script type="text/javascript">
@@ -81,14 +71,32 @@
 					
 					<div class="col-sm-3">
 						<div class="content_slider">
-							<img src="<?php echo base_url(); ?>asset/image/products/<?=$row->image;?>" class="image_result"/>
+							<?php 
+								$fp = 'asset/image/products/' . $row->image;
+								if (file_exists($fp)){ ?>
+									<img src="<?php echo base_url(); ?>asset/image/products/<?=$row->image;?>" class="image_result"/>
+								<?php } else { ?>
+									<img src="<?php echo base_url(); ?>asset/image/products/no.PNG" class="image_result"/>
+								<?php }
+							?>
+							
 							<div class="desc_title">
 								<p><?php echo $row->nama;?></p>	
 							</div>
 							<p class="desc_body">
-								<?php echo $row->remarks;?>
-							</p>
-							<a href="<?php echo base_url(); ?>asset/image/Upload/<?=$row->image;?>" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
+			                    <?php echo $row->id_jenis_barang;?>-<?php echo $row->id_kendaraan;?><?php echo $row->id_varian;?><br/>
+			                    <?php echo $row->make;?> <?php echo $row->model1;?> <?php echo $row->model2;?><br/>
+			                    <?php echo $row->remarks;?><br/>
+			                    EOM no. <?php echo $row->nomor_asli;?>
+			                </p>
+							<!--<?php 
+								$fp = 'asset/image/products/' . $row->image;
+								if (file_exists($fp)){ ?>
+									<a href="<?php echo base_url(); ?>asset/image/products/<?=$row->image;?>" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
+								<?php } else { ?>
+									<a href="<?php echo base_url(); ?>asset/image/products/no.PNG" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>
+								<?php }
+							?>-->
 						</div>
 						<div id="spasi" style="margin-bottom: 30px;"></div>
 					</div>

@@ -8,6 +8,15 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/headerbiru.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>asset/css/bannergeneral.css" type="text/css" />
 		<style type="text/css">
+			.content_slider{
+				height: 400px;
+			}
+			.content_slider img{
+				height: 200px;
+			}
+			.content_slider .desc_body{
+				height: 110px;
+			}
 			ul.pagination li a{
 				font-family: Ubuntu;
 				color: #636363;	
@@ -37,12 +46,20 @@
 			#paging_info{
 				font-family: Ubuntu;
 				color: #636363;	
-				margin-right: 250px;
+				margin-left: 710px;
+				margin-top: 27px;
+				position: absolute;
 			}
 			ul.pagination{
-				margin-top: -5px;
-				margin-left: 150px;
-				margin-right: -200px;
+				margin-right: 130px;
+			}
+			ul.pagination li#first a{
+				background: transparent;
+				border: none;
+			}
+			ul.pagination li#last a{
+				background: transparent;
+				border: none;
 			}
 		</style>
 		<?php $all_page = ceil($total_page / $per_hal); ?>
@@ -68,23 +85,24 @@
 					<p>Your search for "<?php echo $name; ?>" has <?php echo $total_page; ?> matches</p>
 				</div>
 				<div id="result">
-					<?php foreach ($query->result() as $row) { ?>
-						<p id="result_title">
-							<?php if ($lang=="ina"){?>
-								<?php echo $row->product_name_ina;?>
-							<?php } else { ?>
-								<?php echo $row->product_name_eng;?>
-							<?php } ?>
+
+					<?php for ($i = 0; $i < count($products); ++$i) { ?>
+				        <p id="result_title">
+				        	<?php echo $products[$i]->nama;?>
 						</p>
 						<p id="result_desc">
-							<?php if ($lang=="ina"){?>
-								<?php echo $row->product_desc_ina;?>
-							<?php } else { ?>
-								<?php echo $row->product_desc_eng;?>
-							<?php } ?>
+							<?php $tmp = $products[$i]->desc;
+								if ($tmp==""){
+									echo $products[$i]->remarks;	
+								} else {
+									echo $products[$i]->desc;
+								}
+							 ?>
 						</p>
 						<div class="separator"></div>
-					<?php } ?>
+				    <?php } ?>
+
+					
 					<!--<p id="result_title">Xxx The Price of Insurance Broker become High</p>
 					<p id="result_desc">On the other hand, we denounce with righteous indignarion and dislike men who are so beguiled and demoralized by the charms of the moment, so blinded by desire, that they cannot foresee the pain and truble that are bound to ensure and equal blame belongs to those who fail in their duty throught weakness.www.dps-insurancebroker.co/xxx-The-Price-of-Insurance</p>
 					<div class="separator"></div>
@@ -98,7 +116,7 @@
 					<p id="result_desc">On the other hand, we denounce with righteous indignarion and dislike men who are so beguiled and demoralized by the charms of the moment, so blinded by desire, that they cannot foresee the pain and truble that are bound to ensure and equal blame belongs to those who fail in their duty throught weakness.www.dps-insurancebroker.co/xxx-The-Price-of-Insurance</p>
 					<div class="separator"></div>-->
 				</div>
-				<p id="paging_info" class="pull-right"><b>Page <span id="page_now">1</span> of <?php echo $all_page; ?> </b></p><?php echo $page_links; ?>
+				<p id="paging_info" class="pull-right"><b>Page <span id="page_now"></span> of <?php echo $all_page; ?> </b></p><?php echo $pagination; ?>
 			</div>
 		</div>
 		<div id="to_footer"></div>

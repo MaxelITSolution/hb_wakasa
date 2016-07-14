@@ -7,6 +7,7 @@
 	padding-top: 30px;
 	padding-bottom: 50px;
 	margin-top: -100px;
+	height: 580px;
 }
 
 .content #contact_us h3, .content #subscribe_us h3{
@@ -142,19 +143,25 @@
 	}
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 786px){
 	.content #contact_us{
 		margin-top: 100px;
 	}
 	.content #subscribe_us{
-		margin-top: 50px;
+		margin-top: 100px;
 		margin-left: 50px;
 	}
 	.content #welcome, .content #sub_desc{
-		width: 500px !important;
+		width: 500px;
 	}
 	.content{
 		margin-top: -200px;
+	}
+}
+
+@media screen and (max-width: 758px){
+	.content #welcome, .content #sub_desc{
+		width: 600px;
 	}
 }
 
@@ -162,10 +169,7 @@
 	.content{
 		margin-top: -80px;
 	}
-	.content #welcome{
-		width: 250px !important;
-	}
-	.content #sub_desc{
-		width: 250px !important;
+	.content #welcome, .content #sub_desc{
+		width: 250px;
 	}
 }

@@ -9,7 +9,7 @@
 	<form action="search_wakasa" method="post">
 		<input type="hidden" name="prov" id="prov" value="Aceh">
 		<input type="hidden" name="kota" id="kota" value="Airmadidi">
-		<select class="selectpicker" id="left_select" name="left_select" onchange="setProvinsi();">
+		<select class="selectpicker" id="left_select" name="left_select" onchange="setProvinsi();" style="display: none;">
 		  <?php foreach ($provinsi->result() as $row) { ?>
 				<option value="<?php echo $row->provinsi; ?>"><?php echo $row->provinsi; ?></option>
 	        <?php } ?>

@@ -4,7 +4,7 @@
 	<?php } ?>
 
 	<h3>CARI PRODUK WAKASA</h3>
-	<form class="form-inline" action="<?php echo base_url(); ?>search_p" method="post">
+	<form class="form-inline" action="<?php echo base_url(); ?>sp" method="post">
 	  	<div class="form-group">
 	    	<label class="sr-only" for="search_input">Masukkan Kata Kunci</label>
 	    	<input type="text" class="form-control" id="search_input" name="search_input" placeholder="Masukkan kata kunci">

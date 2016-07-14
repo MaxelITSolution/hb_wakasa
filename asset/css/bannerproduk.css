@@ -267,19 +267,25 @@
 	}
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 786px){
+	#search_input{
+		margin-left: 0px;
+	}
+}
+
+@media screen and (max-width: 758px){
 	.banner h3{
 		font-size: 30px	;
 		margin-top: -180px;
 		margin-left: 200px;
 	}
 	.banner .form-inline .form-group{
-		display: none;
+		/*display: none;*/
 		margin-left: 20px;
 		width: 50px;
 	}
 
-	.banner #search_input1{
+	/*.banner #search_input1{
 		display: block;
 		margin-top: -45px;
 		margin-left: 40px;
@@ -287,16 +293,22 @@
 		padding-left: 10px;
 		height: 30px;
 		width: 250px;
+	}*/
+	#search_input{
+		margin-left: 115px;
+		margin-top: 110px;
+		width: 350px;
+		position: absolute;
 	}
 	.banner #btn_search{
 		margin-top: 110px;
-		margin-left: 70px;
+		margin-left: 380px;
 	}
 	.dropdown1{
 		margin-left: 40px;
 	}
 	.dropbtn1, .dropbtn2{
-		width: 200px;
+		width: 150px;
 		margin-left: 0px;
 	}
 	.dropbtn1 span, .dropbtn2 span{
@@ -307,7 +319,7 @@
 		margin-left: 0px;
 	}
 	.dropdown-content1, .dropdown-content2 {
-	    min-width: 200px;
+	    min-width: 150px;
 	}
 }
 
@@ -322,21 +334,32 @@
 		margin-left: 70px;
 	}	
 	.banner .form-inline .form-group{
-		display: none;
+		/*display: none;*/
 		margin-left: 20px;
 		width: 50px;
+	}
+	#search_input{
+		margin-left: 50px;
+		margin-top: 100px;
+		width: 250px;
+		height: 25px;
+		position: absolute;
+		border-radius: 5px;
 	}
 
 	.banner #search_input1{
 		display: block;
-		margin-top: -85px;
+		margin-top: -95px;
 		margin-left: 40px;
 		position: absolute;
 		padding-left: 10px;
 	}
 	.banner #btn_search{
-		margin-top: 150px;
-		margin-left: 20px;
+		margin-top: 190px;
+		margin-left: 50px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		border-radius: 5px;
 	}
 	.dropdown1{
 		margin-left: 40px;
@@ -353,5 +376,18 @@
 	}
 	.dropdown-content1, .dropdown-content2 {
 	    min-width: 120px;
+	}
+	#make_select, #model_select{
+		height: 25px;
+	}
+	#make_select{
+		position: absolute;
+		margin-top: -85px;
+		margin-left: -85px;
+	}
+	#model_select{
+		position: absolute;
+		margin-top: -55px;
+		margin-left: -85px;
 	}
 }

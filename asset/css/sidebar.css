@@ -231,6 +231,11 @@ hr.bold{
 	color: #000;
 }
 
+#sub_report li a:hover{
+	background: #fff;
+	color: #000;
+}
+
 #title_company_name a{
 	font-size: 18px;
 }

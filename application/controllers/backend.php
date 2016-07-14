@@ -1,19 +1,48 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Backend extends CI_Controller {
-	function __construct()
-	{
-		parent::__construct();
-		$this->load->database();
-		$this->load->model('M_backend');
-		$this->load->helper(Array("form","url"));
-	}
 	public function index(){
 		$this->load->view('link');
 		$this->load->view('v_admin_login');
 	}
+
+	/*public function setWatermark(){
+		// Images folder, must end with slash.
+		$images_folder = 'asset/image/products/';
+
+		// Save watermarked images to this folder, must end with slash.
+		$destination_folder = 'asset/image/products_water/';
+
+		// Path to the watermark image (apply this image as waretmark)
+		$watermark_path = 'asset/image/qwe.png';
+
+		// MOST LIKELY YOU WILL NOT NEED TO CHANGE CODE BELOW
+
+		// Load functions for image watermarking
+		include("asset/watermark_image.class.php");
+
+		// Watermark all the "jpg" files from images folder
+		// and save watermarked images into destination folder
+		foreach (glob($images_folder."*.jpg") as $filename) {
+
+		  // Image path
+		  $image_path = $filename;
+
+		  // Where to save watermarked image
+		  $imgdestpath = $destination_folder . basename($filename);
+
+		  // Watermark image
+		  $img = new Zubrag_watermark($image_path);
+		  $img->ApplyWatermark($watermark_path);
+		  $img->SaveAsFile($imgdestpath);
+		  $img->Free();
+
+		}
+	}*/
 	
 	public function dashboard(){
+		$this->load->database();
+		$this->load->model('M_backend');
 		$this->load->view('link_');
 		$this->load->view('v_sidebar');
 		$table = "reseller_no_active";
@@ -60,7 +89,7 @@ class Backend extends CI_Controller {
 
 		$mail = new PHPMailer;            
 
-		$mail->isSMTP();                                      
+		//$mail->isSMTP();                                      
 		$mail->Host = 'smtp.gmail.com;smtp.mail.yahoo.com';  
 		$mail->SMTPAuth = true;                               
 		$mail->Username = $amail;               
@@ -80,10 +109,9 @@ class Backend extends CI_Controller {
 		$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 		if(!$mail->send()) {
-		    echo 'Message could not be sent.';
 		    echo 'Mailer Error: ' . $mail->ErrorInfo;
 		} else {
-		    echo 'Message has been sent';
+		    
 		}
 	}
 
@@ -111,6 +139,108 @@ class Backend extends CI_Controller {
 
 		$kd_product = "PRO".date("dmYHis");
 		$url_img = "./asset/image/products/";
+
+		$fileName = $_FILES["upimageproduct"]["name"]; // The file name
+		$fileTmpLoc = $_FILES["upimageproduct"]["tmp_name"]; // File in the PHP tmp folder
+		$fileType = $_FILES["upimageproduct"]["type"]; // The type of file it is
+		$fileSize = $_FILES["upimageproduct"]["size"]; // File size in bytes
+		$fileErrorMsg = $_FILES["upimageproduct"]["error"]; // 0 for false... and 1 for true
+		$fileName = preg_replace('#[^a-z.0-9]#i', '', $fileName); // filter
+		$kaboom = explode(".", $fileName); // Split file name into an array using the dot
+		$fileExt = end($kaboom); // Now target the last array element to get the file extension
+
+		// START PHP Image Upload Error Handling -------------------------------
+		if (!$fileTmpLoc) { // if file not chosen
+		    echo "ERROR: Please browse for a file before clicking the upload button.";
+		    exit();
+		} else if($fileSize > 5242880) { // if file size is larger than 5 Megabytes
+		    echo "ERROR: Your file was larger than 5 Megabytes in size.";
+		    unlink($fileTmpLoc); // Remove the uploaded file from the PHP temp folder
+		    exit();
+		} else if (!preg_match("/.(gif|jpg|png)$/i", $fileName) ) {
+		     // This condition is only if you wish to allow uploading of specific file types    
+		     echo "ERROR: Your image was not .gif, .jpg, or .png.";
+		     unlink($fileTmpLoc); // Remove the uploaded file from the PHP temp folder
+		     exit();
+		} else if ($fileErrorMsg == 1) { // if file upload error key is equal to 1
+		    echo "ERROR: An error occured while processing the file. Try again.";
+		    exit();
+		}
+		// END PHP Image Upload Error Handling ---------------------------------
+		// Place it into your "uploads" folder mow using the move_uploaded_file() function
+		$moveResult = move_uploaded_file($fileTmpLoc, "asset/image/products_ori/$fileName");
+		// Check to make sure the move result is true before continuing
+		if ($moveResult != true) {
+		    echo "ERROR: File not uploaded. Try again.";
+		    exit();
+		}
+		// Include the file that houses all of our custom image functions
+		include_once("asset/ak_php_img_lib_1.0.php");
+		// ---------- Start Universal Image Resizing Function --------
+		$target_file = "asset/image/products_ori/$fileName";
+		$resized_file = "asset/image/products_ori/resized_$fileName";
+		$wmax = 500;
+		$hmax = 500;
+		ak_img_resize($target_file, $resized_file, $wmax, $hmax, $fileExt);
+		// ----------- End Universal Image Resizing Function ----------
+		// ---------- Start Convert to JPG Function --------
+		if (strtolower($fileExt) != "jpg") {
+		    $target_file = "asset/image/products_ori/resized_$fileName";
+		    $new_jpg = "asset/image/products_ori/resized_".$kaboom[0].".jpg";
+		    ak_img_convert_to_jpg($target_file, $new_jpg, $fileExt);
+		}
+		// ----------- End Convert to JPG Function -----------
+		// ---------- Start Image Watermark Function --------
+		$target_file = "asset/image/products_ori/resized_".$kaboom[0].".jpg";
+		$wtrmrk_file = "asset/image/wakasa_watermark.png";
+		$new_file = "asset/image/products/protected_".$kaboom[0].".jpg";
+		ak_img_watermark($target_file, $wtrmrk_file, $new_file);
+
+		unlink('asset/image/products_ori/'.$kaboom[0].'.'.$kaboom[1]);
+		//unlink('asset/image/products_ori/resized_'.$kaboom[0].'.'.$kaboom[1]);
+		rename("asset/image/products_ori/resized_".$kaboom[0].'.'.$kaboom[1], "asset/image/products_ori/".$kd_product.'.'.$kaboom[1]);
+		rename("asset/image/products/protected_".$kaboom[0].'.'.$kaboom[1], "asset/image/products/".$kd_product.'.'.$kaboom[1]);
+
+		$data['id_jenis_barang'] = $this->input->post('id_jenis_barang');
+		$data['id_kendaraan'] = $this->input->post('id_kendaraan');
+		$data['id_varian'] = $this->input->post('id_varian');
+
+		$data['nomor_asli'] = $this->input->post('no_asli');
+		$data['nama'] = $this->input->post('nama_barang');
+		$data['remarks'] = $this->input->post('remarks');
+
+		$data['make'] = $this->input->post('make_barang');
+		$data['model1'] = $this->input->post('model1_barang');
+		$data['model2'] = $this->input->post('model2_barang');
+		
+		$data['harga'] = $this->input->post('harga_barang');
+		$data['updated'] = $this->input->post('updated');
+		$data['kemasan'] = $this->input->post('kemasan');
+		$data['desc'] = $this->input->post('deskripsi');
+
+		$data['image'] = $kd_product.'.'.$kaboom[1];
+
+		$data['is_active'] = 1;
+		$table = "product";
+		$this->M_product->insert($table, $data);
+
+		redirect('Backend/product');
+
+		// ----------- End Image Watermark Function -----------
+		// Display things to the page so you can see what is happening for testing purposes
+		//echo "The file named <strong>$fileName</strong> uploaded successfuly.<br /><br />";
+		//echo "It is <strong>$fileSize</strong> bytes in size.<br /><br />";
+		//echo "It is an <strong>$fileType</strong> type of file.<br /><br />";
+		//echo "The file extension is <strong>$fileExt</strong><br /><br />";
+		//echo "The Error Message output for this upload is: $fileErrorMsg";
+	}
+
+	/*public function add_new_product(){
+		$this->load->database();
+		$this->load->model('M_product');
+
+		$kd_product = "PRO".date("dmYHis");
+		$url_img = "./asset/image/products/";
 		
 		$data['id_jenis_barang'] = $this->input->post('id_jenis_barang');
 		$data['id_kendaraan'] = $this->input->post('id_kendaraan');
@@ -130,12 +260,13 @@ class Backend extends CI_Controller {
 		$data['desc'] = $this->input->post('deskripsi');
 
 		$data['image'] = $this->do_upload($kd_product, $url_img);
+
 		$data['is_active'] = 1;
 		$table = "product";
 		$this->M_product->insert($table, $data);
 
 		redirect('Backend/product');
-	}
+	}*/
 
 	public function do_upload($kd_product, $url_img){
 		$type = explode('.', $_FILES["upimageproduct"]["name"]);
@@ -182,6 +313,109 @@ class Backend extends CI_Controller {
 		$kd_product = "PRO".date("dmYHis");
 		$url_img = "./asset/image/products/";
 
+		$fileName = $_FILES["upimageproduct"]["name"]; // The file name
+		$fileTmpLoc = $_FILES["upimageproduct"]["tmp_name"]; // File in the PHP tmp folder
+		$fileType = $_FILES["upimageproduct"]["type"]; // The type of file it is
+		$fileSize = $_FILES["upimageproduct"]["size"]; // File size in bytes
+		$fileErrorMsg = $_FILES["upimageproduct"]["error"]; // 0 for false... and 1 for true
+		$fileName = preg_replace('#[^a-z.0-9]#i', '', $fileName); // filter
+		$kaboom = explode(".", $fileName); // Split file name into an array using the dot
+		$fileExt = end($kaboom); // Now target the last array element to get the file extension
+
+		// START PHP Image Upload Error Handling -------------------------------
+		if (!$fileTmpLoc) { // if file not chosen
+		    echo "ERROR: Please browse for a file before clicking the upload button.";
+		    exit();
+		} else if($fileSize > 5242880) { // if file size is larger than 5 Megabytes
+		    echo "ERROR: Your file was larger than 5 Megabytes in size.";
+		    unlink($fileTmpLoc); // Remove the uploaded file from the PHP temp folder
+		    exit();
+		} else if (!preg_match("/.(gif|jpg|png)$/i", $fileName) ) {
+		     // This condition is only if you wish to allow uploading of specific file types    
+		     echo "ERROR: Your image was not .gif, .jpg, or .png.";
+		     unlink($fileTmpLoc); // Remove the uploaded file from the PHP temp folder
+		     exit();
+		} else if ($fileErrorMsg == 1) { // if file upload error key is equal to 1
+		    echo "ERROR: An error occured while processing the file. Try again.";
+		    exit();
+		}
+		// END PHP Image Upload Error Handling ---------------------------------
+		// Place it into your "uploads" folder mow using the move_uploaded_file() function
+		$moveResult = move_uploaded_file($fileTmpLoc, "asset/image/products_ori/$fileName");
+		// Check to make sure the move result is true before continuing
+		if ($moveResult != true) {
+		    echo "ERROR: File not uploaded. Try again.";
+		    exit();
+		}
+		// Include the file that houses all of our custom image functions
+		include_once("asset/ak_php_img_lib_1.0.php");
+		// ---------- Start Universal Image Resizing Function --------
+		$target_file = "asset/image/products_ori/$fileName";
+		$resized_file = "asset/image/products_ori/resized_$fileName";
+		$wmax = 500;
+		$hmax = 500;
+		ak_img_resize($target_file, $resized_file, $wmax, $hmax, $fileExt);
+		// ----------- End Universal Image Resizing Function ----------
+		// ---------- Start Convert to JPG Function --------
+		if (strtolower($fileExt) != "jpg") {
+		    $target_file = "asset/image/products_ori/resized_$fileName";
+		    $new_jpg = "asset/image/products_ori/resized_".$kaboom[0].".jpg";
+		    ak_img_convert_to_jpg($target_file, $new_jpg, $fileExt);
+		}
+		// ----------- End Convert to JPG Function -----------
+		// ---------- Start Image Watermark Function --------
+		$target_file = "asset/image/products_ori/resized_".$kaboom[0].".jpg";
+		$wtrmrk_file = "asset/image/wakasa_watermark.png";
+		$new_file = "asset/image/products/protected_".$kaboom[0].".jpg";
+		ak_img_watermark($target_file, $wtrmrk_file, $new_file);
+
+		unlink('asset/image/else/'.$kaboom[0].'.'.$kaboom[1]);
+		//unlink('asset/image/products_ori/resized_'.$kaboom[0].'.'.$kaboom[1]);
+		
+		rename("asset/image/products_ori/resized_".$kaboom[0].'.'.$kaboom[1], "asset/image/products_ori/".$kd_product.'.'.$kaboom[1]);
+		rename("asset/image/products/protected_".$kaboom[0].'.'.$kaboom[1], "asset/image/products/".$kd_product.'.'.$kaboom[1]);
+
+		$id = $this->input->post('id_product');
+		$ganti = $this->input->post('new_url_image');
+		$ganti_1 = $this->input->post('new_url_image_ori');
+
+		$data['id_jenis_barang'] = $this->input->post('id_jenis_barang');
+		$data['id_kendaraan'] = $this->input->post('id_kendaraan');
+		$data['id_varian'] = $this->input->post('id_varian');
+
+		$data['nomor_asli'] = $this->input->post('no_asli');
+		$data['nama'] = $this->input->post('nama_barang');
+		$data['remarks'] = $this->input->post('remarks');
+
+		$data['make'] = $this->input->post('make_barang');
+		$data['model1'] = $this->input->post('model1_barang');
+		$data['model2'] = $this->input->post('model2_barang');
+		
+		$data['harga'] = $this->input->post('harga_barang');
+		$data['updated'] = $this->input->post('updated');
+		$data['kemasan'] = $this->input->post('kemasan');
+		$data['desc'] = $this->input->post('deskripsi');
+
+		if ($ganti!=""){
+			unlink($ganti);
+			unlink($ganti_1);
+			$data['image'] = $kd_product.'.'.$kaboom[1];
+		}
+
+		$table = "product";
+		$this->M_product->update($table, $id, $data);
+
+		redirect('Backend/product');
+
+	}
+
+	/*public function update_product(){
+		$this->load->database();
+		$this->load->model('M_product');
+
+		$kd_product = "PRO".date("dmYHis");
+		$url_img = "./asset/image/products/";
+
 		$id = $this->input->post('id_product');
 		$ganti = $this->input->post('new_url_image');
 
@@ -212,7 +446,7 @@ class Backend extends CI_Controller {
 
 		redirect('Backend/product');
 
-	}
+	}*/
 
 	public function do_upload_banner($kd_banner, $url_img, $ke){
 		if ($ke==1){
@@ -425,7 +659,7 @@ class Backend extends CI_Controller {
 		$table = "administrator";
 		$this->M_backend->update($table, $data, $id);
 
-		redirect('../backend/administrator');
+		redirect('Backend/administrator');
 	}
 
 	public function delete_administrator(){
@@ -436,7 +670,7 @@ class Backend extends CI_Controller {
 		$table = "administrator";
 		$this->M_backend->delete($table, $data, $id);
 
-		redirect('../backend/administrator');
+		redirect('Backend/administrator');
 	}
 	
 	public function login(){
@@ -498,6 +732,7 @@ class Backend extends CI_Controller {
 		$u_buy_before = $this->input->post('opt_yn');
 		$usince = $this->input->post('time_reg');
 		$uknow_lain = $this->input->post('lainnya_reg');
+		$showMe = $this->input->post('ckBox');
 		$ureg_date = date("Y/m/d");
 		$ureg_time = date("h:i:sa");
 		$uisactive = 0;
@@ -519,6 +754,11 @@ class Backend extends CI_Controller {
 				$data['reseller_know_wakasa'] = $uknow_lain;
 			}else{
 				$data['reseller_know_wakasa'] = $uknow_stat;
+			}
+			if ($showMe=='1'){
+				$data['reseller_is_show'] = '1';
+			} else {
+				$data['reseller_is_show'] = '0';
 			}
 			$data['reseller_buy_before'] = $u_buy_before;
 			$data['reseller_since'] = $usince;
@@ -1031,7 +1271,7 @@ class Backend extends CI_Controller {
 			$name = $array[0];
 			$ext = $array[1];
 			if ($ext == 'zip'){
-				$path = 'asset/image/products';
+				$path = 'asset/image/products_temp';
 				$location = $path . $file_name;
 				if (move_uploaded_file($_FILES['zip_file']['tmp_name'], $location)){
 					$zip = new ZipArchive;
@@ -1046,9 +1286,237 @@ class Backend extends CI_Controller {
 				$data['status'] = "no";
 			}
 		}
+
+		$this->setWatermark_fromzip();
+
 		$this->load->view('link_');
 		$this->load->view('v_sidebar');
 		$this->load->view('v_admin_import_rar_file', $data);
+		$this->load->view('v_sidebar_foot');
+	}
+
+	public function setWatermark_fromzip(){
+		$folder = opendir("asset/image/products_temp");
+		while($files=readdir($folder)){
+			if($files!="." && $files!=".."){
+				$this->resize_fromfolder($files);
+				//$srcfile='asset/image/products_temp/'.$files;
+				//$dstfile='asset/image/products_ori/'.$files;
+				//copy($srcfile, $dstfile);
+			}
+		}
+		$folder = opendir("asset/image/products_ori");
+		while($files=readdir($folder)){
+			if($files!="." && $files!=".."){
+				$this->saveWatermark_tofolder_($files);
+			}
+		}
+		$folder = opendir("asset/image/products_temp");
+		while($files=readdir($folder)){
+			if($files!="." && $files!=".."){
+				unlink("asset/image/products_temp/".$files);
+			}
+		}
+	}
+
+	public function resize_fromfolder($files){
+		include_once("asset/ak_php_img_lib_1.0.php");
+		$target_file = "asset/image/products_temp/".$files;
+		$resized_file = "asset/image/products_ori/".$files;
+		$wmax = 500;
+		$hmax = 500;
+		ak_img_resize($target_file, $resized_file, $wmax, $hmax, ".jpg");
+	}
+
+	public function saveWatermark_tofolder_($files){
+		include_once("asset/ak_php_img_lib_1.0.php");
+		$target_file = "asset/image/products_ori/".$files;
+		$wtrmrk_file = "asset/image/wakasa_watermark.png";
+		$new_file = "asset/image/products/".$files;
+		ak_img_watermark($target_file, $wtrmrk_file, $new_file);
+	}
+
+	public function saveWatermark_tofolder($image){
+		
+		$source = "asset/image/products_temp/".$image;
+		
+		$wm = imagecreatefrompng("asset/image/wakasa_watermark.png");
+		$wmWidth = imagesx($wm);
+		$wmHeight = imagesy($wm);
+
+		$finalPic = imagecreatetruecolor($wmWidth, $wmHeight);
+		$finalPic = imagecreatefromjpeg($source);
+
+		$sourceDim = getimagesize($source);
+		$startX = ($sourceDim[0] - $wmWidth) / 2;
+		$startY = ($sourceDim[1] - $wmHeight) / 2;
+
+		imagecopymerge($finalPic, $wm, $startX, $startY, 0, 0, $wmWidth, $wmHeight, 100);
+		imagejpeg($finalPic,"asset/image/else/".$image);
+	}
+
+
+	public function set_unggulan(){
+		$this->load->database();
+		$this->load->model('M_backend');
+
+		$id = $this->input->get('id');
+
+		$table = "get_unggulan";
+		$flg = $this->M_backend->load_du($table, $id);
+
+		if ($flg=="0"){
+			$data['is_unggulan'] = 1;
+		} else {
+			$data['is_unggulan'] = 0;
+		}
+		
+		$table = "set_unggulan";
+		$this->M_backend->update($table, $data, $id);
+
+		redirect('Backend/product');
+	}
+
+	public function set_new(){
+		$this->load->database();
+		$this->load->model('M_backend');
+
+		$id = $this->input->get('id');
+
+		$table = "get_new";
+		$flg = $this->M_backend->load_du($table, $id);
+
+		if ($flg=="0"){
+			$data['is_new'] = 1;
+		} else {
+			$data['is_new'] = 0;
+		}
+		
+		$table = "set_new";
+		$this->M_backend->update($table, $data, $id);
+
+		redirect('Backend/product');
+	}
+
+	public function setting_content_image(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		$this->load->view('link_');
+		$this->load->view('v_sidebar');
+		$table = "content_about";
+		$data['image'] = $this->M_backend->banner($table);
+		$this->load->view('v_admin_setting_content_image', $data);
+		$this->load->view('v_sidebar_foot');
+	}
+
+	public function update_content_about_image(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		
+		$url_img = "./asset/image/banner/";
+
+		$ganti1 = $this->input->post('img1');
+		$ganti2 = $this->input->post('img2');
+		$ganti3 = $this->input->post('img3');
+
+		if ($ganti1!=""){
+			$kd_banner = "CA1".date("dmYHis");
+			unlink($ganti1);
+			$ke=1;
+			$data['image'] = $this->do_upload_banner($kd_banner, $url_img, $ke);
+			$table = "ca1";
+			$this->M_backend->update_banner($table, $data);
+		}
+		if ($ganti2!=""){
+			$kd_banner = "CA2".date("dmYHis");
+			unlink($ganti2);
+			$ke=2;
+			$data['image'] = $this->do_upload_banner($kd_banner, $url_img, $ke);
+			$table = "ca2";
+			$this->M_backend->update_banner($table, $data);
+		}
+		if ($ganti3!=""){
+			$kd_banner = "CA3".date("dmYHis");
+			unlink($ganti3);
+			$ke=3;
+			$data['image'] = $this->do_upload_banner($kd_banner, $url_img, $ke);
+			$table = "ca3";
+			$this->M_backend->update_banner($table, $data);
+		}
+
+		redirect('Backend/setting_content_image');
+	}
+
+	public function client_subs(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		$this->load->view('link_');
+		$this->load->view('v_sidebar');
+		$table = "subscriber";
+		$data['subscriber'] = $this->M_backend->load($table);
+		$this->load->view('v_admin_report_subs', $data);
+		$this->load->view('v_sidebar_foot');
+	}
+
+	public function delete_subscriber(){
+		$this->load->database();
+		$this->load->model('M_backend');
+
+		$id = $this->input->get('id');
+
+		$table = "update_subs";
+		$data['is_active'] = 0;
+		$this->M_backend->update($table, $data, $id);
+
+		redirect('Backend/client_subs');
+	}
+
+	public function client_contact(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		$this->load->view('link_');
+		$this->load->view('v_sidebar');
+		$table = "user_contact";
+		$data['user_contact'] = $this->M_backend->load($table);
+		$this->load->view('v_admin_report_user_contact', $data);
+		$this->load->view('v_sidebar_foot');
+	}
+
+	public function detail_message(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		$this->load->view('link_');
+		$this->load->view('v_sidebar');
+		$id = $this->input->get('id');
+		$table = "update_read";
+		$data['is_read'] = 1;
+		$this->M_backend->update($table, $data, $id);
+		$table = "detail_message";
+		$data['detail_message'] = $this->M_backend->load_du($table, $id);
+		$this->load->view('v_admin_detail_user_contact', $data);
+		$this->load->view('v_sidebar_foot');
+	}
+
+	public function reseller_conf(){
+		$this->load->database();
+		$this->load->model('M_backend');
+		$this->load->view('link_');
+		$this->load->view('v_sidebar');
+		$table = "reseller_conf";
+		$data['reseller_conf'] = $this->M_backend->load($table);
+		$this->load->view('v_admin_report_reseller_conf', $data);
+		$this->load->view('v_sidebar_foot');
+	}
+
+	public function detail_reseller_conf(){
+		$this->load->database();
+		$this->load->view('link_');
+		$this->load->view('v_sidebar');
+		$this->load->model('M_backend');
+		$id =  $this->input->get('id');
+		$table = "reseller_conf";
+		$data["reseller_conf"] = $this->M_backend->load_du($table, $id);
+        $this->load->view('v_admin_detail_reseller_conf', $data);
 		$this->load->view('v_sidebar_foot');
 	}
 

@@ -65,6 +65,23 @@
 	margin-top: 75px;
 }
 
+#paging_info{
+	font-family: Ubuntu;
+	color: #636363;	
+	margin-left: 920px;
+	margin-top: 27px;
+	position: absolute;
+}
+ul.pagination{
+	margin-right: 130px;
+}
+
+@media screen and (max-width: 1280px){
+	#paging_info{
+		margin-left: 800px;
+	}
+}
+
 @media screen and (max-width: 1024px){
 	.col-sm-3{
 		margin-right: 80px;
@@ -74,6 +91,9 @@
 	}
 	#rsl3, #rsl4{
 		margin-top: 30px;
+	}
+	#paging_info{
+		margin-left: 550px;
 	}
 }
 
@@ -86,6 +106,9 @@
 	}
 	#rsl3, #rsl4{
 		margin-top: 30px;
+	}
+	#paging_info{
+		margin-left: 510px;
 	}
 }
 
@@ -102,11 +125,18 @@
 	#rsl2{
 		margin-top: 30px;
 	}
+	ul.pagination{
+		margin-right: 200px;
+	}
+	#paging_info{
+		margin-left: 220px;
+	}
 }
 
 @media screen and (max-width: 400px){
 	.content{
 		margin-top: 0px;
+		margin-left: 20px;
 	}
 	#rsl1, #rsl3{
 		margin-left: 20px;
@@ -119,5 +149,12 @@
 	}
 	#title{
 		margin-top: 100px;
+	}
+	ul.pagination{
+		margin-right: 20px;
+	}
+	#paging_info{
+		margin-left: 150px;
+		margin-top: 0px;
 	}
 }

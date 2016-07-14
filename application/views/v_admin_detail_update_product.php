@@ -39,10 +39,12 @@
 		<?php foreach ($product->result() as $row) { ?>
 		<input type="hidden" class="product_name" id="id_product" name="id_product" placeholder="ID Barang ... " value="<?php echo $row->id; ?>" >
 		<input type="hidden" class="product_name" id="new_url_image" name="new_url_image" placeholder="URL IMAGE ... " >
+		<input type="hidden" class="product_name" id="new_url_image_ori" name="new_url_image_ori" placeholder="URL IMAGE ... " >
 		<script>
 			$(document).ready(function () {
 				$('#upimageproduct').change(function(){
 					document.getElementById('new_url_image').value = "asset/image/products/<?php echo $row->image; ?>";
+					document.getElementById('new_url_image_ori').value = "asset/image/products_ori/<?php echo $row->image; ?>";
 				});
 			});
 		</script>

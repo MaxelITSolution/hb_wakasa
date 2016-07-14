@@ -20,10 +20,10 @@
 	<div class="col-xs-4" id="footer_right_content">
 		<p>info@wakasaparts.com</p>
 		<ul>
-			<li><img src="<?php echo base_url(); ?>asset/image/footer/twitter.png"></li>
-			<li><img src="<?php echo base_url(); ?>asset/image/footer/mail.png"></li>
-			<li><img src="<?php echo base_url(); ?>asset/image/footer/g+.png"></li>
-			<li><img src="<?php echo base_url(); ?>asset/image/footer/fb.png"></li>
+			<li><a href="https://twitter.com/intent/tweet?url=http://www.wakasaparts.com/&text=See This Page"><img src="<?php echo base_url(); ?>asset/image/footer/twitter.png"></a></li>
+			<li><a href="mailto:michael.chrisdian@yahoo.com?subject=I wanted you to see this site&amp;body=Check out this site http://www.wakasaparts.com." title="Share by Email"><img src="<?php echo base_url(); ?>asset/image/footer/mail.png"></a></li>
+			<li><a href="https://plus.google.com/up/?continue=https://plus.google.com/share?url%3Dhttp://www.wakasaparts.com/&type=st&client=3"><img src="<?php echo base_url(); ?>asset/image/footer/g+.png"></a></li>
+			<li><a href="https://www.facebook.com/sharer.php?u=http://www.wakasaparts.com/&t=Wakasaparts"><img src="<?php echo base_url(); ?>asset/image/footer/fb.png"></a></li>
 		</ul>
 	</div>
 	<div class="col-xs-12" id="copy_rights">

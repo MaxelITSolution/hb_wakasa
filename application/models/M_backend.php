@@ -62,6 +62,18 @@ class M_Backend extends CI_Model
 			$query = $this->db->query('SELECT * FROM product WHERE product_isactive = 1');
 			return $query;	
 		}
+		if ($table=="subscriber"){
+			$query = $this->db->query('SELECT * FROM user_subscribe WHERE is_active = 1 ORDER BY subs_date DESC');
+			return $query;	
+		}
+		if ($table=="user_contact"){
+			$query = $this->db->query('SELECT * FROM user_message WHERE is_active = 1 ORDER BY send_date DESC');
+			return $query;	
+		}
+		if ($table=="reseller_conf"){
+			$query = $this->db->query('SELECT * FROM reseller WHERE reseller_isactive = 1');
+			return $query;	
+		}
 	}
 
 	public function load_du($table, $id){
@@ -83,6 +95,34 @@ class M_Backend extends CI_Model
 		}
 		if ($table=="get_uname"){
 			$query = $this->db->query("SELECT reseller_uname FROM reseller WHERE reseller_id = '".$id."'");
+			return $query;
+		}
+		if ($table=="get_unggulan"){
+			$this->db->select('is_unggulan')->from('products')->where('id',$id);
+
+		    $query = $this->db->get();
+
+		    if ($query->num_rows() > 0) {
+		        return $query->row()->is_unggulan;
+		    }
+		    return false;
+		}
+		if ($table=="get_new"){
+			$this->db->select('is_new')->from('products')->where('id',$id);
+
+		    $query = $this->db->get();
+
+		    if ($query->num_rows() > 0) {
+		        return $query->row()->is_new;
+		    }
+		    return false;
+		}
+		if ($table=="detail_message"){
+			$query = $this->db->query("SELECT * FROM user_message WHERE id = '".$id."'");
+			return $query;
+		}
+		if($table=="reseller_conf"){
+			$query = $this->db->query("SELECT * FROM reseller WHERE reseller_isactive=1 AND reseller_id='" .$id. "'");
 			return $query;
 		}
 	}
@@ -136,6 +176,22 @@ class M_Backend extends CI_Model
 		if ($table == "admin_mail"){
 			$this->db->where('admin_email_id', $id);
 			$this->db->update('admin_mail', $data);	
+		}
+		if ($table == "set_unggulan"){
+			$this->db->where('id', $id);
+			$this->db->update('products', $data);	
+		}
+		if ($table == "set_new"){
+			$this->db->where('id', $id);
+			$this->db->update('products', $data);	
+		}
+		if ($table == "update_subs"){
+			$this->db->where('id', $id);
+			$this->db->update('user_subscribe', $data);	
+		}
+		if ($table == "update_read"){
+			$this->db->where('id', $id);
+			$this->db->update('user_message', $data);	
 		}
 	}
 
@@ -249,6 +305,10 @@ class M_Backend extends CI_Model
 			$query = $this->db->query("SELECT image FROM banner WHERE page='login'");
 			return $query;
 		}
+		if ($table=="content_about"){
+			$query = $this->db->query("SELECT image FROM banner WHERE page='content_about'");
+			return $query;
+		}
 	}
 
 	public function update_banner($table, $data){
@@ -302,6 +362,18 @@ class M_Backend extends CI_Model
 		}
 		if ($table=="login"){
 			$this->db->where('page', 'login');
+			$this->db->update('banner', $data);
+		}
+		if ($table=="ca1"){
+			$this->db->where('id', 14);
+			$this->db->update('banner', $data);
+		}
+		if ($table=="ca2"){
+			$this->db->where('id', 15);
+			$this->db->update('banner', $data);
+		}
+		if ($table=="ca3"){
+			$this->db->where('id', 16);
 			$this->db->update('banner', $data);
 		}
 	}
