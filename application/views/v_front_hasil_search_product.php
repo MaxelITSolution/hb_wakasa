@@ -95,7 +95,7 @@
 			                    <?php echo $products[$i]->id_jenis_barang;?>-<?php echo $products[$i]->id_kendaraan;?><?php echo $products[$i]->id_varian;?><br/>
 			                    <?php echo $products[$i]->make;?> <?php echo $products[$i]->model1;?> <?php echo $products[$i]->model2;?><br/>
 			                    <?php echo $products[$i]->remarks;?><br/>
-			                    EOM no. <?php echo $products[$i]->nomor_asli;?>
+			                    OEM no. <?php echo $products[$i]->nomor_asli;?>
 			                </p>
 			                <!--<?php 
 								$fp = 'asset/image/products/' . $products[$i]->image;

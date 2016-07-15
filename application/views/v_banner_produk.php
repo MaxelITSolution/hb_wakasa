@@ -10,8 +10,8 @@
 	  	<div class="form-group">
 	    	<label class="sr-only" for="search_input">Masukkan Kata Kunci</label>
 	    	<input type="text" class="form-control" id="search_input" name="search_input" placeholder="Masukkan kata kunci">
-	    	<input type="text" id="txt_make" name="txt_make" value="">
-			<input type="text" id="txt_model" name="txt_model" value="">
+	    	<input type="hidden" id="txt_make" name="txt_make" value="">
+			<input type="hidden" id="txt_model" name="txt_model" value="">
 		</div>
 
 	  	<button type="submit" class="btn" id="btn_search">Search <img src="<?php echo base_url(); ?>asset/image/content/search_icon.png" id="search_icon" /></button>
@@ -104,6 +104,8 @@
 	            }
 	        };
 		}*/
+
+		
 		function setMake(){
 //			var getMake = document.getElementById('make_select').value;
       var getMake = $('#make_select').val();

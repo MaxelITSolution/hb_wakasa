@@ -82,7 +82,7 @@
 		                    <?php echo $row->id_jenis_barang;?>-<?php echo $row->id_kendaraan;?><?php echo $row->id_varian;?><br/>
 		                    <?php echo $row->make;?> <?php echo $row->model1;?> <?php echo $row->model2;?><br/>
 		                    <?php echo $row->remarks;?><br/>
-		                    EOM no. <?php echo $row->nomor_asli;?>
+		                    OEM no. <?php echo $row->nomor_asli;?>
 		                </p>
 		                <?php if ($reseller_uname=="nn"){ ?>
 		                	<!--<a href="<?php echo base_url(); ?>menjadireseller"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>-->
@@ -118,7 +118,7 @@
 		                    <?php echo $row->id_jenis_barang;?>-<?php echo $row->id_kendaraan;?><?php echo $row->id_varian;?><br/>
 		                    <?php echo $row->make;?> <?php echo $row->model1;?> <?php echo $row->model2;?><br/>
 		                    <?php echo $row->remarks;?><br/>
-		                    EOM no. <?php echo $row->nomor_asli;?>
+		                    OEM no. <?php echo $row->nomor_asli;?>
 		                </p>
 		                <?php if ($reseller_uname=="nn"){ ?>
 		                	<!--<a href="<?php echo base_url(); ?>menjadireseller"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>-->
