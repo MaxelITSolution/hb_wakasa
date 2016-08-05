@@ -96,23 +96,23 @@
 							</div>
 							<p id="m_p3"><?php echo $lang_array[77]; ?></p>
 							<div class="radio">
-							  	<label><input type="radio" name="opt1" class="from_where" value="1">Teman / Rekan</label>
+							  	<label><input type="radio" name="opt1" class="from_where" value="1"><?php echo $lang_array[85]; ?></label>
 							</div>
 							<div class="radio">
-							  	<label><input type="radio" name="opt1" class="from_where" value="2">Internet</label>
+							  	<label><input type="radio" name="opt1" class="from_where" value="2"><?php echo $lang_array[86]; ?></label>
 							</div>
 							<div class="radio">
-							  	<label><input type="radio" name="opt1" class="from_where" value="3">Salesman</label>
+							  	<label><input type="radio" name="opt1" class="from_where" value="3"><?php echo $lang_array[87]; ?></label>
 							</div>
 							<div class="radio">
-							  	<label><input type="radio" name="opt1" class="from_where" value="4">Lainnya : <span><input type="text" id="lainnya_reg" name="lainnya_reg" class="input_line"></span></label>
+							  	<label><input type="radio" name="opt1" class="from_where" value="4"><?php echo $lang_array[88]; ?> : <span><input type="text" id="lainnya_reg" name="lainnya_reg" class="input_line"></span></label>
 							</div>
 							<p id="m_p4"><?php echo $lang_array[78]; ?></p>
 							<div class="radio">
-							  	<label><input type="radio" name="opt_yn" class="yes_no" value="y">Yes</label>
+							  	<label><input type="radio" name="opt_yn" class="yes_no" value="y"><?php echo $lang_array[89]; ?></label>
 							</div>
 							<div class="radio">
-							  	<label><input type="radio" name="opt_yn" class="yes_no" value="n">No</label>
+							  	<label><input type="radio" name="opt_yn" class="yes_no" value="n"><?php echo $lang_array[90]; ?></label>
 							</div>
 							<p id="m_p5"><?php echo $lang_array[79]; ?> <span><input type="text" id="time_reg" name="time_reg" class="input_line" required></span></p>
 							<p id="m_p7"><input type="checkbox" id="ckBox" name="ckBox" value="1">&nbsp;&nbsp;<?php echo $lang_array[84]; ?></p>
@@ -121,7 +121,7 @@
 									<p id="m_p6" class="pull-right"><?php echo $lang_array[80]; ?></p>
 								</div>
 								<div class="col-sm-6">
-									<button type="button" class="btn" id="register_button">Daftar Sekarang</button>
+									<button type="button" class="btn" id="register_button"><?php echo $lang_array[91]; ?></button>
 								</div>
 							</div>
 							<button type="submit" class="btn" id="btn_reg_now" style="display: none;">Daftar Sekarang</button>

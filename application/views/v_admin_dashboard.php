@@ -44,7 +44,7 @@
 				</td>
 				<td>
 					<a href="<?php echo 'detail_reseller?id=' .$row->reseller_id; ?>"><span class="glyphicon glyphicon-user"></span> Detail </a> | 
-					<a href="<?php echo '/deleteReseller?id=' .$row->reseller_id; ?>"><span class="glyphicon glyphicon-trash"></span> Hapus</a>
+					<a href="<?php echo 'deleteReseller?id=' .$row->reseller_id; ?>"><span class="glyphicon glyphicon-trash"></span> Hapus</a>
 				</td>
             </tr>
             <?php } ?>

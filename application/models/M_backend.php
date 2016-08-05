@@ -48,31 +48,31 @@ class M_Backend extends CI_Model
 		}
 		if ($table=="administrator"){
 			$query = $this->db->query('SELECT * FROM administrator WHERE admin_isactive=1');
-			return $query;	
+			return $query;
 		}
 		if ($table=="content"){
 			$query = $this->db->query('SELECT * FROM content');
-			return $query;	
+			return $query;
 		}
 		if ($table=="unggulan"){
 			$query = $this->db->query('SELECT p.* FROM product p, product_unggulan pu WHERE p.`product_id` = pu.`product_id`');
-			return $query;	
+			return $query;
 		}
 		if ($table=="all_product"){
 			$query = $this->db->query('SELECT * FROM product WHERE product_isactive = 1');
-			return $query;	
+			return $query;
 		}
 		if ($table=="subscriber"){
 			$query = $this->db->query('SELECT * FROM user_subscribe WHERE is_active = 1 ORDER BY subs_date DESC');
-			return $query;	
+			return $query;
 		}
 		if ($table=="user_contact"){
 			$query = $this->db->query('SELECT * FROM user_message WHERE is_active = 1 ORDER BY send_date DESC');
-			return $query;	
+			return $query;
 		}
 		if ($table=="reseller_conf"){
 			$query = $this->db->query('SELECT * FROM reseller WHERE reseller_isactive = 1');
-			return $query;	
+			return $query;
 		}
 	}
 
@@ -167,31 +167,35 @@ class M_Backend extends CI_Model
 		}
 		if ($table == "conf_reseller"){
 			$this->db->where('reseller_id', $id);
-			$this->db->update('reseller', $data);	
+			$this->db->update('reseller', $data);
+		}
+		if ($table == "del_conf_reseller"){
+			$this->db->where('reseller_id', $id);
+			$this->db->update('reseller', $data);
 		}
 		if ($table == "content"){
 			$this->db->where('id', $id);
-			$this->db->update('content', $data);	
+			$this->db->update('content', $data);
 		}
 		if ($table == "admin_mail"){
 			$this->db->where('admin_email_id', $id);
-			$this->db->update('admin_mail', $data);	
+			$this->db->update('admin_mail', $data);
 		}
 		if ($table == "set_unggulan"){
 			$this->db->where('id', $id);
-			$this->db->update('products', $data);	
+			$this->db->update('products', $data);
 		}
 		if ($table == "set_new"){
 			$this->db->where('id', $id);
-			$this->db->update('products', $data);	
+			$this->db->update('products', $data);
 		}
 		if ($table == "update_subs"){
 			$this->db->where('id', $id);
-			$this->db->update('user_subscribe', $data);	
+			$this->db->update('user_subscribe', $data);
 		}
 		if ($table == "update_read"){
 			$this->db->where('id', $id);
-			$this->db->update('user_message', $data);	
+			$this->db->update('user_message', $data);
 		}
 	}
 
@@ -201,18 +205,18 @@ class M_Backend extends CI_Model
 			$this->db->update('administrator', $data);
 		}
 	}
-	
+
 	function insertData($tablename,$data)
 	{
 		$this->db->insert($tablename,$data);
 	}
-	
+
 	public function updateData($tablename,$data,$conditions)
 	{
 		$this->db->where($conditions);
 		$this->db->update($tablename,$data);
 	}
-	
+
 	public function getData($tablename,$conditions)
 	{
 		if(!empty($conditions))

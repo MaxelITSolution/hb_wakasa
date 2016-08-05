@@ -84,7 +84,16 @@
 			<div class="container">
 				<div id="title">
 					<h3><?php echo $lang_array[61]; ?></h3>
-					<p><?php echo $lang_array[62]; ?> "<?php echo $name; ?>" <?php echo $lang_array[63]; ?> <?php echo $total; ?> <?php echo $lang_array[64]; ?></p>
+					<?php  $get_name = $_SESSION["user_search"]; $get_name = explode('-', $get_name); ?>
+
+					<?php if (array_key_exists(2, $get_name)){ ?>
+						<p><?php echo $lang_array[62]; ?> "<?php echo $get_name[0]; ?>, <?php echo $get_name[1]; ?>, <?php echo $get_name[2]; ?>" <?php echo $lang_array[63]; ?> <?php echo $total; ?> <?php echo $lang_array[64]; ?></p>
+					<?php } else if (array_key_exists(1, $get_name))  { ?>
+						<p><?php echo $lang_array[62]; ?> "<?php echo $get_name[0]; ?>, <?php echo $get_name[1]; ?>" <?php echo $lang_array[63]; ?> <?php echo $total; ?> <?php echo $lang_array[64]; ?></p>
+					<?php } else { ?>
+						<p><?php echo $lang_array[62]; ?> "<?php echo $get_name[0]; ?>" <?php echo $lang_array[63]; ?> <?php echo $total; ?> <?php echo $lang_array[64]; ?></p>
+					<?php } ?>
+					
 				</div>
 
 				<?php for ($i = 0; $i < count($products); ++$i) { ?>

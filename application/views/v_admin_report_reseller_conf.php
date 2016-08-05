@@ -10,7 +10,7 @@
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6" class="cop">
 			<h3 style="text-align: center; font-weight: bold; font-size: 30px;">DASHBOARD</h3>
-			<h5 style="text-align: center; font-size: 20px;">List Calon Reseller</h5>
+			<h5 style="text-align: center; font-size: 20px;">List Reseller</h5>
 			<br/>
 		</div>
 		<div class="col-sm-3"></div>
@@ -27,8 +27,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($reseller_conf->result() as $row)  
-            {  
+			<?php foreach ($reseller_conf->result() as $row)
+            {
             ?>
             <tr>
             	<td>
@@ -44,7 +44,8 @@
 					<?php echo $row->reseller_provinsi;?>
 				</td>
 				<td>
-					<a href="<?php echo 'detail_reseller_conf?id=' .$row->reseller_id; ?>"><span class="glyphicon glyphicon-user"></span> Detail </a>
+					<a href="<?php echo 'detail_reseller_conf?id=' .$row->reseller_id; ?>"><span class="glyphicon glyphicon-user"></span> Detail </a> |
+					<a href="<?php echo 'deleteResellerConf?id=' .$row->reseller_id; ?>"><span class="glyphicon glyphicon-trash"></span> Hapus</a>
 				</td>
             </tr>
             <?php } ?>

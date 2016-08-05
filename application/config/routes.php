@@ -84,6 +84,11 @@ $route['cekS'] = 'Frontend/cekS';
 $route['SearchProduct'] = 'Frontend/SearchProduct';
 
 $route['spik'] = 'Frontend/spik';
+$route['spid'] = 'Frontend/spid';
+$route['spikd'] = 'Frontend/spikd';
+$route['spk'] = 'Frontend/spk';
+$route['spd'] = 'Frontend/spd';
+$route['spkd'] = 'Frontend/spkd';
 
 $route['client_message'] = 'Frontend/client_message';
 $route['client_subscribe'] = 'Frontend/client_subscribe';

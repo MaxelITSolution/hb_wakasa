@@ -97,6 +97,13 @@ class M_Paging extends CI_Model
 
 	//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+		function get_products_count($inp = NULL){
+			if ($inp == "NIL") $inp = "";
+			$sql = "select * from products where nama like '%$inp%'";
+			$query = $this->db->query($sql);
+			return $query->num_rows();
+		}
+
 		function get_products($limit, $start, $inp = NULL)
 		{
 			if ($inp == "NIL") $inp = "";
@@ -105,28 +112,116 @@ class M_Paging extends CI_Model
 			return $query->result();
 		}
 
-		function get_products_count($inp = NULL){
-			if ($inp == "NIL") $inp = "";
-			$sql = "select * from products where nama like '%$inp%'";
-			$query = $this->db->query($sql);
-			return $query->num_rows();
-		}
-
 		//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-		function get_products_count_inp_mk($inp = NULL, $inp_make=NULL){
+		function get_products_count_inp_mk($inp = NULL){
 			if ($inp == "NIL") $inp = "";
-			if ($inp_make == "NIL") $inp_make = "";
-			$sql = "select * from products where nama like '%$inp%' and make like '%$inp_make%'";
+			$temp = explode('-', $inp);
+			$sql = "select * from products where nama like '%$temp[0]%' and make like '%$temp[1]%'";
 			$query = $this->db->query($sql);
+			$temp = "";
+			$inp = "";
 			return $query->num_rows();
 		}
 			
 		function get_products_inp_mk($limit, $start, $inp = NULL)
 		{
 			if ($inp == "NIL") $inp = "";
-			if ($inp_make == "NIL") $inp_make = "";
-			$sql = "select * from products where nama like '%$inp%' and make like '%$inp_make%' limit " . $start . ", " . $limit;
+			$temp = explode('-', $inp);
+			$sql = "select * from products where nama like '%$temp[0]%' and make like '%$temp[1]%' limit " . $start . ", " . $limit;
+			$query = $this->db->query($sql);
+			$temp = "";
+			$inp = "";
+			return $query->result();
+		}
+
+		//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+		function get_products_count_inp_md($inp = NULL){
+			if ($inp == "NIL") $inp = "";
+			$temp = explode('-', $inp);
+			$sql = "select * from products where nama like '%$temp[0]%' and model1 like '%$temp[1]%' or model2 like '%$temp[1]%'";
+			$query = $this->db->query($sql);
+			return $query->num_rows();
+		}
+
+		function get_products_inp_md($limit, $start, $inp = NULL)
+		{
+			if ($inp == "NIL") $inp = "";
+			$temp = explode('-', $inp);
+			$sql = "select * from products where nama like '%$temp[0]%' and model1 like '%$temp[1]%' or model2 like '%$temp[1]%' limit " . $start . ", " . $limit;
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
+		//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+		function get_products_count_inp_mk_md($inp = NULL){
+			if ($inp == "NIL") $inp = "";
+			$temp = explode('-', $inp);
+			$sql = "select * from products where nama like '%$temp[0]%' and make like '%$temp[1]%' and model1 like '%$temp[2]%' or model2 like '%$temp[2]%'";
+			$query = $this->db->query($sql);
+			return $query->num_rows();
+		}
+
+		function get_products_inp_mk_md($limit, $start, $inp = NULL)
+		{
+			if ($inp == "NIL") $inp = "";
+			$temp = explode('-', $inp);
+			$sql = "select * from products where nama like '%$temp[0]%' and make like '%$temp[1]%' and model1 like '%$temp[2]%' or model2 like '%$temp[2]%' limit " . $start . ", " . $limit;
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
+		//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+		function get_products_count_mk($inp = NULL){
+			if ($inp == "NIL") $inp = "";
+			$sql = "select * from products where make like '%$inp%'";
+			$query = $this->db->query($sql);
+			return $query->num_rows();
+		}
+
+		function get_products_mk($limit, $start, $inp = NULL)
+		{
+			if ($inp == "NIL") $inp = "";
+			$sql = "select * from products where make like '%$inp%' limit " . $start . ", " . $limit;
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
+		//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+		function get_products_count_md($inp = NULL){
+			if ($inp == "NIL") $inp = "";
+			$sql = "select * from products where model1 like '%$inp%' or model2 like '%inp%'";
+			$query = $this->db->query($sql);
+			return $query->num_rows();
+		}
+
+		function get_products_md($limit, $start, $inp = NULL)
+		{
+			if ($inp == "NIL") $inp = "";
+			$sql = "select * from products where model1 like '%$inp%' or model2 like '%$inp%' limit " . $start . ", " . $limit;
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
+		//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+		function get_products_count_mk_md($inp = NULL){
+			if ($inp == "NIL") $inp = "";
+			$temp = explode('-', $inp);
+			$sql = "select * from products where make like '%$temp[0]%' and model1 like '%$temp[1]%' or model2 like '%$temp[1]%'";
+			$query = $this->db->query($sql);
+			return $query->num_rows();
+		}
+
+		function get_products_mk_md($limit, $start, $inp = NULL)
+		{
+			if ($inp == "NIL") $inp = "";
+			$temp = explode('-', $inp);
+			$sql = "select * from products where make like '%$temp[0]%' and model1 like '%$temp[1]%' or model2 like '%$temp[1]%' limit " . $start . ", " . $limit;
 			$query = $this->db->query($sql);
 			return $query->result();
 		}

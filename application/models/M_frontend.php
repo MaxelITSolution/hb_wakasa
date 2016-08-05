@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_Frontend extends CI_Model
 {
-	
+
 	public function __construct()
 	{
 		parent::__construct();
@@ -12,68 +12,68 @@ class M_Frontend extends CI_Model
 
 	public function load($table){
 		if ($table=="unggulan"){
-			$query = $this->db->query('SELECT * FROM products WHERE is_unggulan = 1');
-			return $query;	
+			$query = $this->db->query('SELECT * FROM products WHERE is_unggulan = 1 and is_active = 1');
+			return $query;
 		}
 		if ($table=="new_product"){
-			$query = $this->db->query('SELECT * FROM products WHERE is_new = 1');
-			return $query;	
+			$query = $this->db->query('SELECT * FROM products WHERE is_new = 1 and is_active = 1');
+			return $query;
 		}
 		if ($table=="city"){
 			$query = $this->db->query('SELECT * FROM city');
-			return $query;	
+			return $query;
 		}
 		if ($table=="provinsi"){
 			$query = $this->db->query('SELECT * FROM provinsi');
-			return $query;	
+			return $query;
 		}
 		if ($table=="model"){
 			$query = $this->db->query('(SELECT DISTINCT make, model1 AS model FROM products) UNION (SELECT DISTINCT make, model2 AS model FROM products)');
-			return $query;	
+			return $query;
 		}
 		if ($table=="make"){
 			$query = $this->db->query("SELECT DISTINCT make FROM products");
-			return $query;	
+			return $query;
 		}
 		if ($table=="banner_home"){
 			$query = $this->db->query("SELECT image FROM banner WHERE page='home'");
-			return $query;	
+			return $query;
 		}
 		if ($table=="banner_produk"){
 			$query = $this->db->query("SELECT image FROM banner WHERE page='product'");
-			return $query;	
+			return $query;
 		}
 		if ($table=="banner_general"){
 			$query = $this->db->query("SELECT image FROM banner WHERE page='general'");
-			return $query;	
+			return $query;
 		}
 		if ($table=="banner_kontak"){
 			$query = $this->db->query("SELECT image FROM banner WHERE page='kontak'");
-			return $query;	
+			return $query;
 		}
 		if ($table=="banner_reseller"){
 			$query = $this->db->query("SELECT image FROM banner WHERE page='reseller'");
-			return $query;	
+			return $query;
 		}
 		if ($table=="banner_temukan"){
 			$query = $this->db->query("SELECT image FROM banner WHERE page='temukan'");
-			return $query;	
+			return $query;
 		}
 		if ($table=="banner_karir"){
 			$query = $this->db->query("SELECT image FROM banner WHERE page='karir'");
-			return $query;	
+			return $query;
 		}
 		if ($table=="banner_login"){
 			$query = $this->db->query("SELECT image FROM banner WHERE page='login'");
-			return $query;	
+			return $query;
 		}
 		if ($table=="banner_tentang"){
 			$query = $this->db->query("SELECT image FROM banner WHERE page='tentang'");
-			return $query;	
+			return $query;
 		}
 		if ($table=="content_tentang"){
 			$query = $this->db->query("SELECT image FROM banner WHERE page='content_about'");
-			return $query;	
+			return $query;
 		}
 	}
 
@@ -120,7 +120,7 @@ class M_Frontend extends CI_Model
 
 	public function cekReseller_($inp1, $inp2){
 		$query = $this->db->query("SELECT reseller_id FROM reseller WHERE reseller_kota='$inp2' OR reseller_provinsi='$inp1'");
-		return $query;	
+		return $query;
 	}
 
 	public function cekReseller_new($inp1, $inp2){
@@ -174,7 +174,7 @@ class M_Frontend extends CI_Model
 	}
 
 	public function getReseller($inp2){
-		$query = $this->db->query("SELECT * FROM reseller WHERE reseller_kota LIKE '$inp2' AND reseller_is_show=1");
+		$query = $this->db->query("SELECT * FROM reseller WHERE reseller_kota LIKE '$inp2' AND reseller_is_show=1 AND reseller_isactive=1");
 		return $query;
 	}
 
@@ -222,7 +222,8 @@ class M_Frontend extends CI_Model
 			'user_register' => 'no',
 			'user_login' => 'no',
 			'user_lang' => 'ina',
-			'user_name' => 'nn'
+			'user_name' => 'nn',
+			'user_search' => ''
 		);
 		$this->session->set_userdata($user_session);
 		return true;
@@ -236,7 +237,7 @@ class M_Frontend extends CI_Model
 		$query = $this->db->query('SELECT content_eng FROM content');
 		return $query;
 	}
-		
+
 	public function getData($tablename,$conditions)
 	{
 		if(!empty($conditions))

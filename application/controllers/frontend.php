@@ -19,7 +19,7 @@ class Frontend extends CI_Controller {
 		}
 	}
 
-	public function tes(){
+	/*public function tes(){
 		$this->load->database();
 		$this->load->view('link');
 		$this->load->model('M_frontend');
@@ -68,7 +68,7 @@ class Frontend extends CI_Controller {
 		  }
 
 		  $this->load->view('test.php', $data);
-	}
+	}*/
 	
 	public function set_lang_eng(){
 		$this->session->set_userdata('user_lang', 'eng');
@@ -359,7 +359,7 @@ class Frontend extends CI_Controller {
 		}
 	}
 
-	public function new_cekS(){
+	/*public function new_cekS(){
 		$this->cekSession();
 		$this->load->database();
 		$this->load->view('link');
@@ -453,9 +453,9 @@ class Frontend extends CI_Controller {
 			$this->load->view('v_front_hasil_search_product',$data);	
 		}
 
-	}
+	}*/
 
-	public function cekS(){
+	/*public function cekS(){
 		$this->cekSession();
 		$this->load->database();
 		$this->load->model('M_paging');
@@ -548,7 +548,7 @@ class Frontend extends CI_Controller {
 		$inp_make = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_make;
 
 		$inp_model = ($this->input->post("txt_model"))? $this->input->post("txt_model") : "NIL";
-		$inp_model = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_model;*/
+		$inp_model = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_model;
 		// get search string
 		//$search = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
 
@@ -606,7 +606,7 @@ class Frontend extends CI_Controller {
 		} else {
 			$this->load->view('v_front_hasil_search_product',$data);	
 		}
-	}
+	}*/
 
 	/*function sp_mk()
 	{
@@ -704,7 +704,7 @@ class Frontend extends CI_Controller {
 		
 	}*/
 
-	function mmm(){
+	/*function mmm(){
 		$offset = 1;
 		$this->load->library('pagination');
 		$config['base_url'] = site_url("Frontend/mmm");
@@ -811,7 +811,7 @@ class Frontend extends CI_Controller {
 		} else {
 			$this->load->view('v_front_hasil_search_product',$data);	
 		}
-	}
+	}*/
 
 	function sp()
 	{
@@ -851,6 +851,9 @@ class Frontend extends CI_Controller {
 		// pagination settings
 
 		$config = array();
+
+		$this->session->set_userdata('user_search', $inp);
+
 		$config['base_url'] = site_url("Frontend/sp/$inp");
 		$total_data = $this->M_paging->get_products_count($inp);
 		
@@ -913,7 +916,7 @@ class Frontend extends CI_Controller {
 		
 	}
 
-	function mmm2(){
+	/*function mmm2(){
 		$this->cekSession();
 		$this->load->database();
 		$this->load->view('link');
@@ -1035,7 +1038,7 @@ class Frontend extends CI_Controller {
 		} else {
 			$this->load->view('qew_view',$data);	
 		}
-	}
+	}*/
 
 	function spik()
 	{
@@ -1055,7 +1058,97 @@ class Frontend extends CI_Controller {
 		$table = "model";
 		$data['models'] = $this->M_frontend->load($table);
 
-		$config['base_url'] = 
+		$this->load->model('M_paging');
+		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
+		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
+
+		$inp_make = ($this->input->post("txt_make"))? $this->input->post("txt_make") : "NIL";
+		$inp_make = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_make;
+
+		$inp_model = ($this->input->post("txt_model"))? $this->input->post("txt_model") : "NIL";
+		$inp_model = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_model;
+		// get search string
+		//$search = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
+
+		//$search = ($this->uri->segment(3)) ? $this->uri->segment(3) : $search;
+
+		// pagination settings
+
+		$inp_new = $inp . '-' . $inp_make;
+		$this->session->set_userdata('user_search', $inp_new);
+
+		$config = array();
+		$config['base_url'] = site_url("Frontend/spik/$inp-$inp_make");
+		
+		
+		$total_data = $this->M_paging->get_products_count_inp_mk($inp_new);
+
+		$config['total_rows'] = $total_data;
+		$config['per_page'] = "12";
+		$config["uri_segment"] = 4;
+		$choice = $config["total_rows"]/$config["per_page"];
+		$config["num_links"] = floor($choice);
+
+		// integrate bootstrap pagination
+		$config["full_tag_open"] = '<ul class="pagination pull-right">';
+		$config["full_tag_close"] = '</ul>';	
+		$config["first_link"] = "&laquo;";
+		$config["first_tag_open"] = '<li id="first">';
+		$config["first_tag_close"] = "</li>";
+		$config["last_link"] = "&raquo;";
+		$config["last_tag_open"] = '<li id="last">';
+		$config["last_tag_close"] = "</li>";
+		$config['next_link'] = '&gt;';
+		$config['next_tag_open'] = '<li id="next">';
+		$config['next_tag_close'] = '<li>';
+		$config['prev_link'] = '&lt;';
+		$config['prev_tag_open'] = '<li id="prev">';
+		$config['prev_tag_close'] = '<li>';
+		$config['cur_tag_open'] = '<li class="active" id="page_active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li id="page_num" onclick="cek();">';
+		$config['num_tag_close'] = '</li>';
+		$config['num_links'] = 1;
+		$this->pagination->initialize($config);
+
+		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+		// get books list
+
+		$data['products'] = $this->M_paging->get_products_inp_mk($config['per_page'], $data['page'], $inp_new);	
+		
+		$data['total']=$total_data;
+		$data['name']=$inp_new;
+
+		$data['pagination'] = $this->pagination->create_links();
+
+		$data['total_page'] = $total_data;
+		$data['per_hal'] = 12;
+
+		if ($total_data<=0){
+			$this->load->view('v_front_hasil_search_product_nf', $data);
+		} else {
+			$this->load->view('qew_view',$data);	
+		}
+		
+	}
+
+	function spid()
+	{
+		$this->load->database();
+		$this->load->view('link');
+		$this->load->model('M_paging');
+		$this->load->library('pagination');
+
+
+		$this->load->model('M_frontend');
+		$table = "banner_produk";
+		$data['banner_produk'] = $this->M_frontend->load($table);
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
+		$table = "make";
+		$data['make'] = $this->M_frontend->load($table);
+		$table = "model";
+		$data['models'] = $this->M_frontend->load($table);
 
 		$this->load->model('M_paging');
 		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
@@ -1073,9 +1166,196 @@ class Frontend extends CI_Controller {
 
 		// pagination settings
 
+		$inp_new = $inp . '-' . $inp_model;
+		$this->session->set_userdata('user_search', $inp_new);
+
 		$config = array();
-		$config['base_url'] = site_url("Frontend/spik/$inp-$inp_make");
-		$total_data = $this->M_paging->jumlah($inp, $inp_make);
+		$config['base_url'] = site_url("Frontend/spid/$inp_new");
+		
+		
+		$total_data = $this->M_paging->get_products_count_inp_md($inp_new);
+
+		$config['total_rows'] = $total_data;
+		$config['per_page'] = "12";
+		$config["uri_segment"] = 4;
+		$choice = $config["total_rows"]/$config["per_page"];
+		$config["num_links"] = floor($choice);
+
+		// integrate bootstrap pagination
+		$config["full_tag_open"] = '<ul class="pagination pull-right">';
+		$config["full_tag_close"] = '</ul>';	
+		$config["first_link"] = "&laquo;";
+		$config["first_tag_open"] = '<li id="first">';
+		$config["first_tag_close"] = "</li>";
+		$config["last_link"] = "&raquo;";
+		$config["last_tag_open"] = '<li id="last">';
+		$config["last_tag_close"] = "</li>";
+		$config['next_link'] = '&gt;';
+		$config['next_tag_open'] = '<li id="next">';
+		$config['next_tag_close'] = '<li>';
+		$config['prev_link'] = '&lt;';
+		$config['prev_tag_open'] = '<li id="prev">';
+		$config['prev_tag_close'] = '<li>';
+		$config['cur_tag_open'] = '<li class="active" id="page_active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li id="page_num" onclick="cek();">';
+		$config['num_tag_close'] = '</li>';
+		$config['num_links'] = 1;
+		$this->pagination->initialize($config);
+
+		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+		// get books list
+
+		$data['products'] = $this->M_paging->get_products_inp_md($config['per_page'], $data['page'], $inp_new);	
+		
+		$data['total']=$total_data;
+		$data['name']=$inp_new;
+
+		$data['pagination'] = $this->pagination->create_links();
+
+		$data['total_page'] = $total_data;
+		$data['per_hal'] = 12;
+
+		if ($total_data<=0){
+			$this->load->view('v_front_hasil_search_product_nf', $data);
+		} else {
+			$this->load->view('qew_view',$data);	
+		}
+		
+	}
+
+	function spikd()
+	{
+		$this->load->database();
+		$this->load->view('link');
+		$this->load->model('M_paging');
+		$this->load->library('pagination');
+
+
+		$this->load->model('M_frontend');
+		$table = "banner_produk";
+		$data['banner_produk'] = $this->M_frontend->load($table);
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
+		$table = "make";
+		$data['make'] = $this->M_frontend->load($table);
+		$table = "model";
+		$data['models'] = $this->M_frontend->load($table);
+
+		$this->load->model('M_paging');
+		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
+		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
+
+		$inp_make = ($this->input->post("txt_make"))? $this->input->post("txt_make") : "NIL";
+		$inp_make = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_make;
+
+		$inp_model = ($this->input->post("txt_model"))? $this->input->post("txt_model") : "NIL";
+		$inp_model = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_model;
+		// get search string
+		//$search = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
+
+		//$search = ($this->uri->segment(3)) ? $this->uri->segment(3) : $search;
+
+		// pagination settings
+
+		$inp_new = $inp . '-'. $inp_make . '-' . $inp_model;
+		$this->session->set_userdata('user_search', $inp_new);
+
+		$config = array();
+		$config['base_url'] = site_url("Frontend/spikd/$inp_new");
+		
+		
+		$total_data = $this->M_paging->get_products_count_inp_mk_md($inp_new);
+
+		$config['total_rows'] = $total_data;
+		$config['per_page'] = "12";
+		$config["uri_segment"] = 4;
+		$choice = $config["total_rows"]/$config["per_page"];
+		$config["num_links"] = floor($choice);
+
+		// integrate bootstrap pagination
+		$config["full_tag_open"] = '<ul class="pagination pull-right">';
+		$config["full_tag_close"] = '</ul>';	
+		$config["first_link"] = "&laquo;";
+		$config["first_tag_open"] = '<li id="first">';
+		$config["first_tag_close"] = "</li>";
+		$config["last_link"] = "&raquo;";
+		$config["last_tag_open"] = '<li id="last">';
+		$config["last_tag_close"] = "</li>";
+		$config['next_link'] = '&gt;';
+		$config['next_tag_open'] = '<li id="next">';
+		$config['next_tag_close'] = '<li>';
+		$config['prev_link'] = '&lt;';
+		$config['prev_tag_open'] = '<li id="prev">';
+		$config['prev_tag_close'] = '<li>';
+		$config['cur_tag_open'] = '<li class="active" id="page_active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li id="page_num" onclick="cek();">';
+		$config['num_tag_close'] = '</li>';
+		$config['num_links'] = 1;
+		$this->pagination->initialize($config);
+
+		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+		// get books list
+
+		$data['products'] = $this->M_paging->get_products_inp_mk_md($config['per_page'], $data['page'], $inp_new);	
+		
+		$data['total']=$total_data;
+		$data['name']=$inp_new;
+
+		$data['pagination'] = $this->pagination->create_links();
+
+		$data['total_page'] = $total_data;
+		$data['per_hal'] = 12;
+
+		if ($total_data<=0){
+			$this->load->view('v_front_hasil_search_product_nf', $data);
+		} else {
+			$this->load->view('qew_view',$data);	
+		}
+		
+	}
+
+	function spk()
+	{
+		$this->load->database();
+		$this->load->view('link');
+		$this->load->model('M_paging');
+		$this->load->library('pagination');
+
+
+		$this->load->model('M_frontend');
+		$table = "banner_produk";
+		$data['banner_produk'] = $this->M_frontend->load($table);
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
+		$table = "make";
+		$data['make'] = $this->M_frontend->load($table);
+		$table = "model";
+		$data['models'] = $this->M_frontend->load($table);
+
+		$this->load->model('M_paging');
+		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
+		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
+		
+		$inp_make = ($this->input->post("txt_make"))? $this->input->post("txt_make") : "NIL";
+		$inp_make = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_make;
+
+		$inp_model = ($this->input->post("txt_model"))? $this->input->post("txt_model") : "NIL";
+		$inp_model = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_model;
+		// get search string
+		//$search = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
+
+		//$search = ($this->uri->segment(3)) ? $this->uri->segment(3) : $search;
+
+		// pagination settings
+
+		$config = array();
+
+		$this->session->set_userdata('user_search', $inp_make);
+
+		$config['base_url'] = site_url("Frontend/spk/$inp_make");
+		$total_data = $this->M_paging->get_products_count_mk($inp_make);
 		
 		$config['total_rows'] = $total_data;
 		$config['per_page'] = "12";
@@ -1108,10 +1388,20 @@ class Frontend extends CI_Controller {
 		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 		// get books list
 
-		$data['products'] = $this->M_paging->get_products_inp_mk($config['per_page'], $data['page'], $inp, $inp_make);	
+		$data['products'] = $this->M_paging->get_products_mk($config['per_page'], $data['page'], $inp_make);	
 
 		$data['total']=$total_data;
-		$data['name']=$inp;
+		$data['name']=$inp_make;
+		/*if ($inp_make=="NIL"){
+			$data['mk']="";	
+		} else {
+			$data['mk']=$inp_make;	
+		}
+		if ($inp_model=="NIL"){
+			$data['md']="";	
+		} else {
+			$data['md']=$inp_model;
+		}*/
 
 		$data['pagination'] = $this->pagination->create_links();
 
@@ -1126,6 +1416,197 @@ class Frontend extends CI_Controller {
 		
 	}
 
+	function spd()
+	{
+		$this->load->database();
+		$this->load->view('link');
+		$this->load->model('M_paging');
+		$this->load->library('pagination');
+
+
+		$this->load->model('M_frontend');
+		$table = "banner_produk";
+		$data['banner_produk'] = $this->M_frontend->load($table);
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
+		$table = "make";
+		$data['make'] = $this->M_frontend->load($table);
+		$table = "model";
+		$data['models'] = $this->M_frontend->load($table);
+
+		$this->load->model('M_paging');
+		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
+		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
+		
+		$inp_make = ($this->input->post("txt_make"))? $this->input->post("txt_make") : "NIL";
+		$inp_make = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_make;
+
+		$inp_model = ($this->input->post("txt_model"))? $this->input->post("txt_model") : "NIL";
+		$inp_model = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_model;
+		// get search string
+		//$search = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
+
+		//$search = ($this->uri->segment(3)) ? $this->uri->segment(3) : $search;
+
+		// pagination settings
+
+		$config = array();
+
+		$this->session->set_userdata('user_search', $inp_model);
+
+		$config['base_url'] = site_url("Frontend/spd/$inp_model");
+		$total_data = $this->M_paging->get_products_count_md($inp_model);
+		
+		$config['total_rows'] = $total_data;
+		$config['per_page'] = "12";
+		$config["uri_segment"] = 4;
+		$choice = $config["total_rows"]/$config["per_page"];
+		$config["num_links"] = floor($choice);
+
+		// integrate bootstrap pagination
+		$config["full_tag_open"] = '<ul class="pagination pull-right">';
+		$config["full_tag_close"] = '</ul>';	
+		$config["first_link"] = "&laquo;";
+		$config["first_tag_open"] = '<li id="first">';
+		$config["first_tag_close"] = "</li>";
+		$config["last_link"] = "&raquo;";
+		$config["last_tag_open"] = '<li id="last">';
+		$config["last_tag_close"] = "</li>";
+		$config['next_link'] = '&gt;';
+		$config['next_tag_open'] = '<li id="next">';
+		$config['next_tag_close'] = '<li>';
+		$config['prev_link'] = '&lt;';
+		$config['prev_tag_open'] = '<li id="prev">';
+		$config['prev_tag_close'] = '<li>';
+		$config['cur_tag_open'] = '<li class="active" id="page_active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li id="page_num" onclick="cek();">';
+		$config['num_tag_close'] = '</li>';
+		$config['num_links'] = 1;
+		$this->pagination->initialize($config);
+
+		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+		// get books list
+
+		$data['products'] = $this->M_paging->get_products_md($config['per_page'], $data['page'], $inp_model);	
+
+		$data['total']=$total_data;
+		$data['name']=$inp_model;
+		/*if ($inp_make=="NIL"){
+			$data['mk']="";	
+		} else {
+			$data['mk']=$inp_make;	
+		}
+		if ($inp_model=="NIL"){
+			$data['md']="";	
+		} else {
+			$data['md']=$inp_model;
+		}*/
+
+		$data['pagination'] = $this->pagination->create_links();
+
+		$data['total_page'] = $total_data;
+		$data['per_hal'] = 12;
+
+		if ($total_data<=0){
+			$this->load->view('v_front_hasil_search_product_nf', $data);
+		} else {
+			$this->load->view('qew_view',$data);	
+		}
+		
+	}
+
+	function spkd()
+	{
+		$this->load->database();
+		$this->load->view('link');
+		$this->load->model('M_paging');
+		$this->load->library('pagination');
+
+
+		$this->load->model('M_frontend');
+		$table = "banner_produk";
+		$data['banner_produk'] = $this->M_frontend->load($table);
+		$data['indo'] = $this->M_frontend->get_content_ina();
+		$data['eng'] = $this->M_frontend->get_content_eng();
+		$table = "make";
+		$data['make'] = $this->M_frontend->load($table);
+		$table = "model";
+		$data['models'] = $this->M_frontend->load($table);
+
+		$this->load->model('M_paging');
+		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
+		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
+
+		$inp_make = ($this->input->post("txt_make"))? $this->input->post("txt_make") : "NIL";
+		$inp_make = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_make;
+
+		$inp_model = ($this->input->post("txt_model"))? $this->input->post("txt_model") : "NIL";
+		$inp_model = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_model;
+		// get search string
+		//$search = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
+
+		//$search = ($this->uri->segment(3)) ? $this->uri->segment(3) : $search;
+
+		// pagination settings
+
+		$inp_new = $inp_make . '-' . $inp_model;
+		$this->session->set_userdata('user_search', $inp_new);
+
+		$config = array();
+		$config['base_url'] = site_url("Frontend/spkd/$inp_new");
+		
+		
+		$total_data = $this->M_paging->get_products_count_mk_md($inp_new);
+
+		$config['total_rows'] = $total_data;
+		$config['per_page'] = "12";
+		$config["uri_segment"] = 4;
+		$choice = $config["total_rows"]/$config["per_page"];
+		$config["num_links"] = floor($choice);
+
+		// integrate bootstrap pagination
+		$config["full_tag_open"] = '<ul class="pagination pull-right">';
+		$config["full_tag_close"] = '</ul>';	
+		$config["first_link"] = "&laquo;";
+		$config["first_tag_open"] = '<li id="first">';
+		$config["first_tag_close"] = "</li>";
+		$config["last_link"] = "&raquo;";
+		$config["last_tag_open"] = '<li id="last">';
+		$config["last_tag_close"] = "</li>";
+		$config['next_link'] = '&gt;';
+		$config['next_tag_open'] = '<li id="next">';
+		$config['next_tag_close'] = '<li>';
+		$config['prev_link'] = '&lt;';
+		$config['prev_tag_open'] = '<li id="prev">';
+		$config['prev_tag_close'] = '<li>';
+		$config['cur_tag_open'] = '<li class="active" id="page_active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+		$config['num_tag_open'] = '<li id="page_num" onclick="cek();">';
+		$config['num_tag_close'] = '</li>';
+		$config['num_links'] = 1;
+		$this->pagination->initialize($config);
+
+		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+		// get books list
+
+		$data['products'] = $this->M_paging->get_products_mk_md($config['per_page'], $data['page'], $inp_new);	
+		
+		$data['total']=$total_data;
+		$data['name']=$inp_new;
+
+		$data['pagination'] = $this->pagination->create_links();
+
+		$data['total_page'] = $total_data;
+		$data['per_hal'] = 12;
+
+		if ($total_data<=0){
+			$this->load->view('v_front_hasil_search_product_nf', $data);
+		} else {
+			$this->load->view('qew_view',$data);	
+		}
+		
+	}
 	/*public function search_p(){
 		$this->load->database();
 		$this->load->model('M_paging');
