@@ -20,7 +20,7 @@ class M_Frontend extends CI_Model
 			return $query;
 		}
 		if ($table=="city"){
-			$query = $this->db->query('SELECT * FROM city');
+			$query = $this->db->query('SELECT * FROM city ORDER BY city');
 			return $query;
 		}
 		if ($table=="provinsi"){

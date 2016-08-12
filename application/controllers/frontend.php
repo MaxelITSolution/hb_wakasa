@@ -3,7 +3,7 @@
 class Frontend extends CI_Controller {
 
 /*MICHAEL PAKE*/
-	
+
 	function __construct()
 	{
 		parent::__construct();
@@ -13,7 +13,7 @@ class Frontend extends CI_Controller {
 
 	function cekSession(){
 		if(isset($_SESSION['user_lang'])){
-			
+
 		} else {
 			$this->M_frontend->set_session();
 		}
@@ -25,7 +25,7 @@ class Frontend extends CI_Controller {
 		$this->load->model('M_frontend');
 		$this->load->library('pagination');
 		$config['total_rows'] = $this->M_frontend->totalProduct();
-  
+
 		  $config['base_url'] = base_url()."frontend/tes";
 		  $config['per_page'] = 4;
 		  $config['uri_segment'] = '3';
@@ -57,19 +57,19 @@ class Frontend extends CI_Controller {
 
 
 		  $this->pagination->initialize($config);
-		   
+
 
 		  $query = $this->M_frontend->getProduct(4,$this->uri->segment(3));
-		  
+
 		  $data['MOVIES'] = null;
-		  
+
 		  if($query){
 		   $data['MOVIES'] =  $query;
 		  }
 
 		  $this->load->view('test.php', $data);
 	}*/
-	
+
 	public function set_lang_eng(){
 		$this->session->set_userdata('user_lang', 'eng');
 		echo "<script>window.location.href='javascript:history.back(-2);'</script>";
@@ -94,7 +94,7 @@ class Frontend extends CI_Controller {
 			$this->M_frontend->set_session();
 		}
 	}
-	
+
 	public function index(){
 		$this->load->database();
 		$this->load->view('link');
@@ -109,10 +109,10 @@ class Frontend extends CI_Controller {
 		$data['unggulan'] = $this->M_frontend->load($table);
 		$table = "banner_home";
 		$data['banner_home'] = $this->M_frontend->load($table);
-		$this->load->view('v_front_home', $data);	
+		$this->load->view('v_front_home', $data);
 		redirect('home');
 	}
-	
+
 	public function home(){
 		$this->cekSession();
 		$this->load->database();
@@ -148,8 +148,8 @@ class Frontend extends CI_Controller {
 		$linkENG = "";
 		$data["linkENG"]=site_url("frontend/jelajahiProduct/eng");
 		$data["linkIND"]=site_url("frontend/jelajahiProduct/ind");
-		
-		
+
+
 		$this->load->view('link',$data);
 		$this->load->view('v_front_jelajahi_produk',$data);*/
 	}
@@ -171,7 +171,7 @@ class Frontend extends CI_Controller {
 		$data['indo'] = $this->M_frontend->get_content_ina();
 		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_hasil_search_general', $data);	
+		$this->load->view('v_front_hasil_search_general', $data);
 	}
 	public function hasilSearchGeneral_nf(){
 		$this->cekSession();
@@ -181,7 +181,7 @@ class Frontend extends CI_Controller {
 		$data['eng'] = $this->M_frontend->get_content_eng();
 		$data['prov'] = "XXX";
 		$this->load->view('link');
-		$this->load->view('v_front_hasil_search_general_nf', $data);	
+		$this->load->view('v_front_hasil_search_general_nf', $data);
 	}
 
 	public function hasilSearchProduct(){
@@ -225,7 +225,7 @@ class Frontend extends CI_Controller {
 		$data['indo'] = $this->M_frontend->get_content_ina();
 		$data['eng'] = $this->M_frontend->get_content_eng();
 		$this->load->view('link');
-		$this->load->view('v_front_hasil_search_product_nf', $data);	
+		$this->load->view('v_front_hasil_search_product_nf', $data);
 	}
 
 	public function karir(){
@@ -238,7 +238,7 @@ class Frontend extends CI_Controller {
 		$data['banner_karir'] = $this->M_frontend->load($table);
 		$this->load->view('link');
 		$this->load->view('v_front_karir', $data);
-	}	
+	}
 
 	public function contact(){
 		$this->cekSession();
@@ -320,7 +320,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -355,7 +355,7 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_general_nf', $data);
 		} else {
-			$this->load->view('v_front_hasil_search_general',$data);	
+			$this->load->view('v_front_hasil_search_general',$data);
 		}
 	}
 
@@ -380,11 +380,11 @@ class Frontend extends CI_Controller {
 		$table = "model";
 		$data['models'] = $this->M_frontend->load($table);
 
-		$this->load->model('M_paging');		
+		$this->load->model('M_paging');
 
 		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
 		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
-		
+
 		$inp1 = ($this->input->post("search_input1"))? $this->input->post("search_input1") : "NIL";
 		$inp1 = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp1;
 
@@ -402,7 +402,7 @@ class Frontend extends CI_Controller {
 				$data['total']=$total_data;
 			}
 		}
-		
+
 		$config['total_rows'] = $total_data;
 		$config['per_page'] = "12";
 		$config["uri_segment"] = 4;
@@ -411,7 +411,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -450,7 +450,7 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('v_front_hasil_search_product',$data);	
+			$this->load->view('v_front_hasil_search_product',$data);
 		}
 
 	}*/
@@ -499,7 +499,7 @@ class Frontend extends CI_Controller {
 		}
 		if ($inp=="" && $inp1==""){
 			if ($inp_make=="" && $inp_model==""){
-				
+
 			}
 			if ($inp_make!="" && $inp_model==""){
 				$this->M_paging->cekS_mk($inp_make);
@@ -540,7 +540,7 @@ class Frontend extends CI_Controller {
 		$this->load->model('M_paging');
 		/*$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
 		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
-		
+
 		$inp1 = ($this->input->post("search_input1"))? $this->input->post("search_input1") : "NIL";
 		$inp1 = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp1;
 
@@ -559,7 +559,7 @@ class Frontend extends CI_Controller {
 		$config = array();
 		$config['base_url'] = site_url("Frontend/SearchProduct/products");
 		$total_data = $this->M_paging->get_search_products();
-		
+
 		$config['total_rows'] = $total_data;
 		$config['per_page'] = "12";
 		$config["uri_segment"] = 4;
@@ -568,7 +568,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -591,7 +591,7 @@ class Frontend extends CI_Controller {
 		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 		// get books list
 
-		$data['products'] = $this->M_paging->get_temp_products($config['per_page'], $data['page']);	
+		$data['products'] = $this->M_paging->get_temp_products($config['per_page'], $data['page']);
 
 		$data['total']=$total_data;
 		$data['name']=$name;
@@ -604,7 +604,7 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('v_front_hasil_search_product',$data);	
+			$this->load->view('v_front_hasil_search_product',$data);
 		}
 	}*/
 
@@ -629,7 +629,7 @@ class Frontend extends CI_Controller {
 		$this->load->model('M_paging');
 		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
 		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
-		
+
 		$inp1 = ($this->input->post("search_input1"))? $this->input->post("search_input1") : "NIL";
 		$inp1 = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp1;
 
@@ -660,7 +660,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -684,7 +684,7 @@ class Frontend extends CI_Controller {
 		// get books list
 
 //================================================================================
-		$data['products'] = $this->M_paging->get_products_s_mk($config['per_page'], $data['page'], $inp, $inp_make);	
+		$data['products'] = $this->M_paging->get_products_s_mk($config['per_page'], $data['page'], $inp, $inp_make);
 //================================================================================
 
 		$data['total']=$total_data;
@@ -698,10 +698,10 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('qew_view',$data);	
+			$this->load->view('qew_view',$data);
 		}
 		//load view
-		
+
 	}*/
 
 	/*function mmm(){
@@ -709,8 +709,8 @@ class Frontend extends CI_Controller {
 		$this->load->library('pagination');
 		$config['base_url'] = site_url("Frontend/mmm");
 		$config['total_rows'] = 200;
-		$config['per_page'] = 20; 
-		$this->pagination->initialize($config); 
+		$config['per_page'] = 20;
+		$this->pagination->initialize($config);
 
 		$this->load->model('M_paging');
 	  	$data['my_result'] = $this->M_paging->get_my_data($config['per_page'], $offset);
@@ -737,7 +737,7 @@ class Frontend extends CI_Controller {
 		$this->load->model('M_paging');
 		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
 		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
-		
+
 		$inp1 = ($this->input->post("search_input1"))? $this->input->post("search_input1") : "NIL";
 		$inp1 = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp1;
 
@@ -758,10 +758,10 @@ class Frontend extends CI_Controller {
 		$total_data = $this->M_paging->get_products_count($inp);
 		if ($inp!=""){
 			if ($inp_make=="" && $inp_model==""){
-				
+
 			}
 		}
-		
+
 		$config['total_rows'] = $total_data;
 		$config['per_page'] = "12";
 		$config["uri_segment"] = 4;
@@ -770,7 +770,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -794,7 +794,7 @@ class Frontend extends CI_Controller {
 		// get books list
 		if ($inp!=""){
 			if ($inp_make=="no" && $inp_model=="no"){
-				$data['products'] = $this->M_paging->get_products($config['per_page'], $data['page'], $inp);				
+				$data['products'] = $this->M_paging->get_products($config['per_page'], $data['page'], $inp);
 			}
 		}
 
@@ -809,7 +809,7 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('v_front_hasil_search_product',$data);	
+			$this->load->view('v_front_hasil_search_product',$data);
 		}
 	}*/
 
@@ -834,7 +834,7 @@ class Frontend extends CI_Controller {
 		$this->load->model('M_paging');
 		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
 		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
-		
+
 		$inp1 = ($this->input->post("search_input1"))? $this->input->post("search_input1") : "NIL";
 		$inp1 = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp1;
 
@@ -856,7 +856,7 @@ class Frontend extends CI_Controller {
 
 		$config['base_url'] = site_url("Frontend/sp/$inp");
 		$total_data = $this->M_paging->get_products_count($inp);
-		
+
 		$config['total_rows'] = $total_data;
 		$config['per_page'] = "12";
 		$config["uri_segment"] = 4;
@@ -865,7 +865,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -888,17 +888,17 @@ class Frontend extends CI_Controller {
 		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 		// get books list
 
-		$data['products'] = $this->M_paging->get_products($config['per_page'], $data['page'], $inp);	
+		$data['products'] = $this->M_paging->get_products($config['per_page'], $data['page'], $inp);
 
 		$data['total']=$total_data;
 		$data['name']=$inp;
 		/*if ($inp_make=="NIL"){
-			$data['mk']="";	
+			$data['mk']="";
 		} else {
-			$data['mk']=$inp_make;	
+			$data['mk']=$inp_make;
 		}
 		if ($inp_model=="NIL"){
-			$data['md']="";	
+			$data['md']="";
 		} else {
 			$data['md']=$inp_model;
 		}*/
@@ -911,9 +911,9 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('qew_view',$data);	
+			$this->load->view('qew_view',$data);
 		}
-		
+
 	}
 
 	/*function mmm2(){
@@ -946,7 +946,7 @@ class Frontend extends CI_Controller {
 		$config['use_page_numbers'] = TRUE;
 
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -989,7 +989,7 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('qew_view',$data);	
+			$this->load->view('qew_view',$data);
 		}
 
 	}
@@ -1019,11 +1019,11 @@ class Frontend extends CI_Controller {
 
 		$config['base_url'] = base_url().'Frontend/mmm1';
 		$config['total_rows'] = $total_data;
-		$config['per_page'] = 12; 
+		$config['per_page'] = 12;
 
 		$dari = $this->uri->segment('3');
 
-		$data['products'] = $this->M_paging->j_s1($config['per_page'],$dari, $inp, $inp_make);;	
+		$data['products'] = $this->M_paging->j_s1($config['per_page'],$dari, $inp, $inp_make);;
 
 		$data['total']=$total_data;
 		$data['name']=$inp;
@@ -1036,7 +1036,7 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('qew_view',$data);	
+			$this->load->view('qew_view',$data);
 		}
 	}*/
 
@@ -1074,13 +1074,13 @@ class Frontend extends CI_Controller {
 
 		// pagination settings
 
-		$inp_new = $inp . '-' . $inp_make;
+		$inp_new = $inp . '~' . $inp_make;
 		$this->session->set_userdata('user_search', $inp_new);
 
 		$config = array();
-		$config['base_url'] = site_url("Frontend/spik/$inp-$inp_make");
-		
-		
+		$config['base_url'] = site_url("Frontend/spik/$inp~$inp_make");
+
+
 		$total_data = $this->M_paging->get_products_count_inp_mk($inp_new);
 
 		$config['total_rows'] = $total_data;
@@ -1091,7 +1091,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -1114,8 +1114,8 @@ class Frontend extends CI_Controller {
 		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 		// get books list
 
-		$data['products'] = $this->M_paging->get_products_inp_mk($config['per_page'], $data['page'], $inp_new);	
-		
+		$data['products'] = $this->M_paging->get_products_inp_mk($config['per_page'], $data['page'], $inp_new);
+
 		$data['total']=$total_data;
 		$data['name']=$inp_new;
 
@@ -1127,9 +1127,9 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('qew_view',$data);	
+			$this->load->view('qew_view',$data);
 		}
-		
+
 	}
 
 	function spid()
@@ -1166,13 +1166,13 @@ class Frontend extends CI_Controller {
 
 		// pagination settings
 
-		$inp_new = $inp . '-' . $inp_model;
+		$inp_new = $inp . '~' . $inp_model;
 		$this->session->set_userdata('user_search', $inp_new);
 
 		$config = array();
 		$config['base_url'] = site_url("Frontend/spid/$inp_new");
-		
-		
+
+
 		$total_data = $this->M_paging->get_products_count_inp_md($inp_new);
 
 		$config['total_rows'] = $total_data;
@@ -1183,7 +1183,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -1206,8 +1206,8 @@ class Frontend extends CI_Controller {
 		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 		// get books list
 
-		$data['products'] = $this->M_paging->get_products_inp_md($config['per_page'], $data['page'], $inp_new);	
-		
+		$data['products'] = $this->M_paging->get_products_inp_md($config['per_page'], $data['page'], $inp_new);
+
 		$data['total']=$total_data;
 		$data['name']=$inp_new;
 
@@ -1219,9 +1219,9 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('qew_view',$data);	
+			$this->load->view('qew_view',$data);
 		}
-		
+
 	}
 
 	function spikd()
@@ -1258,13 +1258,13 @@ class Frontend extends CI_Controller {
 
 		// pagination settings
 
-		$inp_new = $inp . '-'. $inp_make . '-' . $inp_model;
+		$inp_new = $inp . '~'. $inp_make . '~' . $inp_model;
 		$this->session->set_userdata('user_search', $inp_new);
 
 		$config = array();
 		$config['base_url'] = site_url("Frontend/spikd/$inp_new");
-		
-		
+
+
 		$total_data = $this->M_paging->get_products_count_inp_mk_md($inp_new);
 
 		$config['total_rows'] = $total_data;
@@ -1275,7 +1275,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -1298,8 +1298,8 @@ class Frontend extends CI_Controller {
 		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 		// get books list
 
-		$data['products'] = $this->M_paging->get_products_inp_mk_md($config['per_page'], $data['page'], $inp_new);	
-		
+		$data['products'] = $this->M_paging->get_products_inp_mk_md($config['per_page'], $data['page'], $inp_new);
+
 		$data['total']=$total_data;
 		$data['name']=$inp_new;
 
@@ -1311,9 +1311,9 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('qew_view',$data);	
+			$this->load->view('qew_view',$data);
 		}
-		
+
 	}
 
 	function spk()
@@ -1337,7 +1337,7 @@ class Frontend extends CI_Controller {
 		$this->load->model('M_paging');
 		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
 		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
-		
+
 		$inp_make = ($this->input->post("txt_make"))? $this->input->post("txt_make") : "NIL";
 		$inp_make = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_make;
 
@@ -1356,7 +1356,7 @@ class Frontend extends CI_Controller {
 
 		$config['base_url'] = site_url("Frontend/spk/$inp_make");
 		$total_data = $this->M_paging->get_products_count_mk($inp_make);
-		
+
 		$config['total_rows'] = $total_data;
 		$config['per_page'] = "12";
 		$config["uri_segment"] = 4;
@@ -1365,7 +1365,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -1388,17 +1388,17 @@ class Frontend extends CI_Controller {
 		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 		// get books list
 
-		$data['products'] = $this->M_paging->get_products_mk($config['per_page'], $data['page'], $inp_make);	
+		$data['products'] = $this->M_paging->get_products_mk($config['per_page'], $data['page'], $inp_make);
 
 		$data['total']=$total_data;
 		$data['name']=$inp_make;
 		/*if ($inp_make=="NIL"){
-			$data['mk']="";	
+			$data['mk']="";
 		} else {
-			$data['mk']=$inp_make;	
+			$data['mk']=$inp_make;
 		}
 		if ($inp_model=="NIL"){
-			$data['md']="";	
+			$data['md']="";
 		} else {
 			$data['md']=$inp_model;
 		}*/
@@ -1411,9 +1411,9 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('qew_view',$data);	
+			$this->load->view('qew_view',$data);
 		}
-		
+
 	}
 
 	function spd()
@@ -1437,7 +1437,7 @@ class Frontend extends CI_Controller {
 		$this->load->model('M_paging');
 		$inp = ($this->input->post("search_input"))? $this->input->post("search_input") : "NIL";
 		$inp = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp;
-		
+
 		$inp_make = ($this->input->post("txt_make"))? $this->input->post("txt_make") : "NIL";
 		$inp_make = ($this->uri->segment(3)) ? $this->uri->segment(3) : $inp_make;
 
@@ -1456,7 +1456,7 @@ class Frontend extends CI_Controller {
 
 		$config['base_url'] = site_url("Frontend/spd/$inp_model");
 		$total_data = $this->M_paging->get_products_count_md($inp_model);
-		
+
 		$config['total_rows'] = $total_data;
 		$config['per_page'] = "12";
 		$config["uri_segment"] = 4;
@@ -1465,7 +1465,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -1488,17 +1488,17 @@ class Frontend extends CI_Controller {
 		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 		// get books list
 
-		$data['products'] = $this->M_paging->get_products_md($config['per_page'], $data['page'], $inp_model);	
+		$data['products'] = $this->M_paging->get_products_md($config['per_page'], $data['page'], $inp_model);
 
 		$data['total']=$total_data;
 		$data['name']=$inp_model;
 		/*if ($inp_make=="NIL"){
-			$data['mk']="";	
+			$data['mk']="";
 		} else {
-			$data['mk']=$inp_make;	
+			$data['mk']=$inp_make;
 		}
 		if ($inp_model=="NIL"){
-			$data['md']="";	
+			$data['md']="";
 		} else {
 			$data['md']=$inp_model;
 		}*/
@@ -1511,9 +1511,9 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('qew_view',$data);	
+			$this->load->view('qew_view',$data);
 		}
-		
+
 	}
 
 	function spkd()
@@ -1555,8 +1555,8 @@ class Frontend extends CI_Controller {
 
 		$config = array();
 		$config['base_url'] = site_url("Frontend/spkd/$inp_new");
-		
-		
+
+
 		$total_data = $this->M_paging->get_products_count_mk_md($inp_new);
 
 		$config['total_rows'] = $total_data;
@@ -1567,7 +1567,7 @@ class Frontend extends CI_Controller {
 
 		// integrate bootstrap pagination
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -1590,8 +1590,8 @@ class Frontend extends CI_Controller {
 		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 		// get books list
 
-		$data['products'] = $this->M_paging->get_products_mk_md($config['per_page'], $data['page'], $inp_new);	
-		
+		$data['products'] = $this->M_paging->get_products_mk_md($config['per_page'], $data['page'], $inp_new);
+
 		$data['total']=$total_data;
 		$data['name']=$inp_new;
 
@@ -1603,9 +1603,9 @@ class Frontend extends CI_Controller {
 		if ($total_data<=0){
 			$this->load->view('v_front_hasil_search_product_nf', $data);
 		} else {
-			$this->load->view('qew_view',$data);	
+			$this->load->view('qew_view',$data);
 		}
-		
+
 	}
 	/*public function search_p(){
 		$this->load->database();
@@ -1690,7 +1690,7 @@ class Frontend extends CI_Controller {
 		}
 
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -1755,7 +1755,7 @@ class Frontend extends CI_Controller {
 			$total = $result;
 
 			$config["full_tag_open"] = '<ul class="pagination pull-right">';
-			$config["full_tag_close"] = '</ul>';	
+			$config["full_tag_close"] = '</ul>';
 			$config["first_link"] = "&laquo;";
 			$config["first_tag_open"] = "<li>";
 			$config["first_tag_close"] = "</li>";
@@ -1788,7 +1788,7 @@ class Frontend extends CI_Controller {
 			$eng = $this->M_frontend->get_content_eng();
 
 			$this->load->view('link');
-			$this->load->view('v_front_hasil_search_product', compact('query', 'page_links', 'indo', 'eng', 'total_page', 'per_hal', 'name', 'total'));	
+			$this->load->view('v_front_hasil_search_product', compact('query', 'page_links', 'indo', 'eng', 'total_page', 'per_hal', 'name', 'total'));
 		}else{
 			$this->load->view('link');
 			$this->load->view('v_front_hasil_search_product_nf', compact('name', 'indo', 'eng'));
@@ -1808,7 +1808,7 @@ class Frontend extends CI_Controller {
 		$banner_general = $this->M_frontend->load($table);
 
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = "<li>";
 		$config["first_tag_close"] = "</li>";
@@ -1868,7 +1868,7 @@ class Frontend extends CI_Controller {
 			$total_rows = $result;
 
 			$config["full_tag_open"] = '<ul class="pagination pull-right">';
-			$config["full_tag_close"] = '</ul>';	
+			$config["full_tag_close"] = '</ul>';
 			$config["first_link"] = "&laquo;";
 			$config["first_tag_open"] = "<li>";
 			$config["first_tag_close"] = "</li>";
@@ -1901,7 +1901,7 @@ class Frontend extends CI_Controller {
 		} else {
 			$name = $inp;
 			$this->load->view('link');
-			$this->load->view('v_front_hasil_search_general_nf', compact('name', 'indo', 'eng'));	
+			$this->load->view('v_front_hasil_search_general_nf', compact('name', 'indo', 'eng'));
 		}
 	}*/
 
@@ -1918,7 +1918,7 @@ class Frontend extends CI_Controller {
 		$banner_login = $this->M_frontend->load($table);
 
 		$config["full_tag_open"] = '<ul class="pagination pull-right">';
-		$config["full_tag_close"] = '</ul>';	
+		$config["full_tag_close"] = '</ul>';
 		$config["first_link"] = "&laquo;";
 		$config["first_tag_open"] = '<li id="first">';
 		$config["first_tag_close"] = "</li>";
@@ -1985,7 +1985,7 @@ class Frontend extends CI_Controller {
 		$data['indo'] = $this->M_frontend->get_content_ina();
 		$data['eng'] = $this->M_frontend->get_content_eng();
 		$table = "banner_tentang";
-		$data['banner_tentang'] = $this->M_frontend->load($table);	
+		$data['banner_tentang'] = $this->M_frontend->load($table);
 		$table = "content_tentang";
 		$data['content_tentang'] = $this->M_frontend->load($table);
 		$this->load->view('link');
@@ -2043,7 +2043,7 @@ class Frontend extends CI_Controller {
 	    								   ->where('product_model', $model)
 	    								   ->limit(4, $start)
 	    								   ->get()
-	    								   ->result();	
+	    								   ->result();
 	}
 
 	public function search_p_d(){
@@ -2061,7 +2061,7 @@ class Frontend extends CI_Controller {
 			if ($inp!=""){
 				if ($make=="" && $model==""){
 					$table = "n";
-					$result = $this->M_frontend->countProduct_dt($table, $inp, $make, $model);	
+					$result = $this->M_frontend->countProduct_dt($table, $inp, $make, $model);
 				}
 				if ($make!="" && $model==""){
 					$table = "n_mk";
@@ -2069,15 +2069,15 @@ class Frontend extends CI_Controller {
 				}
 				if ($make=="" && $model!=""){
 					$table = "n_md";
-					$result = $this->M_frontend->countProduct_dt($table, $inp, $make, $model);	
+					$result = $this->M_frontend->countProduct_dt($table, $inp, $make, $model);
 				}
 				if ($make!="" && $model!=""){
 					$table = "n_mk_md";
-					$result = $this->M_frontend->countProduct_dt($table, $inp, $make, $model);		
+					$result = $this->M_frontend->countProduct_dt($table, $inp, $make, $model);
 				}
 			} else {
 				$this->load->view('link');
-				$this->load->view('v_front_hasil_search_product_nf', $this->data);	
+				$this->load->view('v_front_hasil_search_product_nf', $this->data);
 			}
 		} else {
 			$this->data['name'] = $inp1;
@@ -2093,7 +2093,7 @@ class Frontend extends CI_Controller {
 		    }
 		    $perpage = 4;
 		    $start = ($page-1) * $perpage;
-		   	
+
 		    $rows = $this->db->count_all('product');
 		    $this->data['page_count'] = $result / $perpage + ($result % $perpage > 0 ? 1 : 0);
 		    $this->data['current_page'] = $page;
@@ -2103,7 +2103,7 @@ class Frontend extends CI_Controller {
 					$this->justName($inp, $start);
 				}
 				if ($make!="" && $model==""){
-					$this->justMk($inp, $start, $make);	
+					$this->justMk($inp, $start, $make);
 				}
 				if ($make=="" && $model!=""){
 					$this->justMd($inp, $start, $model);
@@ -2121,7 +2121,7 @@ class Frontend extends CI_Controller {
 		    								 ->result();
 
 			$this->load->view('link');
-			$this->load->view('v_front_hasil_search_product_', $this->data);	
+			$this->load->view('v_front_hasil_search_product_', $this->data);
 		}else{
 			$this->load->view('link');
 			$this->load->view('v_front_hasil_search_product_nf', $this->data);
@@ -2140,13 +2140,13 @@ class Frontend extends CI_Controller {
 		$this->data['city'] = $inp2;
 		$table = "banner_temukan";
 		$this->data['banner_temukan'] = $this->M_frontend->load($table);
-		
+
 		$table = "provinsi";
 		$this->data['provinsi'] = $this->M_frontend->load($table);
 		$table = "city";
 		$this->data['city'] = $this->M_frontend->load($table);
-		$this->data['hasil'] = $this->M_frontend->getReseller($inp2);   
-		
+		$this->data['hasil'] = $this->M_frontend->getReseller($inp2);
+
 
 		$result = $this->M_frontend->countReseller($inp2);
 		if ($result){
@@ -2193,7 +2193,7 @@ class Frontend extends CI_Controller {
 
 /*GAK TAU DI PAKE ATO NDAK */
 
-	
+
 	public function footer(){
 		$this->load->view('link');
 		$this->load->view('v_footer');

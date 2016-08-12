@@ -21,7 +21,7 @@
 			}
 			ul.pagination li a{
 				font-family: Ubuntu;
-				color: #636363;	
+				color: #636363;
 			}
 			ul.pagination li.active a{
 				background: transparent;
@@ -47,7 +47,7 @@
 			}
 			/*#paging_info{
 				font-family: Ubuntu;
-				color: #636363;	
+				color: #636363;
 				margin-left: 920px;
 				margin-top: 27px;
 				position: absolute;
@@ -84,7 +84,7 @@
 			<div class="container">
 				<div id="title">
 					<h3><?php echo $lang_array[61]; ?></h3>
-					<?php  $get_name = $_SESSION["user_search"]; $get_name = explode('-', $get_name); ?>
+					<?php  $get_name = $_SESSION["user_search"]; $get_name = explode('~', $get_name); ?>
 
 					<?php if (array_key_exists(2, $get_name)){ ?>
 						<p><?php echo $lang_array[62]; ?> "<?php echo $get_name[0]; ?>, <?php echo $get_name[1]; ?>, <?php echo $get_name[2]; ?>" <?php echo $lang_array[63]; ?> <?php echo $total; ?> <?php echo $lang_array[64]; ?></p>
@@ -93,13 +93,13 @@
 					<?php } else { ?>
 						<p><?php echo $lang_array[62]; ?> "<?php echo $get_name[0]; ?>" <?php echo $lang_array[63]; ?> <?php echo $total; ?> <?php echo $lang_array[64]; ?></p>
 					<?php } ?>
-					
+
 				</div>
 
 				<?php for ($i = 0; $i < count($products); ++$i) { ?>
 			        <div class="col-sm-3">
 			            <div class="content_slider">
-			            	<?php 
+			            	<?php
 								$fp = 'asset/image/products/' . $products[$i]->image;
 								if (file_exists($fp)){ ?>
 									<img src="<?php echo base_url(); ?>asset/image/products/<?=$products[$i]->image;?>" class="image_result"/>
@@ -108,7 +108,7 @@
 								<?php }
 							?>
 			                <div class="desc_title">
-			                    <p><?php echo $products[$i]->nama;?></p> 
+			                    <p><?php echo $products[$i]->nama;?></p>
 			                </div>
 			                <p class="desc_body">
 			                    <?php echo $products[$i]->id_jenis_barang;?>-<?php echo $products[$i]->id_kendaraan;?><?php echo $products[$i]->id_varian;?><br/>
@@ -116,7 +116,7 @@
 			                    <?php echo $products[$i]->remarks;?><br/>
 			                    OEM no. <?php echo $products[$i]->nomor_asli;?>
 			                </p>
-			                <!--<?php 
+			                <!--<?php
 								$fp = 'asset/image/products/' . $products[$i]->image;
 								if (file_exists($fp)){ ?>
 									<a href="<?php echo base_url(); ?>asset/image/products/<?=$products[$i]->image;?>" data-lightbox="produk_login"><p class="desc_footer">SELENGKAPNYA &nbsp;></p></a>

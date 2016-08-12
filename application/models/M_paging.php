@@ -37,14 +37,14 @@ class M_Paging extends CI_Model
 		return $query = $this->db->like("nama", 'selang')
 								 ->like("make", 'MITSUBISHI')
 								 ->get('products',$sampai,$dari)->result();
-		
+
 	}
 
 	function j_s1($sampai,$dari, $inp, $inp_make){
 		return $query = $this->db->like("nama", $inp)
 								 ->like("make", $inp_make)
 								 ->get('products',$sampai,$dari)->result();
-		
+
 	}
 
 	function j_s($inp, $inp_make){
@@ -52,7 +52,7 @@ class M_Paging extends CI_Model
 								 ->like("make", '$inp_make')
 								 ->get('products')->num_rows();
 	}
- 
+
 	function jumlah(){
 		return $this->db->get('products')->num_rows();
 	}
@@ -99,7 +99,7 @@ class M_Paging extends CI_Model
 
 		function get_products_count($inp = NULL){
 			if ($inp == "NIL") $inp = "";
-			$sql = "select * from products where nama like '%$inp%'";
+			$sql = "select * from products where nama like '%$inp%' or id_jenis_barang like '%$inp%' or id_kendaraan like '%$inp%' or id_varian like '%$inp%' or nomor_asli like '%$inp%'";
 			$query = $this->db->query($sql);
 			return $query->num_rows();
 		}
@@ -107,7 +107,7 @@ class M_Paging extends CI_Model
 		function get_products($limit, $start, $inp = NULL)
 		{
 			if ($inp == "NIL") $inp = "";
-			$sql = "select * from products where nama like '%$inp%' limit " . $start . ", " . $limit;
+			$sql = "select * from products where nama like '%$inp%' or id_jenis_barang like '%$inp%' or id_kendaraan like '%$inp%' or id_varian like '%$inp%' or nomor_asli like '%$inp%' limit " . $start . ", " . $limit;
 			$query = $this->db->query($sql);
 			return $query->result();
 		}
@@ -116,19 +116,19 @@ class M_Paging extends CI_Model
 
 		function get_products_count_inp_mk($inp = NULL){
 			if ($inp == "NIL") $inp = "";
-			$temp = explode('-', $inp);
-			$sql = "select * from products where nama like '%$temp[0]%' and make like '%$temp[1]%'";
+			$temp = explode('~', $inp);
+			$sql = "select * from products where (nama like '%$temp[0]%' or id_jenis_barang like '%$temp[0]%' or id_kendaraan like '%$temp[0]%' or id_varian like '%$temp[0]%' or nomor_asli like '%$temp[0]%') and make like '%$temp[1]%'";
 			$query = $this->db->query($sql);
 			$temp = "";
 			$inp = "";
 			return $query->num_rows();
 		}
-			
+
 		function get_products_inp_mk($limit, $start, $inp = NULL)
 		{
 			if ($inp == "NIL") $inp = "";
-			$temp = explode('-', $inp);
-			$sql = "select * from products where nama like '%$temp[0]%' and make like '%$temp[1]%' limit " . $start . ", " . $limit;
+			$temp = explode('~', $inp);
+			$sql = "select * from products where (nama like '%$temp[0]%' or id_jenis_barang like '%$temp[0]%' or id_kendaraan like '%$temp[0]%' or id_varian like '%$temp[0]%' or nomor_asli like '%$temp[0]%') and make like '%$temp[1]%' limit " . $start . ", " . $limit;
 			$query = $this->db->query($sql);
 			$temp = "";
 			$inp = "";
@@ -139,8 +139,8 @@ class M_Paging extends CI_Model
 
 		function get_products_count_inp_md($inp = NULL){
 			if ($inp == "NIL") $inp = "";
-			$temp = explode('-', $inp);
-			$sql = "select * from products where nama like '%$temp[0]%' and model1 like '%$temp[1]%' or model2 like '%$temp[1]%'";
+			$temp = explode('~', $inp);
+			$sql = "select * from products where (nama like '%$temp[0]%' or id_jenis_barang like '%$temp[0]%' or id_kendaraan like '%$temp[0]%' or id_varian like '%$temp[0]%' or nomor_asli like '%$temp[0]%') and model1 like '%$temp[1]%' or model2 like '%$temp[1]%'";
 			$query = $this->db->query($sql);
 			return $query->num_rows();
 		}
@@ -148,8 +148,8 @@ class M_Paging extends CI_Model
 		function get_products_inp_md($limit, $start, $inp = NULL)
 		{
 			if ($inp == "NIL") $inp = "";
-			$temp = explode('-', $inp);
-			$sql = "select * from products where nama like '%$temp[0]%' and model1 like '%$temp[1]%' or model2 like '%$temp[1]%' limit " . $start . ", " . $limit;
+			$temp = explode('~', $inp);
+			$sql = "select * from products where (nama like '%$temp[0]%' or id_jenis_barang like '%$temp[0]%' or id_kendaraan like '%$temp[0]%' or id_varian like '%$temp[0]%' or nomor_asli like '%$temp[0]%') and model1 like '%$temp[1]%' or model2 like '%$temp[1]%' limit " . $start . ", " . $limit;
 			$query = $this->db->query($sql);
 			return $query->result();
 		}
@@ -158,8 +158,8 @@ class M_Paging extends CI_Model
 
 		function get_products_count_inp_mk_md($inp = NULL){
 			if ($inp == "NIL") $inp = "";
-			$temp = explode('-', $inp);
-			$sql = "select * from products where nama like '%$temp[0]%' and make like '%$temp[1]%' and model1 like '%$temp[2]%' or model2 like '%$temp[2]%'";
+			$temp = explode('~', $inp);
+			$sql = "select * from products where (nama like '%$temp[0]%' or id_jenis_barang like '%$temp[0]%' or id_kendaraan like '%$temp[0]%' or id_varian like '%$temp[0]%' or nomor_asli like '%$temp[0]%') and make like '%$temp[1]%' and model1 like '%$temp[2]%' or model2 like '%$temp[2]%'";
 			$query = $this->db->query($sql);
 			return $query->num_rows();
 		}
@@ -167,8 +167,8 @@ class M_Paging extends CI_Model
 		function get_products_inp_mk_md($limit, $start, $inp = NULL)
 		{
 			if ($inp == "NIL") $inp = "";
-			$temp = explode('-', $inp);
-			$sql = "select * from products where nama like '%$temp[0]%' and make like '%$temp[1]%' and model1 like '%$temp[2]%' or model2 like '%$temp[2]%' limit " . $start . ", " . $limit;
+			$temp = explode('~', $inp);
+			$sql = "select * from products where (nama like '%$temp[0]%' or id_jenis_barang like '%$temp[0]%' or id_kendaraan like '%$temp[0]%' or id_varian like '%$temp[0]%' or nomor_asli like '%$temp[0]%') and make like '%$temp[1]%' and model1 like '%$temp[2]%' or model2 like '%$temp[2]%' limit " . $start . ", " . $limit;
 			$query = $this->db->query($sql);
 			return $query->result();
 		}
@@ -252,17 +252,17 @@ class M_Paging extends CI_Model
 
 	function cekS_s_mk($inp, $inp_make){
 		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE nama LIKE '%$inp%' AND make LIKE '%$inp_make%'");
-		return true;	
+		return true;
 	}
 
 	function cekS_s_md($inp, $inp_model){
 		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE nama LIKE '%$inp%' AND model1 LIKE '%$inp_model%' OR model2 LIKE '%$inp_model%'");
-		return true;	
+		return true;
 	}
 
 	function cekS_s_mk_md($inp, $inp_make, $inp_model){
 		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE nama LIKE '%$inp%' AND make LIKE '%$inp_make%' AND model1 LIKE '%$inp_model%' OR model2 LIKE '%$inp_model%'");
-		return true;		
+		return true;
 	}
 
 	function cekS_mk($inp_make){
@@ -272,12 +272,12 @@ class M_Paging extends CI_Model
 
 	function cekS_md($inp_model){
 		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE model1 LIKE '%$inp_model%' OR model2 LIKE '%$inp_model%'");
-		return true;	
+		return true;
 	}
 
 	function cekS_mk_md($inp_make, $inp_model){
 		$query = $this->db->query("INSERT INTO temp_products SELECT  id FROM    products WHERE make LIKE '%inp_make%' AND model1 LIKE '%$inp_model%' OR model2 LIKE '%$inp_model%'");
-		return true;		
+		return true;
 	}
 
 
@@ -319,7 +319,7 @@ class M_Paging extends CI_Model
 		if ($inp_make == "NIL") $inp_make = "";
 		$sql = "select * from products where make like '%$inp_make%' and nama like '%$inp%'";
 		$query = $this->db->query($sql);
-		return $query->num_rows();	
+		return $query->num_rows();
 	}
 
 //==================================================================================
@@ -390,7 +390,7 @@ class M_Paging extends CI_Model
 
 	public function countDetail_nn(){
 		$query = $this->db->get('product');
-		return $query->num_rows();	
+		return $query->num_rows();
 	}
 
 	public function countDetail1($inp1){
@@ -532,7 +532,7 @@ class M_Paging extends CI_Model
 						->where('product_name_eng LIKE', '%'.$inp.'%')
 						->or_where('product_name_ina LIKE', '%'.$inp.'%')
 						->limit($limit, $offset)
-						->get();	
+						->get();
 	}
 
 	public function getDetail_mk_md_nn($limit, $inp_make, $inp_model){
@@ -556,7 +556,7 @@ class M_Paging extends CI_Model
 						->where('product_name_eng LIKE', '%'.$inp1.'%')
 						->or_where('product_name_ina LIKE', '%'.$inp1.'%')
 						->limit($limit, $offset)
-						->get();	
+						->get();
 	}
 
 	public function countDetail_mk_md($inp, $inp_make, $inp_model){
